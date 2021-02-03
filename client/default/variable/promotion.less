@@ -1,0 +1,50 @@
+@import './common.less';
+@import '~currentClientDir/variable/common.less';
+
+@sidebar-background: @base-white;
+
+@promotion-bg-size: cover;
+
+@promotion-bg-attachment: fixed;
+
+/*
+** BANNER COMPONENT
+*/
+@banner-height: 18.75rem;
+@border-top: solid 3px @alert-color;
+@border-left: solid 1px @border-color;
+@border-right: solid 1px @border-color;
+@border-bottom: solid 1px @border-color;
+
+@promotion-bg: transparent;
+
+@promotion-header-bg: transparent;
+
+.promotions_sideBar {
+  border-radius: 6px;
+  border-top: @border-top;
+  border-left: @border-left;
+  border-right: @border-right;
+  border-bottom: @border-bottom;
+  flex: 2;
+  margin-right: @size-3;
+  background-color: @base-white;
+  box-shadow: @shadow-dp2;
+  background: @sidebar-background;
+}
+
+.promotions_sideBarBtn_color {
+  color: @alert-color;
+}
+
+@promotions-item-marginBottom: 1rem;
+
+@promotions-sideBarBtn-color: #797979;
+
+@promotions-sideBarBtn-color-active: #ffffd7;
+
+@promotions-sideBar-bgColor: #000;
+
+@promotions-item-borderColor: #ffffd7;
+
+@promotions-sideBar-borderColor: @first-dsf-color;

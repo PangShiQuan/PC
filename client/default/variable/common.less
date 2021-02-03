@@ -1,0 +1,117 @@
+@import '../../general.less';
+@import './base.less';
+
+/*
+** FONTS
+*/
+@font-size: 16px;
+
+@font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica,
+  '\5FAE\8F6F\96C5\9ED1', Arial, sans-serif;
+
+@font-family-courier: 'Courier New', Courier, 'Lucida Sans Typewriter',
+  'Lucida Typewriter', monospace;
+
+/*
+** COLORS PALLETE
+*/
+//  base colors
+
+@text-color: #4c4c4c;
+
+@text-color--light: #9a9a9a;
+
+@text-color--disabled: #ccc;
+
+@logoMaxWidth: none;
+
+/*
+** BRANDS
+*/
+@logo: url('../assets/image/logo.png');
+
+@pending-logo: @logo;
+
+@comingSoon-bg: #000105 url('../assets/image/bg-comingSoon.png') top center
+  no-repeat / 100%;
+
+// general colors
+@white-1: #faf7f7;
+
+// core brand colors
+@primary-color--light: #2f8fff;
+
+@primary-color: #106ddc;
+
+@primary-color--dark: #002962;
+
+@accent-color--light: #fec949;
+
+@accent-color: #feb505;
+
+@accent-color--dark: #ec9b31;
+
+@bg-gray--light: #f2f2f2;
+
+@bg-gray: @text-color--light;
+
+@bg-gray--dark: #434343;
+
+// indication colors
+@indicate-color: #6741d9;
+
+@success-color--light: #40d96e;
+
+@success-color: #60b630;
+
+@alert-color--light: #f8393c;
+
+@alert-color: #e4393c;
+
+@alert-color--dark: #d6393c;
+
+@info-color: #106ddc;
+
+// html based colors
+@anchor-color: @primary-color;
+
+@anchor-color--light: #2f8fff;
+
+@border-color: @text-color--light;
+
+@border-color--light: #d9d9d9;
+
+@border-color--accent: @accent-color;
+
+@shadow-color: @text-color;
+
+@tableRow-bgColor--even: @bg-gray--light;
+
+@tableHeader-bg: @primary-color;
+
+//  custom sizes
+@button-height: @size-6;
+
+@border-width: 1px solid #f4f4f4;
+
+@font-weight: normal;
+
+@page-min-width: 1120px;
+
+@btn-bg: @primary-color;
+
+/*
+ *  MISC
+*/
+.shadowInitial(@shadow-color);
+
+// transition
+@deceleration-curve-timing-function: cubic-bezier(0, 0, 0.2, 1);
+
+@standard-curve-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+@acceleration-curve-timing-function: cubic-bezier(0.4, 0, 1, 1);
+
+@sharp-curve-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+
+@topTray-color: none;

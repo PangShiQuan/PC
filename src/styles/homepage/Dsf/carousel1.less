@@ -1,0 +1,114 @@
+@import '~styles/layout.less';
+
+.carousel {
+  .row;
+
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: @size-1;
+  position: relative;
+  margin: 0 auto;
+
+  .decoLeft {
+    position: absolute;
+    top: -16px;
+    left: -40px;
+    width: 105px;
+  }
+
+  .decoRight {
+    position: absolute;
+    top: -10px;
+    right: -32px;
+    width: 105px;
+    z-index: 1;
+  }
+
+  [class*='slick-list'] {
+    border-radius: @size-1;
+    min-height: 380px;
+
+    img {
+      display: inline-block;
+    }
+  }
+
+  [class*='ant-carousel'] {
+    [class*='slick-dots'] {
+      height: inherit;
+
+      li {
+        margin: 0 7px;
+
+        button {
+          background-color: #fff;
+          border-radius: 50%;
+          width: 15px;
+          height: 15px;
+          opacity: 1;
+
+          &::before {
+            content: none;
+          }
+
+          &:hover {
+            background-color: transparent;
+            border: 2px solid #fff;
+            opacity: 1;
+          }
+
+          &:focus {
+            opacity: 1;
+          }
+        }
+
+        &[class*='slick-active'] {
+          button {
+            background-color: transparent;
+            border: 2px solid #fff;
+            width: 15px;
+
+            &::before {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.carousel_img {
+  width: 100%;
+  height: @carousel-height;
+}
+
+.generateAnimationMoveRight(@name; @basePosition; @movePosition) {
+  @keyframes @name {
+    0% {
+      left: @basePosition;
+    }
+    100% {
+      left: calc(@basePosition + @movePosition);
+    }
+  }
+}
+
+.generateAnimationMoveRight(leftCloudAnimation, 60px, 10px);
+.generateAnimationMoveRight(leftPlum3Animation, 50px, 12px);
+.generateAnimationMoveRight(leftFirecracker2Animation, 50px, 8px);
+.generateAnimationMoveRight(leftPlum1Animation, 0, 6px);
+
+.generateAnimationMoveLeft(@name; @basePosition; @movePosition) {
+  @keyframes @name {
+    0% {
+      left: @basePosition;
+    }
+    100% {
+      left: calc(@basePosition - @movePosition);
+    }
+  }
+}
+
+.generateAnimationMoveLeft(leftPlum2Animation, 0, 10px);
+.generateAnimationMoveLeft(leftFirecracker1Animation, 20px, 6px);

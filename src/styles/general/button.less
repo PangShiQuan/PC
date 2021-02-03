@@ -1,0 +1,104 @@
+@import '~clientResolver/index.less';
+.button {
+  text-align: center;
+  min-height: @button-height;
+  font-size: @size-2;
+  padding: 0 @size-0;
+  vertical-align: middle;
+  min-width: @size-9;
+
+  &:disabled {
+    color: @text-color--disabled;
+    color: @base-white;
+    background-color: @bg-gray;
+    background-image: none;
+    box-shadow: @shadow-dp0;
+  }
+}
+
+.coreButton {
+  .button;
+
+  color: @core-btn-color;
+  background-color: @core-btn-bg;
+  border: @core-btn-border;
+
+  &:hover {
+    background-color: @core-btn-bg-hover;
+  }
+  .coreButton_override;
+}
+
+.subButton {
+  .button;
+
+  color: @sub-btn-color;
+  background-color: @sub-btn-bg;
+  border: @sub-btn-border;
+
+  &:hover {
+    background-color: @sub-btn-bg-hover;
+  }
+  .subButton_override;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translateZ(0);
+  }
+  to {
+    transform: rotate(360deg) translateZ(0);
+  }
+}
+.refreshIcon {
+  -webkit-transform-origin: 50% 51%;
+  &[data-rotated='true'] {
+    animation: rotate infinite 1s @standard-curve-timing-function;
+    animation-fill-mode: forwards;
+  }
+}
+.accessBar {
+  align-content: center;
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.accessBarBtn {
+  border-radius: 6px;
+  color: @primary-color;
+  font-size: @size-2;
+  height: @button-height;
+  padding: 0 @size-2;
+  position: relative;
+  [class*='mdi'] {
+    margin-right: @size-0;
+    font-size: 1.5em;
+    display: inline-block;
+    line-height: 1;
+  }
+  i,
+  span {
+    display: inline-block;
+    line-height: 1.5em;
+    vertical-align: middle;
+  }
+  &[disabled] {
+    color: @text-color--light;
+    cursor: not-allowed;
+  }
+  // &:not(:last-child)::after {
+  //   content: ' ';
+  //   display: inline-block;
+  //   position: absolute;
+  //   width: 1px;
+  //   right: 0;
+  //   top: @size-0;
+  //   bottom: @size-0;
+  //   left: auto;
+  //   background-color: @bg-gray;
+  // }
+  &:last-child {
+    color: @text-color;
+  }
+}

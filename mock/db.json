@@ -1,0 +1,277 @@
+{
+  "posts": {
+    "hello": [{
+        "id": 1,
+        "title": "json-server",
+        "author": "typicode"
+      },
+      {
+        "id": 2,
+        "title": "json-server",
+        "author": "typicode"
+      },
+      {
+        "id": 3,
+        "title": "json-server",
+        "author": "typicode"
+      }
+    ]
+  },
+  "comments": [{
+    "id": 1,
+    "body": "some comment",
+    "postId": 1
+  }],
+  "profile": {
+    "name": "typicode"
+  },
+  "headerNotes": {
+    "cp": "彩票彩票彩票彩票",
+    "mj": "麻将麻将麻将麻将",
+    "pk": "扑克扑克扑克扑克"
+  },
+  "headerLinks": [{
+      "placeholder": "帮助中心",
+      "permalink": "http://www.baidu.com"
+    },
+    {
+      "placeholder": "加入代理",
+      "permalink": "http://www.baidu.com"
+    },
+    {
+      "placeholder": "玩法",
+      "permalink": "http://www.baidu.com"
+    },
+    {
+      "placeholder": "注册",
+      "permalink": "http://www.baidu.com"
+    },
+    {
+      "placeholder": "手机站",
+      "permalink": "http://www.baidu.com",
+      "icon": "cellphone-iphone"
+    },
+    {
+      "placeholder": "加入收藏",
+      "permalink": "http://www.baidu.com",
+      "icon": "star"
+    }
+  ],
+  "predictionsList": [{
+    "highRateLottery": [
+      "重庆时时彩",
+      "山东11选5",
+      "北京PK10",
+      "新疆时时彩",
+      "上海时时乐",
+      "上海11选5",
+      "天津快乐10分",
+      "天津时时彩",
+      "安徽11选5",
+      "重庆快乐十分",
+      "广东快乐1",
+      "江苏快3",
+      "江西11选5",
+      "三分彩"
+    ],
+    "lowRateLottery": [
+      "香港⑥合彩",
+      "福彩3D",
+      "排列3",
+      "排列5"
+    ]
+  }],
+  "winnerList": [{
+    "username": "blackwolf326",
+    "prizeAmount": 1960
+  }, {
+    "username": "whiteswan784",
+    "prizeAmount": 1332.8
+  }, {
+    "username": "beautifulswan701",
+    "prizeAmount": 1176
+  }, {
+    "username": "crazybutterfly503",
+    "prizeAmount": 980
+  }, {
+    "username": "brownkoala934",
+    "prizeAmount": 392
+  }, {
+    "username": "yellowleopard912",
+    "prizeAmount": 254.8
+  }, {
+    "username": "redmouse362",
+    "prizeAmount": 245
+  }, {
+    "username": "organicladybug509",
+    "prizeAmount": 392
+  }, {
+    "username": "tinybird131",
+    "prizeAmount": 254.8
+  }, {
+    "username": "tinyfish497",
+    "prizeAmount": 245
+  }, {
+    "username": "blackwolf326",
+    "prizeAmount": 1960
+  }, {
+    "username": "whiteswan784",
+    "prizeAmount": 1332.8
+  }, {
+    "username": "beautifulswan701",
+    "prizeAmount": 1176
+  }, {
+    "username": "crazybutterfly503",
+    "prizeAmount": 980
+  }, {
+    "username": "brownkoala934",
+    "prizeAmount": 392
+  }, {
+    "username": "yellowleopard912",
+    "prizeAmount": 254.8
+  }, {
+    "username": "redmouse362",
+    "prizeAmount": 245
+  }, {
+    "username": "organicladybug509",
+    "prizeAmount": 392
+  }, {
+    "username": "tinybird131",
+    "prizeAmount": 254.8
+  }, {
+    "username": "tinyfish497",
+    "prizeAmount": 245
+  }],
+  "footList": {
+    "account": [{
+        "question": "如何注册账号",
+        "link": "http://www.baidu.com"
+      },
+      {
+        "question": "怎么找回登录密码",
+        "link": "http://www.baidu.com"
+      },
+      {
+        "question": "如何修改手机号码",
+        "link": "http://www.baidu.com"
+      },
+      {
+        "question": "如何修改真实姓名",
+        "link": "http://www.baidu.com"
+      }
+    ],
+    "charge": [{
+        "question": "如何进行充值",
+        "link": "http://www.baidu.com"
+      },
+      {
+        "question": "如何购买彩票",
+        "link": "http://www.baidu.com"
+      },
+      {
+        "question": "如何查询购彩记录",
+        "link": "http://www.baidu.com"
+      },
+      {
+        "question": "充值没到账怎么办",
+        "link": "http://www.baidu.com"
+      }
+    ],
+    "drawings": [{
+        "question": "兑奖提款",
+        "link": "http://www.baidu.com"
+      },
+      {
+        "question": "怎么进行兑奖",
+        "link": "http://www.baidu.com"
+      },
+      {
+        "question": "如何进行提款",
+        "link": "http://www.baidu.com"
+      },
+      {
+        "question": "提款不成功怎么办",
+        "link": "http://www.baidu.com"
+      }
+    ]
+  },
+  "lotteryList": {
+    "highRateLotteryList": {
+      "重庆时时彩": {
+        "lotteryCount": 4,
+        "phase": 4010244688,
+        "pricePerLottery": 2,
+        "thumbnailName": "thumb_SSC",
+        "timestamp": 3096626714,
+        "totalPool": 593812127
+      },
+      "北京PK拾": {
+        "lotteryCount": 5,
+        "phase": 3313475549,
+        "pricePerLottery": 3,
+        "thumbnailName": "thumb_3D",
+        "timestamp": 1912062027,
+        "totalPool": 1011667082
+      },
+      "山东11选5": {
+        "lotteryCount": 6,
+        "phase": 1580881720,
+        "pricePerLottery": 4,
+        "thumbnailName": "thumb_SSC",
+        "timestamp": 3613440373,
+        "totalPool": 3313053797
+      }
+    },
+    "lowRateLotteryList": {
+      "福彩3D": {
+        "lotteryCount": 6,
+        "phase": 1812429664,
+        "pricePerLottery": 5,
+        "thumbnailName": "thumb_SSC",
+        "timestamp": 1438644358,
+        "totalPool": 875297097
+      },
+      "排列三": {
+        "lotteryCount": 4,
+        "phase": 3482227695,
+        "pricePerLottery": 6,
+        "thumbnailName": "thumb_3D",
+        "timestamp": 144301305,
+        "totalPool": 4275952998
+      }
+    }
+  },
+  "lotteryAnnoucement": {
+    "重庆时时彩": {
+      "lotteryNumbers": [3, 7, 1, 2],
+      "phase": 837739305,
+      "timestamp": 3096626714,
+      "totalPool": 593812127
+    },
+    "福彩3D": {
+      "lotteryNumbers": [5, 4, 7, 1, 3],
+      "phase": 2523653576,
+      "timestamp": 1912062027,
+      "totalPool": 1011667082
+    },
+    "山东11选5": {
+      "lotteryNumbers": [6, 1, 7, 0, 1, 9],
+      "phase": 3736774930,
+      "timestamp": 3613440373,
+      "totalPool": 3313053797
+    },
+    "排列三": {
+      "lotteryNumbers": [3, 7, 1, 2],
+      "phase": 684533605,
+      "timestamp": 2079892157,
+      "totalPool": 2928049728
+    },
+    "北京PK拾": {
+      "lotteryNumbers": [5, 4, 7, 1, 3],
+      "phase": 2523653576,
+      "timestamp": 3592744909,
+      "totalPool": 3992663415
+    }
+  },
+  "hotLotteries": ["重庆时时彩", "山东11选5", "香港六合彩", "北京PK10", "福彩3D"]
+}

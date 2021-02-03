@@ -1,0 +1,228 @@
+@import '~clientResolver/index.less';
+
+.addNewRow {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  .addNewButton {
+    width: 218px;
+    height: 45px;
+    border-radius: 4px;
+    border: solid 1px @profile-body-color;
+    color: @profile-body-color;
+    background-color: #fff;
+    border-style: dotted;
+
+    [class*='mdi'] {
+      vertical-align: baseline;
+    }
+  }
+
+  .search_icon_button {
+    position: absolute;
+    margin: 10px 0 0 8px;
+  }
+
+  .cancel_icon_button {
+    position: absolute;
+    margin: 10px 0 0 -30px;
+  }
+
+  .search_input {
+    height: 45px;
+    border: 1px solid #e1e1e1;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 8px 8px 8px 44px;
+    width: 288px;
+  }
+
+  .download_button {
+    margin-left: 21px;
+    color: @profile-body-color;
+    [class*='mdi'] {
+      vertical-align: middle;
+    }
+  }
+
+  .highlight {
+    color: @orange-1;
+    font-size: 13px;
+    margin-left: 22px;
+  }
+}
+
+.dropdown_menu {
+  background-color: @profile-button-color;
+  color: @profile-button-text-color;
+  box-shadow: @shadow-dp4;
+  overflow: auto;
+  border-radius: 6px;
+  max-height: 38vh;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -6px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 6px solid @profile-button-color;
+  }
+}
+
+.dropdown_menu_item {
+  line-height: @button-height;
+  padding: 0 @size-0;
+  display: block;
+  width: 100%;
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 0.15s;
+  transition-timing-function: @standard-curve-timing-function;
+  &[disabled] {
+    color: @profile-label-color--disabled;
+  }
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    width: auto;
+    height: 1px;
+    left: @size-0;
+    right: @size-0;
+    bottom: 0;
+    background-color: @bg-gray--light;
+  }
+}
+
+.link_button {
+  color: @profile-body-color;
+}
+
+.color_indicator {
+  &::before {
+    content: '';
+    display: inline-block;
+    width: @size-0;
+    height: @size-0;
+    border-radius: @size-0 / 2;
+    margin-right: @size-0;
+  }
+
+  &[data-color='green']::before {
+    background-color: @success-color;
+  }
+  &[data-color='gray']::before {
+    background-color: @primary-color--dark;
+  }
+  &[data-color='blue']::before {
+    background-color: @info-color;
+  }
+  &[data-color='red']::before {
+    background-color: @alert-color;
+  }
+  &[data-color='purple']::before {
+    background-color: @indicate-color;
+  }
+}
+
+.modal_form_row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .modal_form_item {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .formItem_msg {
+    color: #ffa626;
+    position: absolute;
+    right: 65px;
+    font-size: @size-1;
+
+    .formItem_msgIcon {
+      font-size: @size-3;
+      margin-right: 3px;
+      vertical-align: text-bottom;
+    }
+
+    &[data-color='blue'] {
+      color: @blue-1;
+    }
+    &[data-color='red'] {
+      color: @red-1;
+    }
+    &[data-color='orange'] {
+      color: @orange-1;
+    }
+    &[data-color='yellow'] {
+      color: @yellow-1;
+    }
+    &[data-color='green'] {
+      color: @green-1;
+    }
+  }
+}
+
+.svg_icon {
+  svg {
+    width: 1.35rem;
+    margin-bottom: -6px;
+    margin-right: 5px;
+
+    path {
+      fill: @profile-body-color;
+      stroke: none;
+    }
+    rect {
+      fill: @profile-body-color;
+      stroke: none;
+    }
+    ellipse {
+      fill: @profile-body-color;
+      stroke: none;
+    }
+    circle {
+      fill: @profile-body-color;
+      stroke: none;
+    }
+  }
+}
+
+.svg_icon_search {
+  svg {
+    width: 18px;
+    margin-bottom: -6px;
+    margin-right: 5px;
+
+    path {
+      fill: #828282;
+      stroke: none;
+    }
+    rect {
+      fill: #828282;
+      stroke: none;
+    }
+    ellipse {
+      fill: #828282;
+      stroke: none;
+    }
+    circle {
+      fill: #828282;
+      stroke: none;
+    }
+  }
+}
+
+.more_button {
+  width: 34px;
+}

@@ -1,0 +1,50 @@
+@import './base.less';
+
+@results-tableHeader-bg: @common-background-color;
+
+@results-tableHeader-border: 1px solid @common-background-line-color;
+
+@results-tableHeader-color: @main-regular-color;
+
+@results-tableHeader-fontweight: bold;
+
+@results-table-bg--even: @common-table-color;
+
+@results-table-color: @sub-regular-color;
+
+@btn-bg: @first-color;
+
+@predictBtn: @first-color;
+
+@results-betBtn-img: linear-gradient(
+  to bottom,
+  @button-color 0%,
+  @button-color 100%
+);
+
+@results-betBtn-color: @first-color;
+
+@results-betBtn-border: 1px solid @first-color;
+
+.betBtnHover {
+  &:hover {
+    color: @button-color;
+    background-image: linear-gradient(
+      to bottom,
+      @first-color 0%,
+      @first-color 100%
+    );
+  }
+}
+
+.infoBtnHover {
+  &:hover {
+    background-color: mix(@first-color, @button-hover-color);
+  }
+}
+
+.predictBtnHover {
+  &:hover {
+    background-color: mix(@first-color, @button-hover-color);
+  }
+}

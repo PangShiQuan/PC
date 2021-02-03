@@ -1,0 +1,53 @@
+.mobile-only {
+  @media screen and (max-width: 780px) {
+    display: none;
+  }
+}
+.pc-only {
+  @media screen and (max-width: 781px) {
+    display: none;
+  }
+}
+.clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+.btn-live {
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+html {
+  font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica,
+    '\5FAE\8F6F\96C5\9ED1', Arial, sans-serif;
+  font-size: @space;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  width: auto;
+}
+button {
+  .btn-live;
+
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}

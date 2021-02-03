@@ -1,0 +1,50 @@
+@import './common.less';
+
+@sidebar-background: url('../assets/image/promotion_sidebar.png') no-repeat
+  center / 100% 100%;
+
+@promotion-bg: url('../assets/image/promotion_bg.png') no-repeat center;
+
+@border-bottom: none;
+
+.promotions_sideBar {
+  border-radius: 6px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  height: 250px;
+  flex: 2;
+  margin-right: @size-3;
+  background-color: @base-white;
+  box-shadow: @shadow-dp2;
+  background: @sidebar-background;
+  color: #b0855a;
+  & button:first-child {
+    padding-top: 50px;
+  }
+  & button:nth-child(2) {
+    padding-top: 10px;
+  }
+  & button:nth-child(3) {
+    padding-top: 15px;
+  }
+  & button:nth-child(4) {
+    padding-top: 15px;
+  }
+}
+
+.promotions_sideBarBtn_color {
+  color: #fff4cb;
+  span::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    right: 18%;
+    margin-top: 12px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff4cb;
+  }
+}

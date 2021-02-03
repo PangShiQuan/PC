@@ -1,0 +1,111 @@
+@import '~styles/layout.less';
+@import '~clientResolver/index.less';
+
+.page {
+  .pageWidth;
+
+  background: @base-white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: auto;
+}
+
+.headerSelect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tabs {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 1px solid @common-background-line-color;
+}
+.tab {
+  color: @main-regular-color;
+  position: relative;
+  min-width: 100px;
+  padding: 0 @size-3;
+  height: 20px;
+  margin: 10px 0;
+  font-weight: @entrance-fontweight;
+  user-select: none;
+  &[data-selected='true'] {
+    background-color: @entrance-bg-color;
+    color: @entrance-color;
+    &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      left: 0;
+      top: 28px;
+      background-color: @first-color;
+    }
+  }
+  &:not(:first-child) {
+    border-left: 1px solid @common-background-line-color;
+  }
+}
+.navs {
+  padding: @size-3 @size-3 @size-0 @size-3;
+}
+.nav {
+  margin-left: @size-2;
+  margin-right: @size-2;
+  font-size: @size-2;
+  color: @sub-regular-color;
+  padding-bottom: 5px;
+  &:hover,
+  &:focus {
+    color: @first-color;
+    border-bottom: 1px solid @first-color;
+    text-decoration: none;
+  }
+}
+.subnavBtnBorder {
+  display: inline-block;
+  margin-bottom: @size-2;
+  &:first-child,
+  & ~ & {
+    border-right: 1px solid @common-background-line-color;
+  }
+}
+.section {
+  margin-bottom: @size-1;
+  background-color: @common-table-color;
+  padding: 0 @size-1;
+  margin-left: @size-0;
+  margin-right: @size-0;
+  border-radius: 8px;
+}
+.sectionTitle {
+  border-bottom: 1px solid @common-background-color;
+  font-size: @size-3;
+  padding: @size-0 0;
+  color: @main-regular-color;
+  font-weight: bold;
+}
+.sectionItems {
+  padding: 0 @size-3;
+}
+.sectionItem {
+  display: inline-block;
+  margin: @size-1 4% @size-0 0;
+  cursor: pointer;
+  user-select: none;
+}
+.thumbnail {
+  width: @size-8;
+  height: @size-8;
+  border-radius: 50%;
+  box-shadow: @shadow-dp2;
+}
+.sectionItemName {
+  display: block;
+  margin-top: @size-0;
+  font-size: @size-2;
+  color: @sub-regular-color;
+  text-align: center;
+}

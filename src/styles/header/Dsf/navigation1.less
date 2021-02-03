@@ -1,0 +1,112 @@
+@import '~styles/layout.less';
+
+.nav-btn {
+  overflow: hidden;
+  position: relative;
+
+  .nav-btn-override;
+  &:not(:disabled) {
+    &:hover,
+    &[data-active='true'] {
+      .navigation-hover-selected-override;
+    }
+    &[data-active='true'] {
+      .navigation-selected-override;
+    }
+  }
+  &:focus,
+  &:active,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.navListRow {
+  .row;
+  &[ispromotions='true'] {
+    background-color: #ffc353;
+  }
+
+  background: @navigation-bg;
+  color: @navigation-color;
+  position: relative;
+  z-index: 1;
+}
+.list {
+  text-align: center;
+  background: @navigation-list-bg;
+  display: block;
+  font-size: @navigation-button-fontSize;
+  margin: 0 auto;
+  right: 0;
+  width: 100%;
+  z-index: 0;
+  max-width: @page-width;
+}
+.listItem {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  position: relative;
+  .listItem-override;
+
+  &[data-active='true'] {
+    color: @navigation-color--active;
+    background: @navigation-bg--selected;
+
+    &::after {
+      transform: translateY(-100%);
+    }
+  }
+
+  &[data-disabled='true'] {
+    color: @navigation-color--disable;
+    cursor: default;
+  }
+  &:hover {
+    .subNavList {
+      transform: scale(1, 1);
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+}
+
+.button {
+  float: left;
+  line-height: @navigation-height;
+  min-width: 100%;
+  color: inherit;
+  &[disabled] {
+    color: @navigation-color--disable;
+    cursor: default;
+  }
+  .nav-btn;
+}
+
+.subNavList {
+  color: @navigation-subnav-color;
+  font-size: @size-3;
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  vertical-align: top;
+  margin: 0 auto;
+  text-align: center;
+  float: none;
+  background-color: rgba(0, 0, 0, 0);
+  transform: scale(1, 0);
+  transform-origin: top center;
+  transition: transform 0.12s ease-in-out, background-color 0.1s ease-in-out;
+}
+.subNavItem {
+  position: relative;
+}
+
+.subNavBtn {
+  display: inline-block;
+  padding: @size-1 / 2 0;
+  width: 100%;
+  .nav-btn;
+}

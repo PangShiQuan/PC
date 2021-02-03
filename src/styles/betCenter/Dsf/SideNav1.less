@@ -1,0 +1,226 @@
+@import '~styles/layout.less';
+@import '~styles/general/scrollbar.less';
+
+@keyframes pouncing {
+  from {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.borders(@color: rgba(255, 255, 255, 0.25)) {
+  position: relative;
+  &::before {
+    background-color: @color;
+    content: '';
+    bottom: auto;
+    height: 1px;
+    left: @size-3;
+    position: absolute;
+    right: @size-3;
+    top: 0;
+    width: auto;
+  }
+  &:last-child {
+    &::after {
+      content: '';
+      background-color: @color;
+      bottom: 0;
+      height: 1px;
+      left: @size-3;
+      position: absolute;
+      right: @size-3;
+      top: auto;
+      width: auto;
+    }
+  }
+}
+
+.label {
+  display: inline-block;
+  vertical-align: middle;
+  transition: width 0.25s @standard-curve-timing-function;
+  [data-collapsed='true'] & {
+    width: 0;
+    visibility: hidden;
+  }
+}
+
+.avatar {
+  background-color: @bg-gray;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: smaller;
+  margin: 0 @size-0;
+  min-height: @betCenter-sideNav-btnIcon-size;
+  min-width: @betCenter-sideNav-btnIcon-size;
+  padding-left: 15%;
+  padding-top: 15%;
+  transition: margin-left 0.25s @standard-curve-timing-function;
+  vertical-align: middle;
+}
+
+.sideNav {
+  .scrollbar(@betCenter-sideNav-bg);
+
+  background-color: @betCenter-sideNav-bg;
+  color: @betCenter-sideNav-color;
+  box-shadow: @betCenter-sideNav-shadow;
+  transition: width 0.25s @standard-curve-timing-function;
+  width: @betCenter-sideNav-width;
+  height: @betCenter-content-height;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+
+  &[data-collapsed='true'] {
+    width: @betCenter-sideNav-width--collapsed;
+  }
+}
+
+.typeIcon {
+  height: @size-5;
+  width: @size-5;
+  display: inline-block;
+}
+
+.hideMenu {
+  display: none;
+}
+
+.menuItem {
+  .clearfix;
+  .borders();
+
+  font-size: @size-2;
+  position: relative;
+  transition: color 0.25s @standard-curve-timing-function;
+  white-space: nowrap;
+
+  &[data-expanded='true'] {
+    color: @base-white;
+    .subMenus {
+      max-height: 1000px;
+    }
+    .menuChevron {
+      transform: rotate(180deg);
+    }
+  }
+  &:hover {
+    color: @base-white;
+  }
+}
+
+.menuExpandToggle {
+  align-items: center;
+  font-size: inherit;
+  background-color: @betCenter-sideNav-subMenuItem-bg;
+  color: @base-white;
+  height: @betCenter-sideNav-menuItem-height;
+  letter-spacing: 1px;
+  overflow: hidden;
+  padding: 0 @size-3;
+  text-align: left;
+  width: 100%;
+  transition: padding 0.25s @standard-curve-timing-function;
+  &:hover {
+    color: @betCenter-menuExpandToogle-color--hover;
+  }
+}
+.subMenus {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s @standard-curve-timing-function;
+}
+.menuChevron {
+  display: inline-block;
+  height: @size-4;
+  width: @size-4;
+  position: absolute;
+  right: @size-3;
+  font-size: @size-4;
+  transition: transform right;
+  transition-duration: 0.25s;
+  transition-timing-function: @standard-curve-timing-function;
+  [data-collapsed='true'] & {
+    right: @size-0;
+  }
+}
+.subMenuItem {
+  display: block;
+  font-size: inherit;
+  height: @betCenter-sideNav-menuItem-height;
+  padding-left: @size-3;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  background-color: @betCenter-sideNav-menu-bg;
+  color: @betCenter-sideNav-menu-color;
+  .borders();
+
+  &[data-isall='true'] {
+    background-color: @betCenter-sideNav-backToAllBtn-bg;
+    color: @betCenter-sideNav-backToAllBtn-color;
+    &:hover:not([disabled]) {
+      background-color: @betCenter-sideNav-backToAllBtn-bg--hover;
+      color: @betCenter-sideNav-backToAllBtn-color--hover;
+    }
+
+    &[data-active='true'] {
+      background-color: @betCenter-sideNav-backToAllBtn-bg--active;
+      background-image: @betCenter-sideNav-backToAllBtn-bg-image--active;
+      background-size: cover;
+      color: @betCenter-sideNav-backToAllBtn-color--active;
+    }
+  }
+
+  &[data-active='true'],
+  &:hover:not([disabled]) {
+    background-color: @betCenter-sideNav-subMenuItem-bg--hover;
+    color: @betCenter-sideNav-subMenuItem-color--hover;
+    .avatar {
+      margin-left: @size-3;
+    }
+    &::before {
+      content: '';
+      background-color: @betCenter-sideNav-subMenuItem-borderColor;
+      height: 100%;
+      position: absolute;
+      width: 3px;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &[disabled] {
+    cursor: default;
+    color: @betCenter-sideNav-color;
+  }
+  [class*='mdi'] {
+    font-size: 1.5em;
+    margin-left: @size-0 / 2;
+  }
+  [data-collapsed='true'] & {
+    padding: @betCenter-sideNav-padding--collapsed;
+    &[data-active='true'],
+    &:hover:not([disabled]) {
+      .avatar {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.menuBtnIcon {
+  vertical-align: middle;
+  margin: 0 @size-3 / 2;
+  height: @betCenter-sideNav-btnIcon-size;
+  width: @betCenter-sideNav-btnIcon-size;
+}

@@ -1,0 +1,195 @@
+@import '~clientResolver/index.less';
+
+.containerOuter {
+  white-space: nowrap;
+}
+
+.container {
+  color: @base-white;
+  background-color: @primary-color;
+  display: flex;
+  font-size: 12px;
+}
+
+.container_Iframe {
+  position: fixed;
+  border: none;
+  width: 100%;
+}
+
+@media screen and (max-width: @page-width) {
+  .container_Iframe {
+    height: 100%;
+  }
+}
+
+@keyframes transferMoveLeftRight {
+  0% {
+    transform: translateX(0);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(-0.4em);
+    opacity: 0.9;
+  }
+}
+
+.containerAgree {
+  position: relative;
+  color: @base-white;
+  border: 2px solid @base-white;
+  border-radius: 20px;
+  width: 90px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 2rem;
+  font-size: 14px;
+  height: 1.9rem;
+  margin: 0.04rem 0 0.1rem 1rem;
+
+  &:disabled {
+    color: @base-white;
+    background-color: #ccc;
+    background-image: none;
+    box-shadow: @shadow-dp0;
+  }
+
+  &:hover {
+    &:not(:disabled) {
+      background-color: darken(@primary-color, 10%);
+      .containerTransferIcon {
+        animation: transferMoveLeftRight 0.4s infinite alternate ease-in-out;
+      }
+    }
+  }
+}
+
+.containerTransferIcon {
+  width: 2rem;
+  font-size: @size-4;
+  margin-right: @size-0;
+}
+
+.containerAmount {
+  border-radius: 4px;
+  border: 0 none;
+  outline: none;
+  padding: 0 6px;
+  width: 109px;
+  height: 2rem;
+  margin: 0.1rem 0 0.1rem @size-3;
+  color: @base-black;
+
+  &:hover {
+    box-shadow: @shadow-dp2;
+    background-color: darken(@base-white, 10%);
+  }
+}
+
+.containerLabel {
+  color: @base-white;
+
+  &[data-bold='true'] {
+    font-weight: 600;
+  }
+  &[data-icon='true'] {
+    i {
+      font-size: @size-4;
+    }
+  }
+}
+
+.container_Title {
+  font-weight: 700;
+  line-height: @size-6;
+  margin: 0 2rem;
+  margin: 0 @size-3 0 @size-6;
+  padding-right: @size-0;
+}
+
+.container_GameAmount {
+  margin-right: 1rem;
+}
+
+.container_logo {
+  height: 2.1rem;
+  float: left;
+}
+.containerWalletBalance {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  margin-left: @size-0;
+  font-size: @size-1;
+  line-height: 2.4rem;
+  padding: @size-0 @size-3 @size-0 @size-3;
+}
+.containerWalletBalanceOuter {
+  [class*='mdi'] {
+    margin-right: @size-0;
+    font-size: @size-4;
+    display: inline-block;
+    line-height: 1;
+  }
+  span {
+    i {
+      line-height: 2.25rem;
+      margin-left: @size-0;
+      font-weight: 600;
+    }
+
+    vertical-align: middle;
+  }
+}
+
+.containerSplitter {
+  margin-left: @size-3;
+  border-right: 1px solid @base-white;
+  margin-right: @size-0;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translateZ(0);
+  }
+  to {
+    transform: rotate(360deg) translateZ(0);
+  }
+}
+
+@keyframes rotateHalf {
+  from {
+    transform: rotate(0deg) translateZ(0);
+  }
+  to {
+    transform: rotate(60deg) translateZ(0);
+  }
+}
+.containerWalletBalanceRefreshIcon {
+  transform-origin: 50% 51%;
+  &:hover {
+    animation: rotateHalf 0.5s infinite alternate ease-in-out;
+  }
+  &[data-rotated='true'] {
+    animation: rotate 0.5s infinite alternate ease-in-out;
+  }
+}
+
+.containerTransferItemsOuter {
+  padding-left: @size-4;
+  background-color: @primary-color;
+}
+
+.containerGreetings {
+  margin-left: auto;
+  background-color: @primary-color;
+
+  span {
+    line-height: 2.25rem;
+    padding-left: 1rem;
+  }
+}
+
+.containerlogoAnchor {
+  float: left;
+  text-align: center;
+}

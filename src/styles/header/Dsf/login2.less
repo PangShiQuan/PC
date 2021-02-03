@@ -1,0 +1,91 @@
+@import '~styles/layout.less';
+@import '~clientResolver/index.less';
+
+.login_body {
+  display: flex;
+  text-align: @login-body-align;
+  float: right;
+  height: 100%;
+  align-items: center;
+}
+.login_button {
+  border-radius: @login-button-borderRadius;
+  margin-right: 17px;
+  float: right;
+  font-size: 14px;
+  &[data-betcenter='true'] {
+    background: @betcenter-login-button-color;
+  }
+
+  height: 30px;
+  width: 49px;
+  float: none;
+  min-height: 30px;
+  min-width: 20px;
+  color: @login-button-word-color;
+  border: 1px solid @login-button-border;
+  background: @login-button-color;
+  &:hover {
+    background: @logins-button-color-hover;
+  }
+}
+.register_button {
+  border-radius: @login-button-borderRadius;
+  margin-right: 17px;
+  float: right;
+  font-size: 14px;
+  &[data-betcenter='true'] {
+    background: @betcenter-logins-button-color;
+  }
+
+  height: 30px;
+  width: 49px;
+  float: none;
+  min-height: 30px;
+  min-width: 20px;
+  color: @logins-button-word-color;
+  border: 1px solid @logins-button-border;
+  background: @logins-button-color;
+  &:hover {
+    background: @logins-button-color-hover;
+  }
+}
+.chat_button {
+  border-radius: @login-button-borderRadius;
+  margin-right: 17px;
+  font-size: 14px;
+  padding: 0 0.7rem;
+  height: 30px;
+  float: none;
+  min-height: 30px;
+  min-width: 20px;
+  color: @quick-access-bar-btn-chat-color;
+  border: 1px solid @quick-access-bar-btn-chat-color;
+  background: @betcenter-register-button-color;
+  &:hover {
+    color: @betcenter-register-button-color-hover;
+    background: @register-button-color-hover;
+    border: 1px solid @register-button-color-hover;
+  }
+}
+.login_guestRegisterBtn {
+  font-size: 14px;
+  border-radius: @login-button-borderRadius;
+  &[data-betcenter='true'] {
+    background: @betcenter-register-button-color;
+  }
+  & i {
+    font-size: 20px;
+  }
+
+  min-height: 30px;
+  min-width: 79px;
+  color: @register-button-color;
+  border: 1px solid @register-button-border;
+  background: @betcenter-register-button-color;
+  &:hover {
+    color: @betcenter-register-button-color-hover;
+    border: 1px solid @register-button-color-hover-border;
+    background: @register-button-color-hover;
+  }
+}

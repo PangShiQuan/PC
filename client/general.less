@@ -1,0 +1,164 @@
+/*
+** BASE SIZES
+*/
+@size-0: 0.5rem; // 8px
+@size-1: 0.75rem; // 12px
+@size-2: 0.875rem; // 14px
+@size-3: 1rem; // 16px
+@size-4: 1.25rem; // 20px
+@size-5: 1.5rem; // 24px
+@size-6: 2.25rem; // 36px
+@size-7: 3rem; // 48px
+@size-8: 5rem; // 80px
+@size-9: 6rem; // 96px
+
+@transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+@bounchBack-timing: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+@loader-deg: 285deg;
+@loader-gradient: linear-gradient(@loader-deg), rgba(174, 174, 174, 0) 25%,
+  rgba(174, 174, 174, 0.5) 50%, rgba(174, 174, 174, 0) 75%;
+@page-width: 70rem;
+@carousel-height: 23.75rem;
+@carousel-width: 890px;
+@box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+@header-height: 1.875rem;
+@panelHeader-height: 2.063rem;
+@panel-margin: @size-0;
+@panel-center: ((@page-width - @panel-margin * 2) / 5) * 3;
+@panel-side: ((@page-width - @panel-margin * 2) / 5);
+@button-height: @size-6;
+@gray-3-radius: 6px;
+@nav-main-width: @page-width - @nav-side-width - @panel-margin;
+@nav-side-width: @panel-side;
+@banner-height: 18.75rem;
+
+.shadowInitial(@shadow-color) {
+  // shadows
+  @shadow-dp0: 0 0 0 0 fade(@shadow-color, 20%),
+    0 0 0 0 fade(@shadow-color, 14%), 0 0 0 0 fade(@shadow-color, 12%);
+  @shadow-dp1: 0 2px 1px -1px fade(@shadow-color, 20%),
+    0 1px 1px 0 fade(@shadow-color, 14%), 0 1px 3px 0 fade(@shadow-color, 12%);
+  @shadow-dp2: 0 3px 1px -2px fade(@shadow-color, 20%),
+    0 2px 2px 0 fade(@shadow-color, 14%), 0 1px 5px 0 fade(@shadow-color, 12%);
+  @shadow-dp3: 0 3px 3px -2px fade(@shadow-color, 20%),
+    0 3px 4px 0 fade(@shadow-color, 14%), 0 1px 8px 0 fade(@shadow-color, 12%);
+  @shadow-dp4: 0 2px 4px -1px fade(@shadow-color, 20%),
+    0 4px 5px 0 fade(@shadow-color, 14%), 0 1px 10px 0 fade(@shadow-color, 12%);
+  @shadow-dp5: 0 3px 5px -1px fade(@shadow-color, 20%),
+    0 5px 8px 0 fade(@shadow-color, 14%), 0 1px 14px 0 fade(@shadow-color, 12%);
+  @shadow-dp6: 0 3px 5px -1px fade(@shadow-color, 20%),
+    0 6px 10px 0 fade(@shadow-color, 14%), 0 1px 18px 0 fade(@shadow-color, 12%);
+  @shadow-dp7: 0 4px 5px -2px fade(@shadow-color, 20%),
+    0 7px 10px 1px fade(@shadow-color, 14%),
+    0 2px 16px 1px fade(@shadow-color, 12%);
+  @shadow-dp8: 0 5px 5px -3px fade(@shadow-color, 20%),
+    0 8px 10px 1px fade(@shadow-color, 14%),
+    0 3px 14px 2px fade(@shadow-color, 12%);
+  @shadow-dp9: 0 5px 6px -3px fade(@shadow-color, 20%),
+    0 9px 12px 1px fade(@shadow-color, 14%),
+    0 3px 16px 2px fade(@shadow-color, 12%);
+  @shadow-dp10: 0 6px 6px -3px fade(@shadow-color, 20%),
+    0 10px 14px 1px fade(@shadow-color, 14%),
+    0 4px 18px 3px fade(@shadow-color, 12%);
+  @shadow-dp11: 0 6px 7px -4px fade(@shadow-color, 20%),
+    0 11px 15px 1px fade(@shadow-color, 14%),
+    0 4px 20px 3px fade(@shadow-color, 12%);
+  @shadow-dp12: 0 7px 8px -4px fade(@shadow-color, 20%),
+    0 12px 17px 2px fade(@shadow-color, 14%),
+    0 5px 22px 4px fade(@shadow-color, 12%);
+  @shadow-dp13: 0 7px 8px -4px fade(@shadow-color, 20%),
+    0 13px 19px 2px fade(@shadow-color, 14%),
+    0 5px 24px 4px fade(@shadow-color, 12%);
+  @shadow-dp14: 0 7px 9px -4px fade(@shadow-color, 20%),
+    0 14px 21px 2px fade(@shadow-color, 14%),
+    0 5px 26px 4px fade(@shadow-color, 12%);
+  @shadow-dp15: 0 8px 9px -5px fade(@shadow-color, 20%),
+    0 15px 22px 2px fade(@shadow-color, 14%),
+    0 6px 28px 5px fade(@shadow-color, 12%);
+  @shadow-dp16: 0 8px 10px -5px fade(@shadow-color, 20%),
+    0 16px 24px 2px fade(@shadow-color, 14%),
+    0 6px 30px 5px fade(@shadow-color, 12%);
+  @shadow-dp17: 0 8px 11px -5px fade(@shadow-color, 20%),
+    0 17px 26px 2px fade(@shadow-color, 14%),
+    0 6px 32px 5px fade(@shadow-color, 12%);
+  @shadow-dp18: 0 9px 11px -5px fade(@shadow-color, 20%),
+    0 18px 28px 2px fade(@shadow-color, 14%),
+    0 7px 34px 6px fade(@shadow-color, 12%);
+  @shadow-dp19: 0 9px 12px -6px fade(@shadow-color, 20%),
+    0 19px 29px 2px fade(@shadow-color, 14%),
+    0 7px 36px 6px fade(@shadow-color, 12%);
+  @shadow-dp20: 0 10px 13px -6px fade(@shadow-color, 20%),
+    0 20px 31px 3px fade(@shadow-color, 14%),
+    0 8px 38px 7px fade(@shadow-color, 12%);
+  @shadow-dp21: 0 10px 13px -6px fade(@shadow-color, 20%),
+    0 21px 33px 3px fade(@shadow-color, 14%),
+    0 8px 40px 7px fade(@shadow-color, 12%);
+  @shadow-dp22: 0 10px 14px -6px fade(@shadow-color, 20%),
+    0 22px 35px 3px fade(@shadow-color, 14%),
+    0 8px 42px 7px fade(@shadow-color, 12%);
+  @shadow-dp23: 0 11px 14px -7px fade(@shadow-color, 20%),
+    0 23px 36px 3px fade(@shadow-color, 14%),
+    0 9px 44px 8px fade(@shadow-color, 12%);
+  @shadow-dp24: 0 11px 15px -7px fade(@shadow-color, 20%),
+    0 24px 38px 3px fade(@shadow-color, 14%),
+    0 9px 46px 8px fade(@shadow-color, 12%);
+
+  @shadow-dp2--inset: inset 0 3px 1px -2px fade(@shadow-color, 20%),
+    0 2px 2px 0 fade(@shadow-color, 14%), 0 1px 5px 0 fade(@shadow-color, 12%);
+  @shadow-dp4--inset: inset 0 2px 4px -1px fade(@shadow-color, 20%),
+    0 4px 5px 0 fade(@shadow-color, 14%), 0 1px 10px 0 fade(@shadow-color, 12%);
+}
+
+@base-size: 16px;
+@font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica,
+  '\5FAE\8F6F\96C5\9ED1', Arial, sans-serif;
+@font-family-courier: 'Courier New', Courier, 'Lucida Sans Typewriter',
+  'Lucida Typewriter', monospace;
+
+@base-black: #000;
+@base-white: #fff;
+@important-red: #e4393c;
+@red-1: #e4393c;
+@pink-1: #f85d91;
+@orange-1: #f26921;
+@orange-2: #ffedd1;
+@orange-3: #ffd595;
+@orange-4: #ffedd1;
+@orange-6: #ff6911;
+@green-1: #12b886;
+@green-2: #60b630;
+@green-3: #68c946;
+@green-4: #43ef99;
+@yellow-1: #feb505;
+@yellow-2: #ec9b31;
+@yellow-3: #ffd700;
+@yellow-4: #fffacc;
+@yellow-5: #ffd800;
+@blue-1: #106ddc;
+@blue-2: #2f8fff;
+@blue-3: #00bfff;
+@blue-4: #41a8ed;
+@purple-2: #6741d9;
+@purple-1: #d87ee8;
+@gray-1: #4c4c4c;
+@gray-2: #9a9a9a;
+@gray-3: #ccc;
+@gray-4: #f2f2f2;
+@gray-5: #f9f9f9;
+@gray-6: #434a64;
+@gray-7: #eeedf2;
+@gray-8: #555;
+@gray-9: #666;
+@gray-10: #999;
+@brown-1: #985900;
+
+@red-ball-color: @red-1;
+@green-ball-color: @green-1;
+@blue-ball-color: @blue-1;
+
+@insetShadow-dp2: inset 0 2px 2px 0 rgba(67, 74, 100, 0.14),
+  inset 0 1px 5px 0 rgba(67, 74, 100, 0.12),
+  inset 0 3px 1px -2px rgba(67, 74, 100, 0.2);
+@insetShadow-dp4: inset 0 4px 5px 0 rgba(67, 74, 100, 0.14),
+  inset 0 1px 10px 0 rgba(67, 74, 100, 0.12),
+  inset 0 2px 4px -1px rgba(67, 74, 100, 0.4);

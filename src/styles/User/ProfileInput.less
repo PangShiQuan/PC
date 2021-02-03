@@ -1,0 +1,405 @@
+@import '~styles/layout.less';
+
+.profile_inputInlineRow {
+  .clearfix;
+
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.profile_inputInlineBlock {
+  .clearfix;
+
+  display: flex;
+  flex: 1 1;
+
+  & ~ .profile_inputInlineBtn {
+    margin-left: @size-0;
+  }
+}
+.profile_inputInlineBtn {
+  font-size: @size-2;
+  text-align: center;
+  height: @size-6;
+  border-radius: 6px;
+  border: 1px solid @accent-color--dark;
+  color: @accent-color--dark;
+  margin-bottom: @size-3;
+  padding: 0 1rem;
+  align-self: flex-end;
+
+  &:disabled {
+    color: @text-color--disabled;
+    border-color: @profile-borderColor;
+    cursor: default;
+  }
+}
+
+.profile_inputBox {
+  margin: 0 auto @size-3 auto;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.profile_inputLabel {
+  display: block;
+  width: 100%;
+  color: @profile-label-color;
+  font-size: @size-1;
+  position: relative;
+  margin-bottom: @size-0 / 2;
+
+  &[data-layout='horizontal'] {
+    display: inline-block;
+    padding-right: 2%;
+    max-width: 20%;
+    text-align: right;
+    vertical-align: top;
+  }
+  &[data-color='blue'] {
+    color: @info-color;
+  }
+  &[data-color='red'] {
+    color: @alert-color;
+  }
+  &[data-color='green'] {
+    color: @success-color;
+  }
+  &[data-required='true'] {
+    &::before,
+    &::after {
+      display: inline-block;
+      vertical-align: middle;
+      white-space: pre;
+    }
+    &::before {
+      content: '* ';
+      color: red;
+    }
+    &::after {
+      content: ' (必填)';
+    }
+  }
+  &[data-required='false'] {
+    &::after {
+      content: ' (选填)';
+    }
+  }
+  span {
+    vertical-align: middle;
+  }
+}
+
+.profile_input {
+  padding: 0 @size-0;
+  position: relative;
+  background-color: @profile-input-bg;
+  border: 1px solid @profile-borderColor;
+  border-radius: 6px;
+  color: @profile-input-color;
+  display: block;
+  font-size: @size-3;
+  height: @size-6;
+  text-align: left;
+  width: 100%;
+  transition-property: border-color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+
+  &:focus {
+    box-shadow: none;
+    border-color: @profile-primary-color;
+  }
+
+  &:read-only,
+  &:disabled {
+    border-color: @profile-borderColor;
+  }
+
+  &[data-layout='horizontal'] {
+    display: inline-block;
+    font-size: inherit;
+    margin-right: 15%;
+    max-width: 65%;
+
+    & + .profile_inputLength {
+      bottom: @size-0;
+      right: 16%;
+    }
+  }
+  &[data-color='blue'] {
+    border-color: @info-color;
+  }
+  &[data-color='red'] {
+    border-color: @alert-color;
+  }
+  &[data-color='green'] {
+    border-color: @success-color;
+  }
+  &::-webkit-input-placeholder {
+    font-size: 0.8em;
+  }
+  &::-moz-placeholder {
+    font-size: 0.8em;
+  }
+  &:-ms-input-placeholder {
+    font-size: 0.8em;
+  }
+  &:-moz-placeholder {
+    font-size: 0.8em;
+  }
+}
+.profile_input[type*='time'],
+.profile_input[type*='date'] {
+  padding-left: @size-6;
+}
+.profile_input[type*='time']::-webkit-outer-spin-button,
+.profile_input[type*='date']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.profile_input[type*='time']::-webkit-inner-spin-button,
+.profile_input[type*='date']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.profile_input[type*='time']::-webkit-clear-button,
+.profile_input[type*='date']::-webkit-clear-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.profile_input[type*='time']::-webkit-calendar-picker-indicator,
+.profile_input[type*='date']::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: @size-3 + (@size-0 * 2);
+  width: @size-4;
+  z-index: 999;
+  color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  background-color: transparent;
+}
+.profile_input[type*='time'],
+.profile_input[type*='date'] {
+  &:focus {
+    border-color: @border-color;
+  }
+}
+.profile_input[type*='time'] {
+  padding-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 0;
+}
+.profile_input[type*='date'] {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+}
+.profile_inputLength {
+  font-size: @size-0;
+  color: @profile-input-color;
+  position: absolute;
+  bottom: @size-6 / 2;
+  right: @size-0;
+  transform: translateY(50%);
+}
+
+.profile_indicateMsg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transform: translate3d(0, 50%, 0);
+  transition-property: opacity, transform;
+  transition-duration: 0.15s;
+  transition-timing-function: @standard-curve-timing-function;
+  i {
+    vertical-align: middle;
+  }
+}
+
+.profile_indicateMsg__show {
+  .profile_indicateMsg;
+
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.profile_inputMsg {
+  &[data-color='blue'] {
+    color: @info-color;
+  }
+  &[data-color='red'] {
+    color: @alert-color;
+  }
+  &[data-color='green'] {
+    color: @success-color;
+  }
+}
+.profile_inputMsg__show {
+  .profile_inputMsg;
+}
+.profile_inputMsgIcon {
+  vertical-align: middle;
+  font-size: @size-3;
+  margin-right: @size-0 / 2;
+}
+.profile_digitInput {
+  .profile_input;
+
+  border: 0;
+  width: @size-6;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  font: normal normal normal 24px/1 'Material Design Icons';
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.profile_digitInput {
+  vertical-align: middle;
+  &:empty {
+    padding-top: @size-6;
+  }
+  &:read-only,
+  &:disabled {
+    width: @size-6;
+    background-color: transparent;
+  }
+}
+.profile_digitInputDivider {
+  text-align: middle;
+  vertical-align: middle;
+  color: @profile-label-color;
+  line-height: @size-6;
+}
+@keyframes blink {
+  0% {
+    width: 1px;
+  }
+  50% {
+    width: 1px;
+  }
+  100% {
+    width: 0;
+  }
+}
+.profile_digitInput__active {
+  .profile_digitInput;
+  .profile_digitInput__hidden:focus ~ & {
+    border-color: @accent-color;
+
+    &::before {
+      position: absolute;
+      content: '';
+      background-color: @primary-color--dark;
+      left: @size-0;
+      height: 60%;
+      width: 1px;
+      top: 20%;
+      animation: blink 1s infinite ease;
+    }
+  }
+}
+.profile_digitInput__hasValue {
+  .profile_digitInput;
+  &::before {
+    color: @profile-label-color--disabled;
+    content: '\F382';
+    font-size: @size-3;
+    font-weight: bold;
+    height: @size-3;
+    left: 50%;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: @size-3;
+  }
+}
+.profile_digitInput__hidden {
+  background-color: transparent;
+  border-radius: 6px;
+  border: 1px solid @profile-borderColor;
+  bottom: 0;
+  color: rgba(0, 0, 0, 0);
+  height: @size-6;
+  left: 0;
+  position: absolute;
+  transition-duration: 0.15s;
+  transition-property: border-color;
+  transition-timing-function: ease;
+  width: 100%;
+  z-index: 10;
+
+  &:focus {
+    border-color: @profile-borderColor--disabled;
+  }
+
+  & + .profile_digitInput {
+    .profile_digitInput__active;
+  }
+
+  &::selection {
+    color: rgba(0, 0, 0, 0);
+    background-color: transparent;
+  }
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0);
+  }
+  &:read-only,
+  &:disabled {
+    border-color: @profile-borderColor;
+    color: @profile-label-color--disabled;
+  }
+  &[data-color='blue'] {
+    border-color: @info-color;
+  }
+  &[data-color='red'] {
+    border-color: @alert-color;
+  }
+  &[data-color='green'] {
+    border-color: @success-color;
+  }
+}
+.profile_digitInput__hidden::-webkit-input-placeholder {
+  font-size: @size-1;
+  opacity: 0;
+}
+.profile_digitInput__hidden:-ms-input-placeholder {
+  font-size: @size-1;
+  opacity: 0;
+}
+.profile_digitInput__hidden:-moz-input-placeholder {
+  font-size: @size-1;
+  opacity: 0;
+}
+.profile_digitInput__hidden::-moz-input-placeholder {
+  font-size: @size-1;
+  opacity: 0;
+}
+
+.profile_dateInputIcon {
+  position: absolute;
+  z-index: 1;
+  bottom: @size-0;
+  left: @size-0;
+  font-size: @size-4;
+  color: @profile-label-color;
+}
+.passwordIcon {
+  width: 24px;
+  font-size: 0.5rem;
+  color: #4c4c4c;
+  position: absolute;
+  bottom: 1.125rem;
+  right: 4rem;
+  transform: translateY(50%);
+  z-index: 1000;
+}

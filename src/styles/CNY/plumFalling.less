@@ -1,0 +1,101 @@
+@import '~styles/layout.less';
+
+// falling effect
+.plum {
+  background: url('../../assets/image/CNY/plum-gold.png') top center / cover
+    no-repeat;
+  border-radius: 50%;
+  position: fixed;
+  top: -10%;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  animation-name: plum-fall, plum-swing;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: forward, forward;
+  animation-play-state: running, running;
+}
+
+.makeRandom(@minPosition: 0, @maxPosition: @minPosition+1) {
+  .checkInt() {
+    @getNumPosition: `Math.random() * (@{maxPosition} - @{minPosition}) `;
+  }
+  .checkInt();
+  @randNumPosition: @getNumPosition + @minPosition;
+}
+
+.makeRandomSize(@minSize: 4, @maxSize: 14) {
+  .checkInt() {
+    @getSize: `Math.random() * (@{maxSize} - @{minSize}) `;
+  }
+  .checkInt();
+  @randSize: @getSize + @minSize;
+}
+
+.makeRandomDelay(@minFallDelay: 0, @maxFallDelay: @minFallDelay+3, @minSwingDelay: 0, @maxSwingDelay: @minSwingDelay+1) {
+  .checkInt() {
+    @getFallDelay: `Math.random() * (@{maxFallDelay} - @{minFallDelay}) `;
+    @getSwingDelay: `Math.random() * (@{maxSwingDelay} - @{minSwingDelay}) `;
+  }
+  .checkInt();
+  @randFallDelay: @getFallDelay + @minFallDelay;
+  @randSwingDelay: @getSwingDelay + @minSwingDelay;
+}
+
+.makeRandomDuration(@minFallDuration: 6, @maxFallDuration: 12, @minSwingDuration:3, @maxSwingDuration: 13) {
+  .checkInt() {
+    @getFallDuration: `Math.random() * (@{maxFallDuration} - @{minFallDuration})
+      `;
+    @getSwingDuration: `Math.random() *
+      (@{maxSwingDuration} - @{minSwingDuration}) `;
+  }
+  .checkInt();
+  @randFallDuration: @getFallDuration + @minFallDuration;
+  @randSwingDuration: @getSwingDuration + @minSwingDuration;
+}
+
+.loop(@index) when (@index <= 40) {
+  .plum:nth-of-type(@{index}) {
+    .makeRandom(0, 100);
+    .makeRandomDelay();
+    .makeRandomDuration();
+    .makeRandomSize();
+
+    left: ~'@{randNumPosition}%';
+    animation-delay: ~'@{randFallDelay}s, @{randSwingDelay}s';
+    animation-duration: ~'@{randFallDuration}s, @{randSwingDuration}s';
+    width: ~'@{randSize}px';
+    height: ~'@{randSize}px';
+  }
+  .loop(@index + 1);
+}
+
+.loop(1);
+
+@keyframes plum-fall {
+  0% {
+    top: -10%;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+@keyframes plum-swing {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  30% {
+    transform: translateX(100px) rotate(360deg);
+  }
+  65% {
+    transform: translateX(-70px) rotate(-240deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}

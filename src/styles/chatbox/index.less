@@ -1,0 +1,398 @@
+@import '~styles/layout.less';
+
+@chatbox-width: 22.38rem;
+@chatbox-height: 100%;
+@chatbox-expand-width: 25.63rem;
+@chatbox-color: #5a81ff;
+
+.chatbox {
+  position: fixed;
+  z-index: 98;
+  top: 0;
+  right: 0;
+  width: @chatbox-width;
+  height: @chatbox-height;
+  background: white;
+  transition: all 400ms;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid @chatbox-color;
+}
+
+.closeChatbox {
+  transform: translateX(@chatbox-width);
+}
+
+.hideChatbox {
+  display: none;
+}
+
+.expandChatbox {
+  width: @chatbox-expand-width;
+}
+
+.topbarContainer {
+  padding: 6px 11px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: @chatbox-color;
+  color: @navWordColor;
+  font-size: 15px;
+  height: 2.44rem;
+
+  .svg_icon {
+    svg {
+      height: 1.25rem;
+      margin-bottom: -1.5px;
+      vertical-align: text-bottom;
+    }
+  }
+
+  .chatroom_icon {
+    margin-right: 0.5rem;
+
+    svg {
+      height: 1.35rem;
+      margin-bottom: -1.5px;
+      vertical-align: text-bottom;
+
+      path {
+        fill: #fff;
+      }
+
+      [class*='st'] {
+        stroke: #fff;
+        stroke-width: 0.1;
+      }
+    }
+  }
+
+  .chatboxIconBtn {
+    padding: 0 0.28rem;
+  }
+}
+
+.chatBody {
+  position: relative;
+  height: ~'calc(100% - 2.44rem)';
+  width: 100%;
+
+  .chatFrame {
+    height: ~'calc(100% - 50px)';
+    width: 100%;
+  }
+
+  .chatFrameHide {
+    display: none;
+  }
+
+  .loadingDiv {
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.chatbox_navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-bottom: 0.5px solid #d4d4d4;
+
+  .chatbox_navbarButton {
+    width: 100%;
+    height: 100%;
+
+    .icon {
+      margin-left: 10px;
+      width: 15px;
+
+      &[data-active='true'] {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.chatbox_roomList_container {
+  position: absolute;
+  top: 50px;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+
+  .chatbox_roomList {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    border-bottom: 0.5px solid #d4d4d4;
+
+    button {
+      width: 140px;
+      padding: 6px;
+      margin: 10px;
+      border-radius: 20px;
+      border: 1px solid @chatbox-color;
+      color: @chatbox-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .roomIcon {
+        svg {
+          width: 1rem;
+          margin-right: 6px;
+          vertical-align: sub;
+
+          path:not(:first-child) {
+            stroke: @chatbox-color;
+          }
+        }
+      }
+
+      &[data-active='true'] {
+        background-color: @chatbox-color;
+        color: #fff;
+
+        .roomIcon {
+          svg {
+            path:not(:first-child) {
+              stroke: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.chatbox_betDetails_container {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+
+  .chatbox_betDetails_modal {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .title_container {
+      text-align: center;
+      font-weight: bold;
+      padding: 6px 0;
+      border-bottom: 0.5px solid #d4d4d4;
+
+      .closeButton {
+        position: absolute;
+        right: 15px;
+        top: 6px;
+      }
+    }
+
+    .body {
+      padding: 10px;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 14px;
+
+        .game {
+          display: flex;
+
+          .gameIcon {
+            width: 40px;
+            height: 40px;
+            background-color: #eee;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+
+          .gameDesc {
+            .issue {
+              color: #999;
+              font-size: 12px;
+            }
+          }
+        }
+
+        .stopOrder {
+          & > div:nth-child(2) {
+            color: @chatbox-color;
+            font-size: 12px;
+          }
+        }
+      }
+
+      .stat {
+        display: flex;
+        margin: 8px 0;
+
+        .label {
+          border-top-left-radius: 6px;
+          border-bottom-left-radius: 6px;
+          background-color: #eee;
+          color: #999;
+          font-size: 14px;
+          line-height: 26px;
+          padding: 4px;
+          width: 80px;
+          text-align: center;
+        }
+
+        .value {
+          border-top-right-radius: 6px;
+          border-bottom-right-radius: 6px;
+          border: 1px solid #eee;
+          padding: 4px 6px;
+          width: ~'calc(100% - 80px)';
+        }
+      }
+
+      .bet_container {
+        display: flex;
+        margin: 8px 0;
+
+        .label {
+          padding: 4px;
+          width: 80px;
+        }
+
+        .input {
+          display: flex;
+          align-items: center;
+          border: 1px solid #eee;
+          width: 100px;
+
+          input {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+
+      .multiplier_container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #eee;
+        border-radius: 12px;
+        width: ~'calc(100% - 186px)';
+        margin-left: 6px;
+
+        & > button {
+          border-radius: 50%;
+          background-color: @chatbox-color;
+          color: #fff;
+          width: 22px;
+          height: 22px;
+          line-height: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .submitButton {
+        margin: 20px 0;
+        border-radius: 20px;
+        height: 40px;
+        width: 100%;
+        text-align: center;
+        background-color: @chatbox-color;
+        color: #fff;
+      }
+    }
+  }
+
+  .alertMessage {
+    padding: 12px;
+    background-color: #444;
+    color: #fff;
+    z-index: 6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+  }
+}
+
+.chatbox_alert_container {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+
+  .alert_modal {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    .title {
+      font-weight: bold;
+      padding: 14px 0 0;
+    }
+
+    .desc {
+      padding: 14px;
+    }
+
+    .footer {
+      position: relative;
+      bottom: 0;
+      border-top: 1px solid #d4d4d4;
+      display: flex;
+      justify-content: space-around;
+
+      & > *:not(:first-child) {
+        border-left: 1px solid #d4d4d4;
+      }
+
+      .cancelButton {
+        height: 100%;
+        width: 100%;
+        padding: 14px 0;
+      }
+
+      .submitButton {
+        color: #fe3672;
+        height: 100%;
+        width: 100%;
+        padding: 14px 0;
+      }
+    }
+  }
+}

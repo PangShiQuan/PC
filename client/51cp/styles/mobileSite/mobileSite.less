@@ -1,0 +1,68 @@
+@import '~clientResolver/index.less';
+
+article {
+  background-image: url('../../assets/image/mobileSite/mobileBgxxcp.png');
+  background-repeat: no-repeat;
+  min-width: @page-width;
+  background-size: cover;
+}
+
+.container__flex {
+  position: relative;
+  width: @page-width;
+  height: 700px;
+  margin: auto;
+}
+
+.introBox {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  color: @base-white;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .intro {
+  }
+}
+
+.text {
+  letter-spacing: calc(@size-0 / 3);
+  text-align: center;
+
+  > * {
+    display: block;
+  }
+}
+
+.phoneBox {
+  position: absolute;
+  top: 16%;
+  left: -16%;
+}
+
+.container__flexVertical {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.QRBottom_desc {
+  color: @base-white;
+  font-size: @size-3;
+  letter-spacing: 2px;
+  padding-top: @size-5;
+}
+
+.qrGroup {
+  display: flex;
+  position: absolute;
+  top: 67%;
+  left: 59%;
+  transform: translate(-50%, -50%);
+}

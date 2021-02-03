@@ -1,0 +1,161 @@
+.borders-mixin(@color) {
+  &.topBorder {
+    border-top: 1px solid @color;
+  }
+  &.bottomBorder {
+    border-bottom: 1px solid @color;
+  }
+  &.leftBorder {
+    border-left: 1px solid @color;
+  }
+  &.rightBorder {
+    border-right: 1px solid @color;
+  }
+  &.topLeftRadius {
+    border-top-left-radius: 12px;
+  }
+  &.topRightRadius {
+    border-top-right-radius: 12px;
+  }
+  &.bottomLeftRadius {
+    border-bottom-left-radius: 12px;
+  }
+  &.bottomRightRadius {
+    border-bottom-right-radius: 12px;
+  }
+}
+
+.k3Table_container {
+  margin: 10px 0.5rem;
+
+  .table {
+    width: 100%;
+    text-align: center;
+    border-spacing: 0;
+    border-collapse: separate;
+
+    td {
+      padding: 0;
+    }
+
+    button {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+
+      &:disabled {
+        color: #d3d4d5;
+        background-color: darken(#fff, 5%);
+
+        &:hover {
+          background-color: transparent;
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    .bigFont {
+      font-size: 30px;
+      height: 80px;
+    }
+
+    .mediumFont {
+      font-size: 18px;
+      height: 58px;
+    }
+
+    .blueBorder {
+      .borders-mixin(#72bbf5);
+
+      color: #72bbf5;
+
+      &:hover {
+        background-color: #72bbf5;
+        color: #fff;
+      }
+    }
+
+    .redBorder {
+      .borders-mixin(#cd3641);
+
+      color: #cd3641;
+
+      &:hover {
+        background-color: #cd3641;
+        color: #fff;
+      }
+
+      button {
+        padding: 9px 0;
+      }
+    }
+
+    .redTable {
+      button {
+        padding: 3px 0;
+      }
+    }
+
+    .greenBorder {
+      .borders-mixin(#66bb6a);
+
+      color: #66bb6a;
+
+      &:hover {
+        background-color: #66bb6a;
+        color: #fff;
+      }
+
+      button {
+        padding: 2px 0;
+      }
+    }
+
+    .yellowBorder {
+      .borders-mixin(#fcbd12);
+
+      color: #fcbd12;
+
+      &.EBTHDT_submitColumn {
+        height: 78px;
+      }
+
+      &:hover {
+        background-color: #fcbd12;
+        color: #fff;
+      }
+
+      &[data-disabled='true'] {
+        background-color: unset;
+      }
+
+      &[data-active='true'] {
+        background-color: darken(#fcbd12, 6%);
+        color: #fff;
+      }
+
+      button {
+        padding: 8px 0;
+      }
+    }
+
+    .whiteBorder {
+      .borders-mixin(#fff);
+
+      cursor: auto;
+      background-color: #fcbd12;
+      color: #fff;
+    }
+
+    .kua {
+      display: flex;
+
+      div {
+        width: 25%;
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+@import '~styles/layout.less';
+
+@sitemap-bgWhite: @base-white;
+@sitemap-bgGray: @gray-4;
+@sitemap-color: @base-black;
+@sitemap-benefit-fontSize: @size-2;
+
+.sitemap {
+  background-color: @base-white;
+  &[data-sitemapbgcolor='white'] {
+    background-color: @sitemap-bgWhite;
+  }
+}
+.sitemap_body {
+  display: flex;
+  flex-direction: row;
+  padding: @size-3 0;
+  width: @page-width;
+  margin: 0 auto;
+  border-bottom: 1px solid @common-background-line-color;
+}
+.sitemap_leftColumn {
+  width: @panel-side;
+  margin-right: @panel-margin;
+}
+.sitemap_logo {
+  text-align: center;
+}
+.sitemap_rightRow {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+.sitemap_benefits {
+  .row;
+
+  margin-top: @size-0;
+}
+.sitemap_benefit {
+  font-size: @sitemap-benefit-fontSize;
+  color: @sitemap-color;
+  width: 50%;
+  float: left;
+}
+.sitemap_checkbox {
+  font-size: @size-4;
+  color: @first-color;
+  margin-right: @size-0;
+}
+.sitemap_label {
+  font-size: @size-3;
+  line-height: 40px;
+  color: @gray-2;
+}
+.sitemap_row {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+.sitemap_column {
+  display: flex;
+  flex: 1;
+  text-align: center;
+  padding: 0 @size-0;
+  border-left: 1px dashed @gray-3;
+}
+.sitemap_columnBody {
+  display: flex;
+  width: 100%;
+  text-align: left;
+}
+.sitemap_list {
+  color: @gray-2;
+  font-size: @size-1;
+}
+.sitemap_listItem {
+  padding-top: @size-0;
+}
+.sitemap_permalink {
+  color: inherit;
+}
+.sitemap_rightColumns {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+.sitemap_rightColumn {
+  display: flex;
+  flex: 1;
+  border-left: 1px solid @common-background-line-color;
+  padding-left: @size-4;
+  flex-direction: column;
+}
+.sitemap_emptyMsg {
+  font-size: @size-1;
+  border-left: 1px dashed @gray-3;
+  padding-left: @size-4;
+  flex: 3;
+}
+.sitemap_emtpyColumnMsg {
+  font-size: @size-1;
+}
+.sitemap_rightColumnHeader {
+  font-size: @size-2;
+  letter-spacing: 1px;
+  color: @base-black;
+  margin-bottom: @size-0;
+  font-weight: bold;
+}
+.sitemap_questions {
+  font-size: @size-1;
+  color: @sub-regular-color;
+  text-align: left;
+  button {
+    text-align: inherit;
+    padding-left: 0;
+  }
+  li {
+    margin-bottom: @size-0;
+  }
+}
+.peture {
+  width: 17px;
+  height: 17px;
+}
+.leftstyle {
+  margin-left: 0.1rem;
+}
+.sitemap_contact {
+  width: 14rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: @size-1;
+  color: @sub-regular-color;
+  i,
+  a {
+    vertical-align: middle;
+  }
+
+  [class*='mdi'] {
+    font-size: @size-4;
+    margin-right: @size-0;
+  }
+}

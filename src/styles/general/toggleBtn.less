@@ -1,0 +1,96 @@
+@import '~styles/layout.less';
+
+@track-height: @size-2;
+@handerSize: @size-4;
+@contrast: 25%;
+
+.button {
+  .row;
+
+  font-size: @size-2;
+  height: @button-height;
+  color: @text-color--light;
+
+  i {
+    vertical-align: middle;
+  }
+
+  &[data-checked='true'] {
+    .toggleHander {
+      left: 100%;
+      &:not(:disabled) {
+        background-color: @success-color;
+      }
+    }
+    .toggleTrack:not(:disabled) {
+      background-color: lighten(@success-color, @contrast);
+    }
+    .btnPlaceholder:not(:disabled) {
+      color: @success-color;
+    }
+  }
+  &:disabled {
+    cursor: not-allowed;
+
+    .toggleTrack {
+      background-color: darken(@bg-gray, @contrast);
+    }
+    .btnPlaceholder {
+      color: @text-color--disabled;
+    }
+  }
+}
+
+.inputBox {
+  margin: 0 0 @size-3 0;
+  position: relative;
+
+  td & {
+    margin-bottom: 0;
+  }
+}
+.btnPlaceholder {
+  display: inline-block;
+  line-height: @button-height;
+  margin-bottom: (@button-height - @track-height) / 2;
+  margin-left: @size-3;
+}
+.inputLabel {
+  display: block;
+  width: 100%;
+  color: @profile-label-color;
+  font-size: @size-1;
+  position: relative;
+  margin-bottom: @size-0 / 2;
+}
+.toggle {
+  display: inline-block;
+  position: relative;
+  height: @button-height;
+}
+.toggleTrack {
+  display: inline-block;
+  height: @track-height;
+  background-color: @bg-gray;
+  width: @handerSize * 1.5;
+  border-radius: @track-height / 2;
+  margin-top: (@button-height - @track-height) / 2;
+  transition-property: background-color;
+  transition-duration: 0.15s;
+  transition-timing-function: @standard-curve-timing-function;
+}
+.toggleHander {
+  display: inline-block;
+  height: @handerSize;
+  width: @handerSize;
+  background-color: @base-white;
+  box-shadow: @shadow-dp2;
+  border-radius: @handerSize / 2;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  transition-property: left, background-color;
+  transition-duration: 0.15s;
+  transition-timing-function: @standard-curve-timing-function;
+}

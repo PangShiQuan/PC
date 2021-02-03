@@ -1,0 +1,10 @@
+import mainScreen from '../../assets/image/mobileSite/mainScreen.png';
+import title from '../../assets/image/mobileSite/title.png';
+import featured from '../../assets/image/mobileSite/featured.png';
+import feature1 from '../../assets/image/mobileSite/feature-1.png';
+import feature2 from '../../assets/image/mobileSite/feature-2.png';
+import feature3 from '../../assets/image/mobileSite/feature-3.png';
+import android from '../../assets/image/mobileSite/android.png';
+import ios from '../../assets/image/mobileSite/ios.png';
+const features = [feature1, feature2, feature3];
+export {features, mainScreen, title, featured, android, ios};

@@ -1,0 +1,108 @@
+@import '~clientResolver/index.less';
+
+.input {
+  border-color: @profile-borderColor;
+
+  &:hover {
+    border-color: @profile-borderColor;
+  }
+  &:focus {
+    border-color: @profile-primary-color;
+    box-shadow: none;
+  }
+}
+
+.form_btns {
+  border: none;
+  text-align: center;
+
+  > button {
+    margin: 0 @size-0;
+  }
+}
+
+.ctrl {
+  margin: 0 @size-5;
+}
+.feedback_table {
+  font-size: @size-2;
+  margin-bottom: @size-3;
+}
+.feedback_thead {
+  background-color: @primary-color;
+  color: @base-white;
+}
+.feedback_contentWrapper {
+  width: 100%;
+  padding: @size-0;
+  float: left;
+
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+.feedback_content {
+  overflow: auto;
+  text-align: right;
+  & > * {
+    vertical-align: bottom;
+  }
+
+  & > span {
+    text-align: initial;
+    word-break: break-all;
+    display: inline-block;
+    padding: @size-0 @size-3;
+    border-radius: 8px;
+    max-width: 75%;
+    background-color: @primary-color;
+    color: @base-white;
+
+    &:empty {
+      content: '尚未回复';
+    }
+  }
+  &:first-of-type {
+    text-align: left;
+    & > span {
+      background-color: rgba(0, 0, 0, 0.1);
+      color: inherit;
+    }
+  }
+}
+
+.feedback_row {
+  display: block;
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  &:blank {
+    text-align: center;
+  }
+  &:not(:first-child) {
+    border-top: 1px solid @bg-gray--light;
+  }
+  &:only-child {
+    text-align: center;
+  }
+  &[data-expanded='true'] {
+    background-color: @bg-gray--light;
+  }
+  &:only-child {
+    text-align: center;
+  }
+}
+.feedback_col {
+  float: left;
+  width: 25%;
+  padding: @size-0;
+  &:nth-child(4) {
+    text-align: right;
+  }
+}

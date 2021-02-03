@@ -1,0 +1,215 @@
+@import '~styles/layout.less';
+
+@borderColor: @red-1;
+@borderWidth: 1px;
+@sideNav-innerBorderColor: lighten(@gray-3, 15%);
+@sideNav-sectionLabel-fontSize: @size-2;
+@sideNav-placeholderList-color: @base-black;
+@sizeNav-section-height: @size-8;
+
+.sideNav {
+  .column;
+
+  background-color: @common-background-color;
+  width: @nav-side-width;
+  color: @gray-1;
+  margin-bottom: @panel-margin;
+  // box-shadow: @shadow-dp2;
+  margin-top: -@carousel-height - (@panel-margin * 2);
+  font-size: @size-2;
+  border-top: 0;
+}
+.sideNav_list {
+  max-height: @sizeNav-section-height * 3.25;
+  overflow: auto;
+}
+.sideNav_list,
+.sideNav_sectionRow {
+  font-size: inherit;
+}
+.sideNav_listItem {
+  padding: @size-0 @size-3;
+  color: @main-regular-color;
+}
+.sideNav_thumbnail {
+  border-radius: 50%;
+  box-shadow: @shadow-dp2;
+  display: inline-block;
+  height: @size-6;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  width: @size-6;
+}
+.sideNav_anchor {
+  padding: 0;
+  &[disabled] {
+    color: @disabled-color;
+  }
+}
+.sideNav_anchorSpan {
+  margin-left: @size-0;
+  font-weight: bold;
+}
+.sideNav_sectionRow {
+  display: flex;
+  border-top: @borderWidth solid @common-background-line-color;
+  position: relative;
+  max-height: @sizeNav-section-height;
+  .sideNav_listItem;
+  &[data-hasextra='true'] {
+    &:hover {
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: @borderWidth;
+        left: 0;
+        // background-color: @borderColor;
+        z-index: 12;
+      }
+      &::before {
+        top: -@borderWidth;
+      }
+      &::after {
+        bottom: -@borderWidth;
+      }
+      .sideNav_sectionLabel {
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          height: auto;
+          z-index: 12;
+        }
+        &::before {
+          width: @borderWidth;
+          // background-color: @borderColor;
+          top: -@borderWidth;
+          bottom: -@borderWidth;
+          left: -@borderWidth;
+        }
+        // &::after {
+        //   width: 5px;
+        //   background-color: @base-white;
+        //   top: 0;
+        //   bottom: 1px;
+        //   right: -1px;
+        // }
+      }
+    }
+    .sideNav_expandedBody {
+      display: none;
+    }
+  }
+  &:not([data-hasextra='true']) {
+    .sideNav_chevron {
+      display: none;
+    }
+  }
+  &:last-child {
+    .sideNav_sectionLabel {
+      padding: @size-0 0;
+    }
+  }
+}
+.sideNav_sectionLabel {
+  display: inline-block;
+  width: 2.5rem;
+  text-align: center;
+  margin-right: @size-1;
+  color: @main-regular-color;
+  background-color: @common-background-line-color;
+  // border: @borderWidth solid @orange-1;
+  border-radius: 6px;
+  padding: 0;
+  font-size: 14px;
+  letter-spacing: 0;
+  font-weight: bold;
+  box-sizing: content-box;
+  span {
+    line-height: 1.25;
+    display: inline-block;
+    width: 100%;
+  }
+}
+.sideNav_placeholderList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  color: @sub-regular-color;
+}
+.sideNav_placeholderListItem {
+  font-size: @size-1;
+  width: 50%;
+  &:hover {
+    color: @first-color;
+  }
+}
+.sideNav_chevron {
+  font-size: 1.5em;
+  position: absolute;
+  right: 0;
+  color: #000;
+  top: 50%;
+  transform: translateY(-50%);
+  .sideNav_sectionRow:hover & {
+    display: none;
+  }
+}
+.sideNav_expandedBody {
+  display: none;
+  position: absolute;
+  background-color: @base-white;
+  left: 100%;
+  top: 0;
+  width: @panel-center + @panel-margin;
+  // border-top: @borderWidth solid @borderColor;
+  // border-bottom: @borderWidth solid @borderColor;
+  // border-right: @borderWidth solid @borderColor;
+  transform: translateY(-@borderWidth);
+  // box-shadow: @shadow-dp4;
+  border: 1px solid @common-background-line-color;
+  .sideNav_listItem;
+  .sideNav_sectionRow:hover[data-hasextra='true'] & {
+    display: block;
+    min-height: @sizeNav-section-height;
+    z-index: 10;
+    &::before {
+      content: '';
+      // background-color: @borderColor;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: @borderWidth;
+      z-index: 13;
+    }
+  }
+  .sideNav_sectionRow:last-child & {
+    transform: translateY(@borderWidth);
+    bottom: 0;
+    top: auto;
+  }
+}
+.sideNav_expandedListLabel {
+  font-size: @size-2;
+  margin-bottom: @size-0;
+  color: @main-regular-color;
+  font-weight: bold;
+}
+.sideNav_expandedList {
+  display: flex;
+  flex-wrap: wrap;
+  color: @sub-regular-color;
+}
+.sideNav_expandedListItem {
+  margin: 0 @size-0 @size-0 0;
+  min-width: @size-9;
+  font-size: @size-1;
+  &:hover {
+    color: @first-color;
+  }
+}

@@ -1,0 +1,259 @@
+@import '~clientResolver/index.less';
+
+.bet_listing {
+  .search_div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+
+    .search_label {
+      width: 50px;
+    }
+
+    .search_dropdown {
+      [class*='ant-select-selection--single'] {
+        height: 45px;
+        width: 329px;
+        display: flex;
+        align-items: center;
+
+        [class*='ant-select-selection__rendered'] {
+          max-width: 100%;
+        }
+      }
+
+      [class*='ant-select-selection'] {
+        &:hover,
+        &:active,
+        &:focus {
+          border-color: @profile-button-color;
+          box-shadow: none;
+        }
+      }
+    }
+
+    .search_text_div {
+      position: relative;
+
+      .search_text {
+        display: inline-block;
+        padding: 0 45px 0 15px;
+        border: 1px solid #e1e1e1;
+        border-radius: 4px;
+        height: 45px;
+        width: 329px;
+      }
+
+      .search_icon_button {
+        position: absolute;
+        right: 0;
+        top: 10px;
+
+        .svg_icon_search {
+          svg {
+            width: 1.35rem;
+            margin-bottom: -6px;
+            margin-right: 5px;
+
+            path {
+              fill: #828282;
+              stroke: none;
+            }
+            rect {
+              fill: #828282;
+              stroke: none;
+            }
+            ellipse {
+              fill: #828282;
+              stroke: none;
+            }
+            circle {
+              fill: #828282;
+              stroke: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bet_details {
+  .bet_details_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d0d0d0;
+
+    .headline {
+      > div {
+        display: inline-block;
+      }
+
+      .game_image {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+      }
+
+      .game_name {
+        font-size: 16px;
+        color: #313131;
+        padding-left: 23px;
+        padding-right: 5px;
+      }
+
+      .game_period {
+        color: #9a9a9a;
+        padding-left: 5px;
+        padding-right: 34px;
+      }
+
+      .draw_number {
+        font-weight: bold;
+        letter-spacing: 1px;
+        background-color: #fff;
+      }
+    }
+
+    .cancel_button {
+      width: 96px;
+      height: 38px;
+      border-radius: 4px;
+      background-color: @profile-button-color;
+      color: @profile-button-text-color;
+      margin-left: 5px;
+    }
+
+    .dropdown_item {
+      &[data-color='red'] {
+        color: @alert-color;
+      }
+      &[data-color='green'] {
+        color: @success-color;
+      }
+    }
+  }
+
+  .bet_details_body {
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin: 6px 0;
+
+      &:first-child {
+        margin-top: 20px;
+      }
+
+      .column {
+        vertical-align: middle;
+
+        .label {
+          display: inline-block;
+          width: 70px;
+        }
+
+        .value {
+          display: inline-block;
+          border: 1px solid #d0d0d0;
+          border-radius: 4px;
+          width: 308px;
+          padding: 10px 15px;
+          color: #828282;
+
+          button {
+            padding: 0;
+          }
+
+          .link {
+            color: @profile-body-color;
+            width: 100%;
+            text-align: inherit;
+            vertical-align: bottom;
+
+            [class*='mdi'] {
+              vertical-align: text-top;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .table {
+    margin-top: 25px;
+
+    .bet_string {
+      color: @profile-body-color;
+      font-weight: bold;
+      cursor: pointer;
+
+      .bet_string_details {
+        display: none;
+        max-height: 300px;
+        overflow: auto;
+        transform: translateX(58px);
+        cursor: default;
+        font-weight: normal;
+        z-index: 10;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px -1px rgba(76, 76, 76, 0.2),
+          0 4px 5px 0 rgba(76, 76, 76, 0.14),
+          0 1px 10px 0 rgba(76, 76, 76, 0.12);
+        padding: 10px;
+        background-color: #fff;
+
+        .bet_string_record {
+          padding: 5px 0;
+          text-align: left;
+          border-bottom: 1px solid #eee;
+          width: 100%;
+          max-width: 600px;
+          word-break: break-all;
+          white-space: normal;
+        }
+
+        .bet_string_result {
+          .bet_string_record;
+        }
+
+        .betString_bonus {
+          padding: 0 6px;
+
+          &[data-color='green'] {
+            color: @success-color;
+          }
+        }
+      }
+    }
+  }
+
+  .winning_amount {
+    &[data-color='red'] {
+      color: @alert-color;
+    }
+    &[data-color='green'] {
+      color: @success-color;
+    }
+  }
+}
+
+.orderRecord_table {
+  .gameColumn {
+    text-align: left;
+    padding: 5px 0;
+
+    .orderReport_collapse {
+      &[class*='ant-collapse-borderless'] {
+        [class*='ant-collapse-item'] {
+          border: 0;
+        }
+      }
+    }
+  }
+}

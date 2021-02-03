@@ -1,0 +1,140 @@
+@import '~styles/variables.less';
+@import '~clientResolver/index.less';
+
+@general: @main-ball-color;
+@red: @red-ball-color;
+@blue: @blue-ball-color;
+@green: @green-ball-color;
+@none: @gray-1;
+
+.lottery_color {
+  &[data-color='red'] {
+    background-color: @red;
+  }
+  &[data-color='blue'] {
+    background-color: @blue;
+  }
+  &[data-color='green'] {
+    background-color: @green;
+  }
+  &[data-color='none'] {
+    background-color: @none;
+  }
+}
+.lottery_color(highlight) {
+  background-color: @red;
+  // background-image: linear-gradient(
+  //   145deg,
+  //   @yellow-1 0%,
+  //   @orange-1 30%,
+  //   lighten(@red, 5%) 60%,
+  //   @red 100%
+  // );
+
+  &[data-color='blue'] {
+    background-color: @blue;
+    // background-image: linear-gradient(
+    //   145deg,
+    //   lighten(@blue, 30%) 0%,
+    //   lighten(@blue, 20%) 30%,
+    //   lighten(@blue, 10%) 60%,
+    //   @blue 100%
+    // );
+  }
+  &[data-color='green'] {
+    background-color: @green;
+    // background-image: linear-gradient(
+    //   145deg,
+    //   lighten(@green, 15%) 0%,
+    //   lighten(@green, 10%) 30%,
+    //   lighten(@green, 5%) 60%,
+    //   @green 100%
+    // );
+  }
+  &[data-color='none'] {
+    background-color: @none;
+    background-image: none;
+  }
+}
+.lottery_size(@size) {
+  min-width: @size;
+  height: @size;
+  line-height: @size;
+}
+
+.lotteryPkTen {
+  border-radius: @size-4;
+  background-color: #a7a4a4;
+  color: @base-white;
+  display: inline-block;
+  text-align: center;
+  margin: 0 @size-0 / 2 @size-0 / 2 0;
+  font-size: @size-1;
+
+  .lottery_color;
+  .lottery_size(@size-5);
+}
+.lottery {
+  border-radius: @size-4;
+  background-color: @general;
+  color: @base-white;
+  display: inline-block;
+  text-align: center;
+  margin: 0 @size-0 / 2 @size-0 / 2 0;
+  font-size: @size-1;
+
+  .lottery_color;
+  .lottery_size(@size-5);
+}
+.lotteryPkTen__s {
+  &:extend(.lotteryPkTen);
+
+  .lottery_color;
+  .lottery_size(@size-3);
+
+  font-size: @size-0;
+}
+.lottery__s {
+  &:extend(.lottery);
+
+  .lottery_color;
+  .lottery_size(@size-3);
+
+  font-size: @size-0;
+}
+
+.lottery__highlight {
+  &:extend(.lottery);
+
+  .lottery_color(highlight);
+  .lottery_size(@size-6);
+
+  background-color: @general;
+  background-image: none;
+  animation: dropdown 0.3s 1 @transition-timing;
+  font-size: @size-3;
+  font-weight: 600;
+}
+
+.lottery__size {
+  color: @main-regular-color;
+}
+
+.lotterys_symbolicName {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: @gray-1;
+  font-size: inherit;
+  line-height: inherit;
+}
+.cqssc_lotterys_symbolicName {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: @gray-1;
+  font-size: 12px;
+  line-height: inherit;
+}

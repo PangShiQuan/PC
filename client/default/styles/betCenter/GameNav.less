@@ -1,0 +1,52 @@
+@import '~clientResolver/index.less';
+
+@nav-btn-padding: @size-0 @size-2;
+
+.gameNav {
+  display: flex;
+  flex-direction: column;
+  background-color: @betCenter-nav-bg;
+  color: @betCenter-nav-color;
+  font-size: @size-2;
+}
+.gameNav_btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 37px;
+}
+.gameNav_btn {
+  padding: @nav-btn-padding;
+
+  &[data-active='true'] {
+    background-color: @betCenter-nav-bg--active;
+    color: @betCenter-nav-color--active;
+  }
+  &[disabled] {
+    cursor: default;
+  }
+}
+.gameSubnavs {
+  background-color: @betCenter-subNav-bg;
+  color: @betCenter-subNav-color;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: @size-2;
+  box-shadow: @shadow-dp2--inset;
+}
+.gameSubnav_chevron {
+  font-size: @size-4;
+  margin: 0 @size-0;
+  vertical-align: middle;
+}
+.gameSubnav_btn {
+  height: @button-height;
+  padding: @nav-btn-padding;
+
+  &:hover,
+  &[data-active='true'] {
+    background-color: @betCenter-subNav-bg--active;
+    color: @betCenter-subNav-color--active;
+  }
+}

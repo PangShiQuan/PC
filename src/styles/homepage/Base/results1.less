@@ -1,0 +1,117 @@
+@import '~styles/common.less';
+@import '~styles/layout.less';
+
+@results-loadMoreBtn-fontSize: @size-2;
+
+.results_panel {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0; //for sou gou browser compatibility styling//
+}
+.results_headers {
+  .clearfix;
+
+  border-bottom: 1px solid @common-background-line-color;
+}
+.results_header {
+  float: left;
+}
+
+.results_btn__loadMore {
+  text-align: right;
+  font-weight: initial;
+  float: right;
+  cursor: pointer;
+  user-select: none;
+  font-size: @results-loadMoreBtn-fontSize;
+  padding-right: 0;
+}
+.results_text {
+  font-size: @size-2;
+  color: @gray-2;
+}
+.results_itemHeaders {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.results_lotName {
+  &:extend(.ellipsis);
+
+  float: left;
+  font-size: @size-1;
+  font-weight: bold;
+  color: @main-regular-color;
+}
+.results_lotDate {
+  &:extend(.ellipsis);
+  &:extend(.results_text);
+
+  text-align: right;
+  font-size: @size-1;
+  margin-bottom: @size-0;
+  color: @sub-regular-color;
+}
+.results_lotPhase {
+  font-size: @size-1;
+  color: @main-regular-color;
+}
+.results_awaitMsg {
+  font-size: @size-1;
+  margin-bottom: @size-0;
+  color: @sub-regular-color;
+}
+.results_listItem {
+  padding: @size-0;
+  &:not(:first-child) {
+    border-top: 1px solid @common-background-line-color;
+  }
+}
+.results_list {
+  .clearfix;
+
+  display: block;
+  overflow-y: scroll;
+  transition: height 0.3s ease-in-out;
+}
+.results_permalinks {
+  margin-top: @size-0;
+  text-align: right;
+}
+.results_permalink {
+  &:extend(.results_lotPhase);
+
+  color: @first-color;
+  margin-left: @size-0;
+  &:hover {
+    color: @first-color;
+  }
+  // padding-left: @size-0;
+  // border-left: 1px solid @gray-3;
+}
+
+.results_numbers {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: @size-2;
+  flex-wrap: wrap;
+}
+.results_numberDivider {
+  font-size: @size-1;
+  display: inline-block;
+  margin-bottom: @size-0 / 2;
+  color: @sub-regular-color;
+  &:not(:last-child) {
+    margin-right: @size-0 / 2;
+  }
+}
+.result_chevron {
+  font-size: 1.5em;
+  right: 0;
+  color: #000;
+  top: 50%;
+  transform: translateY(-50%);
+}

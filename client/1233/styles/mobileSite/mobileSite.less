@@ -1,0 +1,135 @@
+@import '~clientResolver/index.less';
+
+@mobileSite-titleFontSize: 30px;
+@mobileSite-descFontSize: 18px;
+@mobileSite-introBox-color: #fffc97;
+
+mark {
+  background-color: transparent;
+  color: @accent-color;
+}
+.article {
+  min-width: @page-width;
+  min-height: auto;
+  background-image: url('../../assets/image/mobileSite/featuredBg.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+}
+.background {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.text {
+  letter-spacing: calc(@size-0 / 3);
+  text-align: center;
+  > * {
+    display: block;
+  }
+}
+.icon {
+  padding: 7px 5px;
+  vertical-align: middle;
+  font-size: @size-6;
+}
+.container__flex {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.container__flexVertical {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 -5%;
+}
+.box {
+  border-radius: @size-8;
+  box-shadow: @shadow-dp8;
+  color: @base-white;
+  margin: @size-2 0;
+  padding: @size-0 @size-1;
+  & span {
+    font-weight: bolder;
+    font-size: @size-4;
+    vertical-align: text-top;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+}
+.box__desc {
+  align-items: flex-start;
+  border: 1px solid transparent;
+  display: flex;
+  padding: @size-0;
+  & img {
+    margin: @size-0 @size-4;
+  }
+  & p {
+    font-size: @size-3;
+    margin-left: @size-3;
+    & * {
+      display: block;
+      margin: 0;
+    }
+    & span:first-child {
+      font-weight: bolder;
+    }
+  }
+}
+.group {
+  padding-bottom: @size-7;
+  padding-top: 0;
+  > * {
+    margin: @size-1 @size-5;
+  }
+  & .box {
+    min-width: 175px;
+    color: #20b7b3;
+    background-color: @base-white;
+    // border: 2px solid @base-white;
+  }
+}
+.featured__item {
+  transform: scale(0.85);
+  margin-right: @size-9;
+  margin-top: @size-8;
+}
+.intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  bottom: 2rem;
+  margin-right: 4rem;
+}
+.introBox {
+  color: @mobileSite-introBox-color;
+  line-height: 1;
+  font-size: @mobileSite-descFontSize;
+  & p {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+}
+.introTitle {
+  color: @base-white;
+  font-size: @mobileSite-titleFontSize;
+  text-align: center;
+  line-height: 1;
+  vertical-align: bottom;
+  margin-top: @size-4;
+}
+.introFlex {
+  display: flex;
+  align-items: center;
+}
+.introRightColumn {
+  margin-left: @size-3;
+  & img {
+    transform: scale(0.8);
+  }
+}

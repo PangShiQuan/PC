@@ -1,0 +1,117 @@
+@import '~clientResolver/index.less';
+
+@entry-width: 10%;
+
+.gameCal {
+  align-content: center;
+  background-color: @betCenter-cal-bg;
+  color: @betCenter-cal-color;
+  display: flex;
+  flex-direction: row;
+  font-size: @size-2;
+  margin: @size-0;
+  padding: @size-1 / 2 @size-1;
+  align-items: center;
+  border-radius: @betCenter-cal-radius;
+}
+.gameCal_multiplyBtn {
+  font-size: @size-3;
+  line-height: 1;
+  background-color: @betCenter-calBtn-bg;
+  color: @betCenter-calBtn-color;
+  border-radius: @betCenter-cal-radius;
+  height: @size-5;
+  margin: 0 @size-0 / 2;
+  padding: 0 @size-0 / 2;
+  box-shadow: @shadow-dp2;
+  i {
+    display: block;
+  }
+
+  &[data-active='true'] {
+    background-color: @accent-color;
+  }
+}
+.gameCal_multiplySpan {
+  margin: 0 @size-0 0 @size-3;
+}
+.gameCal_multiplyInput {
+  background-color: @betCenter-calInput-bg;
+  border: 1px solid @betCenter-calInput-borderColor;
+  color: @betCenter-calInput-color;
+  width: @entry-width;
+  height: @size-5;
+  padding: 0 @size-0;
+  text-align: center;
+  border-radius: @betCenter-cal-radius;
+}
+.gameCal_baseAmountInput {
+  .gameCal_multiplyInput;
+
+  margin-left: @size-0;
+  width: @entry-width;
+}
+.gameCal_numberOfUnits {
+  margin-right: @size-3;
+}
+.gameCal_unitBtn {
+  .gameCal_multiplyBtn;
+
+  padding: 0 @size-1 / 2;
+  font-size: @size-1;
+  &[data-active='true'] {
+    color: @betCenter-calUnitBtn-color--active;
+    background-color: @betCenter-calUnitBtn-bg--active;
+  }
+}
+.gameCal_amountSpan {
+  margin-left: @size-0;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  p {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.gameCal_ctrlBtns {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+.gameCal_ctrlBtn {
+  background-color: @betCenter-cal-ctrlBtn-bg;
+  height: @size-5;
+  box-shadow: @shadow-dp4;
+  min-width: 15%;
+  padding: 0 @size-0;
+  color: @betCenter-cal-ctrlBtn-color;
+  line-height: 1;
+  margin-left: @size-0;
+  border-radius: @betCenter-cal-radius;
+  word-break: keep-all;
+  &[disabled] {
+    cursor: not-allowed;
+    box-shadow: @shadow-dp0;
+    color: rgba(255, 255, 255, 0.75);
+    background-color: @bg-gray;
+  }
+}
+.gameCal_ctrlAddBtn {
+  .gameCal_ctrlBtn;
+
+  background-color: @betCenter-cal-ctrlAddBtn-bg;
+  color: @betCenter-cal-ctrlAddBtn-color;
+}
+.gameCal_ctrlBtn__clear {
+  .gameCal_ctrlBtn;
+
+  color: @betCenter-cal-clear-btn-color;
+  background-color: @betCenter-cal-clear-btn-bg;
+  &[disabled] {
+    background-color: @betCenter-cal-clear-btn-bg;
+    color: rgba(255, 255, 255, 0.9);
+  }
+}

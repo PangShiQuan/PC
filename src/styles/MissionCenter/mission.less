@@ -1,0 +1,96 @@
+@import '~styles/layout.less';
+
+.wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  background-color: @welfare-bg;
+  border-radius: @welfare-center-container-br;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: @welfare-center-desc-color;
+
+  .div_icon {
+    padding: 0 20px;
+
+    .icon {
+      svg {
+        path {
+          fill: @welfare-center-font-color;
+        }
+      }
+    }
+  }
+
+  .div_info {
+    flex: 2 1;
+    .title {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .progress_bar {
+      width: 100%;
+      height: 5px;
+      background-color: #999;
+      border-radius: 5px;
+
+      .progress {
+        height: 5px;
+        background-color: @red-1;
+        border-radius: 5px;
+      }
+    }
+
+    .desc {
+      font-size: 1.1rem;
+      margin-top: 4px;
+
+      .amount {
+        color: @red-1;
+      }
+    }
+  }
+
+  .div_amount {
+    text-align: right;
+    flex: 0 1 160px;
+    padding: 0 10px;
+    font-size: 1.1rem;
+    color: @green-1;
+  }
+
+  .div_button {
+    padding: 0 10px;
+
+    button {
+      padding: 6px 20px;
+      border-radius: 6px;
+      background-color: fade(@welfare-center-primary-color, 90%);
+      color: @welfare-center-button-color;
+
+      &:hover {
+        color: @welfare-center-button-color;
+        background-color: @welfare-center-primary-color;
+      }
+
+      &:disabled {
+        color: @welfare-center-primary-color;
+        background-color: @welfare-center-button-color;
+        border: 1px solid @welfare-center-primary-color;
+      }
+
+      &[data-received='true'] {
+        color: fade(@welfare-center-button-color, 80%);
+        background-color: fade(@welfare-center-primary-color, 40%);
+        border: 0;
+      }
+    }
+  }
+
+  .empty_mission {
+    margin: auto;
+  }
+}

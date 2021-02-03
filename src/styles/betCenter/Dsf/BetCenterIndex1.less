@@ -1,0 +1,284 @@
+@import '~styles/layout.less';
+
+.betCenterIndex {
+  background: @betCenter-bg;
+  background-size: @betCenter-bg-size;
+  background-attachment: @betCenter-bg-attachment;
+  background-repeat: @betCenter-bg-repeat;
+  overflow: auto;
+  @media only screen and (max-width: 1024px) {
+    .pageWidth;
+  }
+
+  &[data-collapsed='true'] {
+    .betCenter_logoCol {
+      padding: 0 5px;
+      flex: 0 0 8rem;
+    }
+    .betCenter_collapseIcon {
+      transform: rotate(180deg) scale(0.75);
+      margin-left: @betCenter-sideNav-width--collapsed - 1.5rem;
+      @media only screen and (max-width: 1120px) {
+        margin-left: 4.25rem;
+      }
+    }
+  }
+}
+
+.betCenter_header {
+  .row;
+
+  display: flex;
+  background: @betCenter-header-bg;
+  color: @betCenter-header-color;
+}
+
+.betCenter_logoCol {
+  flex: 0 1 15%;
+  background-color: @betCenter-logo-bg;
+  padding: @size-0 @size-3;
+  transition: all 0.25s @standard-curve-timing-function;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.betCenter_logoImg {
+  display: inline-block;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+.betCenter_navCol {
+  flex: 1 1 35%;
+  padding: @size-0 @size-3;
+  height: @betCenter-header-height;
+  position: relative;
+  z-index: 1;
+}
+.betCenter_listCol {
+  flex: 1 1 45%;
+  padding: 0 @betCenter-sideNav-padding 0 @betCenter-sideNav-padding;
+  transition: padding 0.25s @standard-curve-timing-function;
+}
+.betCenter_allGameLabel {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  font-size: @size-2;
+  justify-content: space-between;
+  min-height: @betCenter-header-height;
+  padding: 0 @betCenter-sideNav-padding;
+  text-align: left;
+  background-color: @primary-color;
+  color: @base-white;
+  letter-spacing: 1px;
+  border-top: 1px solid darken(@primary-color, 5%);
+}
+.betCenter_body {
+  > * {
+    display: inline-block;
+
+    &:first-child {
+      vertical-align: top;
+    }
+  }
+}
+.betCenter_backHomeBtn {
+  line-height: @button-height;
+  padding: 0 @size-0;
+  border-radius: 6px;
+  font-size: @size-2;
+  color: @primary-color;
+  display: inline-block;
+  &:hover {
+    color: @primary-color;
+    opacity: 0.7;
+  }
+  i {
+    vertical-align: middle;
+  }
+  [class*='mdi'] {
+    font-size: @size-4;
+    display: inline-block;
+    line-height: 1;
+    margin-right: @size-0;
+  }
+}
+.betCenter_boardWrapper {
+  width: 100% - @betCenter-sideNav-width;
+}
+.betCenter_board {
+  max-width: @page-width;
+  box-shadow: @shadow-dp16;
+  border-radius: 6px;
+  margin: @betCenter-sideNav-padding auto;
+  background-color: @betCenter-board-bg;
+  min-height: @betCenter-content-height;
+}
+.betCenter_boardBody {
+  display: flex;
+  min-height: 68vh;
+}
+.betCenter_boardColumn {
+  flex: 9;
+  overflow: hidden;
+  background-color: @betCenter-boardColumn-bg;
+  min-width: 820px;
+}
+.betCenter_widgetsColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  background-color: @betCenter-widgetsColumn-bg;
+  min-width: 300px;
+}
+
+@keyframes countDown {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+.betCenter_notificationBtn {
+  font-size: @size-2;
+  color: @base-white;
+  border-radius: 6px;
+  background-color: @alert-color;
+  height: @button-height;
+  padding: 0 @size-0;
+  position: relative;
+  overflow: hidden;
+  span {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  &::before {
+    content: '';
+    background-color: darken(@alert-color, 10%);
+    top: 0;
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    right: 100%;
+    animation: countDown 7s 1 ease;
+  }
+}
+@actionBtn-size: @size-9 * 1.5;
+@actionBtns-size: @actionBtn-size + (@size-0 * 2);
+.betCenter_actionRow {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  min-height: @actionBtns-size + @betCenter-sideNav-padding;
+}
+.betCenter_actionBtns {
+  background-color: @betCenter-actionBtn-bg-outer;
+  border-radius: @actionBtn-size + (@size-0 * 2) / 2;
+  box-shadow: @shadow-dp2--inset;
+  display: flex;
+  flex-direction: column;
+  font-size: @size-5;
+  height: @actionBtns-size;
+  padding: @size-0;
+  transition: background-color 0.15s @standard-curve-timing-function;
+  width: @actionBtns-size;
+
+  &[data-color='red'] {
+    background-color: @alert-color;
+  }
+
+  &[data-color='green'] {
+    background-color: @success-color;
+  }
+}
+.betCenter_actionBtn {
+  background-color: @bg-gray--light;
+  background-position: center bottom;
+  background-size: 100% 150%;
+  box-shadow: @shadow-dp4;
+  color: @betCenter-actionBtn-color;
+  height: @actionBtn-size / 2;
+  transition: background-position 0.15s @standard-curve-timing-function;
+  width: @actionBtn-size;
+  &[data-position='top'] {
+    padding-top: @size-4;
+    border-top-left-radius: @actionBtn-size / 2;
+    border-top-right-radius: @actionBtn-size / 2;
+    margin-bottom: @size-0 / 4;
+    background-image: @betCenter-actionBtn-bg-top;
+  }
+  &[data-position='bottom'] {
+    padding-bottom: @size-4;
+    border-bottom-left-radius: @actionBtn-size / 2;
+    border-bottom-right-radius: @actionBtn-size / 2;
+    margin-top: @size-0 / 4;
+    background-image: @betCenter-actionBtn-bg-bottom;
+  }
+  &:hover:not([disabled]) {
+    background-color: @base-white;
+    color: @betCenter-actionBtn-color-hover;
+    &[data-position='top'] {
+      background-position: center top;
+    }
+    &[data-position='bottom'] {
+      background-position: center top;
+    }
+  }
+  &[disabled] {
+    color: @betCenter-actionBtn-color-disabled;
+    cursor: default;
+  }
+}
+.betCenter_collapseIcon {
+  position: absolute;
+  line-height: 1;
+  border-radius: @betCenter-sideNav-collapseToggle-size / 2;
+  background-color: @betCenter-sideNav-collapseToggle-bgColor;
+  font-size: 1.5em;
+  color: @betCenter-collapseIcon-color;
+  height: @betCenter-sideNav-collapseToggle-size;
+  width: @betCenter-sideNav-collapseToggle-size;
+  box-shadow: @shadow-dp6;
+  z-index: 1;
+  transform: rotate(0deg) scale(1);
+  margin-top: @betCenter-header-height -
+    (@betCenter-sideNav-collapseToggle-size / 2);
+  margin-left: @betCenter-sideNav-width - 1.5rem;
+  transition: all 0.25s @standard-curve-timing-function;
+  i {
+    vertical-align: middle;
+  }
+  @media screen and (max-width: 1120px) {
+    margin-left: 7.5rem;
+  }
+}
+
+.gameboard {
+  background-color: white;
+  margin: @size-0;
+  margin-bottom: @size-1;
+  padding: @size-0 0 0 @size-0;
+  border-radius: 6px;
+  min-height: 42.75vh;
+}
+
+.popupModelFooter {
+  [class~='ant-modal-footer'] {
+    background-image: none;
+    border-top: 1px solid #e8e8e8;
+    padding: 10px 16px;
+    border-radius: 0 0 4px 4px;
+    text-align: center;
+    [class~='ant-btn'] {
+      background: @first-color;
+      color: @base-white;
+      border: 0.9px solid @first-color;
+    }
+  }
+}

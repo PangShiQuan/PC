@@ -1,0 +1,49 @@
+@import '~clientResolver/index.less';
+
+.layout {
+  position: relative;
+  background: @page-mainLayout-bg;
+  background-attachment: @page-mainLayout-bg-attachment;
+  background-size: @page-mainLayout-bg-size;
+  min-width: @page-min-width;
+
+  &[data-pathname~='games'] {
+    background: @gamePage-bg;
+    background-size: @games-bg-size;
+    background-repeat: @games-bg-repeat;
+  }
+  &[data-pathname~='sports'] {
+    background: @sportPage-bg;
+  }
+  &[data-pathname~='cards'] {
+    background: @cardPage-bg;
+    background-size: @cards-bg-size;
+    background-repeat: @cards-bg-repeat;
+  }
+  &[data-pathname~='fishing'] {
+    background: @fishingPage-bg;
+    background-size: @fishing-bg-size;
+    background-repeat: @fishing-bg-repeat;
+  }
+  &[data-pathname~='realis'] {
+    background: @realiPage-bg;
+  }
+  &[data-pathname~='promotions'],
+  &[data-pathname~='welfarecenter'] {
+    background: @promotion-bg;
+    background-size: @promotion-bg-size;
+    background-attachment: @promotion-bg-attachment;
+  }
+}
+
+.pages {
+  background: @page-bg;
+}
+
+.promotionBg {
+  background: @promotionBg-base;
+}
+
+.userBg {
+  background: @base-white;
+}

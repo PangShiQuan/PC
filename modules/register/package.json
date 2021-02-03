@@ -1,0 +1,29 @@
+{
+  "name":"register",
+  "version":"1.0.0",
+  "description":"Register Page",
+  "private":true,
+  "browserslist":{
+     "production":[
+        "> 0.35%",
+        "last 3 Chrome versions",
+        "last 3 Firefox versions",
+        "last 3 Safari versions",
+        "last 3 Edge versions",
+        "ie >= 10"
+     ],
+     "development":[
+        "last 2 Chrome versions",
+        "last 2 Firefox versions",
+        "last 2 Safari versions",
+        "last 2 Edge versions",
+        "ie >= 10"
+     ]
+  },
+  "author":"",
+  "dependencies":{
+     "debounce":"^1.1.0",
+     "open-color":"^1.6.2",
+     "whatwg-fetch":"^3.0.0"
+  }
+}

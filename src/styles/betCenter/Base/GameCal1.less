@@ -1,0 +1,129 @@
+@import '~styles/variables.less';
+@import '~clientResolver/index.less';
+
+.gameCal {
+  align-content: center;
+  background-color: @common-table-color;
+  color: @base-white;
+  display: flex;
+  flex-direction: row;
+  font-size: @size-2;
+  margin: @size-0;
+  padding: 0 @size-0 0 @size-3;
+  align-items: center;
+  height: @button-height;
+  border-radius: 8px;
+}
+.gameCal_text {
+  line-height: 1.25;
+  color: @main-regular-color;
+  font-weight: bold;
+}
+.gameCal_multiplyBtn {
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  font-size: @size-3;
+  line-height: 1;
+  background-color: @first-color;
+  color: @button-color;
+  border-radius: 4px;
+  margin: 0 @size-0 / 2;
+  i {
+    display: block;
+  }
+
+  &[data-active='true'] {
+    background-color: @first-color;
+    color: @button-color;
+  }
+}
+.gameCal_multiplySpan {
+  &:extend(.gameCal_text);
+
+  margin-left: @size-5;
+  margin-right: @size-0;
+}
+.gameCal_multiplyInput {
+  background-color: @button-color;
+  width: @size-8;
+  height: @size-5;
+  padding: 0 @size-0;
+  text-align: center;
+  border-radius: 4px;
+  color: @main-regular-color;
+}
+.gameCal_baseAmountInput {
+  .gameCal_multiplyInput;
+
+  margin-left: @size-0;
+  width: @size-9;
+}
+.gameCal_numberOfUnits {
+  margin-right: @size-3;
+}
+.gameCal_unitBtn {
+  font-size: @size-1;
+  line-height: 1;
+  color: @first-color;
+  border-radius: @size-5 / 2;
+  height: @size-5;
+  width: @size-5;
+  margin: 0 @size-0 / 2;
+  i {
+    display: block;
+  }
+
+  &[data-active='true'] {
+    background-color: @first-color;
+    color: @button-color;
+  }
+}
+.gameCal_amountSpan {
+  margin-left: @size-0;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  p {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.gameCal_ctrlBtns {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+.gameCal_ctrlBtn {
+  background-color: @button-color;
+  height: @size-5;
+  min-width: @size-7 + @size-3;
+  padding: 0 @size-0;
+  color: @first-color;
+  line-height: 1;
+  margin-left: @size-0;
+  border-radius: 4px;
+  border: 1px solid @first-color;
+  word-break: keep-all;
+  &[disabled] {
+    cursor: not-allowed;
+    color: @disabled-color;
+    background-color: @button-color;
+    border: 1px solid @disabled-color;
+  }
+}
+.gameCal_ctrlBtn__clear {
+  .gameCal_ctrlBtn;
+
+  border: none;
+  color: @base-white;
+  background-color: @subbutton-color;
+  &[disabled] {
+    border: none;
+    background-color: @subbutton-color;
+    color: @disabled-color;
+    cursor: not-allowed;
+  }
+}

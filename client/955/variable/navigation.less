@@ -1,0 +1,38 @@
+@import './common.less';
+
+.logoDream {
+  position: absolute;
+  padding-left: 40px;
+}
+
+.profileNavRow {
+  max-width: @page-width;
+  margin: 0 auto;
+  padding: @size-2 0;
+  background: none;
+  height: 104px;
+  &[data-logon='true'] {
+    background: none;
+
+    .listCol {
+      padding-right: 0;
+    }
+  }
+  > * {
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
+
+.listCol {
+  float: right;
+  text-align: right;
+  padding-right: 0;
+  margin-top: 10px;
+}
+
+.Marquee {
+  background-color: #262626;
+  height: 1.875rem;
+  line-height: 1.875rem;
+}

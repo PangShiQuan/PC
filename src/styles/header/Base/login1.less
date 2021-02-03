@@ -1,0 +1,46 @@
+@import '~styles/layout.less';
+@import '~clientResolver/index.less';
+
+.login_body {
+  text-align: right;
+  float: right;
+}
+.login_button {
+  border-radius: 6px;
+  margin-left: @size-0;
+  float: right;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1.2px;
+  color: @button-color;
+  background-color: @first-color;
+  &:hover {
+    background-color: mix(@first-color, @button-hover-color);
+  }
+}
+.login_guestRegisterBtn {
+  border: 1px solid @first-color;
+  border-radius: 6px;
+  margin-left: @size-0;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1.2px;
+  color: @first-color;
+  background-color: @button-background-color;
+  &:hover {
+    color: @button-color;
+    background-color: @first-color;
+  }
+  &:disabled {
+    border-color: @gray-3;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translateZ(0);
+  }
+  to {
+    transform: rotate(360deg) translateZ(0);
+  }
+}

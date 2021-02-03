@@ -1,0 +1,28 @@
+@import '~styles/layout.less';
+
+.login_body {
+  .row;
+
+  text-align: @login-body-align;
+}
+.login_button {
+  border-radius: 6px;
+  margin-left: @size-0;
+  float: right;
+  font-size: @size-1;
+  &[data-betcenter='true'] {
+    background-color: @betCenter-login-btn-bg;
+  }
+  .login-button-override;
+}
+.login_guestRegisterBtn {
+  font-size: @size-1;
+  border-radius: 6px;
+  &[data-betcenter='true'] {
+    background-color: @betCenter-register-btn-bg;
+  }
+  & i {
+    font-size: 20px;
+  }
+  .login_guestRegisterBtn-override;
+}

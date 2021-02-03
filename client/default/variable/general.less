@@ -1,0 +1,182 @@
+@import './common.less';
+@import '~currentClientDir/variable/common.less';
+
+/*
+** PAGE PROP
+*/
+@page-mainLayout-bg: transparent;
+
+@page-mainLayout-bg-attachment: unset;
+
+@page-bg: transparent;
+
+@page-mainLayout-bg-size: auto;
+
+@page-mainLayout-bg-color: none;
+
+@promotionBg-base: none;
+
+@navigation-bg-all: transparent;
+
+/*
+** POPUP COMPONENT
+*/
+@popup-content-height: @button-height * 10 + @size-0;
+
+/*
+** FLOAT_PANEL COMPONENT
+*/
+@floatContent-bg: transparent;
+
+@floatContent-bg--right: transparent;
+
+@floatPanel-bg: @primary-color;
+
+@floatPanel-color: @base-white;
+
+@floatPanelTitle-color: @base-white;
+
+@floatPanelDesc-color: inherit;
+
+@floatPanel-btn-bg--top: @base-white;
+
+@floatPanel-btn-bg--bottom: @base-white;
+
+@floatPanel-btn-color--top: @success-color;
+
+@floatPanel-btn-color--bottom: @indicate-color;
+
+@floatPanel-btn-border-color--top: none;
+
+@floatPanel-btn-border-color--bottom: none;
+
+.floatingPanelOverride {
+}
+.closeBtnLeftOverride {
+}
+.closeBtnRightOverride {
+}
+@closeBtn-bg: transparent;
+.closeBtnOverride {
+  &::before {
+    filter: drop-shadow(0 0 0.125rem black);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: @size-3 solid @bg-gray--light;
+    border-left: @size-0 solid transparent;
+    border-right: @size-0 solid transparent;
+    z-index: -1;
+  }
+}
+.pageLoading_Loading_override {
+}
+
+/*
+** HEADER COMPONENT
+*/
+
+@header-top-tray-bg: @bg-gray--light;
+
+@header-top-tray-color: @text-color;
+
+@header-bg: darken(@primary-color, 5%);
+
+@header-color: @accent-color--light;
+
+@cards-header-color: @header-color;
+
+@header-height: 1.875rem;
+
+@marquee-height: 1.875rem;
+
+@marquee-icon-size: 1.875rem;
+
+@marquee-icon-size-rightPadding: 0;
+
+@marquee-topRatio: 0;
+
+@marquee-bg: aliceblue;
+
+@marquee-icon-color: @alert-color;
+
+@marquee-color: inherit;
+
+@popup-content-height: @button-height * 10 + @size-0;
+
+@marquee-content-lineheight: 1.875rem;
+
+/*
+** FOOTER COMPONENT
+*/
+@footer-bgColor--white: @base-white;
+
+@footer-bgColor--gray: @bg-gray--light;
+
+@footer-bgColor--black: @base-black;
+
+@footer-color: @base-black;
+
+@footerBorderTop: none;
+
+/*
+** SITEMAP COMPONENT
+*/
+@sitemap-bgColor--white: @base-white;
+
+@sitemap-bgColor--gray: @bg-gray--light;
+
+@sitemap-color: @base-black;
+
+@sitemap-benefit-fontSize: @size-2;
+
+@sitemap-panel-width: ((@page-width - @size-0 * 2) / 5);
+
+/*
+** BUTTONS COMPONENT
+*/
+
+@core-btn-color: @base-white;
+
+@core-btn-bg: @btn-bg;
+
+@core-btn-bg-hover: @btn-bg;
+
+@sub-btn-color: @base-white;
+
+@sub-btn-bg: @accent-color;
+
+@sub-btn-bg-hover: @accent-color;
+
+@core-btn-border: none;
+
+@sub-btn-border: none;
+
+@login-body-align: right;
+
+@loadingBar-loading-bg: @primary-color;
+
+.coreButton_override {
+}
+.subButton_override {
+}
+.login-button-override {
+}
+.login_guestRegisterBtn-override {
+}
+
+@entrance-color: #000000;
+
+@entrance-bg-color: none;
+
+@entrance-fontweight: bold;
+
+@profile-btn-bg-disabled: none;
+
+@disabled-btn-bg-color: none;
+
+@btn-bg-color: none;
+
+@index-body-color: white;

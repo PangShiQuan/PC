@@ -1,0 +1,76 @@
+@import '~styles/layout.less';
+
+.content {
+  z-index: 1;
+}
+
+.realis {
+  display: flex;
+  min-height: 750px;
+  align-items: center;
+  justify-content: center;
+  background: @realis-bg-noHeader;
+}
+
+.realGameButtonWrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  max-width: 70rem;
+  .realiWrapper-maxin();
+
+  .realGameButton {
+    width: 350px;
+    height: 100px;
+    margin-top: 240px;
+    .realiButton-maxin();
+
+    &.ag_wording {
+      background: @realiButtnPage-bg;
+    }
+
+    &.bg_wording {
+      background: @realiButtnPage-bg-BG;
+    }
+
+    &.bbin_wording {
+      background: @realiButtnPage-bg-BBIN;
+    }
+  }
+}
+
+.realis_row {
+  .row;
+
+  text-align: left;
+  width: 100%;
+}
+
+.realis_body {
+  margin: 0 auto;
+  min-height: 24.7rem;
+  transition: width 0.25s ease-in-out;
+  [data-login='true'] {
+    font-size: @size-2;
+    text-align: center;
+    background-color: @white-1;
+    box-shadow: @shadow-dp8;
+    margin: 0 auto @size-3 auto;
+    min-height: 40rem;
+    padding-top: 18rem;
+  }
+}
+
+.realis_tabContainerIframe {
+  .content;
+
+  z-index: 0;
+  background-color: @base-white;
+  box-shadow: @shadow-dp12;
+}
+
+.realis_tabIframe {
+  display: block;
+  width: 100%;
+  height: 50rem;
+}

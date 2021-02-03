@@ -1,0 +1,158 @@
+@import '~clientResolver/index.less';
+
+.row {
+  margin: @size-0 @size-1;
+}
+
+.button {
+  border-radius: 6px;
+  box-shadow: @shadow-dp2;
+  padding: 0 @size-3;
+  transition-property: box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: @standard-curve-timing-function;
+
+  &:focus:enabled,
+  &:hover:enabled {
+    box-shadow: @shadow-dp0;
+  }
+}
+
+.inputContainer {
+  .row;
+
+  display: flex;
+  font-size: @size-2;
+}
+
+.inputArea {
+  flex: 1;
+
+  > * {
+    height: inherit !important;
+    width: inherit !important;
+  }
+}
+
+.dropzone {
+  border: 1px solid @border-color;
+  border-radius: 4px;
+  background-color: @base-white;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.betInput {
+  border: 0;
+  outline: 0;
+  resize: none;
+  background-color: transparent;
+
+  &:focus {
+    box-shadow: @shadow-dp0;
+  }
+}
+
+.betInstruction {
+  color: @text-color--light;
+  display: inline-block;
+  font-size: @size-1;
+  padding: @size-0 / 3;
+  width: 100%;
+
+  > span {
+    display: block;
+  }
+}
+
+.ctrlBar {
+  padding: @size-0;
+}
+
+.ctrlButton {
+  .button;
+
+  display: block;
+  margin: @size-3 @size-0 / 2;
+  height: @button-height;
+  background-color: @base-white;
+  min-width: inherit;
+  width: @size-5+ @size-8;
+
+  &:focus:enabled,
+  &:hover:enabled {
+    color: @accent-color;
+  }
+  &:focus:enabled {
+    background-color: @primary-color--dark;
+  }
+}
+
+.infoDesc {
+  > div {
+    border: 0.5px solid @border-color--light;
+    box-shadow: @shadow-dp2--inset;
+    margin: 5px 0;
+    overflow-x: auto;
+    padding: 5px;
+  }
+
+  span {
+    display: block;
+    line-height: 20px;
+  }
+}
+
+.invalid {
+  color: lighten(@alert-color, 15%);
+}
+
+.modal {
+  text-align: center;
+  white-space: nowrap;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    width: 0;
+  }
+
+  [class~='ant-modal'] {
+    display: inline-block;
+    vertical-align: middle;
+    top: 0;
+    text-align: left;
+  }
+
+  [class~='ant-modal-header'] {
+    font-size: @size-3;
+    background-color: @first-color;
+  }
+
+  [class~='ant-modal-footer'] {
+    border-top: none;
+    text-align: center;
+    background-image: none;
+  }
+}
+
+.modal__info {
+  .modal;
+
+  [class~='ant-modal-footer'] {
+    button {
+      .button;
+
+      background-color: lighten(@primary-color, 10%);
+      color: @base-white;
+      letter-spacing: 2px;
+      margin: 0 auto;
+      position: relative;
+    }
+  }
+}
+
+.modal__confirm {
+  .modal;
+}

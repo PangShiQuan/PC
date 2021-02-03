@@ -1,0 +1,241 @@
+@import '~clientResolver/index.less';
+
+@keyframes scanner {
+  100% {
+    top: 119px;
+  }
+  0% {
+    top: 0;
+  }
+}
+
+@-webkit-keyframes scanner {
+  100% {
+    top: 119px;
+  }
+  0% {
+    top: 0;
+  }
+}
+@item-background: @blue-1;
+@item-border: 10px;
+
+.wrapper {
+  margin: 0 @size-1;
+  position: fixed;
+  top: 35%;
+  z-index: 97;
+  &[data-float='left'] {
+    left: 0;
+  }
+  &[data-float='right'] {
+    right: 0;
+  }
+  @media screen and (max-width: 1440px) {
+    &[data-float='left'] {
+      margin-left: 0;
+    }
+    &[data-float='right'] {
+      margin-right: 0;
+    }
+  }
+}
+
+.floatingPanel {
+  -webkit-backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased !important;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  padding: @size-0;
+  border-radius: 8px;
+  background: fade(#5e0e00, 50%);
+  border: 1px solid @first-dsf-color;
+  // box-shadow: @shadow-dp6;
+  text-align: center;
+}
+.QRCode {
+  margin-top: @size-0;
+  font-size: @size-1;
+
+  > * {
+    display: block;
+  }
+}
+.playBtn,
+.helpBtn,
+.onlineCSBtn,
+.qqBtn {
+  display: block;
+  width: 8rem;
+  margin-top: @size-0;
+  background-color: fade(#000, 50%);
+  color: @first-dsf-color;
+  font-size: @size-2;
+  letter-spacing: 2px;
+  line-height: @size-6;
+  text-align: center;
+  border-radius: 8px;
+  padding: 0 0;
+  border: 1px solid @first-dsf-color;
+  &:hover,
+  &:focus {
+    color: @first-dsf-color;
+    text-decoration: none;
+  }
+}
+.qqLogo,
+.csLogo,
+.playLogo,
+.helpLogo {
+  margin-right: @size-0;
+  font-size: 1.25em;
+  font-style: normal;
+  vertical-align: middle;
+}
+
+.closeBtn {
+  width: 25px;
+  height: 25px;
+  background: fade(#5e0e00, 50%);
+  border-radius: 50%;
+  color: @first-dsf-color;
+  display: block;
+  margin: 10px auto;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  line-height: 1.25rem;
+  border: 1px solid @first-dsf-color;
+}
+
+.closeBtnSVG {
+  padding-bottom: 3px;
+}
+
+.QRCode_title {
+  color: @first-dsf-color;
+  background-color: transparent;
+}
+
+.QRCode_desc {
+  color: @first-dsf-color;
+  background-color: transparent;
+}
+
+.desc {
+  padding-right: 8px;
+}
+
+.icon__svg {
+  max-height: 3em;
+
+  > * {
+    max-height: 4em;
+  }
+
+  path {
+    fill: @first-dsf-color;
+  }
+}
+
+.downScale {
+  display: none;
+}
+
+@media screen and (max-width: 1400px) {
+  .wrapper {
+    &[data-float='left'] {
+      .floatingPanel {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 0;
+      }
+    }
+    &[data-float='right'] {
+      .floatingPanel {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
+  .floatingPanel {
+    &:not(:hover) {
+      .downScale {
+        display: block;
+        margin-top: 1px;
+      }
+
+      .downScale + *:not(.title) {
+        display: none;
+      }
+
+      .playBtn,
+      .helpBtn,
+      .onlineCSBtn,
+      .qqBtn {
+        margin: 0;
+        width: 5rem;
+        background-color: transparent;
+        padding: 0 0;
+        border: none;
+        border-bottom: 1px solid @first-dsf-color;
+        border-radius: 0;
+      }
+
+      .icon__svg {
+        margin: 0;
+        width: 5rem;
+      }
+
+      .QRCode {
+        background-color: transparent;
+        margin: 0;
+        width: 100%;
+      }
+
+      .downScale ~ .desc {
+        color: @base-white;
+        font-size: @size-1;
+        letter-spacing: 1px;
+        line-height: @size-6;
+        margin: 0;
+      }
+    }
+    &:hover {
+      & + .closeBtn {
+        display: none;
+      }
+    }
+  }
+}
+.allIcon {
+  svg {
+    width: 45px;
+    padding-right: 10px;
+    vertical-align: top;
+    > path[class*='cls-1'] {
+      fill: @first-dsf-color;
+    }
+  }
+}
+
+.scannerEffectBg {
+  position: relative;
+}
+
+.scannerEffect {
+  position: absolute;
+  background: url(../../assets/image/qrcode-light.png);
+  width: 130px;
+  height: 14px;
+  left: -4px;
+  animation-name: scanner;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}

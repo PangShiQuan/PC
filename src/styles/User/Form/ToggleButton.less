@@ -1,0 +1,87 @@
+@import '~styles/layout.less';
+
+@handerSize: 1rem;
+@contrast: 25%;
+
+.button {
+  display: flex;
+  align-items: center;
+  font-size: @size-2;
+  color: @text-color--light;
+
+  i {
+    vertical-align: middle;
+  }
+
+  &[data-checked='true'] {
+    .toggleHander {
+      left: 14px;
+    }
+    .toggleTrack:not(:disabled) {
+      background-color: #4cd964;
+    }
+  }
+  &:disabled {
+    cursor: not-allowed;
+
+    .toggleTrack {
+      background-color: darken(@bg-gray, @contrast);
+    }
+  }
+}
+
+.inputBox {
+  position: relative;
+
+  button {
+    padding-left: 1px;
+  }
+
+  td & {
+    margin-bottom: 0;
+    margin-left: 10px;
+  }
+}
+.btnPlaceholder {
+  display: inline-block;
+  color: #000;
+  margin-left: 1.2rem;
+}
+.inputLabel {
+  display: block;
+  width: 100%;
+  color: @profile-label-color;
+  font-size: @size-1;
+  position: relative;
+  margin-bottom: @size-0 / 2;
+}
+.toggle {
+  display: inline-block;
+  position: relative;
+}
+.toggleTrack {
+  display: inline-block;
+  background-color: @bg-gray;
+  height: 20px;
+  width: 32px;
+  margin-top: 7px;
+  border-radius: 10px;
+  transition-property: background-color;
+  transition-duration: 0.15s;
+  transition-timing-function: @standard-curve-timing-function;
+}
+.toggleHander {
+  display: inline-block;
+  height: @handerSize;
+  width: @handerSize;
+  background-color: @base-white;
+  box-shadow: @shadow-dp2;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  top: 16.5px;
+  transform: translate3d(0, -50%, 0);
+  transition-property: left, background-color;
+  transition-duration: 0.15s;
+  transition-timing-function: @standard-curve-timing-function;
+}

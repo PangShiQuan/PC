@@ -1,0 +1,61 @@
+@import '~styles/layout.less';
+
+.statsReport_filter {
+  .clearfix;
+
+  margin-bottom: 8px;
+  width: 100%;
+  line-height: @size-2;
+  font-size: @size-2;
+
+  // overwrite antdesign
+  [class='ant-input'] {
+    padding: 0;
+  }
+}
+.statsReport_searchRow {
+  margin-top: 10px;
+}
+.statsReport_searchBox {
+  width: 500px;
+  display: inline-block;
+}
+.statsReport_searchBtnDiv {
+  display: inline-block;
+}
+.statsReport_searchBtn {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.25em;
+
+  .svg_icon_search {
+    svg {
+      width: 1.35rem;
+      margin-bottom: -6px;
+      margin-right: 5px;
+
+      path {
+        fill: #828282;
+        stroke: none;
+      }
+      rect {
+        fill: #828282;
+        stroke: none;
+      }
+      ellipse {
+        fill: #828282;
+        stroke: none;
+      }
+      circle {
+        fill: #828282;
+        stroke: none;
+      }
+    }
+  }
+}
+.statsReport_searchInput {
+  [class*='mdi'] {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

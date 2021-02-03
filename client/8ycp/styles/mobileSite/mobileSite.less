@@ -1,0 +1,102 @@
+@import '~clientResolver/index.less';
+
+.mobilePromote_container {
+  display: block;
+  text-align: center;
+  background-image: url('../../assets/image/mobileSite/bg8yi.png');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center center;
+  min-height: 574px;
+  overflow: auto;
+}
+
+.mobilePromote_article {
+  margin: 0 auto;
+  text-align: left;
+  color: @base-white;
+  width: @page-width;
+}
+
+.mobilePromote_headline {
+  color: inherit;
+  font-weight: light;
+  font-size: 3.75rem;
+  margin-top: @size-6;
+}
+
+.mobilePromote_paragraph {
+  display: table-row;
+  color: inherit;
+  font-size: 1.375rem;
+  margin-top: 1rem;
+
+  span,
+  .placeholder {
+    vertical-align: top;
+    display: table-cell;
+  }
+
+  .placeholder {
+    line-height: 1;
+
+    &::before {
+      content: '';
+      margin-top: 0.5rem;
+      margin-right: 1rem;
+      background-color: @base-white;
+      height: 2px;
+      width: 35px;
+      display: inline-block;
+    }
+  }
+}
+
+.mobilePromote_download {
+  float: left;
+  margin-top: @size-3;
+  text-align: center;
+
+  & ~ & {
+    margin-left: @size-8;
+  }
+}
+
+.mobilePromote_downloadLink {
+  line-height: 4rem;
+  border-radius: 2rem;
+  display: inline-block;
+  background-color: #fe5841;
+  padding: 0 @size-3 0 @size-0;
+  margin: 0 auto;
+
+  span {
+    vertical-align: middle;
+  }
+}
+
+.mobilePromote_linkIcon {
+  background-color: @base-white;
+  border-radius: 3.125rem / 2;
+  color: #fe5841;
+  display: inline-block;
+  font-size: 2em;
+  height: 3.125rem;
+  margin-right: @size-3;
+  line-height: 3.125rem;
+  vertical-align: middle;
+  width: 3.125rem;
+
+  &::before {
+    font-size: inherit !important;
+  }
+}
+
+.mobilePromote_linkDesc {
+  font-size: @size-2;
+  margin-top: @size-0;
+}
+
+.mobilePromote_qr {
+  margin-top: @size-5;
+}

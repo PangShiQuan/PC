@@ -1,0 +1,294 @@
+@import '~clientResolver/index.less';
+
+@keyframes scanner {
+  100% {
+    top: 109px;
+  }
+  0% {
+    top: 4px;
+  }
+}
+
+@-webkit-keyframes scanner {
+  100% {
+    top: 109px;
+  }
+  0% {
+    top: 4px;
+  }
+}
+@item-border: 10px;
+
+.wrapper {
+  margin: 0 @size-1;
+  position: fixed;
+  top: 35%;
+  z-index: 97;
+
+  &[data-float='left'] {
+    left: 0;
+  }
+  &[data-float='right'] {
+    right: 0;
+  }
+  @media screen and (max-width: 1440px) {
+    &[data-float='left'] {
+      margin-left: 0;
+    }
+    &[data-float='right'] {
+      margin-right: 0;
+    }
+  }
+}
+
+.floatingPanel {
+  -webkit-font-smoothing: antialiased !important;
+  background: @floatPanel-bg;
+  color: @floatPanel-color;
+  padding: @size-0;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: @shadow-dp6;
+  text-align: center;
+  .floatingPanelOverride;
+}
+
+.desc {
+  white-space: nowrap;
+}
+.QRCode_bracket {
+  margin: 0 auto;
+  img {
+    background-color: @base-white;
+    padding: @size-0;
+    margin: @size-0 / 2;
+  }
+}
+.QRCode {
+  margin-top: @size-0;
+  font-size: @size-1;
+
+  > * {
+    display: block;
+  }
+}
+
+.left-btn-1,
+.left-btn-0,
+.right-btn-0,
+.right-btn-1 {
+  display: block;
+  width: 8rem;
+  margin: @size-0 auto 0 auto;
+  font-size: @size-2;
+  letter-spacing: 2px;
+  line-height: @size-6;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+.left-btn-0,
+.right-btn-0 {
+  background: @floatPanel-btn-bg--top;
+  color: @floatPanel-btn-color--top;
+  border: @floatPanel-btn-border-color--top;
+
+  &:hover,
+  &:focus {
+    color: @floatPanel-btn-color--top;
+  }
+}
+.left-btn-1,
+.right-btn-1 {
+  background: @floatPanel-btn-bg--bottom;
+  color: @floatPanel-btn-color--bottom;
+  border: @floatPanel-btn-border-color--bottom;
+
+  &:hover,
+  &:focus {
+    color: @floatPanel-btn-color--bottom;
+  }
+}
+.left-icon-0,
+.left-icon-1,
+.right-icon-1,
+.right-icon-0 {
+  font-size: 1.5em;
+  margin-right: @size-0;
+  vertical-align: middle;
+}
+.closeBtn {
+  font-size: 10px;
+  letter-spacing: 2px;
+  line-height: @size-3;
+  width: 30%;
+  position: absolute;
+  padding: 0;
+  top: 0;
+  color: @text-color;
+  transform: translateY(-100%);
+  background: @closeBtn-bg;
+
+  [data-float='right'] & {
+    .closeBtnRightOverride;
+  }
+  [data-float='left'] & {
+    .closeBtnLeftOverride;
+  }
+  @media screen and (min-width: 1401px) {
+    .closeBtnOverride;
+  }
+}
+
+.QRCode_title {
+  color: @floatPanelTitle-color;
+}
+
+.QRCode_desc {
+  color: @floatPanelDesc-color;
+}
+
+.icon__svg {
+  max-height: 3em;
+
+  > * {
+    max-height: 4em;
+  }
+
+  path {
+    fill: @floatPanel-color;
+  }
+}
+
+.downScale {
+  display: none;
+}
+
+@media screen and (max-width: 1400px) {
+  .wrapper {
+    &[data-float='left'] {
+      .floatingPanel {
+        > :first-child {
+          border-top-right-radius: @item-border;
+        }
+        > :last-child {
+          border-bottom-right-radius: @item-border;
+        }
+      }
+    }
+    &[data-float='right'] {
+      .floatingPanel {
+        > :first-child {
+          border-top-left-radius: @item-border;
+        }
+        > :last-child {
+          border-bottom-left-radius: @item-border;
+        }
+      }
+    }
+  }
+
+  .closeBtn {
+    background: transparent;
+    bottom: 0;
+    top: unset;
+    transform: translateY(120%);
+    width: 100%;
+  }
+  .closeBtn_text {
+    background: @floatPanel-bg;
+    border-radius: 20px;
+    color: @floatPanelDesc-color;
+    display: block;
+    letter-spacing: 0;
+    margin: 0 auto;
+    padding: 8% 14%;
+    width: 40%;
+
+    + * {
+      display: none;
+    }
+  }
+
+  .floatingPanel {
+    &:not(:hover) {
+      border-radius: @item-border;
+      padding: 0;
+
+      .downScale {
+        display: block;
+        margin-top: 1px;
+      }
+
+      .downScale + *:not(.title) {
+        display: none;
+      }
+
+      .left-btn-1,
+      .left-btn-0,
+      .right-btn-0,
+      .right-btn-1,
+      .QRCode {
+        background: @floatPanel-bg;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        width: 4rem;
+      }
+
+      .left-icon-0,
+      .left-icon-1,
+      .right-icon-1,
+      .right-icon-0 {
+        margin: @size-0 / 2 0;
+      }
+
+      .desc {
+        color: @floatPanel-color;
+        font-size: @size-1;
+        letter-spacing: 0;
+        line-height: @size-5 + @size-0 / 2;
+        margin: 0;
+      }
+
+      > :not(:last-child)::after {
+        background-color: @floatPanel-color;
+        bottom: 0;
+        content: ' ';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+    &:hover {
+      > * {
+        border-radius: 0 !important;
+      }
+
+      & + .closeBtn {
+        display: none;
+      }
+    }
+  }
+}
+
+.scannerEffectBg {
+  position: relative;
+}
+
+.scannerEffect {
+  position: absolute;
+  background: url(../../assets/image/qrcode-light.png);
+  width: 117px;
+  height: 14px;
+  left: 0;
+  animation-name: scanner;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}

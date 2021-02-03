@@ -1,0 +1,75 @@
+@import './common.less';
+
+/* 
+** HEADER COMPONENT
+*/
+@header-bg: @base-white;
+
+@header-color: @base-white;
+
+@header-height: 1.875rem;
+
+/*
+** FLOAT_PANEL COMPONENT
+*/
+@floatPanel-bg: @base-white;
+
+@floatPanelTitle-color: #12b886;
+
+@floatPanelDesc-color: @base-black;
+
+@floatPanel-btn-bg--top: #ccf2ff;
+
+@floatPanel-btn-bg--bottom: #ccf2ff;
+
+@floatPanel-btn-color--top: @base-black;
+
+@floatPanel-btn-color--bottom: @base-black;
+
+@floatPanel-btn-border-color--top: 1px solid #00bfff;
+
+@floatPanel-btn-border-color--bottom: 1px solid #00bfff;
+
+.floatingPanelOverride {
+  border-radius: 0 0 0.5rem 0.5rem;
+  box-shadow: 0 6px 10px 0 rgba(67, 74, 100, 0.14),
+    0 1px 18px 0 rgba(67, 74, 100, 0.12), 0 3px 5px -1px rgba(67, 74, 100, 0.4);
+}
+.closeBtnOverride {
+  width: 100%;
+  transform: translateY(-95%);
+  color: @base-black;
+  font-size: 0.75rem;
+
+  &::before {
+    filter: drop-shadow(0 0 0.125rem black);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-bottom: @size-3 solid @base-white;
+    border-left: 1.25rem solid transparent;
+    border-right: 1.25rem solid transparent;
+    z-index: -1;
+  }
+}
+
+/*
+** BUTTONS COMPONENT
+*/
+
+@core-btn-color: @base-white;
+
+@core-btn-bg: #d50000;
+
+@core-btn-bg-hover: #d50000;
+
+@sub-btn-color: @base-black;
+
+@sub-btn-bg: @accent-color;
+
+@core-btn-border: none;
+
+@sub-btn-border: 2px solid darken(@accent-color, 5%);

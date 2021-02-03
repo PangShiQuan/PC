@@ -1,0 +1,156 @@
+@import './common.less';
+@import '~currentClientDir/variable/common.less';
+
+/*
+** HOME_PAGE COMPONENT
+*/
+@home-background: url('../assets/image/homepage-bg.png') repeat top left;
+
+@home-content--min-height: 1276px;
+
+@homepage-border-color: none;
+
+@quickAccessBarBtn-color: @first-color;
+
+@userBarIcon-color: @first-color;
+
+/*
+** CAROUSEL COMPONENT
+*/
+@carousel-height: 23.75rem;
+
+/*
+** NAVIGATION COMPONENT
+*/
+@navigation-bg: @primary-color;
+
+@navigation-list-bg: transparent;
+
+@navigation-color--disable: darken(@primary-color, 10%);
+@navigation-color--disable2: darken(@primary-color, 10%);
+
+@navigation-color: @base-white;
+@navigation-color2: @base-white;
+
+@navigation-color--active: @accent-color;
+@navigation-color--active2: @accent-color;
+
+@navigation-height: 2.625rem;
+
+@navigation-button-fontSize: @size-4;
+
+@navigation-button-fontSize2: 1rem;
+
+@navigation-profileNavRow-bg: transparent;
+
+@navigation-bg--selected: transparent;
+
+@navigation-subnav-color: inherit;
+
+@button-float: left;
+
+@navigation_promotion: url('../assets/image/featured_bg.png');
+
+.navigation__selected {
+}
+.navigationBefore_override {
+}
+.navigationAfter_override {
+}
+.listItem-override {
+}
+.nav-btn-override {
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border-width: 5px;
+    border-style: solid;
+    top: 50%;
+    transition-property: transform, border, height, width, top;
+    transition-duration: 0.25s;
+    transition-timing-function: @standard-curve-timing-function;
+  }
+  &::before {
+    left: 0;
+    border-color: transparent transparent transparent @navigation-color--active;
+    transform: translate(-5px, -5px);
+  }
+  &::after {
+    right: 0;
+    border-color: transparent @navigation-color--active transparent transparent;
+    transform: translate(5px, -5px);
+  }
+}
+.navigation-hover-selected-override {
+  &::before,
+  &::after {
+    transform: translate(0, -5px);
+  }
+}
+.navigation-selected-override {
+  &::before {
+    border-color: transparent @navigation-color--active transparent transparent;
+  }
+  &::after {
+    border-color: transparent transparent transparent @navigation-color--active;
+  }
+}
+
+/*
+** Card COMPONENT
+*/
+@featured-item-bgColor: transparent;
+
+@category-title-color: @base-white;
+
+@homePageHeader-background: none;
+
+@navigation-sidenavbackgroundcolor : none;
+
+@navColor: @first-color;
+
+@navWordColor: @base-white;
+
+@navigation-margin-top : 0;
+
+@navigation-word-color : none;
+
+@navigation-hover-word-color : none;
+
+@navigation-button-hover-color : @first-color;
+
+.mainFooter {
+}
+
+@homepage-title-display : block;
+
+@homepage-imageContent-display: block;
+
+@homePage-imageBtn-transform: skew(-10deg);
+
+@homePage-image-border: none;
+
+@homePage-image-borderRadius: 10px;
+
+@homePage-banner-border: none;
+
+@homePage-sideRow-border: none;
+
+@homePage-image-width: 216px;
+
+@caipiaoBtn-margintop: 10px;
+
+@dianziBtn-margintop: 10px;
+
+@qipaiBtn-margintop: 20px;
+
+@realisBtn-margintop: 20px;
+
+@tiyuBtn-margintop: 10px;
+
+@shinyHoverEffect: 100%;
+
+@shinyHoverEffectTransform: none;

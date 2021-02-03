@@ -1,0 +1,310 @@
+@import '~clientResolver/index.less';
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translateZ(0);
+  }
+  to {
+    transform: rotate(360deg) translateZ(0);
+  }
+}
+
+.quickAccessBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  justify-content: flex-end;
+}
+
+.quickAccessBarBtn {
+  border-radius: 6px;
+  font-size: @quickAccessBar;
+  position: relative;
+  color: @profile-quickAccessBar-color;
+  [class*='mdi'] {
+    margin-right: 3px;
+    font-size: 18px;
+    display: inline-block;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  &:first-child {
+    padding: 0 0 0 0;
+  }
+  &:last-child {
+    color: @profile-quickAccessBarIcon-color;
+  }
+  i {
+    display: inline-block;
+    line-height: 1.5em;
+    font-size: 14px;
+  }
+  &[disabled] {
+    color: @profile-label-color--disabled;
+    cursor: not-allowed;
+  }
+  &[data-logout='true'] {
+    width: 8rem;
+    color: @alert-color;
+    vertical-align: bottom;
+  }
+  &[data-Amount='true'] {
+    width: 11rem;
+    vertical-align: bottom;
+  }
+  &[data-betcenter='true'] {
+    background-color: @betcenter-quickAccessBar-bg;
+    color: @betcenter-quickAccessBar-color;
+
+    [class*='mdi'] {
+      color: @betcenter-quickAccessBarIcon-color;
+    }
+  }
+}
+.quickAccessBar_btnBubble {
+  background-color: red;
+  color: #fff;
+  position: absolute;
+  line-height: 15px;
+  font-size: 12px;
+  border-radius: 11px;
+  bottom: 10px;
+  left: 10px;
+  padding: 0 4px;
+}
+.quickAccessBarWallet {
+  .quickAccessBarBtn;
+}
+.quickAccessBarBtnWelcome {
+  &:hover {
+    .popover {
+      transform: scale(1, 1);
+    }
+  }
+  .quickAccessBarBtn;
+  [class*='mdi'] {
+    margin-right: 0;
+  }
+
+  margin: auto;
+  margin-right: 12px;
+  color: @quickAccessBarBtnWelcome-color;
+}
+.quickAccessBarBtnMsg {
+  .quickAccessBarBtn;
+
+  margin-right: 12px;
+  padding-left: 0;
+  padding-right: 0;
+  color: @quickAccessBarBtnMsg-color;
+  i {
+    padding-left: 7px;
+  }
+}
+.showWallet {
+  padding: 0 5px;
+  color: @topTray-color;
+  text-decoration: underline;
+  font-size: 14px;
+  cursor: pointer;
+}
+.showLogout {
+  color: @topTray-color;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.quickAccessBar_refreshIcon {
+  font-size: 1.5em;
+  display: inline-block;
+  line-height: 1;
+  color: @profile-quickAccessBarIcon-color;
+  -webkit-transform-origin: 50% 51%;
+  &[data-rotated='true'] {
+    animation: rotate infinite 1s @transition-timing;
+    animation-fill-mode: forwards;
+    cursor: not-allowed;
+  }
+  &[disabled] {
+    color: @profile-label-color--disabled;
+    cursor: not-allowed;
+  }
+}
+.quickAccessBar_balance {
+  display: inline-block;
+  font-size: 14px;
+  padding: 0 @size-0;
+  &[data-betcenter='true'] {
+    color: @betcenter-quickAccessBar-color;
+    [class*='mdi'] {
+      color: @betcenter-quickAccessBarIcon-color;
+    }
+  }
+}
+.quickAccessBarBtnLogout {
+  .quickAccessBarBtn;
+
+  padding-left: 0;
+  margin-right: 0;
+
+  [class*='mdi'] {
+    color: @quickAccessBarBtnWelcome-color;
+  }
+}
+.wrapAmount {
+  border-radius: 6px;
+  font-size: 12px;
+  padding: 0.2rem;
+  position: relative;
+  border: 1px solid @navigation-betcenter-button-background;
+  margin: auto 8px auto 0;
+}
+.labelMoney {
+  padding: 0 0.5rem;
+  font-size: 14px;
+}
+.quickAccessBarBtnMoney {
+  .quickAccessBarBtn;
+
+  border-radius: 6px;
+  margin: 2px 8px 2px 0;
+  font-size: 14px;
+  &[data-betcenter='true'] {
+    background-color: @navigation-betcenter-button-background;
+    color: @navigation-betcenter-button;
+  }
+
+  height: 30px;
+  width: 49px;
+  color: @navigation-betcenter-button;
+  background: @navigation-betcenter-button-background;
+  &:hover {
+    background: @navigation-betcenter-button-hover;
+  }
+}
+.quickAccessBarBtnChat {
+  .quickAccessBarBtn;
+
+  border-radius: 6px;
+  margin-right: 8px;
+  padding: 0 0.7rem;
+  font-size: 14px;
+  float: none;
+  height: 30px;
+  width: auto;
+  color: @quick-access-bar-btn-chat-color;
+  border: 1px solid @quick-access-bar-btn-chat-border-color;
+  background: @betcenter-register-button-color;
+
+  &:hover {
+    color: @betcenter-register-button-color-hover;
+    background: @register-button-color-hover;
+    border: 1px solid @register-button-color-hover;
+  }
+}
+
+.popover {
+  color: #000;
+  font-size: 12px;
+  position: absolute;
+  display: inline-block;
+  width: 261px;
+  height: 194px;
+  border-radius: 4px;
+  background-color: #fff;
+  left: -87px;
+  top: 150%;
+  vertical-align: top;
+  margin: 0 auto;
+  text-align: center;
+  float: none;
+  transform: scale(1, 0);
+  transform-origin: center top;
+  transition: transform 0.12s ease-in-out, background-color 0.1s ease-in-out;
+  z-index: 999;
+  &::before {
+    content: '';
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+    left: 50%;
+    bottom: 100%;
+    border-color: transparent transparent white;
+  }
+}
+
+.popoverTitle {
+  width: 260px;
+  height: 79px;
+}
+
+.popOverBg {
+  position: absolute;
+  left: 0;
+}
+
+.popOverProfilePic {
+  position: absolute;
+  left: 27px;
+  top: 19px;
+  width: 45px;
+}
+
+.accountUserName {
+  position: absolute;
+  width: 47px;
+  height: 16px;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0.4px;
+  color: #2f2f2f;
+  left: 35%;
+  top: 14%;
+}
+
+.popoverContent {
+  display: flex;
+  margin: 14px 18px;
+}
+
+.subPopoverContent {
+  flex: 1;
+}
+
+.popoverContentItem {
+  display: block;
+  margin: 0 0 10px;
+  i {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  &[disabled] {
+    color: @profile-label-color--disabled;
+    cursor: not-allowed;
+  }
+}
+
+.userIcon {
+  svg {
+    width: 20px;
+    padding: 0 5px 2px 0;
+    vertical-align: middle;
+
+    path {
+      fill: @quickAccessBarBtnWelcome-color;
+    }
+  }
+}
+
+.msgIcon {
+  svg {
+    width: 20px;
+    padding: 0 5px 2px 0;
+    vertical-align: middle;
+
+    path {
+      fill: @quickAccessBarBtnWelcome-color;
+    }
+  }
+}

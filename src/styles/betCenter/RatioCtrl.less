@@ -1,0 +1,68 @@
+@import '~clientResolver/index.less';
+
+.ratioCtrl {
+  color: @text-color;
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+  margin: @size-0 @size-0 0 0;
+}
+.ratioCtrl_paragraph {
+  display: flex;
+  font-size: @size-3;
+  margin-top: @size-0;
+}
+.ratioCtrl_rangeInput {
+  background-color: @betCenter-ratioCtrl-input-bg;
+  color: @betCenter-ratioCtrl-input-color;
+  border-color: @border-color--light;
+  border-radius: @ratioCtrl-rangeInput-border;
+  margin: @size-0 0 0 0;
+  padding: 0 @size-1;
+}
+.ratioCtrl_label {
+  background-color: @betCenter-ratioCtrl-label-bg;
+  color: @betCenter-ratioCtrl-label-color;
+  display: flex;
+  width: @size-7 + @size-0;
+  font-size: @size-1;
+  line-height: @size-5;
+  padding: 0 @size-0 / 2;
+  position: relative;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  &::after {
+    background-color: transparent;
+    border-color: transparent transparent transparent
+      @betCenter-ratioCtrl-label-border;
+    border-style: solid;
+    border-width: @size-5 / 2;
+    content: '';
+    display: inline-block;
+    height: @size-5;
+    left: 100%;
+    position: absolute;
+    top: 0;
+    width: @size-5;
+  }
+  .ratioCtrl_labelOverride;
+}
+.ratioCtrl_content {
+  background-color: @betCenter-ratioCtrl-content-bg;
+  color: @betCenter-ratioCtrl-content-color;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  text-align: left;
+  min-width: 0;
+  display: flex;
+  flex: 1;
+  line-height: @size-5;
+  padding: 0 @size-0 0 @size-5;
+  p {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ratioCtrl_content_override;
+}

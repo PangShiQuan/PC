@@ -1,0 +1,39 @@
+@import '~clientResolver/index.less';
+
+.profile_responseMessage {
+  font-size: @size-2;
+  padding: @size-0 @size-2;
+  color: @base-white;
+  text-align: left;
+  &[data-color='blue'] {
+    background-color: @blue-1;
+  }
+  &[data-color='red'] {
+    background-color: @red-1;
+  }
+  &[data-color='orange'] {
+    background-color: @orange-1;
+  }
+  &[data-color='yellow'] {
+    background-color: @yellow-1;
+  }
+  &[data-color='green'] {
+    background-color: #3edd82;
+  }
+
+  [class*='mdi'] {
+    font-size: 1.25em;
+    vertical-align: middle;
+    margin-right: @size-0;
+  }
+
+  [class*='mdi']:last-child {
+    margin-right: 0;
+  }
+
+  button:last-child {
+    float: right;
+    margin: 0;
+    padding: 0;
+  }
+}

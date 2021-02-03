@@ -1,0 +1,141 @@
+@import '~clientResolver/index.less';
+
+article {
+  background: white url('../../assets/image/mobileSite/bg123.png') top center
+    no-repeat / 100%;
+  min-width: @page-width;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  width: @page-width;
+  margin: auto;
+}
+
+.contentColumn {
+  width: 40%;
+  padding: 4rem 0 10rem 0;
+}
+
+.headline {
+  color: white;
+  font-size: 40px;
+  font-weight: light;
+}
+
+.spacer {
+  display: inline-block;
+  width: 60px;
+  height: 1px;
+  background: transparent;
+}
+
+.container .description {
+  margin: 0 @size-8;
+}
+
+.introBox {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.devices {
+  width: auto;
+  position: absolute;
+  right: -20px;
+  top: @size-3;
+}
+
+.downloadAnchor {
+  display: inline-block;
+  color: @base-white;
+  font-size: 20px;
+  margin: @size-0 auto;
+
+  i {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  [class*='mdi-'] {
+    font-size: 1.25em;
+    margin-right: @size-0 / 2;
+  }
+}
+
+.qrColumns {
+  float: left;
+  width: 50%;
+  margin-top: @size-3;
+}
+
+.qr {
+  display: inline-block;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 8px;
+  border: 1px solid white;
+}
+
+.QRcontainer {
+  overflow: auto;
+  text-align: center;
+  padding-bottom: @size-7;
+  padding-top: 0;
+
+  & .downloadBtn {
+    min-width: 220px;
+  }
+}
+
+.features {
+  overflow: auto;
+  color: #413534;
+  padding-bottom: @size-8 * 2;
+}
+
+.featureHeadline {
+  font-size: 38px;
+  position: relative;
+  margin-top: @size-8;
+  margin-bottom: @size-5;
+
+  & > * {
+    vertical-align: middle;
+  }
+
+  img {
+    margin-right: @size-3;
+  }
+
+  &::after {
+    content: '';
+    background-color: #ebebeb;
+    display: inline-block;
+    position: absolute;
+    height: 4px;
+    top: 50%;
+    width: 70%;
+    left: 30%;
+  }
+}
+
+.featureColumn {
+  float: left;
+  width: 25%;
+  padding-left: 90px;
+  background-position: center left;
+  background-size: 70px auto;
+  background-repeat: no-repeat;
+}
+
+.featureTitle {
+  font-size: 24px;
+}
+
+.featureDesc {
+  color: #7e7473;
+  margin-top: @size-3;
+  font-size: 18px;
+}

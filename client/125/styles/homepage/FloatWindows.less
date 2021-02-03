@@ -1,0 +1,277 @@
+@import '~clientResolver/index.less';
+
+@keyframes scanner {
+  100% {
+    top: 119px;
+  }
+  0% {
+    top: 0;
+  }
+}
+
+@-webkit-keyframes scanner {
+  100% {
+    top: 119px;
+  }
+  0% {
+    top: 0;
+  }
+}
+
+@item-background: @blue-1;
+@item-border: 10px;
+
+.wrapper {
+  margin: 0 @size-1;
+  position: fixed;
+  top: 21%;
+  z-index: 97;
+  &[data-float='left'] {
+    left: 0;
+  }
+  &[data-float='right'] {
+    right: 0;
+  }
+  @media screen and (max-width: 1400px) {
+    top: 35%;
+    &[data-float='left'] {
+      margin-left: 0;
+    }
+    &[data-float='right'] {
+      margin-right: 0;
+    }
+  }
+}
+
+.floatingPanel {
+  -webkit-backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased !important;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  padding: @size-0;
+  background-color: #fff;
+  border-bottom: 12px solid @first-dsf-color;
+  border-top: 12px solid @first-dsf-color;
+  border-left: 6px solid @first-dsf-color;
+  border-right: 6px solid @first-dsf-color;
+  text-align: center;
+}
+.QRCode {
+  background-color: @base-white;
+  margin-top: @size-0;
+  font-size: @size-1;
+
+  > * {
+    display: block;
+  }
+}
+.playBtn,
+.helpBtn,
+.onlineCSBtn,
+.qqBtn {
+  display: block;
+  width: 8rem;
+  margin-top: @size-0;
+  background: linear-gradient(#b44d48 50%, #e4443d 50%);
+  color: #fff;
+  font-size: @size-2;
+  letter-spacing: 2px;
+  line-height: @size-6;
+  text-align: center;
+  border-radius: 8px;
+  padding: 0 0;
+  &:hover,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.qqLogo,
+.csLogo,
+.playLogo,
+.helpLogo {
+  margin-right: @size-0;
+  font-size: 1.25em;
+  font-style: normal;
+  vertical-align: middle;
+}
+
+.closeBtn {
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 50%;
+  color: @first-dsf-color;
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  line-height: 1.25rem;
+  border: 1px solid @first-dsf-color;
+  position: absolute;
+  bottom: 6px;
+}
+
+.closeBtnSVG {
+  padding-bottom: 3px;
+}
+
+.closeWord {
+  position: absolute;
+  color: #fff;
+  word-break: keep-all;
+  margin-left: 10px;
+}
+
+.closeSection {
+  border-top: 33px solid @first-dsf-color;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  width: 103px;
+  margin: 0 auto;
+}
+
+.QRCode_title {
+  color: #000;
+  background-color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.QRCode_desc {
+  color: #000;
+  background-color: #fff;
+  font-size: 12px;
+}
+
+.desc {
+  padding-right: 8px;
+}
+
+.icon__svg {
+  max-height: 3em;
+
+  > * {
+    max-height: 4em;
+  }
+
+  path {
+    fill: @first-dsf-color;
+  }
+}
+
+.downScale {
+  display: none;
+}
+
+.downPicScale {
+  display: block;
+  @media screen and (max-width: 1400px) {
+    display: none;
+  }
+}
+
+.leftPic {
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1400px) {
+  .wrapper {
+    &[data-float='left'] {
+      .floatingPanel {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 0;
+        border: 1px solid @first-dsf-color;
+      }
+    }
+    &[data-float='right'] {
+      .floatingPanel {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 0;
+        border: 1px solid @first-dsf-color;
+      }
+    }
+  }
+
+  .floatingPanel {
+    &:not(:hover) {
+      .downScale {
+        display: block;
+        margin-top: 1px;
+      }
+
+      .downScale + *:not(.title) {
+        display: none;
+      }
+
+      .playBtn,
+      .helpBtn,
+      .onlineCSBtn,
+      .qqBtn {
+        margin: 0;
+        width: 5rem;
+        background: #fff;
+        padding: 0 0;
+        border: none;
+        border-bottom: 1px solid @first-dsf-color;
+        border-radius: 0;
+      }
+
+      .icon__svg {
+        margin: 0;
+        width: 5rem;
+        padding-top: 13px;
+      }
+
+      .QRCode {
+        background-color: #fff;
+        margin: 0;
+        width: 100%;
+      }
+
+      .downScale ~ .desc {
+        color: @first-dsf-color;
+        font-size: @size-1;
+        letter-spacing: 1px;
+        line-height: @size-6;
+        margin: 0;
+      }
+    }
+    &:hover {
+      & + .closeBtn {
+        display: none;
+      }
+    }
+  }
+}
+.allIcon {
+  svg {
+    width: 45px;
+    padding-right: 10px;
+    vertical-align: middle;
+    > path[class*='cls-1'] {
+      fill: @first-dsf-color;
+    }
+  }
+}
+
+.scannerEffectBg {
+  position: relative;
+}
+
+.scannerEffect {
+  position: absolute;
+  background: url(../../assets/image/qrcode-light.png);
+  width: 130px;
+  height: 14px;
+  left: -4px;
+  animation-name: scanner;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}

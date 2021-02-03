@@ -1,0 +1,33 @@
+@import '~styles/layout.less';
+
+@navigation-logo-width: 20%;
+
+.profileNavRow {
+  .row;
+
+  max-width: @page-width;
+  margin: 0 auto;
+  padding: @size-2 0;
+  background: @navigation-profileNavRow-bg;
+
+  &[data-logon='true'] {
+    background: none;
+
+    .listCol {
+      padding-right: 0;
+    }
+  }
+  > * {
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
+
+.logoCol {
+  width: @navigation-logo-width;
+}
+.listCol {
+  width: 100% - @navigation-logo-width;
+  text-align: right;
+  padding-right: 20%;
+}

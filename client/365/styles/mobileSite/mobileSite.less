@@ -1,0 +1,139 @@
+@import '~clientResolver/index.less';
+
+.mobilePromote_container {
+  display: block;
+  text-align: center;
+  background-color: @orange-3;
+  min-height: 574px;
+  overflow: auto;
+  background: url('../../assets/image/mobileSite/bg365.jpg') top left no-repeat;
+  background-size: cover;
+}
+
+.mobilePromote_article {
+  margin: @size-5 auto;
+  text-align: left;
+  width: @page-width;
+}
+
+.mobilePromote_headline {
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.mobilePromote_paragraph {
+  display: table-row;
+  color: inherit;
+  font-size: 1.375rem;
+  margin-top: 1rem;
+
+  span,
+  .placeholder {
+    vertical-align: top;
+    display: table-cell;
+  }
+
+  .placeholder {
+    line-height: 1;
+
+    &::before {
+      content: '';
+      margin-top: 0.5rem;
+      margin-right: 1rem;
+      background-color: @base-white;
+      height: 2px;
+      width: 35px;
+      display: inline-block;
+    }
+  }
+}
+
+.mobilePromote_downloadCol,
+.mobilePromote_deviceCol {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 48%;
+}
+
+.mobilePromote_device {
+  max-width: 100%;
+  margin: @size-3 auto;
+  position: relative;
+}
+
+.mobilePromote_downloads {
+  z-index: 1;
+  position: relative;
+}
+
+.mobilePromote_download {
+  display: inline-block;
+  margin-top: @size-3;
+  text-align: center;
+
+  & ~ & {
+    margin-left: @size-8;
+  }
+}
+
+.mobilePromote_downloadLink {
+  line-height: 3rem;
+  border-radius: @size-2;
+  display: inline-block;
+  color: @red-1;
+  background-color: @base-white;
+  padding: 0 @size-3 0 @size-0;
+  margin: 0 auto;
+  width: 100%;
+
+  span {
+    vertical-align: middle;
+  }
+
+  &:hover,
+  &:focus,
+  &:visited {
+    color: @red-1;
+  }
+}
+
+.mobilePromote_linkIcon {
+  display: inline-block;
+  font-size: 2em;
+  height: 34px;
+  margin-right: @size-3;
+  line-height: 34px;
+  vertical-align: middle;
+  width: 34px;
+
+  &::before {
+    font-size: inherit !important;
+  }
+}
+
+.mobilePromote_linkDesc {
+  font-size: @size-2;
+  margin-top: @size-0;
+}
+
+.mobilePromote_qr {
+  margin-top: @size-5;
+}
+
+.mobilePromote_footer {
+  background-color: @orange-1;
+  text-align: center;
+  padding: @size-0;
+}
+
+.mobilePromote_footerContent {
+  max-width: @page-width;
+  margin: 0 auto;
+
+  img {
+    width: auto;
+  }
+}

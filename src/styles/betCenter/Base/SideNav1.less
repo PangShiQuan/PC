@@ -1,0 +1,167 @@
+@import '~styles/layout.less';
+@import '~styles/general/scrollbar.less';
+@import '~clientResolver/index.less';
+
+@keyframes pouncing {
+  from {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.gameIcon {
+  height: @size-6;
+  width: @size-6;
+  display: inline-block;
+  max-width: none;
+  margin-right: @size-3;
+}
+
+.maintainanceIcon {
+  padding-left: 30px;
+  svg {
+    width: 18px;
+    vertical-align: middle;
+    > * path[class*='st0'] {
+      fill: @disabled-color;
+    }
+    > * g[class*='st1'] {
+      fill-opacity: 1;
+    }
+    > * path[class*='st3'] {
+      fill: @disabled-color;
+    }
+  }
+}
+
+.sideNav {
+  min-width: @nav-side-width;
+  box-shadow: @sideNav-boxShadow;
+  > div:last-child {
+    border-bottom: @sideNav-lastChild-borderBottom;
+  }
+}
+
+.typeIcon {
+  height: @size-5;
+  width: @size-5;
+  display: inline-block;
+}
+
+.hideMenu {
+  display: none;
+}
+
+.menuItem {
+  .clearfix;
+
+  font-size: @size-2;
+  background-color: @menuItem-bgColor;
+  border-top: 1px solid @menuItem-borderTopColor;
+  display: block;
+}
+
+.menuExpandToggle {
+  align-items: center;
+  background-color: @menuExpandToggle-bgColor;
+  letter-spacing: 1px;
+  color: @menuExpandToggle-Color;
+  display: flex;
+  font-size: inherit;
+  padding: @size-0 @size-3;
+  text-align: left;
+  width: 100%;
+  border-right: @menuExpandToggle-borderRight;
+
+  img,
+  span {
+    vertical-align: middle;
+  }
+  &:hover {
+    color: @menuExpandToggle-hover-Color;
+    .typeIcon {
+      animation: pouncing 0.4s infinite @transition-timing;
+    }
+  }
+  &:disabled {
+    cursor: default;
+  }
+}
+.subMenus {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s @transition-timing;
+
+  &[data-expanded='true'] {
+    .scrollbar(@button-color);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 50vh;
+    scrollbar-width: none;
+  }
+}
+.gameName {
+  color: inherit;
+  flex: 1;
+}
+.menuChevron {
+  font-size: @size-4;
+  color: @menuChevron-color;
+  transition: transform 0.25s @transition-timing;
+  &[data-rotated='true'] {
+    transform: rotate(180deg);
+  }
+}
+.subMenuItem {
+  display: block;
+  font-size: inherit;
+  height: @size-6 + (@size-0 * 2);
+  padding-left: @size-3;
+  text-align: left;
+  width: 100%;
+  transition: background-color 0.25s @transition-timing;
+  color: @subMenuItem-color;
+  background-color: @subMenuItem-bgColor;
+  border-top: @subMenuItem-borderColor;
+  // &:not(:last-child) {
+  //   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  // }
+  img,
+  span {
+    vertical-align: middle;
+  }
+  img {
+    border-radius: 50%;
+    box-shadow: @shadow-dp2;
+    transition: margin-left 0.25s @transition-timing;
+  }
+  &:hover {
+    color: @subMenuItem-hover-onlybgColor;
+  }
+  &[data-active='true'],
+  &:hover:not([disabled]) {
+    background-color: @subMenuItem-hover-bgColor;
+
+    img {
+      margin-left: @size-3;
+    }
+  }
+  &[disabled] {
+    cursor: default;
+    color: @subMenuItem-disabled-color;
+    &[data-active='true'] {
+      color: @subMenuItem-disabled-trueData-color;
+    }
+  }
+  [class*='mdi'] {
+    font-size: 1.5em;
+    margin-left: @size-3;
+  }
+}

@@ -1,0 +1,129 @@
+@import '~styles/layout.less';
+
+.sitemap {
+  background-color: @base-white;
+  &[data-sitemapbgcolor='white'] {
+    background-color: @sitemap-bgColor--white;
+  }
+  &[data-sitemapbgcolor='gray'] {
+    background-color: @sitemap-bgColor--gray;
+  }
+}
+.sitemap_body {
+  display: flex;
+  flex-direction: row;
+  padding: @size-3 0;
+  width: @page-width;
+  margin: 0 auto;
+}
+.sitemap_leftColumn {
+  width: @sitemap-panel-width;
+  margin-right: @size-0;
+}
+.sitemap_logo {
+  text-align: center;
+}
+.sitemap_rightRow {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+.sitemap_benefits {
+  .row;
+
+  margin-top: @size-0;
+}
+.sitemap_benefit {
+  font-size: @sitemap-benefit-fontSize;
+  color: @sitemap-color;
+  width: 50%;
+  float: left;
+}
+.sitemap_checkbox {
+  font-size: @size-4;
+  color: @accent-color;
+  margin-right: @size-0;
+}
+.sitemap_label {
+  font-size: @size-3;
+  line-height: 40px;
+  color: @text-color--light;
+}
+.sitemap_row {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+.sitemap_column {
+  display: flex;
+  flex: 1;
+  text-align: center;
+  padding: 0 @size-0;
+  border-left: 1px dashed @border-color;
+}
+.sitemap_columnBody {
+  display: flex;
+  width: 100%;
+  text-align: left;
+}
+.sitemap_list {
+  color: @text-color--light;
+  font-size: @size-1;
+}
+.sitemap_listItem {
+  padding-top: @size-0;
+}
+.sitemap_permalink {
+  color: inherit;
+}
+.sitemap_rightColumns {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+.sitemap_rightColumn {
+  display: flex;
+  flex: 1;
+  border-left: 1px dashed @border-color;
+  padding-left: @size-4;
+  flex-direction: column;
+}
+.sitemap_emptyMsg {
+  font-size: @size-1;
+  border-left: 1px dashed @border-color;
+  padding-left: @size-4;
+  flex: 3;
+}
+.sitemap_emtpyColumnMsg {
+  font-size: @size-1;
+  color: @sitemap-color;
+}
+.sitemap_rightColumnHeader {
+  font-size: @size-2;
+  letter-spacing: 1px;
+  color: @base-black;
+  margin-bottom: @size-0;
+}
+.sitemap_questions {
+  font-size: @size-1;
+  color: @sitemap-color;
+  text-align: left;
+  button {
+    text-align: inherit;
+  }
+  li {
+    margin-bottom: @size-0;
+  }
+}
+.sitemap_contact {
+  font-size: @size-1;
+  i,
+  a {
+    vertical-align: middle;
+  }
+
+  [class*='mdi'] {
+    font-size: @size-4;
+    margin-right: @size-0;
+  }
+}

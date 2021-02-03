@@ -1,0 +1,327 @@
+@import '~clientResolver/index.less';
+
+@keyframes scanner {
+  100% {
+    top: 109px;
+  }
+  0% {
+    top: 4px;
+  }
+}
+
+@-webkit-keyframes scanner {
+  100% {
+    top: 109px;
+  }
+  0% {
+    top: 4px;
+  }
+}
+
+@item-border: 10px;
+@floatPanel-bg-padding-top: 95px;
+
+.wrapper {
+  margin: 0 @size-1;
+  position: fixed;
+  top: 20%;
+  z-index: 97;
+
+  &[data-float='left'] {
+    left: 0;
+  }
+  &[data-float='right'] {
+    right: 0;
+  }
+  @media screen and (max-width: 1440px) {
+    &[data-float='left'] {
+      margin-left: 0;
+    }
+    &[data-float='right'] {
+      margin-right: 0;
+    }
+  }
+}
+.floatingPanel {
+  -webkit-font-smoothing: antialiased !important;
+  background: @floatContent-bg;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 @size-0 / 2;
+  border-radius: 0 0 @size-0 @size-0;
+  text-align: center;
+  padding-top: @floatPanel-bg-padding-top;
+}
+.floatWindowBg {
+  position: absolute;
+  transform: translate3d(-8px, -20%, 0);
+  z-index: -1;
+}
+.desc {
+  white-space: nowrap;
+}
+
+.shade {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  z-index: -1;
+}
+
+.banner_top {
+  color: @floatPanel-color;
+  font-size: @size-1;
+  padding: @size-0 / 2 @size-0;
+  display: block;
+  text-align: center;
+  margin-bottom: -@size-0 / 2;
+  position: relative;
+
+  &::before {
+    .shade;
+
+    left: 12.5%;
+    width: 75%;
+    border-bottom: 1.35rem solid @primary-color--dark;
+  }
+}
+
+.QRCode {
+  margin: @size-0 / 2 0;
+  border: @size-1 / 2;
+}
+
+.left-btn-0,
+.left-btn-1,
+.left-btn-2,
+.right-btn-0,
+.right-btn-1,
+.right-btn-2 {
+  display: block;
+  padding: @size-0 / 2;
+  background-color: transparent;
+  color: @base-white;
+  font-size: @size-2;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    color: @base-white;
+    text-decoration: none;
+  }
+}
+.left-icon-0,
+.left-icon-1,
+.left-icon-2,
+.right-icon-0,
+.right-icon-1,
+.right-icon-2 {
+  margin-right: @size-0;
+  font-size: 1.25em;
+  font-style: normal;
+  vertical-align: bottom;
+}
+.closeBtn {
+  padding: 0 @size-0 / 2;
+  position: absolute;
+  right: 25%;
+  top: 98%;
+  background: transparent;
+  font-size: 0.6rem;
+  width: 50%;
+  color: @base-white;
+  letter-spacing: 2px;
+  padding: 0.2rem;
+
+  > * {
+    vertical-align: unset;
+  }
+
+  @media screen and (min-width: 1401px) {
+    &::before {
+      .shade;
+
+      left: 0;
+      width: 100%;
+      border-top: 1.2rem solid @primary-color--dark;
+    }
+  }
+}
+
+.QRCode_bracket {
+  background: url('../../assets/image/floatWindow-qr-bg.png') left top no-repeat /
+    100% 100%;
+  margin: 0 auto;
+  img {
+    background-color: @base-white;
+    padding: @size-0;
+    margin: @size-0 / 2;
+  }
+}
+.QRCode_title,
+.QRCode_desc {
+  display: block;
+  color: @base-white;
+  font-size: @size-1;
+  line-height: @size-5;
+}
+.QRCode_title {
+  display: none;
+}
+
+.icon__svg {
+  max-height: 3em;
+
+  > * {
+    max-height: 4em;
+  }
+
+  path {
+    fill: @floatPanel-color;
+  }
+}
+
+.downScale {
+  display: none;
+}
+
+@media screen and (max-width: 1400px) {
+  .wrapper {
+    &[data-float='left'] {
+      .floatingPanel {
+        > :first-child {
+          border-top-right-radius: @item-border;
+        }
+        > :last-child {
+          border-bottom-right-radius: @item-border;
+        }
+      }
+    }
+    &[data-float='right'] {
+      .floatingPanel {
+        > :first-child {
+          border-top-left-radius: @item-border;
+        }
+        > :last-child {
+          border-bottom-left-radius: @item-border;
+        }
+      }
+    }
+  }
+
+  .banner_top {
+    display: none;
+  }
+
+  .closeBtn {
+    bottom: 0;
+    left: 0;
+    top: unset;
+    transform: translateY(100%);
+    width: 100%;
+  }
+  .closeBtn_text {
+    background: @navigation-list-bg;
+    border-radius: 20px;
+    color: @floatPanelDesc-color;
+    display: block;
+    letter-spacing: 0;
+    margin: 0 auto;
+    padding: 9% 14%;
+    width: 40%;
+
+    + * {
+      display: none;
+    }
+  }
+
+  .floatingPanel {
+    &:not(:hover) {
+      background: transparent !important;
+      border-radius: @item-border;
+      padding: @floatPanel-bg-padding-top * 0.875 0 0;
+
+      .downScale {
+        display: block;
+        margin-top: 1px;
+      }
+
+      .downScale + *:not(.title) {
+        display: none;
+      }
+
+      .left-btn-0,
+      .left-btn-1,
+      .left-btn-2,
+      .right-btn-0,
+      .right-btn-1,
+      .right-btn-2,
+      .QRCode {
+        background: @navigation-list-bg;
+        background-size: 100% 100%;
+        margin: 0;
+        padding: 0 @size-0 / 2;
+        position: relative;
+        width: 4rem;
+      }
+
+      .left-icon-0,
+      .left-icon-1,
+      .left-icon-2,
+      .right-icon-0,
+      .right-icon-1,
+      .right-icon-2 {
+        margin: @size-0 / 2 0;
+      }
+
+      .desc {
+        color: @floatPanel-color;
+        font-size: @size-1;
+        letter-spacing: 0;
+        line-height: @size-5 + @size-0 / 2;
+        margin: 0;
+      }
+
+      > :not(:last-child)::after {
+        background-color: @floatPanel-color;
+        bottom: 0;
+        content: ' ';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+    &:hover {
+      > * {
+        border-radius: 0 !important;
+      }
+
+      & + .closeBtn {
+        display: none;
+      }
+    }
+  }
+}
+
+.scannerEffectBg {
+  position: relative;
+}
+
+.scannerEffect {
+  position: absolute;
+  background: url(../../assets/image/qrcode-light.png);
+  width: 117px;
+  height: 14px;
+  left: 0;
+  animation-name: scanner;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}

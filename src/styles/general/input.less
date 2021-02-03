@@ -1,0 +1,44 @@
+@import '~clientResolver/index.less';
+
+.input_container {
+  max-width: 20rem;
+  margin-right: @size-0;
+}
+
+.input_wrapper {
+  font-size: @size-4;
+  border: 1px solid @border-color;
+  color: @text-color;
+  position: relative;
+}
+
+.input {
+  color: inherit;
+  font-size: inherit;
+  padding: 0 @size-0;
+}
+
+.input_msg {
+  position: absolute;
+  text-align: left;
+  font-size: @size-1;
+  opacity: 0;
+  transform: translate3d(0, -50%, 0);
+  transition-duration: 0.15s;
+  transition-property: opacity, transform;
+  transition-timing-function: @standard-curve-timing-function;
+  vertical-align: middle;
+  z-index: 0;
+}
+
+.input_msg__error {
+  color: @alert-color;
+}
+
+.input_msg__success {
+  color: @success-color;
+}
+
+.input_msg_content {
+  vertical-align: middle;
+}

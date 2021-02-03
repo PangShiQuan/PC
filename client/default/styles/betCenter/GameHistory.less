@@ -1,0 +1,150 @@
+@import '~styles/layout.less';
+@import '~styles/betCenter/RatioCtrl.less';
+
+.gameHistory {
+  .ratioCtrl;
+
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #f4f4f4;
+}
+
+.gameHistory_body {
+  .clearfix;
+
+  font-size: @size-1;
+  height: @size-5 * 9;
+  overflow: auto;
+  transition: height 0.15s @standard-curve-timing-function;
+  width: 100%;
+
+  &[data-collapse='true'] {
+    height: 0;
+  }
+}
+.gameHistory_openCodes {
+  display: flex;
+  flex-wrap: wrap;
+  padding: @size-0 / 3;
+  align-items: center;
+  flex: 1;
+  font-size: @size-1 * 0.75;
+  line-height: 2rem;
+  //padding: @size-0 / 2 0 @size-0 / 2 @size-0 / 2;
+}
+.gameHistory_openCodeDivider {
+  line-height: 1rem;
+  margin-bottom: @size-0 / 2;
+}
+.gameHistory_tableBodyRow {
+  display: flex;
+  flex-direction: row;
+  &:nth-child(even) {
+    .gameHistory_tableCell {
+      background-color: @tableRow-bgColor--even;
+    }
+  }
+}
+.gameHistory_tableHeaderRow {
+  display: flex;
+  flex-direction: row;
+  font-size: @size-1;
+  .gameHistory_tableCell {
+    color: @betCenter-game-history-header-color;
+    background-color: @betCenter-game-history-header-bg;
+  }
+}
+
+.gameHistory_tableCell {
+  display: flex;
+  color: @text-color;
+  line-height: @size-5;
+  background-color: @base-white;
+  padding: 0 @size-0;
+  align-items: center;
+  &:first-child {
+    flex: 1;
+  }
+  .gameHistory_tableFooterRow &,
+  .gameHistory_tableHeaderRow &:first-child {
+    flex: 1;
+  }
+  .gameHistory_tableHeaderRow &:last-child {
+    flex: 2;
+  }
+  .gameHistory_tableFooterRow &:nth-child(2) {
+    justify-content: center;
+  }
+  .gameHistory_tableFooterRow &:last-child {
+    justify-content: flex-end;
+  }
+  &:only-child {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.gameHistory_tableBody {
+  max-height: @size-5 * 9;
+  overflow: auto;
+  transition: max-height 0.15s @standard-curve-timing-function;
+
+  &[data-collapse='true'] {
+    max-height: 0;
+  }
+}
+.gameHistory_tableFooterRow {
+  display: flex;
+  flex-direction: row;
+  font-size: @size-1;
+  .gameHistory_tableCell:nth-child(2) {
+    text-align: center;
+  }
+}
+.gameHistory_tableFooterBtn {
+  line-height: @size-5;
+  i {
+    vertical-align: middle;
+  }
+  [class*='mdi'] {
+    line-height: 1;
+    font-size: @size-3;
+    margin-right: @size-0 / 2;
+    display: inline-block;
+  }
+}
+.gameHistory_tableChevronBtn {
+  .gameHistory_tableFooterBtn;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  &[data-collapse='true'] {
+    transform: rotate(180deg) translate(-50%, -50%);
+  }
+}
+.gameHistory_table {
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+  background-color: @base-white;
+  tr:nth-child(even) {
+    td {
+      background-color: @betCenter-game-history-td--even;
+    }
+  }
+  td {
+    height: @size-5;
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0 3px;
+    white-space: nowrap;
+    width: attr(width);
+
+    &:only-child {
+      text-align: center;
+    }
+  }
+}

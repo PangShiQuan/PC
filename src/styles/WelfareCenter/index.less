@@ -1,0 +1,61 @@
+@import '~styles/layout.less';
+
+.wrapper {
+  text-align: center;
+
+  .missionInstruction {
+    display: flex;
+    justify-content: flex-end;
+    width: 840px;
+    margin: 10px auto 0;
+
+    .instructionLinkButton {
+      padding: 8px 16px;
+      border-radius: @welfare-center-button-br;
+      color: @welfare-center-desc-color;
+      background-color: @welfare-center-instruction-button-bg;
+
+      &:hover {
+        color: @welfare-center-button-color;
+        background-color: @welfare-center-primary-color;
+      }
+    }
+  }
+
+  .container {
+    display: inline-block;
+    background-color: @welfare-center-bg;
+    width: 840px;
+    margin: 10px auto;
+    padding: 5px 10px;
+    border-radius: @welfare-center-container-br;
+
+    .navigation {
+      position: relative;
+      display: flex;
+      margin-bottom: 10px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-bottom: 1px solid fade(@welfare-center-font-color, 30%);
+      }
+
+      & > .nav_button {
+        padding-bottom: 6px;
+        margin: 10px 10px 0;
+        color: @welfare-center-font-color;
+        border-bottom: 1px solid transparent;
+        font-weight: bold;
+        z-index: 1;
+
+        &[data-active='true'],
+        &:hover {
+          border-bottom: 1px solid @welfare-center-font-color;
+        }
+      }
+    }
+  }
+}

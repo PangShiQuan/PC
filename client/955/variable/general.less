@@ -1,0 +1,88 @@
+@import './common.less';
+
+@page-mainLayout-bg: #111 url('../assets/image/background.png') top no-repeat;
+
+@page-mainLayout-bg-attachment: fixed;
+
+/*
+** HEADER COMPONENT
+*/
+@header-bg: transparent;
+
+@header-color: @base-white;
+
+@cards-header-color: @primary-color;
+
+@header-color--disabled: @primary-color--light;
+
+@header-height: 1.875rem;
+
+@marquee-icon-size: 1.875rem;
+
+@marquee-bg: #262626;
+
+@marquee-icon-color: @accent-color;
+
+@marquee-color: @base-white;
+
+/*
+** FOOTER COMPONENT
+*/
+@footer-bgColor--white: @base-white;
+
+@footer-bgColor--gray: @bg-gray--light;
+
+@footer-bgColor--black: rgba(17, 17, 17, 0.75);
+
+@footer-color: @base-black;
+
+@footerBorderTop: 2px solid #706143;
+
+/*
+** FLOAT COMPONENT
+*/
+
+@floatContent-bg: url('../assets/image/flowWindowBg.png') top 12% center / 100%
+  100%;
+
+@floatPanel-bg: transparent;
+
+@loadingBar-loading-bg: @primary-color--light;
+
+.login_guestRegisterBtn-override {
+  min-height: 2rem;
+  min-width: 7rem;
+  color: #ffc353;
+  border: 1px solid #ffc353;
+  background: black;
+  &:hover {
+    color: #1e1f23;
+    border: none;
+    background: linear-gradient(
+      to left,
+      @accent-color--light 0%,
+      @accent-color 50%,
+      @accent-color--dark 100%
+    );
+  }
+}
+.login-button-override {
+  float: none;
+  min-height: 2rem;
+  min-width: 7rem;
+  color: #1e1f23;
+  border: 1px solid #15084c;
+  box-shadow: 1px 3px 12px 1px @base-black;
+  background: @button-color;
+  &:hover {
+    background: #b20000;
+  }
+}
+.pageLoading_Loading_override {
+  -webkit-box-shadow: 2px 2px 2px #080819;
+  box-shadow: 2px 2px 2px #080819;
+}
+
+.pageLoading_LoadingBar {
+  margin-left: 30px;
+}

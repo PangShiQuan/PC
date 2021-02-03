@@ -1,0 +1,107 @@
+@import '~styles/layout.less';
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@icon-size: @marquee-icon-size;
+
+.marquee_row {
+  .pageWidth;
+
+  width: 100%;
+  padding-left: @icon-size;
+  padding-right: @marquee-icon-size-rightPadding;
+  margin: 0 auto;
+  display: inline-block;
+  height: @marquee-height;
+  text-align: left;
+  background: @marquee-bg;
+  position: relative;
+  color: @marquee-color;
+}
+
+.marquee_Cs {
+  font-size: inherit;
+  text-align: left;
+}
+
+.marquee {
+  display: inline-block;
+  font-size: @size-2;
+  height: @marquee-height;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  top: @marquee-topRatio;
+}
+
+.marquee_body {
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  display: inline-block;
+  font-size: inherit;
+  left: 0;
+  position: absolute;
+  height: @marquee-height;
+  top: 0;
+  width: 100%;
+
+  &:hover {
+    animation-play-state: paused;
+    .marquee_content {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.marquee_content {
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  display: inline-block;
+  left: 100%;
+  line-height: @marquee-content-lineheight;
+  min-width: 100%;
+  overflow: visible;
+  position: absolute;
+  text-align: left;
+  text-decoration: none;
+  top: 0;
+  white-space: nowrap;
+  width: auto;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  span:not(:last-child) {
+    margin-right: @size-9;
+  }
+}
+
+.marquee_icon {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: @marquee-icon-color;
+  display: inline-block;
+  font-size: @size-4;
+  left: 0;
+  line-height: @icon-size;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: @icon-size;
+  &[ispromotions='true'] {
+    color: grey;
+  }
+}

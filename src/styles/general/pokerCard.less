@@ -1,0 +1,100 @@
+@import '~clientResolver/index.less';
+
+.pokerCards {
+  display: inline-block;
+  line-height: 1;
+  position: relative;
+  vertical-align: middle;
+  & ~ & {
+    margin-left: @size-0;
+  }
+}
+
+.pokerCard {
+  display: inline-block;
+  min-height: 1px;
+  min-width: 1px;
+  position: relative;
+  background-color: @base-white;
+  border-radius: 4px;
+  box-shadow: @shadow-dp4;
+  color: @text-color;
+
+  & ~ & {
+    margin-left: -10%;
+  }
+
+  &[data-symbol='200'],
+  &[data-symbol='400'] {
+    color: @alert-color;
+  }
+}
+
+.pokerCard_num {
+  top: 10%;
+  left: 10%;
+}
+.pokerCard_symbols {
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+  left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pokerCard_symbol {
+  right: 25%;
+  bottom: 10%;
+  .pokerCard_symbols & {
+    font-size: 0.5em;
+    position: relative;
+    display: flex;
+    margin-top: 0.25em;
+  }
+}
+
+.pokerCard_num,
+.pokerCard_symbol {
+  &[data-color='red'] {
+    color: #e4393c;
+  }
+
+  color: inherit;
+  position: absolute;
+  display: inline-block;
+  line-height: 1;
+  font-size: inherit;
+  height: 1em;
+  width: 1em;
+
+  &::before {
+    font-size: inherit;
+    color: inherit;
+  }
+  &:only-child {
+    font-size: 1.5em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.pokerCard_method {
+  bottom: 10%;
+  color: inherit;
+  font-size: 0.75em;
+  font-weight: bold;
+  height: auto;
+  line-height: 1;
+  position: absolute;
+  right: 10%;
+  width: 1em;
+  word-break: break-all;
+
+  & ~ .pokerCard_num,
+  & ~ .pokerCard_symbol {
+    top: 10%;
+    left: 10%;
+  }
+}

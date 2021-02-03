@@ -1,0 +1,86 @@
+@import './common.less';
+
+@page-mainLayout-bg: none;
+
+@page-mainLayout-bg-attachment: fixed;
+
+@navigation-bg-all: transparent;
+
+/*
+** HEADER COMPONENT
+*/
+@header-bg: linear-gradient(to bottom, #303030, #111111);
+
+@header-color: @base-white;
+
+@cards-header-color: @primary-color;
+
+@header-color--disabled: @primary-color--light;
+
+@header-height: 38px;
+
+@marquee-icon-size: 5rem;
+
+@marquee-icon-size-rightPadding: 5rem;
+
+@marquee-bg: url('../assets/image/marqueBannerxxcp.png') no-repeat center / 100%;
+
+@marquee-icon-color: @accent-color;
+
+@marquee-color: @base-white;
+
+@marquee-height: 38px;
+
+@marquee-topRatio: 10%;
+
+/*
+** FOOTER COMPONENT
+*/
+@footer-bgColor--white: @base-white;
+
+@footer-bgColor--gray: @bg-gray--light;
+
+@footer-bgColor--black: rgba(17, 17, 17, 0.75);
+
+@footer-color: @base-black;
+
+/*
+** FLOAT COMPONENT
+*/
+
+@floatPanel-bg: transparent;
+
+@loadingBar-loading-bg: @primary-color--light;
+
+.login_guestRegisterBtn-override {
+  min-height: 2rem;
+  min-width: 7rem;
+  color: #efe87a;
+  border: 1px solid #15084c;
+  background: linear-gradient(
+    to bottom,
+    @primary-color--light 0%,
+    @primary-color 50%,
+    @primary-color--dark 100%
+  );
+}
+.login-button-override {
+  float: none;
+  min-height: 2rem;
+  min-width: 7rem;
+  color: @base-white;
+  border: 1px solid #15084c;
+  box-shadow: 1px 3px 12px 1px @base-black;
+  background: radial-gradient(
+    ellipse at center,
+    @accent-color--light 0%,
+    @accent-color 50%,
+    @accent-color--dark 100%
+  );
+}
+.pageLoading_Loading_override {
+  -webkit-box-shadow: 2px 2px 2px #080819;
+  box-shadow: 2px 2px 2px #080819;
+}
+
+@index-body-color: black;

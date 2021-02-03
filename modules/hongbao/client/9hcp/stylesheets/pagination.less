@@ -1,0 +1,85 @@
+@import './var.less';
+
+/**
+* CSS themes for simplePagination.js
+* Author: Flavius Matis - http://flaviusmatis.github.com/
+* URL: https://github.com/flaviusmatis/simplePagination.js
+*/
+
+ul {
+  &.simple-pagination {
+    list-style: none;
+  }
+}
+
+.simple-pagination {
+  text-align: right;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+}
+
+.simple-pagination ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  float: right;
+}
+
+.simple-pagination li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+span.ellipse.clickable {
+  cursor: pointer;
+}
+
+.ellipse input {
+  width: 3em;
+}
+
+.history-pagination {
+  span {
+    cursor: pointer;
+  }
+  a,
+  span {
+    float: left;
+    color: @brown;
+    font-size: 0.85rem;
+    line-height: 1.5rem;
+    font-weight: normal;
+    text-align: center;
+    min-width: 0.85rem;
+    padding: 0.25rem 1rem;
+    margin: 0 0.25rem 0.25rem 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  a:hover,
+  li:not(.disabled):not(.active) span:hover {
+    text-decoration: none;
+    &:not(.ellipse) {
+      background: @antique-white;
+    }
+  }
+  .current {
+    //background: #ccc;
+    border: 1px solid #e62323;
+    color: #f50b0b;
+    border-radius: 4px;
+    cursor: default;
+  }
+  .ellipse {
+    color: #ddd;
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-weight: bold;
+    cursor: default;
+  }
+}

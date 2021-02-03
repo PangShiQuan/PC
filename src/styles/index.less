@@ -1,0 +1,181 @@
+@import '~clientResolver/index.less';
+
+/* normalize */
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: @font-size / 1 sans-serif;
+  font-family: @font-family;
+}
+
+body {
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: inherit;
+  font-family: @font-family !important;
+  [class*='geetest'] {
+    box-sizing: content-box;
+  }
+
+  background: @index-body-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+figure,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+main,
+li {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: inherit;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a,
+input,
+button {
+  outline: 0;
+  &:hover,
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+}
+a,
+button {
+  transition: none;
+  color: inherit;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    color: inherit;
+  }
+  &[disabled] {
+    pointer-events: initial;
+  }
+}
+
+button {
+  overflow: visible;
+  border: 0;
+  font: inherit;
+  -webkit-font-smoothing: inherit;
+  letter-spacing: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+input {
+  border: 0;
+  outline: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+i {
+  font-style: normal;
+}
+
+td {
+  &[data-align='left'] {
+    text-align: left;
+  }
+  &[data-align='right'] {
+    text-align: right;
+  }
+  &[data-align='center'] {
+    text-align: center;
+  }
+}
+
+::moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+:focus {
+  outline: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+*[title*='站长统计'] {
+  position: fixed;
+  z-index: -99;
+  left: 99999999;
+  bottom: 99999999;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  color: rgba(255, 255, 255, 0);
+}
+
+// ::-webkit-scrollbar {
+// 	width: 0;
+// 	display: 'none';
+// }
+
+// /* Track */
+
+// ::-webkit-scrollbar-track {
+// 	background: transparent;
+// }
+
+// /* Handle */
+
+// ::-webkit-scrollbar-thumb {
+// 	background: transparent;
+// 	display: none;
+// }
+
+// ::-webkit-scrollbar-thumb:window-inactive {
+// 	background: transparent;
+// 	display: none;
+// }

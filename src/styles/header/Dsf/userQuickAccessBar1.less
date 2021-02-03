@@ -1,0 +1,71 @@
+@import '~clientResolver/index.less';
+
+.quickAccessBar {
+  margin: auto;
+}
+.quickAccessBarBtn {
+  border-radius: 6px;
+  font-size: @profile-quickAccessBar-fontSize;
+  height: @button-height;
+  padding: 0 @size-2;
+  position: relative;
+  color: @profile-quickAccessBar-color;
+  [class*='mdi'] {
+    margin-right: @size-0;
+    font-size: 1.5em;
+    display: inline-block;
+    line-height: 1;
+    color: @profile-quickAccessBarIcon-color;
+  }
+  &:last-child {
+    color: @profile-quickAccessBarIcon-color;
+  }
+  i {
+    display: inline-block;
+    line-height: 1.5em;
+    vertical-align: middle;
+  }
+  &[disabled] {
+    color: @profile-label-color--disabled;
+    cursor: not-allowed;
+  }
+  &:not(:last-child)::after {
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    width: 1px;
+    right: 0;
+    top: @size-0;
+    bottom: @size-0;
+    left: auto;
+    background-color: @bg-gray--light;
+  }
+  &[data-logout='true'] {
+    width: 8rem;
+    color: @alert-color;
+    vertical-align: bottom;
+  }
+  &[data-Amount='true'] {
+    width: 11rem;
+    vertical-align: bottom;
+  }
+  &[data-betcenter='true'] {
+    background-color: @betcenter-quickAccessBar-bg;
+    color: @betcenter-quickAccessBar-color;
+
+    [class*='mdi'] {
+      color: @betcenter-quickAccessBarIcon-color;
+    }
+  }
+}
+.quickAccessBar_btnBubble {
+  background-color: red;
+  color: white;
+  position: absolute;
+  line-height: 22px;
+  font-size: 14px;
+  border-radius: 11px;
+  top: 0;
+  left: @size-0 / 2;
+  padding: 0 8px;
+}

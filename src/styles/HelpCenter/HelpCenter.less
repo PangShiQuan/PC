@@ -1,0 +1,117 @@
+@import '~styles/layout.less';
+
+.helpCenter {
+  background: @helpCenter-bg;
+  display: inline-block;
+  min-height: 40rem;
+  width: 100%;
+}
+.helpCenter_header {
+  background: @helpCenter-header-bg;
+  font-size: @size-1;
+  line-height: @size-6;
+}
+.helpCenter_loading {
+  margin: 0;
+  margin-bottom: @size-4 / 2;
+  background-color: @bg-gray--light;
+}
+.helpCenter_body {
+  .pageWidth;
+
+  margin: @size-3 auto;
+}
+.helpCenter_sideNav {
+  margin-right: @size-3;
+}
+.helpCenter_sideNavBtn {
+  display: block;
+  width: 100%;
+  margin-bottom: @size-0;
+  padding: @size-0 @size-3;
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: @base-white;
+  box-shadow: @shadow-dp2;
+  color: @primary-color;
+  font-size: @size-2;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &[data-active='true'] {
+    background-color: @primary-color;
+    box-shadow: @shadow-dp0;
+    color: @base-white;
+  }
+}
+.helpCenter_title {
+  margin-bottom: @size-0;
+  padding-bottom: @size-0;
+  border-bottom: 1px solid @border-color;
+  font-size: @size-4;
+}
+.helpCenter_emtpyMsg {
+  color: @text-color--light;
+}
+.helpCenter_contents {
+  display: flex;
+}
+.helpCenter_content {
+  width: 100%;
+  padding: @size-3;
+  background-color: @base-white;
+
+  [class~='ant-collapse-header'] {
+    font-weight: bold;
+  }
+  [class~='ant-collapse-content-active'] {
+    border-top: none !important;
+
+    [class~='ant-collapse-content-box'] {
+      padding: @size-1 0;
+    }
+  }
+}
+.helpCenter_question {
+  margin-bottom: @size-0;
+  color: @base-black;
+  font-weight: 600;
+  cursor: pointer;
+}
+.helpCenter_answers {
+  table {
+    display: table;
+    max-width: 100%;
+    border-collapse: collapse;
+    border: 1px solid @border-color;
+  }
+  td {
+    border-right: 1px solid @border-color;
+    border-bottom: 1px solid @border-color;
+  }
+  img {
+    max-width: 100%;
+  }
+  ul,
+  ol {
+    margin-bottom: @size-0;
+    padding-left: @size-4;
+  }
+  ul {
+    list-style: initial;
+  }
+  ol {
+    list-style: decimal;
+  }
+  li {
+    display: list-item;
+  }
+  p {
+    margin-bottom: @size-0;
+  }
+  a {
+    color: @primary-color;
+    text-decoration: underline;
+  }
+}

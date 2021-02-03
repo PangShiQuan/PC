@@ -1,0 +1,221 @@
+@import '~clientResolver/index.less';
+@import '../variables.less';
+
+.content {
+  color: rgba(0, 0, 0, 0.65);
+  border-bottom: 1px solid @gray-3;
+  padding-top: 15px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.tab {
+  font-size: @size-3;
+  font-weight: bolder;
+  padding-bottom: 15px;
+
+  & ~ .tab {
+    margin-left: @size-6;
+  }
+  &[data-checked='true'] {
+    color: @first-color;
+    border-bottom: 2px solid @first-color;
+  }
+  &[data-checked='false'] {
+    &:hover {
+      color: @gray-3;
+      border-bottom: 2px solid @gray-3;
+    }
+  }
+}
+
+.input {
+  margin: @size-3 0;
+  display: inline-block;
+  font-weight: normal;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.label {
+  font-size: @size-2;
+  padding-right: 10px;
+}
+
+.inputField {
+  border: 1px solid rgb(211, 211, 211);
+  width: 50px;
+  height: 30px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.profile_radioBtn {
+  font-size: @size-2;
+  color: @gray-1;
+  height: @button-height;
+  i {
+    display: inline-block;
+    font-size: @size-4;
+    margin-right: @size-0 / 2;
+  }
+  &[data-checked='true'] {
+    i {
+      color: @first-color;
+    }
+  }
+  &[disabled] {
+    color: @gray-2;
+    i {
+      color: @gray-4;
+    }
+  }
+}
+
+.buttonPlan {
+  vertical-align: none;
+  height: 30px;
+  margin-left: 20px;
+  border-radius: 5px;
+  &[disabled] {
+    background-color: @disabled-color;
+  }
+}
+
+.tableHeaders {
+  border: 1px solid @base-black;
+  background-color: @gray-4;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+.tableHeader {
+  color: darken(@gray-2, 5%);
+  font-weight: bold;
+  height: 1.95rem;
+  padding-top: 0.2rem;
+  background-color: @gray-4;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid @base-black;
+
+  &:nth-last-child(1) {
+    border-right: none;
+  }
+}
+
+.tableBody_NoData {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid @gray-3;
+  border-top: none;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.confirmText {
+  font-size: @size-2;
+  margin-top: @size-4;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.result {
+  color: @red-1;
+  font-weight: normal;
+}
+
+.action {
+  width: 120px;
+  height: 40px;
+  background-color: @gray-4;
+  border-radius: 5px;
+  color: @gray-1;
+  font-weight: normal;
+  transform: translateX(-22.5vw);
+
+  &:not([disabled]):hover {
+    background-color: @first-color;
+    color: @base-white;
+  }
+}
+
+.tableTd {
+  text-align: center;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.betPlanModelFooter {
+  [class~='ant-modal-header'] {
+    background-color: @first-color;
+    * {
+      color: @base-white;
+      font-size: @size-4;
+    }
+  }
+  [class~='ant-modal-close-x'] {
+    color: @base-white;
+  }
+
+  [class~='ant-modal-footer'] {
+    background-image: none;
+    border-top: 1px solid #e8e8e8;
+    padding: 10px 16px;
+    border-radius: 0 0 4px 4px;
+    text-align: right;
+  }
+}
+
+.betPlanlist {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid @gray-3;
+  border-top: none;
+}
+
+.totalBetPlanList {
+  max-height: 20rem;
+  overflow: auto;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.betCenter_notificationBtn {
+  font-size: @size-2;
+  color: @base-white;
+  border-radius: 6px;
+  background-color: @red-1;
+  height: @button-height;
+  padding: 0 @size-0;
+  position: relative;
+  overflow: hidden;
+  span {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  &::before {
+    content: '';
+    background-color: darken(@red-1, 10%);
+    top: 0;
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    right: 100%;
+    animation: countDown 7s 1 ease;
+  }
+}
+
+.inputFieldMultiplyDiv {
+  display: inline-block;
+  text-align: center;
+}
+
+.inputFieldMultiply {
+  border: 1px solid rgb(211, 211, 211);
+  width: 50px;
+  height: 30px;
+  text-align: center;
+}

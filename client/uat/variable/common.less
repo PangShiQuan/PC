@@ -1,0 +1,99 @@
+@import '../../general.less';
+
+/*
+** FONTS
+*/
+@font-size: 16px;
+
+@font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica,
+  '\5FAE\8F6F\96C5\9ED1', Arial, sans-serif;
+
+@font-family-courier: 'Courier New', Courier, 'Lucida Sans Typewriter',
+  'Lucida Typewriter', monospace;
+
+/*
+** COLORS PALLETE
+*/
+//  base colors
+
+@text-color: #4c4c4c;
+
+@text-color--light: #9a9a9a;
+
+@text-color--disabled: #ccc;
+
+/*
+** BRANDS
+*/
+@logo: url('../assets/image/logo.png');
+
+// general colors
+@white-1: #faf7f7;
+
+// core brand colors
+@primary-color--light: #8559da;
+
+@primary-color: #512da8;
+
+@primary-color--dark: #140078;
+
+@accent-color--light: #ffd95a;
+
+@accent-color: #f9a825;
+
+@accent-color--dark: #c17900;
+
+@bg-gray--light: #f2f2f2;
+
+@bg-gray: @text-color--light;
+
+@bg-gray--dark: #434343;
+
+// indication colors
+@indicate-color: #2f8fff;
+
+@success-color--light: #80e27e;
+
+@success-color: #4caf50;
+
+@alert-color--light: #ff6f60;
+
+@alert-color: #e53935;
+
+@alert-color--dark: #ab000d;
+
+// html based colors
+@anchor-color: @primary-color;
+
+@anchor-color--light: @indicate-color;
+
+@border-color: @text-color--light;
+
+@border-color--light: #d9d9d9;
+
+@border-color--accent: @accent-color;
+
+@shadow-color: @text-color;
+
+@tableRow-bgColor--even: @bg-gray--light;
+
+@tableHeader-bg: @primary-color;
+
+//  custom sizes
+@button-height: @size-6;
+
+@btn-bg: @primary-color;
+
+/*
+ *  MISC
+*/
+.shadowInitial(@shadow-color);
+
+// transition
+@deceleration-curve-timing-function: cubic-bezier(0, 0, 0.2, 1);
+
+@standard-curve-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+@acceleration-curve-timing-function: cubic-bezier(0.4, 0, 1, 1);
+
+@sharp-curve-timing-function: cubic-bezier(0.4, 0, 0.6, 1);

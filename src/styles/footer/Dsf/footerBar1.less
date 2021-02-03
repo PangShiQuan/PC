@@ -1,0 +1,67 @@
+@import '~clientResolver/index.less';
+
+.footer {
+  background-color: @bg-gray--light;
+  color: @footer-color;
+  text-align: center;
+  border-top: @footerBorderTop;
+  border-top: 1px solid @homepage-border-color;
+
+  &[data-disclaimerbgcolor='white'] {
+    background: @footer-bgColor--white;
+    background-size: cover;
+  }
+  &[data-disclaimerbgcolor='black'] {
+    background: @footer-bgColor--black;
+    background-size: cover;
+    color: @base-white;
+  }
+}
+.footer_content {
+  width: 100%;
+  margin: 0 auto;
+  padding: @size-2 0;
+  position: relative;
+  font-size: @size-2;
+  overflow: auto;
+  p {
+    margin-bottom: 6px;
+  }
+}
+.footer_partners {
+  margin-bottom: @size-2;
+}
+.footerImgs {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: @size-0;
+  li {
+    display: inline-block;
+    margin-right: @size-0;
+    width: 120px;
+    height: 45px;
+    line-height: 30px;
+    background: url('assets/image/footerImgs.png') no-repeat 0 0;
+    &:nth-child(2) {
+      background-position: 0 -47px;
+    }
+    &:nth-child(3) {
+      background-position: 0 -94px;
+    }
+    &:nth-child(4) {
+      background-position: 0 -141px;
+    }
+    &:nth-child(5) {
+      background-position: 0 -188px;
+    }
+  }
+}
+
+.mainFooter {
+  &[data-pathname='mobilesite'] {
+    position: relative;
+  }
+}

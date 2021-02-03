@@ -1,0 +1,235 @@
+@import '~clientResolver/index.less';
+
+@alternate-color: #fafafa;
+
+.table_container {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.table {
+  border-bottom: 1px solid #f2f2f2;
+  width: 100%;
+  background-color: #fff;
+
+  thead {
+    background-color: @alternate-color;
+    border-bottom: 1px solid #f2f2f2;
+    color: #828282;
+
+    button {
+      margin: 0;
+      padding: 0;
+
+      [class*='mdi'] {
+        font-size: @size-3;
+        vertical-align: sub;
+      }
+
+      [class*='mdi-chevron'] {
+        font-size: @size-4;
+      }
+
+      [class*='mdi-arrow'],
+      [class*='mdi-close'] {
+        vertical-align: initial;
+      }
+
+      .search_icon_active {
+        &::before {
+          z-index: 1;
+          color: #fff;
+          position: relative;
+        }
+        &::after {
+          background-color: #666;
+          border-radius: @size-2;
+          content: '';
+          height: 1.5rem;
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          transition-property: transform;
+          transition-duration: 0.15s;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transform-origin: center center;
+          width: 1.5rem;
+          z-index: 0;
+          transform: translate3d(-50%, -50%, 0) scale(1);
+        }
+      }
+
+      .close_icon_inactive {
+        display: none;
+      }
+    }
+
+    .search_button {
+      position: relative;
+      margin-right: @size-0;
+    }
+  }
+
+  tbody tr:nth-child(2n) {
+    background-color: @alternate-color;
+  }
+
+  tbody tr {
+    &[data-lastRow='true'] {
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    [class*='mdi'] {
+      vertical-align: initial;
+    }
+  }
+
+  tr td {
+    text-align: center;
+    height: 40px;
+    padding: 0 5px;
+
+    &[data-align='right'] {
+      text-align: right;
+    }
+
+    &.status_column {
+      &[data-color='grey'] {
+        color: #828282;
+      }
+
+      &[data-color='red'] {
+        color: #ff5028;
+      }
+    }
+
+    &[data-color='red'] {
+      color: #ff5028;
+    }
+
+    .link {
+      color: @profile-body-color;
+    }
+  }
+
+  .table_total_row {
+    td {
+      font-weight: bold;
+      border-top: 3px double @profile-body-color;
+      border-bottom: 1px solid @profile-body-color;
+    }
+  }
+
+  .action_button {
+    border-radius: 4px;
+    border: 1px solid #ec9b31;
+    color: #ec9b31;
+    margin: 0 5px;
+  }
+}
+
+.table_alternate {
+  .table;
+
+  border-top: 1px solid #f2f2f2;
+  background-color: @alternate-color;
+
+  tbody tr:nth-child(2n) {
+    background-color: #fff;
+  }
+}
+
+.sort_icon {
+  svg {
+    width: 4.5px;
+    vertical-align: middle;
+    margin: 0 1.5px 3px;
+
+    path {
+      fill: #828282;
+      stroke: none;
+    }
+    rect {
+      fill: #828282;
+      stroke: none;
+    }
+    ellipse {
+      fill: #828282;
+      stroke: none;
+    }
+    circle {
+      fill: #828282;
+      stroke: none;
+    }
+  }
+}
+
+.sort_icon_active {
+  .sort_icon;
+
+  svg {
+    path {
+      fill: #292929;
+      stroke: none;
+    }
+    rect {
+      fill: #292929;
+      stroke: none;
+    }
+    ellipse {
+      fill: #292929;
+      stroke: none;
+    }
+    circle {
+      fill: #292929;
+      stroke: none;
+    }
+  }
+}
+
+.pagination {
+  text-align: right;
+  margin-top: 27px;
+
+  span[class*='ant-select-arrow'] {
+    top: 55%;
+  }
+}
+
+.dropdown_menu {
+  background-color: @base-white;
+  box-shadow: @shadow-dp4;
+  overflow: auto;
+  border-radius: 4px;
+  max-height: 38vh;
+
+  .dropdown_item {
+    line-height: @button-height;
+    padding: 0 @size-0;
+    font-size: inherit;
+    display: block;
+    width: 100%;
+    position: relative;
+    transition-property: background-color, color;
+    transition-duration: 0.15s;
+    transition-timing-function: @standard-curve-timing-function;
+    &[disabled] {
+      color: @profile-label-color--disabled;
+    }
+    &[data-active='true'],
+    &[data-checked='true'] {
+      color: @profile-body-color;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: auto;
+      height: 1px;
+      left: @size-0;
+      right: @size-0;
+      bottom: 0;
+      background-color: @bg-gray--light;
+    }
+  }
+}

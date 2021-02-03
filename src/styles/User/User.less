@@ -1,0 +1,145 @@
+@import '~clientResolver/index.less';
+
+.content_body {
+  background-color: #fff;
+  color: #000;
+  margin-top: 7px;
+  font-size: @size-2;
+  padding: 16px 11px;
+}
+
+.popUp_content_body {
+  .content_body;
+
+  padding: 16px 52px;
+}
+
+.orderRecord_shareButton {
+  .shareIcon {
+    svg {
+      width: 1rem;
+      vertical-align: bottom;
+
+      path,
+      circle {
+        fill: @profile-primary-color;
+        stroke: @profile-primary-color;
+      }
+    }
+  }
+}
+
+.orderRecord_sharePopUp {
+  animation: popDown 0.15s 1 @standard-curve-timing-function;
+  animation-fill-mode: forwards;
+  background-color: @bg-gray--light;
+  border-radius: 20px;
+  padding: 1.75rem;
+}
+
+.orderRecord_sharePopUp_confirmation {
+  .orderRecord_sharePopUp;
+
+  padding: 2.38rem 1rem 1rem;
+}
+
+.shareModel_popUpCloseBtn {
+  color: @profile-primary-color;
+  font-size: @size-2;
+  position: absolute;
+  z-index: 999;
+  right: 5px;
+  top: 8px;
+
+  [class*='mdi'] {
+    font-size: @size-4;
+    margin-left: @size-0;
+  }
+  i {
+    vertical-align: middle;
+  }
+}
+
+.shareTitle {
+  text-align: center;
+  margin-bottom: 1.75rem;
+  font-size: @size-3;
+  font-weight: bold;
+
+  &[data-confirmation='true'] {
+    margin-bottom: 2.44rem;
+  }
+}
+
+.roomContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  .room {
+    margin-bottom: 1.13rem;
+    border-radius: 6px;
+    width: 16rem;
+    height: 2.56rem;
+    color: @profile-primary-color;
+    border: 1px solid @profile-primary-color;
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: @base-white;
+      background: @profile-primary-color;
+
+      .roomIcon {
+        path:not(:first-child) {
+          stroke: @base-white;
+        }
+      }
+    }
+
+    .roomIcon {
+      svg {
+        width: 1rem;
+        margin-right: 6px;
+        vertical-align: bottom;
+
+        path:not(:first-child) {
+          stroke: @profile-primary-color;
+        }
+      }
+    }
+  }
+}
+
+.buttonContainer {
+  text-align: center;
+}
+.cancelButton {
+  border-radius: 0.5rem;
+  margin-right: 1.25rem;
+  width: 6.94rem;
+  height: 2.19rem;
+  color: @profile-primary-color;
+  border: @profile-primary-color solid 1px;
+
+  &:hover {
+    color: @base-white;
+    background: @profile-primary-color;
+  }
+}
+.confirmButton {
+  .cancelButton;
+
+  margin-right: 0;
+  color: @base-white;
+  background: @profile-primary-color;
+}
+
+.orderRecord_shareChatRoomModal {
+  [class*='ant-modal-content'] {
+    border-radius: 20px;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,31 @@
+@import '~styles/layout.less';
+
+.profileNavRow {
+  .row;
+
+  max-width: @page-width;
+  margin: 0 auto;
+  padding: @size-2 0;
+  background: none;
+
+  &[data-logon='true'] {
+    background: none;
+
+    .listCol {
+      padding-right: 0;
+    }
+  }
+  > * {
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
+
+.logoCol {
+  float: left;
+}
+.listCol {
+  margin-top: 10px;
+  float: right;
+  text-align: right;
+}

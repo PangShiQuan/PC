@@ -1,0 +1,209 @@
+@import '~clientResolver/index.less';
+
+@result-color-red: #e75167;
+@result-color-orange: #ff9800;
+@result-color-green: #2ecc71;
+
+.lottery_color {
+  background-color: @lottery-bgColor--default;
+  color: @lottery-colorWording;
+
+  &[data-color] {
+    color: @base-white;
+  }
+  &[data-color='red'] {
+    background-color: @lottery-bgColor--red;
+  }
+  &[data-color='blue'] {
+    background-color: @lottery-bgColor--blue;
+  }
+  &[data-color='green'] {
+    background-color: @lottery-bgColor--green;
+  }
+  &[data-color='none'] {
+    background-color: @lottery-bgColor--none;
+  }
+}
+.lottery_color(highlight) {
+  background-color: @lottery-bgColor--default;
+  background-image: linear-gradient(
+    145deg,
+    lighten(@lottery-bgColor--default, 35%) 0%,
+    lighten(@lottery-bgColor--default, 25%) 30%,
+    lighten(@lottery-bgColor--default, 15%) 60%,
+    @lottery-bgColor--default 100%
+  );
+  color: @base-white;
+
+  &[data-color='red'] {
+    background-color: @lottery-bgColor--red;
+    background-image: linear-gradient(
+      145deg,
+      lighten(@lottery-bgColor--red, 30%) 0%,
+      lighten(@lottery-bgColor--red, 20%) 30%,
+      lighten(@lottery-bgColor--red, 10%) 60%,
+      @lottery-bgColor--red 100%
+    );
+  }
+  &[data-color='blue'] {
+    background-color: @lottery-bgColor--blue;
+    background-image: linear-gradient(
+      145deg,
+      lighten(@lottery-bgColor--blue, 30%) 0%,
+      lighten(@lottery-bgColor--blue, 20%) 30%,
+      lighten(@lottery-bgColor--blue, 10%) 60%,
+      @lottery-bgColor--blue 100%
+    );
+  }
+  &[data-color='green'] {
+    background-color: @lottery-bgColor--green;
+    background-image: linear-gradient(
+      145deg,
+      lighten(@lottery-bgColor--green, 15%) 0%,
+      lighten(@lottery-bgColor--green, 10%) 30%,
+      lighten(@lottery-bgColor--green, 5%) 60%,
+      @lottery-bgColor--green 100%
+    );
+  }
+  &[data-color='none'] {
+    background-color: @lottery-bgColor--none;
+    background-image: none;
+  }
+
+  .gameHeader_openNumber_override;
+}
+.lottery_size(@size) {
+  min-width: @size;
+  height: @size;
+  line-height: @size;
+}
+
+.lottery {
+  border-radius: @size-4;
+  display: inline-block;
+  text-align: center;
+  margin: 0 @size-0 / 2 @size-0 / 2 0;
+  font-size: @size-1;
+
+  .lottery_color;
+  .lottery_size(@size-5);
+}
+.lottery__size {
+  color: @base-black;
+}
+
+.lottery__s {
+  &:extend(.lottery);
+
+  .lottery_color;
+  .lottery_size(16px);
+
+  font-size: 12px;
+}
+
+.lottery__highlight {
+  &:extend(.lottery);
+
+  .lottery_color(highlight);
+  .lottery_size(@size-6);
+
+  animation: dropdown 0.3s 1 @standard-curve-timing-function;
+  font-size: @size-3;
+  font-weight: 600;
+}
+
+.lotterys_symbolicName {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: @text-color;
+  font-size: inherit;
+  line-height: inherit;
+}
+.cqssc_lotterys_symbolicName {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: @text-color;
+  font-size: 12px;
+  line-height: inherit;
+}
+
+.lotterys_elementName {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  color: @text-color;
+  font-size: inherit;
+  line-height: inherit;
+
+  &[data-result='METAL'] {
+    color: #d7ad00;
+  }
+  &[data-result='WOOD'] {
+    color: #11c511;
+  }
+  &[data-result='WATER'] {
+    color: #0d79e5;
+  }
+  &[data-result='FIRE'] {
+    color: #fd6500;
+  }
+  &[data-result='EARTH'] {
+    color: #984705;
+  }
+}
+
+.drawNo_redBg {
+  background-color: @result-color-red;
+  border-radius: 1.25rem;
+  display: inline-block;
+  text-align: center;
+  margin: 0 0.15rem;
+  font-size: 0.75rem;
+  color: #fff;
+  line-height: 1.25rem;
+  height: 1.25rem;
+  min-width: 1.25rem;
+}
+
+.drawNo_orangeBg {
+  .drawNo_redBg;
+
+  background-color: @result-color-orange;
+}
+
+.drawNo_greenBg {
+  .drawNo_redBg;
+
+  background-color: @result-color-green;
+}
+
+.drawNo_red {
+  color: @result-color-red;
+  font-size: 0.875rem;
+  margin: 0 3pt;
+  display: inline-block;
+}
+
+.drawNo_orange {
+  .drawNo_red;
+
+  color: @result-color-orange;
+}
+
+.drawNo_green {
+  .drawNo_red;
+
+  color: @result-color-green;
+}
+
+.gameHistory_drawNo_red {
+  color: @result-color-red;
+}
+
+.gameHistory_drawNo_orange {
+  color: @result-color-orange;
+}

@@ -1,0 +1,91 @@
+@import '../../general.less';
+@import './base.less';
+
+/*
+** FONTS
+*/
+@font-size: 16px;
+
+@font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica,
+  '\5FAE\8F6F\96C5\9ED1', Arial, sans-serif;
+
+@font-family-courier: 'Courier New', Courier, 'Lucida Sans Typewriter',
+  'Lucida Typewriter', monospace;
+
+/*
+** BRANDS
+*/
+@logo: url('../assets/image/logo.png');
+
+@text-color: #4c4c4c;
+
+@text-color--light: #9a9a9a;
+
+@text-color--disabled: #ccc;
+// core brand colors
+@primary-color--light: #fe4a5c;
+
+@primary-color: #f10219;
+
+@primary-color--dark: #ae0112;
+
+@accent-color--light: #fe9245;
+
+@accent-color: #fd6b02;
+
+@accent-color--dark: #db5d02;
+
+@bg-gray--light: #f5f5f5;
+
+@bg-gray: #ededed;
+
+@bg-gray--dark: #434343;
+
+// indication colors
+@indicate-color: #0f365e;
+
+@success-color--light: #77e34c;
+
+@success-color: #51cb20;
+
+@alert-color--light: #fe3a3a;
+
+@alert-color: #f30101;
+
+@alert-color--dark: #c00101;
+
+// html based colors
+@anchor-color: @primary-color;
+
+@anchor-color--light: #2f8fff;
+
+@border-color: @text-color--light;
+
+@border-color--light: #d9d9d9;
+
+@border-color--accent: @accent-color;
+
+@shadow-color: #4c4c4c;
+
+@tableRow-bgColor--even: @bg-gray--light;
+
+@tableHeader-bg: @primary-color--light;
+
+// custom sizes
+@button-height: @size-6;
+
+@btn-bg: @primary-color;
+
+/*
+** MISC
+*/
+.shadowInitial(@shadow-color);
+
+// transition
+@deceleration-curve-timing-function: cubic-bezier(0, 0, 0.2, 1);
+
+@standard-curve-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+@acceleration-curve-timing-function: cubic-bezier(0.4, 0, 1, 1);
+
+@sharp-curve-timing-function: cubic-bezier(0.4, 0, 0.6, 1);

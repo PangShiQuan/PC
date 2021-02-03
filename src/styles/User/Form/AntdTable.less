@@ -1,0 +1,106 @@
+@import '~clientResolver/index.less';
+
+.table {
+  [class*='ant-table-body'] {
+    overflow: auto;
+  }
+
+  ul[class*='ant-table-pagination'] {
+    margin-top: 27px;
+  }
+
+  table thead th {
+    text-align: center;
+
+    [class*='ant-table-column-sorter-up'] {
+      &:hover,
+      &[class*='on'] {
+        [class*='anticon anticon-caret-up'] {
+          color: #292929;
+        }
+      }
+    }
+
+    &:first-child {
+      border-top-left-radius: 0 !important;
+    }
+
+    [class*='anticon-caret-up']::before {
+      content: '\e644';
+      transform: rotate(270deg);
+      font-size: 23px;
+      margin-top: 6px;
+      font-weight: bold;
+    }
+
+    [class*='ant-table-column-sorter-down'] {
+      margin-left: 5px;
+      margin-top: -6px;
+
+      &:hover,
+      &[class*='on'] {
+        [class*='anticon anticon-caret-down'] {
+          color: #292929;
+        }
+      }
+    }
+
+    [class*='anticon-caret-down']::before {
+      content: '\e644';
+      transform: rotate(90deg);
+      font-size: 23px;
+      margin-top: -12px;
+      font-weight: bold;
+    }
+
+    span {
+      color: #828282;
+      font-weight: normal;
+    }
+  }
+
+  table tbody tr {
+    text-align: center;
+    background-color: #fff;
+
+    &:hover > td {
+      background: none;
+    }
+  }
+
+  table thead th,
+  table tbody td {
+    padding: 0 5px;
+    height: 40px;
+    white-space: nowrap;
+  }
+
+  table tbody > tr[class*='appendBGcolor'] {
+    > td,
+    &:hover > td {
+      background-color: #fafafa;
+    }
+  }
+
+  table tbody tr[class*='ant-table-expanded-row'] > td,
+  table tbody tr[class*='ant-table-expanded-row']:hover > td {
+    padding: 0;
+    // nested table
+    table th {
+      border-top: 1px solid fade(@profile-button-color, 20%);
+      border-bottom: 1px solid fade(@profile-button-color, 20%);
+      background-color: fade(@profile-button-color, 2%);
+    }
+
+    table tbody tr[class*='ant-table-row-level-0']:nth-child(2n) > td {
+      background-color: fade(@profile-button-color, 2%);
+    }
+  }
+
+  .info_icon {
+    [class*='mdi'] {
+      vertical-align: initial;
+      margin-left: 2px;
+    }
+  }
+}

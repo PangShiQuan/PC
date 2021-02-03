@@ -1,0 +1,65 @@
+@import './common.less';
+
+@bg-transition-color-1: lighten(@footer-bgColor--black, 1.5%);
+@bg-transition-color-2: lighten(@footer-bgColor--black, 2.5%);
+@bg-transition-color-3: lighten(@footer-bgColor--black, 3.5%);
+@page-mainLayout-bg: url('../assets/image/background.png') top center no-repeat;
+@page-mainLayout-bg-size: cover;
+@page-mainLayout-bg-color: none;
+
+/* ** HEADER COMPONENT */
+@header-bg: transparent;
+@header-color: @base-white;
+@header-height: 1.875rem;
+@marquee-icon-size: 1.875rem;
+@marquee-bg: #4e496e;
+@marquee-icon-color: #f4d869;
+@marquee-color: @base-white;
+
+/* ** FOOTER COMPONENT */
+@floatContent-bg: url('../assets/image/floatWindowBg.png') center top / 100%
+  100%;
+@floatContent-bg--right: url('../assets/image/floatWindowBg-right.png') center
+  top / 100% 100%;
+@floatPanel-bg: transparent;
+
+@footer-bgColor--black: #0d0737;
+@login-body-align: center;
+@loadingBar-loading-bg: @primary-color--light;
+.login_guestRegisterBtn-override {
+  min-height: 2rem;
+  min-width: 7rem;
+  color: #efe87a;
+  border: 1px solid #15084c;
+  background: linear-gradient(
+    to bottom,
+    #a2527b 0%,
+    #8f3e74 25%,
+    #6b3265 50%,
+    #451e56 75%,
+    #2f1649 100%
+  );
+}
+.login-button-override {
+  float: none;
+  min-height: 2rem;
+  min-width: 7rem;
+  color: @base-white;
+  border: 1px solid #15084c;
+  box-shadow: 1px 3px 12px 1px @base-black;
+  background: radial-gradient(
+    ellipse at center,
+    #784f7c 0%,
+    #6c4677 25%,
+    #5b3a6f 35%,
+    #4c2f66 50%,
+    #2f1a56 75%,
+    #15093e 100%
+  );
+}
+.pageLoading_Loading_override {
+  -webkit-box-shadow: 2px 2px 2px #080819;
+  box-shadow: 2px 2px 2px #080819;
+}
+
+@page-mainLayout-bg-attachment: fixed;

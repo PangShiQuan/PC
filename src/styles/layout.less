@@ -1,0 +1,34 @@
+@import '~clientResolver/index.less';
+
+.clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.row {
+  .clearfix;
+
+  display: block;
+}
+
+.column {
+  .clearfix;
+
+  float: left;
+  width: auto;
+}
+
+.pageContainer {
+  display: block;
+  width: 70rem;
+  margin: 0 auto;
+}
+
+.pageWidth(@max: @page-width) {
+  min-width: @page-min-width;
+  max-width: @max;
+  margin: 0 auto;
+}

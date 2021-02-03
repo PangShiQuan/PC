@@ -1,0 +1,345 @@
+@import '~styles/layout.less';
+@import './ProfileIndex1.less';
+@import '../ProfileTable.less';
+
+.teamReport_filter {
+  .clearfix;
+
+  // display: flex;
+  width: 100%;
+  // margin: @size-1 auto;
+  font-size: @size-2;
+  line-height: @size-2;
+  [class='ant-input'] {
+    padding: 0;
+  }
+  [class*='ant-calendar-range-picker-separator'],
+  [class*='ant-calendar-range-picker-input'] {
+    vertical-align: middle;
+  }
+
+  margin-top: 1.2rem;
+}
+
+.teamReport_dateRangePicker {
+  // margin: 0 0 0 7.5rem;
+  float: right;
+}
+
+.teamReport_gamePlatformSelect {
+  width: @size-3*14;
+}
+
+.teamReport_SubPageButton {
+  border: 0;
+  background-color: @base-white;
+  color: @text-color;
+  font-size: @size-2;
+  &:hover {
+    background-color: @profile-primary-color;
+    color: @base-white;
+  }
+  &[data-active='true'] {
+    background-color: @profile-primary-color;
+    color: @base-white;
+  }
+}
+
+.teamReport_SubPageButtonOuter {
+  .clearfix;
+
+  float: right;
+}
+
+.teamReport_filterDate {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.teamReport_filterLabel {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.teamReport_searchBox {
+  width: 500px;
+  display: inline-block;
+}
+
+.teamReport_searchInput {
+  background-color: transparent;
+  border-bottom: 1px solid @border-color;
+  margin: 0 @size-0;
+  [class*='mdi'] {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.teamReport_searchBtnDiv {
+  display: inline-block;
+}
+.teamReport_searchBtn {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.25em;
+
+  .svg_icon_search {
+    svg {
+      width: 1.35rem;
+      margin-bottom: -6px;
+      margin-right: 5px;
+
+      path {
+        fill: #828282;
+        stroke: none;
+      }
+      rect {
+        fill: #828282;
+        stroke: none;
+      }
+      ellipse {
+        fill: #828282;
+        stroke: none;
+      }
+      circle {
+        fill: #828282;
+        stroke: none;
+      }
+    }
+  }
+}
+
+.teamReport_gamePlatformSelect {
+  margin: 0 @size-3*2 0 @size-3*2;
+  width: @size-3*10;
+}
+
+.teamReport_filter_div {
+  margin-bottom: 20px;
+}
+
+.teamReport_gamePlatformTab {
+  width: @size-8;
+  height: 2.5rem;
+  border-color: @primary-color--light;
+  border-style: solid;
+  border-radius: 0.25rem 0.25rem 0 0;
+  background-color: @profile-primary-color;
+  color: @base-white;
+  font-size: @size-1;
+  vertical-align: middle;
+  &:not(:only-child) {
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+    }
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+    }
+  }
+  &:not(:last-child) {
+    border-right-width: 1px;
+  }
+  &:hover {
+    background-color: @profile-primary-color;
+  }
+  &[data-active='true'] {
+    background-color: @profile-btn-bg-active;
+  }
+  &:disabled {
+    // cursor: wait;
+    cursor: pointer;
+  }
+}
+
+.teamReport_gamePlatformTabOuter {
+  display: inline-block;
+  border-bottom: 1px solid @profile-primary-color;
+}
+
+.teamReport_value {
+  color: inherit;
+  &[data-negative='true'] {
+    color: @alert-color;
+  }
+}
+
+.teamReport_detailsBtn {
+  color: @profile-primary-color;
+  i {
+    font-size: @size-2;
+  }
+}
+
+.teamReport_subTableOuter {
+  width: 100%;
+  margin: @size-0 @size-0 @size-0 0;
+  padding-left: @size-3;
+  [class*='ant-table-row-level-0']:last-of-type {
+    td {
+      font-weight: normal;
+    }
+  }
+}
+
+.teamReport_personalReportModal {
+  width: 8rem;
+  [class*='ant-table-row'] {
+    background-color: @base-white;
+    &:hover {
+      td {
+        background-color: @base-white;
+      }
+    }
+  }
+  [class*='ant-pagination'][class*='ant-table-pagination'] {
+    .profile_tablePagination;
+  }
+}
+
+.teamReport_downLineReportModal {
+  width: 8rem;
+  [class*='ant-table-row'] {
+    background-color: @base-white;
+    &:hover {
+      td {
+        background-color: @base-white;
+      }
+    }
+  }
+  [class*='ant-pagination'][class*='ant-table-pagination'] {
+    .profile_tablePagination;
+  }
+}
+
+.teamReport_searchUserInput {
+  display: flex;
+  span {
+    padding-top: @size-0;
+  }
+  input {
+    width: 11rem;
+    // height: 2rem;
+    // margin-left: @size-0;
+    // padding-top: @size-0;
+    // border: 1px solid #d9d9d9;
+    background-color: @profile-primary-color;
+    font-size: @size-1;
+  }
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: @base-white;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: @base-white;
+  }
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    color: @base-white;
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: @base-white;
+  }
+}
+.teamReport_searchInputClearBtn {
+  visibility: hidden;
+  // margin: 0 0 @size-1 @size-0/2;
+  font-size: @size-3;
+  &[data-visible='true'] {
+    visibility: visible;
+  }
+}
+
+.teamReport_link {
+  color: @profile-body-color;
+}
+
+.teamReport_detailBtns {
+  min-width: 3.5rem;
+}
+
+.teamReport_personalReportBtn {
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  font-size: 0.65rem;
+}
+
+.teamReport_columnDatetime {
+  [class*='ant-table-tbody'] tr td {
+    width: 3.5rem;
+  }
+  [class*='ant-table-thead'] tr th {
+    width: 3.5rem;
+  }
+}
+
+.teamReport_downlineReportBtn {
+  margin: 0.25rem 0.5rem 0.25rem 0;
+}
+
+.teamReport_mainTableOuter {
+  [class*='ant-table-thead'],
+  [class*='ant-table-tbody'] {
+    font-size: 0.75rem;
+  }
+}
+
+.teamReport_columnGameName {
+  min-width: 4rem;
+  text-align: left;
+}
+.teamReport_personalReportTable {
+  margin-top: @size-3;
+}
+.teamReport_downlineReportTable {
+  margin-top: @size-6;
+}
+.teamReport_personalReportTitle {
+  color: @base-black;
+  font-size: 14px;
+  font-weight: 500;
+}
+.teamReport_downlineReportTitle {
+  color: @base-black;
+  font-size: 14px;
+  font-weight: 500;
+}
+.teamReport_columnTitle {
+  .profile_columnTitle;
+}
+.teamReport_columnAmount {
+  .profile_columnAmount;
+}
+.teamReport_mediumLong {
+  .profile_columnMediumLong;
+}
+.teamReport_medium {
+  .profile_columnMedium;
+}
+.teamReport_mediumShort {
+  .profile_columnShortMedium;
+}
+.teamReport_long {
+  .profile_columnLong;
+}
+.teamReport_extraLong {
+  .profile_columnExtraLong;
+}
+.teamReport_short {
+  .profile_columnShort;
+}
+.teamReport_bold {
+  .profile_columnBold;
+}
+.teamReport_columnDetailBtn {
+  [class*='ant-table-tbody'] tr td {
+    width: 12rem;
+  }
+
+  width: 14rem;
+}
+.teamReport_ToolTip {
+  font-size: @size-3;
+  margin-left: @size-0;
+}

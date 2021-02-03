@@ -1,0 +1,111 @@
+@import '~styles/layout.less';
+@import '~clientResolver/index.less';
+
+@topTray-height: @header-height;
+
+.header {
+  .row;
+
+  background-color: @common-background-color;
+  min-width: @page-width;
+
+  & .header_topTray {
+    background-color: @toptray-background-color;
+    color: @toptray-color;
+  }
+}
+
+.header_topTray {
+  font-size: @size-1;
+  height: @topTray-height;
+  line-height: @topTray-height;
+  overflow: hidden;
+  text-align: center;
+  background-color: @first-color;
+  color: @toptray-color;
+}
+
+.header_topTrayBody {
+  display: flex;
+  flex-direction: row;
+  max-width: @page-width;
+  margin: 0 auto;
+}
+
+.header_topTrayLinks {
+  display: flex;
+}
+
+.header_topTrayLink {
+  padding: 0 @size-0;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 1px;
+    position: absolute;
+    top: 0.6rem;
+    bottom: 0.6rem;
+    left: 0;
+    right: auto;
+    background-color: @toptray-color;
+  }
+}
+
+.header_marquee {
+  width: 50%;
+}
+
+.header_logo {
+  vertical-align: middle;
+  width: auto;
+  max-width: 250px;
+  height: auto;
+  display: inline-block;
+  margin: @size-0 0 @size-0 0;
+}
+
+.header_login {
+  text-align: center;
+  z-index: 97;
+  position: relative;
+  background: @homePageHeader-background;
+}
+
+.header_row {
+  text-align: right;
+  width: @page-width;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.header_logoAnchor {
+  float: left;
+  width: @nav-side-width;
+  text-align: center;
+}
+
+.header_authColumn,
+.header_logoColumn {
+  .column;
+}
+
+.header_permalink {
+  color: inherit;
+  font-size: inherit;
+  padding: 0 @size-1;
+  border-left: 1px solid @gray-3;
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.header_permalinkIcon {
+  font-size: @size-4;
+  vertical-align: sub;
+  color: @orange-1;
+  margin: 0 @size-0;
+}

@@ -1,0 +1,128 @@
+@import '~animate/animated.less';
+@import '~animate/fadeIn.less';
+@import '~animate/fadeInDown.less';
+@import './var.less';
+
+.pagination-row {
+  box-sizing: border-box;
+  padding: @space / 2 @space;
+}
+
+.myHongbao {
+  .animated;
+  .fadeInDown;
+
+  width: 90%;
+  margin: 10% auto;
+  max-width: 648px;
+  background-color: white;
+  border-radius: @space * 1.5;
+  overflow-x: hidden;
+  max-height: 90%;
+  position: relative;
+
+  [role='close'] {
+    right: 2%;
+    color: white;
+  }
+}
+.myHongbao-header {
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: @space @space;
+  background-color: #ff6465;
+  box-sizing: border-box;
+  color: white;
+}
+.myHongbao-total-row {
+  box-sizing: border-box;
+  padding: 0 3%;
+  text-align: left;
+  & ~ & {
+    margin-top: @space;
+  }
+}
+.myHongbao-total-col {
+  @media screen and (max-width: 399px) {
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+}
+[class^='myHongbao'][class$='paragraph'] {
+  font-size: @space * 1.1;
+  letter-spacing: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: @space / 2 auto;
+  text-align: left;
+  span {
+    color: @red-1;
+  }
+}
+[class^='myHongbao'][class$='paragraph1'] {
+  font-size: @space * 1.1;
+  letter-spacing: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: @space / 2 auto;
+  text-align: right;
+  span {
+    color: @red-1;
+  }
+}
+.myHongbao-table-row {
+  height: 230px;
+  overflow: hidden;
+  padding: 0 3%;
+  box-sizing: border-box;
+}
+.myHongbao-table-content {
+  min-height: 199px;
+  margin: @space / 2 auto;
+  z-index: 1;
+  position: relative;
+
+  @media screen and (min-width: 780px) {
+    min-height: 295px;
+  }
+}
+.myHongbao-table {
+  font-size: @space;
+  width: 100%;
+  font-weight: 300;
+  margin: 0 auto;
+  padding: 0 @space @space;
+  text-align: center;
+  border-collapse: collapse;
+  position: relative;
+  thead {
+    td {
+      background-color: #f2f2f2;
+    }
+  }
+  td {
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: @space / 2;
+    border-bottom: 1px dashed #d9d9d9;
+    @media screen and (min-width: 780px) {
+      padding: @space*0.5;
+    }
+  }
+  tr:last-child {
+    td {
+      border-bottom: 1px solid #d9d9d9;
+    }
+  }
+  tbody {
+    td {
+      .fadeIn;
+    }
+  }
+}

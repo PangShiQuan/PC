@@ -1,0 +1,122 @@
+@import '~clientResolver/index.less';
+@red-2 : #db1104;
+
+.mobileBody {
+}
+
+.mobileBanner {
+  min-height: 500px;
+  width: 100%;
+  background-image: url('../../assets/image/mobileSite/mobile-bgcp77.png');
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+.mobileHeaderText1 {
+  font-size: 2.2rem;
+  color: white;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+.mobileHeaderText2 {
+  font-size: 2.2rem;
+  color: white;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+.mobileImage {
+  display: flex;
+}
+
+.btn {
+  height: 60px;
+  width: 240px;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 1.6rem;
+  padding-top: 0.5rem;
+  background-color: @red-2;
+  color: @base-white;
+
+  &:hover {
+    background-color: darken(@red-2, 5%);
+    color: @base-white;
+    // background-color: transparent;
+    // color: @red-4;
+    border: 1px solid @red-2;
+  }
+}
+
+.mobileIOSBtn {
+  .btn;
+
+  margin: 2.5rem 0 0 0;
+}
+
+.mobileAndroidBtn {
+  .btn;
+
+  margin: 2.5rem 0 0 3rem;
+}
+
+.qrCol {
+  height: 205px;
+  width: 205px;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+
+  &[data-right='true'] {
+    margin-left: 5.5rem;
+  }
+
+  // margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.qrBg {
+  .qrCol;
+
+  background-image: url('../../assets/image/mobileSite/erweimacp77.png');
+}
+
+.qr {
+  height: 169px;
+  width: 169px;
+  padding-top: 1.1rem;
+  margin-left: 1rem;
+}
+
+.mobileIOSQR {
+  .qr;
+}
+
+.mobileAndroidQR {
+  .qr;
+}
+
+.qrTitle {
+  text-align: center;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: @base-white;
+}
+
+.mobileItems {
+  margin-left: 5rem;
+}
+
+.iosAndroidButton {
+  display: flex;
+}
+
+.mobileQR {
+  display: flex;
+}
+
+.icon {
+  vertical-align: top;
+  font-size: 30px;
+}

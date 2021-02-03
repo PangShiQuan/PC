@@ -1,0 +1,82 @@
+@import '~clientResolver/index.less';
+
+article {
+  background-image: url('../../assets/image/mobileSite/mobileBgxxcp.png');
+  background-repeat: no-repeat;
+  min-width: @page-width;
+  background-size: cover;
+}
+
+.container__flex {
+  position: relative;
+  width: @page-width;
+  height: 650px;
+  margin: auto;
+}
+
+.introBox {
+  position: absolute;
+  top: 50%;
+  right: 28%;
+  color: @base-white;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > img {
+    position: absolute;
+    max-width: unset;
+    top: -120%;
+    right: -330px;
+  }
+
+  .intro {
+  }
+}
+
+.text {
+  letter-spacing: calc(@size-0 / 3);
+  text-align: center;
+
+  > * {
+    display: block;
+  }
+}
+
+.phoneBox {
+  position: absolute;
+  top: 21%;
+  left: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.container__flexVertical {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.downloadBtn {
+  margin: @size-2 0;
+}
+
+.QRBottom_desc {
+  color: @base-white;
+  font-size: @size-3;
+  letter-spacing: 2px;
+  padding-top: @size-5;
+}
+
+.group {
+  display: inline-flex;
+  z-index: 1;
+
+  & .downloadBtn {
+    min-width: 220px;
+  }
+}

@@ -1,0 +1,102 @@
+@import '~clientResolver/index.less';
+
+.container {
+  font-size: @size-2;
+  margin: 14% 0;
+  text-align: center;
+  width: 100%;
+}
+
+.table {
+  text-align: center;
+  width: 100%;
+  font-size: @size-2;
+  border-collapse: collapse;
+  margin-top: 0.7rem;
+  thead tr {
+    font-size: @size-2;
+    background-color: @results-tableHeader-bg;
+    border-bottom: @results-tableHeader-border;
+    color: @results-tableHeader-color;
+    font-weight: @results-tableHeader-fontweight;
+  }
+  tr {
+    align-items: center;
+    background-color: @base-white;
+    font-size: @size-1;
+    height: 46px;
+    margin-bottom: @size-0;
+    &[disabled] {
+      box-shadow: @shadow-dp0;
+      cursor: default;
+    }
+  }
+  tbody tr {
+    &:nth-child(even) {
+      background-color: @results-table-bg--even;
+      color: @results-table-color;
+    }
+  }
+  td {
+    min-width: 0;
+    min-height: @button-height;
+    padding: @size-0 / 2 @size-0;
+    align-items: center;
+    text-align: center;
+    &:only-child {
+      justify-content: center;
+    }
+  }
+}
+.lotteryBallDivider {
+  // margin-right: @size-0 / 2;
+  vertical-align: middle;
+  // flex: 1;
+}
+
+.betBtn {
+  background-image: @results-betBtn-img;
+  display: inline-block;
+  border-radius: 4px;
+  color: @results-betBtn-color;
+  height: @size-3*2;
+  line-height: @size-3*2;
+  min-width: 4rem;
+  border: @results-betBtn-border;
+  .betBtnHover;
+}
+.infoBtn {
+  background-color: @btn-bg;
+  border-radius: 4px;
+  color: @base-white;
+  display: inline-block;
+  height: @size-3*2;
+  line-height: @size-3*2;
+  min-width: @size-3*2;
+  [class*='mdi'] {
+    font-size: 1.5em;
+    color: @base-white;
+  }
+  .infoBtnHover;
+}
+.predictBtn {
+  .infoBtn;
+
+  background-color: @predictBtn;
+  &[disabled] {
+    cursor: not-allowed;
+  }
+  .predictBtnHover;
+}
+.gameNameInChinese,
+.uniqueIssueNumber,
+.openTime,
+.issueCountPerDay,
+.issueDuration {
+  font-size: 13px;
+}
+
+.numsContainerClassName {
+  display: flex;
+  flex-wrap: wrap;
+}

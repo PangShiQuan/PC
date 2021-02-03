@@ -1,0 +1,87 @@
+@import '~clientResolver/index.less';
+
+article {
+  background-color: @base-white;
+  min-width: @page-width;
+}
+
+.topSection {
+  background-image: url('../../assets/image/mobileSite/bannerdj.png');
+  background-position: top center;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.container__flex {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  width: @page-width;
+  margin: auto;
+}
+
+.description {
+  margin: 0 auto;
+
+  img {
+    height: 600px;
+    margin-top: 95px;
+    margin-left: -100px;
+  }
+}
+
+.QRBtn {
+  margin-bottom: @size-3;
+}
+
+.introBox {
+  width: 600px;
+  margin-top: @size-8;
+}
+
+.logoMobile {
+  position: absolute;
+  margin-top: 10px;
+}
+
+.logoIntro {
+  width: 500px;
+  margin-left: 170px;
+}
+
+.text {
+  letter-spacing: calc(@size-0 / 3);
+  text-align: center;
+
+  > * {
+    display: block;
+  }
+}
+
+.icon {
+  border-radius: 24px;
+  padding: 9px 9px;
+}
+
+.icon::before {
+  font-size: 24px;
+  vertical-align: inherit;
+}
+
+.container__flexVertical {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.group {
+  padding-bottom: @size-7;
+  padding-top: 0;
+  display: inline-flex;
+  margin-top: @size-9;
+
+  > * {
+    margin: @size-1 @size-7;
+  }
+}

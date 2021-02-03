@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <title>注册</title>
+    <meta
+      content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      name="viewport"
+    />
+    <style>
+      html {
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+      }
+      h1 {
+        font-size: 2em;
+        margin: 0.67em 0;
+      }
+      hr {
+        box-sizing: content-box;
+        height: 0;
+        overflow: visible;
+      }
+      pre {
+        font-family: monospace, monospace;
+        font-size: 1em;
+      }
+      a {
+        background-color: transparent;
+      }
+      abbr[title] {
+        border-bottom: none;
+        text-decoration: underline;
+        text-decoration: underline dotted;
+      }
+      b,
+      strong {
+        font-weight: bolder;
+      }
+      code,
+      kbd,
+      samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+      }
+      small {
+        font-size: 80%;
+      }
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+      sub {
+        bottom: -0.25em;
+      }
+      sup {
+        top: -0.5em;
+      }
+      img {
+        border-style: none;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+      }
+      button,
+      input {
+        overflow: visible;
+      }
+      button,
+      select {
+        text-transform: none;
+      }
+      [type='button'],
+      [type='reset'],
+      [type='submit'],
+      button {
+        -webkit-appearance: button;
+      }
+      [type='button']::-moz-focus-inner,
+      [type='reset']::-moz-focus-inner,
+      [type='submit']::-moz-focus-inner,
+      button::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+      }
+      [type='button']:-moz-focusring,
+      [type='reset']:-moz-focusring,
+      [type='submit']:-moz-focusring,
+      button:-moz-focusring {
+        outline: 1px dotted ButtonText;
+      }
+      fieldset {
+        padding: 0.35em 0.75em 0.625em;
+      }
+      legend {
+        box-sizing: border-box;
+        color: inherit;
+        display: table;
+        max-width: 100%;
+        padding: 0;
+        white-space: normal;
+      }
+      progress {
+        vertical-align: baseline;
+      }
+      textarea {
+        overflow: auto;
+      }
+      [type='checkbox'],
+      [type='radio'] {
+        box-sizing: border-box;
+        padding: 0;
+      }
+      [type='number']::-webkit-inner-spin-button,
+      [type='number']::-webkit-outer-spin-button {
+        height: auto;
+      }
+      [type='search'] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px;
+      }
+      [type='search']::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+      }
+      details {
+        display: block;
+      }
+      summary {
+        display: list-item;
+      }
+      template {
+        display: none;
+      }
+      [hidden] {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="center">
+      <form class="form" id="register-form">
+        <label
+          for="username"
+          id="usernameLabel"
+          class="form-inputLabel"
+          data-required="true"
+        >
+          <svg
+            class="form-inputIcon"
+            viewbox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              d="M6.3,10.7C4.9,9.6,4,7.9,4,6c0-3.3,2.7-6,6-6s6,2.7,6,6c0,1.9-0.9,3.6-2.3,4.7c3.7,1.5,6.3,5.1,6.3,9.3H0
+          C0,15.8,2.6,12.2,6.3,10.7z M10,10c2.2,0,4-1.8,4-4s-1.8-4-4-4S6,3.8,6,6S7.8,10,10,10z M18,20c0-4.4-3.6-8-8-8s-8,3.6-8,8H18z"
+            />
+          </svg>
+          <input
+            class="form-input"
+            id="username"
+            name="用户名"
+            pattern="^.{4,11}$"
+            data-hint="请输入4-11位字母和数字，至少含有一个字母"
+            placeholder="用户名(4-11位字母和数字)"
+            required
+            type="text"
+          />
+        </label>
+        <label
+          for="password"
+          id="passwordLabel"
+          class="form-inputLabel"
+          data-required="true"
+        >
+          <svg
+            class="form-inputIcon"
+            viewbox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              d="M9.6,14.2v0.9c0,0.4,0.3,0.8,0.8,0.8c0.4,0,0.8-0.3,0.8-0.8v-0.9c0.5-0.3,0.8-0.8,0.8-1.4
+          c0-0.9-0.7-1.6-1.5-1.6c-0.8,0-1.5,0.7-1.5,1.6C8.8,13.4,9.1,14,9.6,14.2 M17.5,16.8c0,0.1,0,1.4-1.5,1.5c-2.2,0.1-10.8,0-11,0
+          c-0.1,0-1.3-0.1-1.5-1.7V9.6h14V16.8z M10.5,1.7c4.2,0,4.5,2.8,4.5,3.1v3H6L6,5C6,4.9,6.1,1.7,10.5,1.7z M18.2,7.9h-1.8l0-3.3
+          c0-1.6-1.4-4.7-6-4.7c-4.6,0-5.9,3.2-6,4.8v3.1H2.8C2.3,7.9,2,8.2,2,8.6v8.3c0,0,0,0,0,0.1C2.3,19.4,4.1,20,5,20
+          c0.2,0,3.7,0,6.8,0c1.8,0,3.4,0,4.2,0c2.3-0.1,2.9-1.9,2.9-2.9V8.6C19,8.2,18.7,7.9,18.2,7.9L18.2,7.9z"
+            />
+          </svg>
+          <input
+            class="form-input"
+            id="password"
+            name="密码"
+            pattern="^.{6,15}$"
+            data-hint="请输入大小写字母和数字组成的6-15个字符"
+            placeholder="请输入大小写字母和数字组成的6-15个字符"
+            required
+            type="password"
+          />
+          <svg
+            id="password-toggle"
+            class="form-inputIcon"
+            viewbox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              d="M0.1,10.1C0.2,9.9,0.4,9.5,0.7,9c0.5-0.8,1.2-1.6,1.9-2.4C4.7,4.4,7.2,3,10,3
+          s5.3,1.4,7.4,3.6c0.7,0.8,1.3,1.6,1.9,2.4c0.3,0.5,0.5,0.9,0.7,1.1c0.1,0.2,0.1,0.5,0,0.7c-0.1,0.2-0.3,0.6-0.7,1.1
+          c-0.5,0.8-1.2,1.6-1.9,2.4C15.3,16.6,12.8,18,10,18s-5.3-1.4-7.4-3.6c-0.7-0.8-1.3-1.6-1.9-2.4c-0.3-0.5-0.5-0.9-0.7-1.1
+          C0,10.6,0,10.4,0.1,10.1z M2.1,11.1c0.5,0.7,1,1.5,1.7,2.2c1.8,1.9,3.9,3.1,6.2,3.1s4.4-1.1,6.2-3.1c0.6-0.7,1.2-1.4,1.7-2.2
+          c0.1-0.2,0.3-0.4,0.4-0.6c-0.1-0.2-0.2-0.4-0.4-0.6c-0.5-0.7-1-1.5-1.7-2.2c-1.8-1.9-3.9-3.1-6.2-3.1S5.6,5.8,3.8,7.7
+          C3.2,8.4,2.6,9.2,2.1,9.9c-0.1,0.2-0.3,0.4-0.4,0.6C1.9,10.7,2,10.9,2.1,11.1z M10,13.8c-1.8,0-3.3-1.5-3.3-3.3S8.2,7.2,10,7.2
+          s3.3,1.5,3.3,3.3S11.8,13.8,10,13.8z M10,12.2c0.9,0,1.7-0.7,1.7-1.7S10.9,8.8,10,8.8s-1.7,0.7-1.7,1.7S9.1,12.2,10,12.2z"
+            />
+          </svg>
+        </label>
+        <label
+          for="repeatPassword"
+          id="repeatPasswordLabel"
+          class="form-inputLabel"
+          data-required="true"
+        >
+          <svg
+            class="form-inputIcon"
+            viewbox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              d="M9.6,14.2v0.9c0,0.4,0.3,0.8,0.8,0.8c0.4,0,0.8-0.3,0.8-0.8v-0.9c0.5-0.3,0.8-0.8,0.8-1.4
+          c0-0.9-0.7-1.6-1.5-1.6c-0.8,0-1.5,0.7-1.5,1.6C8.8,13.4,9.1,14,9.6,14.2 M17.5,16.8c0,0.1,0,1.4-1.5,1.5c-2.2,0.1-10.8,0-11,0
+          c-0.1,0-1.3-0.1-1.5-1.7V9.6h14V16.8z M10.5,1.7c4.2,0,4.5,2.8,4.5,3.1v3H6L6,5C6,4.9,6.1,1.7,10.5,1.7z M18.2,7.9h-1.8l0-3.3
+          c0-1.6-1.4-4.7-6-4.7c-4.6,0-5.9,3.2-6,4.8v3.1H2.8C2.3,7.9,2,8.2,2,8.6v8.3c0,0,0,0,0,0.1C2.3,19.4,4.1,20,5,20
+          c0.2,0,3.7,0,6.8,0c1.8,0,3.4,0,4.2,0c2.3-0.1,2.9-1.9,2.9-2.9V8.6C19,8.2,18.7,7.9,18.2,7.9L18.2,7.9z"
+            />
+          </svg>
+          <input
+            class="form-input"
+            id="repeatPassword"
+            name="重复密码"
+            pattern="^.{6,15}$"
+            data-hint="请重复输入一样的密码"
+            placeholder="确认密码"
+            required
+            type="password"
+          />
+        </label>
+        <label
+          for="validateCode"
+          class="form-inputLabel"
+          id="validateCodeLabel"
+          data-required="true"
+          style="display: none"
+        >
+          <svg
+            class="form-inputIcon"
+            viewbox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              d="M6.2,12.5h6l1.4-5.2H7.7L6.2,12.5z M4,12.5l1.5-5.2H2.2C1.5,7.3,1.1,6.9,1.1,6c0-0.6,0.6-0.9,1.8-0.9H6
+          c0.2-1,0.5-2.3,0.9-3.9C7.2,0.4,7.7,0,8.4,0C8.6,0,8.9,0.1,9,0.3s0.3,0.5,0.3,0.7c0,0.3-0.1,0.9-0.3,1.6C8.6,4,8.4,4.8,8.4,5.1h5.8
+          c0.3-1,0.6-2.3,1.1-4C15.5,0.4,15.9,0,16.4,0c0.7,0,1,0.3,1,1c0,0.6-0.3,1.9-1,4.1h2.3C19.6,5.1,20,5.4,20,6c0,0.9-0.5,1.3-1.4,1.3
+          c-0.1,0-0.3,0-0.6,0c-0.3,0-0.4,0-0.6,0h-1.7l-1.3,5.2H17c0.6,0,1,0,1.2,0.1c0.4,0.2,0.6,0.5,0.6,1c0,0.8-0.3,1.1-1,1.1h-3.8
+          l-1.1,4.1c-0.2,0.8-0.7,1.2-1.3,1.2c-0.7,0-1-0.3-1-1c0-0.5,0.1-1.2,0.4-2.1c0.4-1.3,0.6-2,0.6-2.1h-6c-0.2,1-0.7,2.4-1.3,4.3
+          c-0.2,0.6-0.6,0.9-1.2,0.9c-0.6,0-1-0.3-1-1c0-0.3,0.1-0.8,0.3-1.4c0.3-0.9,0.6-1.9,0.8-2.8H1c-0.7,0-1-0.4-1-1.2
+          c0-0.3,0.1-0.6,0.4-0.8c0.2-0.2,0.5-0.3,0.8-0.3H4z"
+            />
+          </svg>
+          <input
+            class="form-input"
+            id="validateCode"
+            name="验证码"
+            pattern="\d"
+            data-hint="请输入图片里的号码"
+            placeholder="验证码"
+            required
+            type="text"
+          />
+          <img
+            alt="获取验证码"
+            src=""
+            id="validatePic"
+            class="form-inputImg"
+            onerror="this.style.display='none'"
+          />
+        </label>
+        <label for="affCode" id="affCodeLabel" class="form-inputLabel">
+          <svg
+            class="form-inputIcon"
+            viewbox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              d="M16.8,9.4C17.5,8.8,18,8,18,7c0-1.7-1.4-3-3.1-3c-1.7,0-3.1,1.3-3.1,3c0,1,0.5,1.8,1.2,2.4
+          c-1.2,0.5-2.1,1.3-2.7,2.4c-0.4-0.3-0.9-0.6-1.4-0.8c0.9-0.8,1.5-1.9,1.5-3.1C10.4,5.7,8.7,4,6.5,4S2.6,5.7,2.6,7.9
+          c0,1.3,0.6,2.4,1.5,3.1C1.7,11.9,0,14.3,0,17h1.3c0-2.9,2.3-5.2,5.2-5.2s5.2,2.3,5.2,5.2H13c0-1.8-0.7-3.3-1.9-4.5
+          c0.6-1.5,2-2.5,3.8-2.5c2.2,0,4.1,1.8,4.1,4h1C20,11.9,18.7,10.1,16.8,9.4z M6.5,10.5c-1.4,0-2.6-1.2-2.6-2.6c0-1.4,1.2-2.6,2.6-2.6
+          s2.6,1.2,2.6,2.6C9.1,9.3,7.9,10.5,6.5,10.5z M14.9,9c-1.1,0-2-0.9-2-2s0.9-2,2-2c1.1,0,2,0.9,2,2S16,9,14.9,9z"
+            />
+          </svg>
+          <input
+            class="form-input"
+            id="affCode"
+            name="邀请码"
+            pattern="[A-Za-z0-9]{2,19}$"
+            data-hint="请输入字母或数字组成的3-20个字符"
+            placeholder="邀请码(选填) "
+            type="text"
+          />
+        </label>
+        <label for="email" id="emailLabel" class="form-inputLabel">
+          <svg
+            class="form-inputIcon"
+            viewbox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              fill="#000000"
+              d="M4,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4C2.89,20 2,19.1 2,18V6C2,4.89 2.89,4 4,4M12,11L20,6H4L12,11M4,18H20V8.37L12,13.36L4,8.37V18Z"
+            />
+          </svg>
+          <input
+            class="form-input"
+            id="email"
+            name="电邮地址"
+            data-hint="请输入正确的电邮地址"
+            placeholder="电邮地址"
+            type="email"
+          />
+        </label>
+        <label for="phoneNumber" id="phoneNumberLabel" class="form-inputLabel">
+          <svg
+            class="form-inputIcon"
+            viewbox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              fill="#000000"
+              d="M16,18H7V4H16M11.5,22A1.5,1.5 0 0,1 10,20.5A1.5,1.5 0 0,1 11.5,19A1.5,1.5 0 0,1 13,20.5A1.5,1.5 0 0,1 11.5,22M15.5,1H7.5A2.5,2.5 0 0,0 5,3.5V20.5A2.5,2.5 0 0,0 7.5,23H15.5A2.5,2.5 0 0,0 18,20.5V3.5A2.5,2.5 0 0,0 15.5,1Z"
+            />
+          </svg>
+          <input
+            class="form-input"
+            id="phoneNumber"
+            name="手机号码"
+            data-hint="请输入正确的手机号码（首次提款需要验证）"
+            placeholder="手机号码（首次提款需要验证）"
+            type="tel"
+          />
+        </label>
+        <label for="QQ" id="QQLabel" class="form-inputLabel">
+          <svg
+            class="form-inputIcon"
+            viewbox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              fill="#000000"
+              d="M3.18,13.54C3.76,12.16 4.57,11.14 5.17,10.92C5.16,10.12 5.31,9.62 5.56,9.22C5.56,9.19 5.5,8.86 5.72,8.45C5.87,4.85 8.21,2 12,2C15.79,2 18.13,4.85 18.28,8.45C18.5,8.86 18.44,9.19 18.44,9.22C18.69,9.62 18.84,10.12 18.83,10.92C19.43,11.14 20.24,12.16 20.82,13.55C21.57,15.31 21.69,17 21.09,17.3C20.68,17.5 20.03,17 19.42,16.12C19.18,17.1 18.58,18 17.73,18.71C18.63,19.04 19.21,19.58 19.21,20.19C19.21,21.19 17.63,22 15.69,22C13.93,22 12.5,21.34 12.21,20.5H11.79C11.5,21.34 10.07,22 8.31,22C6.37,22 4.79,21.19 4.79,20.19C4.79,19.58 5.37,19.04 6.27,18.71C5.42,18 4.82,17.1 4.58,16.12C3.97,17 3.32,17.5 2.91,17.3C2.31,17 2.43,15.31 3.18,13.54Z"
+            />
+          </svg>
+          <input
+            class="form-input"
+            id="QQ"
+            name="QQ号"
+            data-hint="请输入正确的QQ号"
+            placeholder="QQ号"
+            type="number"
+          />
+        </label>
+        <label
+          for="identityNumber"
+          id="identityNumberLabel"
+          class="form-inputLabel"
+        >
+          <svg
+            class="form-inputIcon"
+            viewbox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              fill="#000000"
+              d="M2,3H22C23.05,3 24,3.95 24,5V19C24,20.05 23.05,21 22,21H2C0.95,21 0,20.05 0,19V5C0,3.95 0.95,3 2,3M14,6V7H22V6H14M14,8V9H21.5L22,9V8H14M14,10V11H21V10H14M8,13.91C6,13.91 2,15 2,17V18H14V17C14,15 10,13.91 8,13.91M8,6A3,3 0 0,0 5,9A3,3 0 0,0 8,12A3,3 0 0,0 11,9A3,3 0 0,0 8,6Z"
+            />
+          </svg>
+          <input
+            class="form-input"
+            id="identityNumber"
+            name="身份证号"
+            data-hint="请输入正确的身份证号码"
+            placeholder="身份证号"
+            type="text"
+          />
+        </label>
+      </form>
+      <div class="form-btnRow">
+        <label for="agreement" class="form-agreement">
+          <input
+            type="checkbox"
+            class="form-agreementCheckbox"
+            id="agreement"
+            checked
+          />
+          <svg
+            style="width:24px;height:24px"
+            viewbox="0 0 24 24"
+            class="form-checkboxIcon"
+          >
+            <path
+              d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"
+            />
+          </svg>
+          <span class="form-agreementSpan">
+            我已看过并同意《
+            <a
+              href="javascript:void(0)"
+              class="agreementLink"
+              id="agreement-link"
+              >用户购彩服务协议</a
+            >》
+          </span>
+        </label>
+        <div id="response-message">
+          <div id="err-msg" aria-live="polite"></div>
+          <div id="success-msg" aria-live="polite"></div>
+        </div>
+        <a
+          href="javascript:void(0)"
+          id="submit"
+          class="btn form-registerBtn--white"
+          >立即注册</a
+        >
+        <a
+          href="javascript:void(0)"
+          id="register-toggle"
+          hidden="true"
+          class="btn form-registerBtn--indigo"
+          >免费试玩</a
+        >
+        <a href="javascript:void(0)" class="form-returnBtn">快速登入</a>
+      </div>
+    </div>
+    <footer>
+      <p>
+        2010-<%= new Date().getFullYear() %> ©
+        <span id="siteName"></span> 版权所有。
+      </p>
+    </footer>
+  </body>
+</html>

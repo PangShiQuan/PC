@@ -1,0 +1,46 @@
+@import '~clientResolver/index.less';
+
+.filter_row {
+  margin-bottom: 8px;
+  width: 100%;
+  line-height: @size-2;
+  font-size: @size-2;
+
+  // overwrite antdesign
+  [class='ant-input'] {
+    padding: 0;
+  }
+}
+
+.option_buttons {
+  padding: @size-0 @size-4;
+  border: 1px solid #e1e1e1;
+  border-radius: 6px;
+  color: @gray-1;
+  margin: 0 5px;
+  &[disabled] {
+    background-color: @gray-2;
+    color: @gray-1;
+  }
+  &[data-active='true'] {
+    background-color: @profile-button-color;
+    color: @profile-button-text-color;
+  }
+}
+
+.link_text {
+  color: @profile-body-color;
+}
+
+.breadcrum {
+  padding: 8px 0;
+
+  .breadcrum_main {
+    color: @profile-body-color;
+    padding: 0;
+  }
+
+  [class*='mdi'] {
+    vertical-align: text-bottom;
+  }
+}

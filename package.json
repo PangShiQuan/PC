@@ -1,0 +1,182 @@
+{
+  "name": "jx-lottery-webapp",
+  "version": "2.7.1",
+  "private": true,
+  "workspaces": [
+    "modules/*"
+  ],
+  "browserslist": {
+    "production": [
+      "last 3 Chrome versions",
+      "last 3 Firefox versions",
+      "last 3 Safari versions",
+      "last 3 Edge versions",
+      "ie >= 10"
+    ],
+    "development": [
+      "last 2 Chrome versions",
+      "last 2 Firefox versions",
+      "last 2 Safari versions",
+      "last 2 Edge versions",
+      "ie >= 10"
+    ]
+  },
+  "scripts": {
+    "postinstall": "cd modules && yarn install",
+    "inspect:cssPrefix": "autoprefixer --info",
+    "inspect:eslint": "eslint --print-config .eslintrc.js",
+    "start": "run-p start:*",
+    "start:app": "cross-env BABEL_ENV=development NODE_ENV=development ESLINT=none roadhog dev",
+    "start:module": "cross-env BABEL_ENV=development NODE_ENV=development yarn run module-script",
+    "build": "run-s build:*",
+    "build:app": "cross-env BABEL_ENV=production NODE_ENV=production ESLINT=none roadhog build",
+    "build:module": "yarn run build-clean && cross-env BABEL_ENV=production NODE_ENV=production yarn run module-script",
+    "module-script": "node bin/modules.js",
+    "build-clean": "shx rm -rf \"modules/*/build\" \"dist/!(*.*|assets|errpage)\"",
+    "clean-packages": "shx rm -rf node_modules \"modules/*/node_modules\"",
+    "lint": "run-p lint:*",
+    "lint:css": "stylelint \"src/styles/**/*.less\" \"modules/*/app/**/*.less\" --custom-formatter=node_modules/stylelint-formatter-pretty --cache",
+    "lint:css:fix": "yarn lint:css --fix",
+    "lint:js": "eslint -f pretty --quiet --cache  \"modules/*/app/**/*.js\" \"src/**/*.{js,jsx}\"",
+    "lint:js:fix": "yarn lint:js --fix",
+    "json": "json-server mock/db.json",
+    "scramble": "cross-env NODE_ENV=production node scripts/spawn.js scramble.js",
+    "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.obfuscate.js": [
+      "eslint -f pretty --fix",
+      "prettier --write",
+      "git add",
+      "yarn scramble"
+    ],
+    "*!obfuscate.{js,jsx}": [
+      "eslint -f pretty --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{css,less,sccs}": [
+      "stylelint --custom-formatter=node_modules/stylelint-formatter-pretty --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{png,jpeg,jpg,svg}": [
+      "imagemin-lint-staged",
+      "git add"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "!node_modules/"
+    ]
+  },
+  "engines": {
+    "node": "^10.8.0"
+  },
+  "dependencies": {
+    "@senntyou/canvas2image": "0.0.1",
+    "antd": "~3.8.0",
+    "bcryptjs": "2.4.3",
+    "blueimp-md5": "2.10.0",
+    "broadcast-channel": "2.1.9",
+    "classnames": "2.2.5",
+    "core-js": "3.0.0",
+    "crypto-js": "3.1.9-1",
+    "dva": "2.4.1",
+    "dva-loading": "^2.0.0",
+    "emoji-mart": "^3.0.0",
+    "entropy-string": "4.1.0",
+    "fingerprintjs2": "2.1.0",
+    "history": "4.9.0",
+    "html2canvas": "1.0.0-rc.3",
+    "isaac": "0.0.5",
+    "kjua": "0.4.0",
+    "lodash": "4.17.4",
+    "mdi": "2.1.19",
+    "moment": "2.21.0",
+    "moment-timezone": "0.5.14",
+    "nodent-runtime": "3.2.0",
+    "number-precision": "^1.5.0",
+    "prop-types": "15.7.2",
+    "query-string": "5.1.0",
+    "react": "16.8.6",
+    "react-clipboard.js": "1.1.2",
+    "react-dom": "16.8.6",
+    "react-dropzone": "4.2.4",
+    "react-favicon": "0.0.14",
+    "react-inlinesvg": "0.8.2",
+    "react-native-rsa": "0.0.3",
+    "react-slick": "^0.26.1",
+    "react-tiny-virtual-list": "2.1.4",
+    "react-transition-group": "2.2.1",
+    "regenerator-runtime": "0.13.2",
+    "scroll-into-view": "1.9.0",
+    "setprototypeof": "1.1.0",
+    "slick-carousel": "^1.8.1",
+    "ua-parser-js": "^0.7.20",
+    "uuid": "3.3.2",
+    "webpack-bundle-analyzer": "3.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.3",
+    "@babel/plugin-syntax-dynamic-import": "7.0.0",
+    "@babel/plugin-transform-react-constant-elements": "7.0.0",
+    "@babel/preset-env": "7.4.3",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.1",
+    "babel-jest": "23.2.0",
+    "babel-plugin-dva-hmr": "0.4.0",
+    "babel-plugin-import": "1.7.0",
+    "babel-plugin-lodash": "3.3.2",
+    "babel-plugin-syntax-trailing-function-commas": "6.22.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.13",
+    "cross-env": "5.1.4",
+    "eslint": "~5.16.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "4.0.0",
+    "eslint-config-react-app": "3.0.8",
+    "eslint-formatter-pretty": "2.0.0",
+    "eslint-import-resolver-alias": "1.1.2",
+    "eslint-import-resolver-webpack": "0.11.0",
+    "eslint-plugin-babel": "5.3.0",
+    "eslint-plugin-compat": "3.1.0",
+    "eslint-plugin-flowtype": "2.50.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jsx-a11y": "6.2.0",
+    "eslint-plugin-no-inferred-method-name": "1.0.2",
+    "eslint-plugin-promise": "4.1.1",
+    "eslint-plugin-react": "7.12.0",
+    "eslint-plugin-redux-saga": "1.0.0",
+    "fast-async": "7.0.6",
+    "husky": "1.3.1",
+    "imagemin-lint-staged": "0.4.0",
+    "jest": "23.3.0",
+    "jscrambler": "5.3.2",
+    "json-server": "0.14.0",
+    "jszip": "3.1.5",
+    "lint-staged": "8.1.0",
+    "nodemon": "1.18.10",
+    "npm-run-all": "4.1.5",
+    "postcss-preset-env": "6.6.0",
+    "postcss-reporter": "6.0.0",
+    "prettier": "1.16.0",
+    "redbox-react": "1.6.0",
+    "roadhog": "2.5.0-beta.4",
+    "shx": "0.3.0",
+    "stylelint": "~9.10.0",
+    "stylelint-config-css-modules": "1.3.0",
+    "stylelint-config-prettier": "5.0.0",
+    "stylelint-config-standard": "18.2.0",
+    "stylelint-declaration-block-no-ignored-properties": "1.1.0",
+    "stylelint-formatter-pretty": "1.0.3",
+    "stylelint-no-unsupported-browser-features": "3.0.0"
+  }
+}

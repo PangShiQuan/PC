@@ -1,0 +1,178 @@
+@import '~clientResolver/index.less';
+
+.profile_banner_container {
+  display: flex;
+  align-items: center;
+  background: url('assets/image/User/bg_top.png') no-repeat;
+  background-size: cover;
+  height: 94px;
+  padding: 0 15px;
+  margin-top: 7px;
+
+  > * {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  .profile_pic {
+    width: 45px;
+    path {
+      fill: #4484ff;
+    }
+  }
+
+  .vip_num {
+    width: 25px;
+  }
+
+  .vip_num_btn {
+    width: 90px;
+  }
+
+  .profile_checkinColumn {
+    font-size: @size-2;
+    margin-left: auto;
+    margin-right: 0;
+
+    strong {
+      font-size: 1.5rem;
+      color: @profile-body-color;
+    }
+
+    .profile_checkinIndicate {
+      margin-right: @size-3;
+    }
+
+    .profile_checkinBtn {
+      position: relative;
+      border-radius: 4px;
+      border: 1px solid @profile-button-color;
+      color: @profile-button-color;
+      padding: 4px 24px;
+      overflow: hidden;
+
+      [class*='mdi'] {
+        font-size: 1.3em;
+        position: absolute;
+        left: 24px;
+      }
+
+      .profile_checkinThumbIcon {
+        -webkit-font-smoothing: antialiased;
+        top: 115%;
+      }
+      .profile_checkinCalendaIcon svg {
+        -webkit-font-smoothing: antialiased;
+        vertical-align: middle;
+        width: 1.3rem;
+        margin-right: 10px;
+
+        path {
+          fill: @profile-button-color;
+        }
+      }
+
+      &:disabled {
+        color: @profile-button-text-color;
+        background-color: @profile-button-color;
+        cursor: initial;
+
+        .profile_checkinThumbIcon {
+          animation: pumpUp 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        .profile_checkinCalendaIcon svg {
+          animation: pumpUp 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+          path {
+            fill: @profile-button-text-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes pumpUp {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translate3d(0, -28px, 0) scale(1);
+  }
+  80% {
+    transform: translate3d(0, -28px, 0) scale(1);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.profile_form_container {
+  font-size: @size-2;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 11px;
+
+  > * {
+    flex: 0 50%;
+  }
+
+  .profile_inputDiv {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-right: 15px;
+
+      &.not_bind {
+        color: #828282;
+      }
+    }
+
+    .inputTextField {
+      padding: 0 0.5rem;
+      background-color: #fff;
+      border: 1px solid #f4f4f4;
+      border-radius: 4px;
+      color: #4c4c4c;
+      font-size: 1rem;
+      height: 45px;
+      width: 178px;
+
+      &[data-color='red'] {
+        border: 1px solid @red-1;
+      }
+    }
+
+    .errorMessage {
+      position: absolute;
+      margin-top: 34px;
+      color: @red-1;
+      font-size: 13px;
+    }
+
+    .submitButton {
+      padding: 0 15px;
+      height: 45px;
+      background-color: @profile-button-color;
+      color: @profile-button-text-color;
+      border-radius: 4px;
+      margin-left: 10px;
+    }
+
+    .cancelButton {
+      padding: 0 15px;
+      height: 45px;
+      border: 1px solid @profile-button-color;
+      color: @profile-button-color;
+      border-radius: 4px;
+      margin-left: 10px;
+    }
+
+    .editButton {
+      color: @profile-body-color;
+      text-decoration: underline;
+    }
+  }
+}

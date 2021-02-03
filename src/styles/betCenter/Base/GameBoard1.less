@@ -1,0 +1,445 @@
+@import '~styles/variables.less';
+@import '~clientResolver/index.less';
+
+.gameboard {
+  background-color: @button-color;
+  margin: @size-0 @size-0 @size-0 0;
+  padding: @size-0 0 0 @size-0;
+  border-radius: 6px;
+  flex-direction: column;
+  display: flex;
+  min-height: @size-5 * 11;
+}
+.gameboard_section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: @size-0;
+  font-size: @size-2;
+}
+.gameboard_numBtn {
+  .gameboard_pokerBtn;
+
+  width: 50px;
+}
+.gameboard_pokerBtn {
+  align-items: stretch;
+  border-radius: 6px;
+  border: 1px solid @common-background-line-color;
+  display: flex;
+  flex-direction: column;
+  font-size: @size-3;
+  margin-bottom: @size-0;
+  margin-right: @size-0;
+  padding: @size-0;
+  position: relative;
+
+  &[data-active='true'] {
+    background-color: @common-background-line-color;
+    border-color: @first-color;
+  }
+}
+.gameboard_pokerMethodText {
+  margin-bottom: @size-0;
+  font-size: @size-5;
+  text-align: center;
+}
+.gameboard_numMethodText {
+  .gameboard_pokerMethodText;
+
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+@label-height: @size-1 + (@size-0 * 2);
+.gameboard_sectionLabel {
+  display: flex;
+  background-color: @betcenter-sidelabel-color;
+  font-size: @size-1;
+  color: @gameboard-sectionLabel-color;
+  margin-right: @size-3 + @label-height / 2;
+  margin-bottom: @size-0;
+  margin-left: -@size-3 / 2;
+  line-height: @label-height;
+  padding: 0 @size-0;
+  position: relative;
+  min-width: @size-7;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    height: @label-height;
+    width: @label-height;
+    border-width: @label-height / 2;
+    border-style: solid;
+    border-color: transparent transparent transparent @betcenter-sidelabel-color;
+    left: 100%;
+    top: 0;
+  }
+}
+.gameboard_btns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.gameboard_btn {
+  color: @gameboard-btnColor;
+  height: @button-height;
+  min-width: @button-height;
+  padding: 0 @size-0;
+  position: relative;
+  text-align: center;
+  border-radius: @button-height / 2;
+  margin-right: @size-0;
+  margin-bottom: @size-0;
+  background-color: @common-background-line-color;
+  //border: 1px solid #f4f4f4;
+  border: @border-width;
+  font-weight: @font-weight;
+  line-height: 1;
+
+  // &:hover {
+  //   background-color: @yellow-1;
+  //   border-color: @first-color;
+  //   color: @base-white;
+  // }
+
+  &[data-active='true'] {
+    background-color: @main-ball-color;
+    // border-color: lighten(@first-color, 5%);
+    // box-shadow: @insetShadow-dp2;
+    color: @button-color;
+  }
+  &[data-color='red'] {
+    color: @red-ball-color;
+    border-color: @red-ball-color;
+    &[data-active='true'] {
+      color: @button-color;
+      background-color: @red-ball-color;
+    }
+  }
+  &[data-color='blue'] {
+    color: @blue-ball-color;
+    border-color: @blue-ball-color;
+    &[data-active='true'] {
+      color: @button-color;
+      background-color: @blue-ball-color;
+    }
+  }
+  &[data-color='green'] {
+    color: @green-ball-color;
+    border-color: @green-ball-color;
+    &[data-active='true'] {
+      color: @button-color;
+      background-color: @green-ball-color;
+    }
+  }
+}
+.gameboard_btnPrize {
+  font-weight: normal;
+  color: @error-color;
+  font-size: @size-1;
+  left: 50%;
+  line-height: 1.5;
+  position: absolute;
+  bottom: -2px;
+  transform: translate3d(-50%, 100%, 0);
+}
+.gameboard_labelPrizeAmount {
+  width: 100%;
+  font-size: @size-1;
+  line-height: 1.5;
+  color: @error-color;
+  margin-bottom: @size-0;
+  span {
+    margin-right: @size-0;
+  }
+}
+.gameOpenOptions {
+  margin: 0 @size-0;
+}
+.gameOpenOption {
+  line-height: 1;
+  font-size: @size-2;
+  border: 1px solid @first-color;
+  border-radius: 6px;
+  height: @button-height;
+  color: @first-color;
+  padding: 0 @size-3;
+  margin: @size-0 @size-0 @size-0 0;
+  [class*='mdi'] {
+    font-size: @size-4;
+    margin-right: @size-0 / 2;
+  }
+  i {
+    vertical-align: middle;
+  }
+
+  [data-active='true'] {
+    background-color: @first-color;
+    box-shadow: @insetShadow-dp2;
+    color: @button-color;
+  }
+}
+.gameboard_groupBtn {
+  align-items: flex-start;
+  font-weight: bold;
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  height: auto;
+  justify-content: space-between;
+  margin: 0 @size-3 @size-0 0;
+  width: 100%;
+  position: relative;
+  &[data-color='blue'] {
+    color: @blue-ball-color;
+  }
+  &[data-color='red'] {
+    color: @red-ball-color;
+  }
+  &[data-color='orange'] {
+    color: @orange-1;
+  }
+  &[data-color='yellow'] {
+    color: @yellow-1;
+  }
+  &[data-color='green'] {
+    color: @green-ball-color;
+  }
+  &[data-active='true'] {
+    color: @base-white;
+    &[data-color='blue'] {
+      background-color: @blue-ball-color;
+    }
+    &[data-color='red'] {
+      background-color: @red-ball-color;
+    }
+    &[data-color='orange'] {
+      background-color: @orange-1;
+    }
+    &[data-color='yellow'] {
+      background-color: @yellow-1;
+    }
+    &[data-color='green'] {
+      background-color: @green-ball-color;
+    }
+  }
+}
+.gameboard_btnDisplayText {
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  height: @button-height;
+  min-width: @button-height;
+  border-radius: @button-height / 2;
+}
+.gameboard_btnNums {
+  border: 1px solid;
+  border-radius: 6px;
+  display: flex;
+  flex: 1;
+  margin-left: @size-0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: @size-0;
+  padding-left: @size-0;
+
+  &[data-color='blue'] {
+    border-color: @blue-ball-color;
+  }
+  &[data-color='red'] {
+    border-color: @red-ball-color;
+  }
+  &[data-color='orange'] {
+    border-color: @orange-1;
+  }
+  &[data-color='yellow'] {
+    border-color: @yellow-1;
+  }
+  &[data-color='green'] {
+    border-color: @green-ball-color;
+  }
+}
+.gameboard_btnNum {
+  display: inline-block;
+  font-size: @size-1;
+  margin-right: @size-0;
+  margin-bottom: @size-0;
+  color: inherit;
+}
+.gameboard_ctrlBtns {
+  display: flex;
+  margin-left: @size-0;
+  justify-content: flex-start;
+}
+.gameboard_ctrlBtn {
+  .gameboard_btn;
+
+  background-color: @button-color;
+  color: @first-color;
+  font-weight: normal;
+  border: 1px solid @first-color;
+  &:hover {
+    background-color: @first-color;
+    color: @button-color;
+  }
+  &[disabled] {
+    color: @disabled-color;
+    cursor: not-allowed;
+  }
+  &[data-active='true'] {
+    background-color: @first-color;
+    color: @button-color;
+  }
+}
+.CQSSCgameboard {
+  background-color: @button-color;
+  margin: @size-0 @size-0 @size-0 0;
+  padding: @size-0 0 0 @size-0;
+  border-radius: 6px;
+  flex-direction: column;
+  display: flex;
+  min-height: 19.5rem;
+}
+.CQSSCgameboard_section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1.3rem;
+  font-size: @size-2;
+}
+.gameBoard_lunpanBallColor {
+  border: 1px solid @common-background-line-color;
+  &[data-color='red'] {
+    color: @main-ball-color;
+    border: 1px solid @main-ball-color;
+  }
+  &[data-color='black'] {
+    color: @main-regular-color;
+    border: 1px solid @main-regular-color;
+  }
+  &[data-color='green'] {
+    color: #19751a;
+    border: 1px solid #19751a;
+  }
+}
+.gameBoard_lunpanBallActiveColor {
+  &[data-active='true'] {
+    color: @button-color;
+    background: @first-color;
+    &[data-color='red'] {
+      border: 1px solid @main-ball-color;
+      background-color: @main-ball-color;
+    }
+    &[data-color='black'] {
+      border: 1px solid @main-regular-color;
+      background-color: @main-regular-color;
+    }
+    &[data-color='green'] {
+      border: 1px solid #19751a;
+      background-color: #19751a;
+    }
+  }
+}
+.gameboard_lunpan_section {
+  background-image: url('../../../assets/image/lunpan/lunpanBg.png');
+  background-size: contain;
+  margin: 0 10px 0 10px;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 270px;
+  min-width: 800px;
+}
+.gameboard_lunpanNumBtn {
+  height: @button-height;
+  min-width: @button-height;
+  padding: 0 @size-0;
+  position: absolute;
+  text-align: center;
+  border-radius: @button-height / 2;
+  font-weight: @font-weight;
+  line-height: 1;
+  .gameBoard_lunpanBallColor;
+  .gameBoard_lunpanBallActiveColor;
+}
+.gameboard_lunpanNumSpan {
+  position: absolute;
+
+  &[data-active='true'] {
+    color: @first-color;
+  }
+
+  &[data-color='black'] {
+    color: #000;
+  }
+
+  &[data-color='red'] {
+    color: @main-ball-color;
+  }
+}
+.gameboard_lunpanSpecialIndicator {
+  border: 1px solid @common-background-line-color;
+  height: 1.7rem;
+  min-width: 12rem;
+  padding: 0 @size-0;
+  position: absolute;
+  text-align: center;
+  font-weight: @font-weight;
+  line-height: 1;
+
+  &[data-active='true'] {
+    background: @first-color;
+    color: @button-color;
+  }
+}
+.gameboard_lunpanSpecialDivideIndicator {
+  border: 1px solid @common-background-line-color;
+  height: @button-height;
+  min-width: @button-height;
+  position: absolute;
+  text-align: center;
+  font-weight: @font-weight;
+  line-height: 1;
+
+  &[data-active='true'] {
+    background: @first-color;
+    color: @button-color;
+  }
+}
+.gameboard_lunpanTwoArrayNumBtn {
+  background-image: url('../../../assets/image/lunpan/lunpanTwoArrowNotSelected.png');
+  width: 18px;
+  height: 15px;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-size: contain;
+
+  &[data-active='true'] {
+    width: 16px;
+    background-image: url('../../../assets/image/lunpan/lunpanTwoArrowSelected.png');
+  }
+}
+.gameboard_lunpanFourArrayNumBtn {
+  background-image: url('../../../assets/image/lunpan/lunpanFourArrowNotSelected.png');
+  width: 20px;
+  height: 15px;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-size: contain;
+
+  &[data-active='true'] {
+    width: 14px;
+    background-image: url('../../../assets/image/lunpan/lunpanFourArrowSelected.png');
+  }
+}

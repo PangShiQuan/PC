@@ -1,0 +1,245 @@
+@import './common.less';
+
+/*
+** BET_CENTER COMPONENT
+*/
+@betCenter-bg: url('../assets/image/background.png') no-repeat;
+
+@betCenter-logo-bg: transparent;
+
+// betcenter header
+
+@betCenter-header-bg: url('../assets/image/header_bg.png');
+
+@betCenter-collapseIcon-color: @base-white;
+
+@betCenter-header-color: @base-white;
+
+@betCenter-headerLink-color: #2087e8;
+
+// betcenter sidenav
+@betCenter-sideNav-header-height: @size-9;
+
+@betCenter-sideNav-collapseToggle-size: @size-7;
+
+@betCenter-sideNav-padding: @size-3;
+
+@betCenter-sideNav-menuItem-height: @button-height + @size-3;
+
+@betCenter-sideNav-subMenuItem-bg: #eeedf2;
+
+@betCenter-sideNav-subMenuItem-bg--hover: @primary-color;
+
+@betCenter-sideNav-subMenuItem-color--hover: @base-white;
+
+@betCenter-sideNav-subMenuItem-bg-before: #f1f1f1;
+
+@betCenter-sideNav-subMenuItem-color: @base-black;
+
+@betCenter-sideNav-subMenuItem-color-hover: @base-white;
+
+@betCenter-sideNav-menu-bg: @base-white;
+
+@betCenter-sideNav-menu-color: @base-black;
+
+@betCenter-sideNav-bg: #e3e3ec;
+
+@betCenter-sideNav-color: @base-black;
+
+@gameboard-sectionLabel-bg: #0caf69;
+
+@betCenter-sideNav-subMenuItem-first-bg: #424350;
+
+@betCenter-sideNav-subMenuItem-first-color: rgba(255, 255, 255, 0.4);
+
+@betCenter-sideNav-subMenuItem-first-bg-active: #424350;
+
+@betCenter-sideNav-subMenuItem-first-color-active: rgba(255, 255, 255, 0.4);
+
+@betCenter-sideNav-subMenuItem-first-bg-hover: #eeedf2;
+
+@betCenter-sideNav-subMenuItem-first-color-hover: @base-white;
+
+@betCenter-sideNav-backToAllBtn-bg--active: @primary-color;
+
+@betCenter-sideNav-backToAllBtn-bg--hover: @primary-color;
+
+@betCenter-sideNav-backToAllBtn-bg-image--active: url('../assets/image/navigation-bg.png');
+
+// betcenter nav
+
+@betCenter-nav-bg: #00bfff;
+
+@betCenter-nav-bg--active: #0086b3;
+
+@betCenter-subNav-bg: @base-white;
+
+@betCenter-subNav-bg--active: @primary-color;
+
+// betcenter calulator
+@betCenter-cal-bg: #e3e3ec;
+
+@betCenter-cal-color: #707188;
+
+@betCenter-cal-radius: 0;
+
+@betCenter-cal-unit-btn-bg: #b5b5b5;
+
+@betCenter-calUnitBtn-color: @base-black;
+
+@betCenter-calUnitBtn-bg--active: @primary-color;
+
+@betCenter-calUnitBtn-color--active: @base-white;
+
+@betCenter-cal-clear-btn-bg: #f40;
+
+@betCenter-calBtn-bg: #00bfff;
+
+@betCenter-calBtn-color: @base-white;
+
+@betCenter-calBorder-color: @indicate-color;
+
+@betCenter-calInput-bg: @base-white;
+
+@betCenter-calInput-color: @base-black;
+
+@betCenter-calInput-borderColor: @base-white;
+
+@betCenter-cal-ctrlAddBtn-bg: #f8a600;
+
+@betCenter-cal-ctrlAddBtn-color: @base-white;
+
+// betcenter cart
+@betCenter-cart-bg: darken(@bg-gray--light, 5%);
+
+@betCenter-cartHeader-bg: rgba(0, 0, 0, 0.2);
+
+@betCenter-cartHeader-color: @base-white;
+
+@betCenter-cart-color: @text-color;
+
+// betcenter ratio ctrl
+@betCenter-ratioCtrl-content-bg: @base-white;
+
+@betCenter-ratioCtrl-content-color: @base-black;
+
+@betCenter-ratioCtrl-label-bg: #00bfff;
+
+@betCenter-ratioCtrl-label-border: #00bfff;
+
+@betCenter-ratioCtrl-input-bg: #00bfff;
+
+@betCenter-ratioCtrl-input-color: @base-white;
+
+@betCenter-ratioCtrl-inputValueIndicator-bg: #00bfff;
+
+@betCenter-ratioCtrl-inputValueIndicator-highlight-bg: @primary-color;
+
+@betCenter-ratioCtrl-inputValueIndicator-hasValue-bg: @base-white;
+
+/*
+** COMPONENTS
+*/
+@lottery-bgColor--default: @primary-color;
+@lottery-bgColor--red: @primary-color;
+
+// betcenter action btn
+// @betCenter-actionBtn-color: @base-white;
+// @betCenter-actionBtn-color-hover: @base-white;
+// @betCenter-actionBtn-color-disabled: lighten(@primary-color, 35%);
+// @betCenter-actionBtn-bg-outer: #a12133;
+// @betCenter-actionBtn-bg: @primary-color;
+// @betCenter-actionBtn-bg-top: linear-gradient(
+//   to bottom,
+//   @primary-color--dark 0%,
+//   lighten(@primary-color--dark, 15%) 51%,
+//   @primary-color--dark 100%
+// );
+
+// @betCenter-actionBtn-bg-bottom: linear-gradient(
+//   to bottom,
+//   @primary-color--dark 0%,
+//   lighten(@primary-color--dark, 15%) 51%,
+//   @primary-color--dark 100%
+// );
+
+// betcenter history
+@betCenter-game-history-td--even: #e2e2e2;
+
+@betCenter-game-history-header-bg: #00bfff;
+
+@betCenter-game-history-header-color: @base-white;
+
+/*
+** CIRCULAR_PROGRESS_BAR COMPONENT
+*/
+@circularBar-track-color: #2087e8;
+
+@circularBar-progress-color: @primary-color;
+
+@circularBar-track-text-color: #2087e8;
+
+/*
+** BET_ENTRANCE COMPONENT
+*/
+@betEntrance-btn-color: @primary-color--dark;
+
+@betEntrance-gradient--btn: linear-gradient(
+  to bottom,
+  @primary-color 0%,
+  @primary-color--dark 100%
+);
+
+@betEntrance-gradient--card: linear-gradient(
+  to bottom,
+  @base-white 0%,
+  @bg-gray--light 100%
+);
+@betEntrance-gameSubnav--btn-bg: @base-white;
+
+/* ** Overrides */
+.gameboard_btn_override {
+  background-image: linear-gradient(-180deg, #fdfdfd, #eeedf2 51%, #e3e3ec);
+  border-radius: 1.125rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 2px 0 rgba(67, 74, 100, 0.14),
+    0 1px 5px 0 rgba(67, 74, 100, 0.12), 0 3px 1px -2px rgba(67, 74, 100, 0.2);
+  color: #4c4c4c;
+  &:hover,
+  &[data-active='true'] {
+    background-color: @primary-color;
+    background-image: none;
+    border-color: transparent;
+    box-shadow: 0 2px 4px 0 rgba(254, 125, 9, 0.4);
+    color: @base-white;
+  }
+}
+.gameboard_ctrlBtn_override {
+  background: linear-gradient(
+    to bottom,
+    #e2e2e2 0%,
+    #f1f1f1 50%,
+    #e2e2e2 51%,
+    #fff 100%
+  );
+  color: @text-color;
+  border: 0;
+  box-shadow: @shadow-dp2;
+  &:hover {
+    background: @primary-color;
+    color: @base-white;
+    border: 0;
+    box-shadow: @shadow-dp2--inset;
+  }
+  &[data-active='true'] {
+    background: @primary-color;
+    color: @base-white;
+    border: 0;
+    box-shadow: @shadow-dp2--inset;
+  }
+}
+.gameHeader_openNumber_override {
+  background-color: @primary-color;
+  background-image: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}

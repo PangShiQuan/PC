@@ -1,0 +1,147 @@
+@import '~styles/variables.less';
+@import '~clientResolver/index.less';
+
+.gameCart {
+  background-color: @common-table-color;
+  padding: @size-0;
+  margin-right: @size-0;
+  margin-left: @size-0;
+  margin-bottom: @size-0;
+  color: @main-regular-color;
+  min-height: 275px;
+  border-radius: 8px;
+}
+.gameCart_table {
+  font-size: @size-2;
+
+  [data-align='right'] {
+    text-align: right;
+  }
+
+  span {
+    height: @size-5;
+    padding: 0 @size-0;
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+.gameCart_header {
+  div {
+    color: @main-regular-color;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  border-bottom: 1px solid @common-background-color;
+  padding-bottom: 5px;
+}
+.gameCart_items {
+  padding-top: 15px;
+  &[data-repeated='true'] {
+    span {
+      color: @error-color;
+    }
+  }
+
+  > span:only-child {
+    text-align: center;
+    color: @sub-regular-color;
+  }
+}
+.gameCart_tdEllipsis {
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: @sub-regular-color;
+  text-align: center;
+}
+.gameCart_ctrlBtn {
+  line-height: 1;
+  font-size: @size-3;
+  color: @sub-regular-color;
+  left: 33px;
+  top: -13px;
+  padding: 0 0 0 8px;
+  cursor: pointer;
+  i {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.gameCart_popOverText {
+  i {
+    vertical-align: middle;
+  }
+  [class*='mdi'] {
+    margin-right: @size-0;
+    font-size: @size-3;
+    display: inline-block;
+  }
+}
+
+@keyframes floatDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gameCart_response {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  border-radius: 6px;
+  font-size: @size-2;
+  line-height: @button-height;
+  margin-bottom: @size-0;
+  animation: floatDown 0.15s 1 @transition-timing;
+  animation-fill-mode: forwards;
+  &[data-color='blue'] {
+    background-color: @blue-1;
+  }
+  &[data-color='red'] {
+    background-color: @error-color;
+  }
+  &[data-color='orange'] {
+    background-color: @orange-1;
+  }
+  &[data-color='yellow'] {
+    background-color: @yellow-1;
+  }
+  &[data-color='green'] {
+    background-color: @correct-color;
+  }
+}
+.gameCart_clearAllBtn {
+  border-radius: @size-3;
+  padding: 0 @size-0;
+  width: 32px;
+  .clearIcon {
+    svg {
+      > * path[class*='st0'] {
+        fill: @disabled-color;
+        stroke: @disabled-color;
+        stroke-width: 0.1;
+      }
+    }
+  }
+  &:not([disabled]) {
+    .clearIcon {
+      svg {
+        > * path[class*='st0'] {
+          fill: #feab59;
+          stroke: #feab59;
+          stroke-width: 0.1;
+        }
+      }
+    }
+  }
+}

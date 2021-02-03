@@ -1,0 +1,30 @@
+@import '~styles/layout.less';
+
+@margin: @size-3;
+
+.homePage_body {
+  text-align: center;
+  overflow: auto;
+  background: @home-background;
+  .pageWidth(100%);
+
+  min-height: @home-content--min-height;
+}
+.homePage_panel {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: @margin;
+  overflow: hidden;
+  background-color: @base-white;
+  box-shadow: @shadow-dp2;
+}
+
+.homePage_row {
+  .row;
+
+  text-align: left;
+  max-width: @page-width;
+  margin: 0 auto;
+}

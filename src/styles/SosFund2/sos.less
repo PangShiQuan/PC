@@ -1,0 +1,99 @@
+@import '~styles/layout.less';
+
+.loading {
+  color: @welfare-center-font-color;
+  margin: 60px auto;
+}
+
+.banner {
+  width: 100%;
+  height: 210px;
+  background-color: #fff;
+  background-size: cover;
+  position: relative;
+  cursor: pointer;
+
+  .buttonImage {
+    position: absolute;
+    bottom: 30px;
+    right: 80px;
+    max-width: 200px;
+  }
+
+  .arrowButton {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    transform: rotate(0);
+    transition: transform 0.1s linear;
+
+    &[data-rotated='true'] {
+      transform: rotate(180deg);
+    }
+
+    .downArrowIcon {
+      border-radius: 8px;
+      background-color: fade(@welfare-bg, 70);
+      font-size: 36px;
+      color: @welfare-center-desc-color;
+    }
+  }
+
+  .remark {
+    display: inline-block;
+    position: absolute;
+    bottom: 6px;
+    right: 157px;
+    padding: 3px;
+    border-radius: 1rem;
+    background-color: fade(@welfare-bg, 70);
+    font-size: 12px;
+
+    > span {
+      color: @welfare-center-desc-color;
+
+      &:first-child {
+        margin-right: 3px;
+      }
+      &:last-child {
+        margin-left: 3px;
+      }
+    }
+  }
+}
+
+.contentBox {
+  position: relative;
+  top: 0;
+  background-color: #fff;
+  height: 0;
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: all 0.1s linear;
+  text-align: left;
+  visibility: hidden;
+
+  &[data-expanded='true'] {
+    height: unset;
+    padding: 10px;
+    transform: scale(1, 1);
+    visibility: visible;
+  }
+
+  .contentBoxTitle {
+    border-bottom: 1px solid #000;
+    font-size: 1.25rem;
+  }
+
+  .iframeDiv {
+    min-height: 400px;
+    margin-top: 10px;
+
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

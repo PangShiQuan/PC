@@ -1,0 +1,114 @@
+@import '~styles/variables.less';
+@import '~clientResolver/index.less';
+
+@winnerList-td-color: @base-black;
+
+@keyframes scrollChild {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes scrollRepeat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  51% {
+    transform: translateY(200%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+@scrollingTime: 60s;
+
+.winnerList {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0; //for sou gou browser compatibility styling//
+}
+.winnderList_table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  color: @sub-regular-color;
+}
+.winnerList_coverUpList,
+.winnerList_repeatedList {
+  position: relative;
+  background-color: @base-white;
+}
+
+.winnerList_coverUpList {
+  animation: scrollRepeat @scrollingTime linear infinite;
+  z-index: -1;
+
+  .winnerList_tbodyRow:nth-child(even) {
+    background-color: @common-table-color;
+  }
+}
+.winnerList_repeatedList {
+  z-index: 1;
+  .winnerList_tbodyRow:nth-child(even) {
+    background-color: @base-white;
+  }
+  .winnerList_tbodyRow:nth-child(odd) {
+    background-color: @common-table-color;
+  }
+  &[data-even='true'] {
+    .winnerList_tbodyRow:nth-child(even) {
+      background-color: @common-table-color;
+    }
+    .winnerList_tbodyRow:nth-child(odd) {
+      background-color: @base-white;
+    }
+  }
+}
+.winnerList_td {
+  padding: @size-0 @size-0 / 2;
+  font-size: inherit;
+  display: flex;
+  flex: 2;
+  min-width: 1px;
+  &:first-child {
+    flex: 1;
+  }
+  &:not(:first-child) {
+    justify-content: flex-end;
+  }
+}
+.winnerList_theadRow {
+  color: @main-regular-color;
+  font-weight: bold;
+  font-size: @size-1;
+  display: flex;
+  flex-direction: row;
+  background-color: @base-white;
+}
+.winnerList_tbodyRow {
+  font-size: @size-1;
+  display: flex;
+  flex-direction: row;
+  background-color: @base-white;
+}
+.winnerList_tbody {
+  position: relative;
+  animation: scrollChild @scrollingTime linear infinite;
+  &:hover {
+    animation-play-state: paused;
+    & > .winnerList_coverUpList {
+      animation-play-state: paused;
+    }
+  }
+}
+.winnerList_header {
+  border-bottom: 1px solid @common-background-line-color;
+}

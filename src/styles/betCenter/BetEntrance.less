@@ -1,0 +1,151 @@
+@import '~clientResolver/index.less';
+
+.betEntrace {
+  text-align: center;
+  width: 100% - @betCenter-sideNav-width;
+}
+
+.betEntrace_list {
+  margin: @size-0 auto;
+}
+
+.betEntrace_listItem {
+  background-color: @base-white;
+  background-image: @betEntrance-gradient--card;
+  border-radius: 6px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  display: inline-block;
+  margin: 0.5%;
+  min-width: 220px;
+  overflow: hidden;
+  padding: @size-0;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  width: 100% / 6;
+  transition: box-shadow 0.25s @standard-curve-timing-function;
+
+  &:hover {
+    box-shadow: @shadow-dp0;
+  }
+}
+.betEntrace_listItemContent {
+  display: inline-block;
+  padding-left: @size-0;
+  position: relative;
+  width: 70%;
+  min-width: 120px;
+  vertical-align: middle;
+}
+.betEntrace_listItemAvatar {
+  display: inline-block;
+  padding-top: 30%;
+  padding-left: 30%;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center center;
+  vertical-align: middle;
+}
+.betEntrace_listItemDesc {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.betEntrace_recommendList {
+  width: ((100% / 6) + 1%) * 5;
+  margin: @size-0 auto;
+}
+.betEntrace_recommendListItem {
+  background-color: @base-white;
+  background-image: @betEntrance-gradient--card;
+  border-radius: @betEntrance-btn-border-radius;
+  border: 1px solid @border-color;
+  display: inline-block;
+  font-size: @size-2;
+  margin: 0.5%;
+  min-width: 350px;
+  min-height: 197px;
+  padding: @size-3;
+  text-align: left;
+  vertical-align: top;
+  width: (100% / 3) - 1%;
+}
+.betEntrace_recommendOrderTime {
+  margin-top: @size-3;
+}
+.betEntrace_recommendOrderBtn {
+  background-color: @betEntrance-btn-color;
+  background-image: @betEntrance-gradient--btn;
+  color: @base-white;
+  border-radius: @betEntrance-btn-border-radius;
+  height: 34px;
+  min-width: 80px;
+  margin-top: @size-0;
+  vertical-align: middle;
+  &[disabled] {
+    background-color: @bg-gray;
+    background-image: none;
+    color: @base-white;
+  }
+}
+.betEntrace_recommendResultBtn {
+  display: inline-block;
+  color: @betEntrance-btn-color;
+  border: 1px solid @betEntrance-btn-color;
+  border-radius: @betEntrance-btn-border-radius;
+  line-height: 34px - 2px;
+  text-align: center;
+  min-width: 80px;
+  margin-top: @size-0;
+  margin-left: @size-0;
+  vertical-align: middle;
+  &:hover,
+  &:focus {
+    color: @betEntrance-btn-color;
+    text-decoration: none;
+  }
+  &[disabled] {
+    color: @text-color--disabled;
+    border-color: @border-color--light;
+  }
+}
+.betEntrace_orderBtn {
+  .betEntrace_recommendOrderBtn;
+
+  font-size: @size-1;
+  height: 30px;
+  min-width: 60px;
+}
+.betEntrace_resultBtn {
+  .betEntrace_recommendResultBtn;
+
+  font-size: @size-1;
+  line-height: 28px - 2px;
+  min-width: 60px;
+}
+.betEntrace_headline {
+  display: inline-block;
+  font-size: @size-5;
+  margin: @size-3 auto 0 auto;
+  min-width: 100px;
+  position: relative;
+  color: @betEntrance-headline-color;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background-color: @border-color;
+    width: 200%;
+    top: 50%;
+  }
+  &::before {
+    left: 120%;
+  }
+  &::after {
+    right: 120%;
+  }
+}

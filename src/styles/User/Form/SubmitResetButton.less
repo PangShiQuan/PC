@@ -1,0 +1,23 @@
+@import '~clientResolver/index.less';
+
+.button {
+  border-radius: 4px;
+  padding: 8px;
+  height: 45px;
+  font-size: 16px;
+}
+
+.submitButton {
+  .button;
+
+  background-color: @profile-button-color;
+  color: @profile-button-text-color;
+  margin-right: 17px;
+}
+
+.cancelButton {
+  .button;
+
+  border: 1px solid @profile-button-color;
+  color: @profile-button-color;
+}

@@ -1,0 +1,45 @@
+@import '~clientResolver/index.less';
+
+@height: 45px;
+
+.filter_game {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 12px;
+  width: 100%;
+  line-height: @size-2;
+  font-size: @size-2;
+
+  .filter_label {
+    flex-basis: 50px;
+    flex-shrink: 0;
+  }
+
+  .filter_options {
+    margin: -5px 0;
+
+    .option_buttons {
+      padding: @size-0 @size-4;
+      border: 1px solid #e1e1e1;
+      border-radius: 4px;
+      color: @gray-1;
+      height: @height;
+      margin: 6px 10px 6px 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &[disabled] {
+        background-color: @gray-2;
+        color: @gray-1;
+      }
+
+      &[data-active='true'] {
+        background-color: @profile-button-color;
+        color: @profile-button-text-color;
+      }
+    }
+  }
+}

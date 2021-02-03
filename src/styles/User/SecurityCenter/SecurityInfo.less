@@ -1,0 +1,97 @@
+@import '~clientResolver/index.less';
+
+.label {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 8px 0;
+}
+
+.optionButton {
+  position: relative;
+  padding: 10px;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  width: 165px;
+  height: 45px;
+
+  &[data-checked='true'] {
+    border: 1px solid @profile-button-color;
+  }
+
+  .tickIconDiv {
+    background: linear-gradient(
+      to bottom right,
+      transparent 0%,
+      transparent 50%,
+      @profile-button-color 50%,
+      @profile-button-color 100%
+    );
+    position: absolute;
+    right: 0;
+    border-radius: 0 0 4px 0;
+    bottom: 0;
+    padding: 6px;
+    width: 30px;
+    height: 30px;
+
+    .tickIcon {
+      color: @profile-button-text-color;
+      position: absolute;
+      right: 2px;
+      bottom: 2px;
+    }
+  }
+}
+
+.formItemRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.formItem {
+  width: 457px;
+  margin-right: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.formItem_msg {
+  display: inline-block;
+  font-size: @size-1;
+
+  .formItem_msgIcon {
+    font-size: @size-3;
+    margin-right: 3px;
+    vertical-align: middle;
+  }
+
+  &[data-color='blue'] {
+    color: @blue-1;
+  }
+  &[data-color='red'] {
+    color: @red-1;
+  }
+  &[data-color='orange'] {
+    color: @orange-1;
+  }
+  &[data-color='yellow'] {
+    color: @yellow-1;
+  }
+  &[data-color='green'] {
+    color: @green-1;
+  }
+}
+
+.passwordIcon_button {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  .passwordIcon {
+    width: 26px;
+  }
+}

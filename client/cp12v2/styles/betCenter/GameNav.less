@@ -1,0 +1,66 @@
+@import '~clientResolver/index.less';
+
+.gameNav {
+  display: flex;
+  flex-direction: column;
+  background-color: @first-color;
+  color: @button-color;
+  font-size: @size-2;
+  border-radius: 8px;
+  margin: 0 0.5rem;
+}
+.gameNav_btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  button:nth-of-type(1) {
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+}
+.gameNav_btn {
+  padding: @size-0 @size-2;
+  &[data-active='true'] {
+    background-color: mix(@first-color, @hover-color);
+  }
+  &:hover {
+    background-color: mix(@first-color, @hover-color);
+  }
+  &[disabled] {
+    cursor: default;
+  }
+}
+.gameSubnavs {
+  margin: 0 0 @size-0 0;
+  padding: 0 @size-0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: @size-2;
+}
+.gameSubnav_label {
+  color: @gray-2;
+}
+.gameSubnav_chevron {
+  font-size: @size-4;
+  margin: 0 @size-0;
+  vertical-align: middle;
+}
+.gameSubnav_btn {
+  height: @button-height;
+  border-radius: 8px;
+  background-color: @common-background-line-color;
+  color: @sub-regular-color;
+  padding: 0 @size-3;
+  margin-right: @size-0;
+  transition-property: box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: @transition-timing;
+  margin-top: @size-0;
+
+  &[data-active='true'],
+  &:hover {
+    background-color: @first-color;
+    color: @button-color;
+  }
+}

@@ -1,0 +1,31 @@
+@import '~styles/layout.less';
+
+.header_topTray {
+  font-size: @size-1;
+  text-align: center;
+  background-color: @topTray-background-color;
+  color: @topTray-color;
+  height: 36px;
+}
+.header_topTrayBody {
+  display: flex;
+  flex-direction: row;
+  max-width: @page-width;
+  margin: 0 auto;
+}
+.header_topTrayLinks {
+  display: flex;
+  flex: 1;
+  color: @header-topTrayLink;
+  align-items: center;
+  height: 36px;
+}
+.header_topTrayLink {
+  position: relative;
+  margin-right: 28px;
+  cursor: pointer;
+}
+
+.accountIcon {
+  font-size: 1.5rem;
+}

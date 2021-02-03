@@ -1,0 +1,137 @@
+@import '~clientResolver/index.less';
+
+@titleFontSize: @size-2 + @size-3;
+@descFontSize: @size-6 / 2;
+
+.article {
+  min-width: @page-width;
+}
+
+.icon {
+  margin: 0 @size-0;
+  font-size: @size-6;
+}
+
+.container__flex {
+  display: flex;
+  justify-content: center;
+}
+
+.container__inline {
+  > * {
+    display: inline-block;
+    margin: 0 5%;
+  }
+}
+
+.title {
+  color: @orange-6;
+  font-size: @titleFontSize;
+}
+
+.mainScreen {
+  transform: scale(0.85) translate3d(-5px, 10px, 1px);
+  transform-origin: 0 0;
+}
+
+.intro {
+  .container__inline;
+
+  color: @yellow-5;
+}
+
+.intro_title {
+  font-size: @titleFontSize;
+  line-height: 1;
+  vertical-align: top;
+}
+
+.intro_desc {
+  font-size: @descFontSize;
+  font-weight: bold;
+  white-space: nowrap;
+
+  & span {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.box {
+  padding: @size-0 / 2 @size-1;
+  border-radius: @size-8;
+  box-shadow: @shadow-dp8;
+  color: @base-white;
+
+  &:focus {
+    text-decoration: none;
+  }
+
+  & span {
+    margin: 0 @size-0;
+    font-size: @size-4;
+    font-weight: bolder;
+    vertical-align: text-top;
+  }
+}
+
+.box_download {
+  .box;
+
+  min-width: 200px;
+  background-color: @yellow-3;
+  color: darken(@red-1, 5%);
+  line-height: @size-3;
+
+  &:hover {
+    color: @base-white;
+  }
+}
+
+.box__desc {
+  .container__inline;
+
+  margin: @size-3 0;
+  padding: @size-0;
+  border: 1px solid transparent;
+
+  & img {
+    width: 100%;
+    max-width: 70px;
+    vertical-align: top;
+  }
+
+  & p {
+    font-size: descFontSize;
+    vertical-align: top;
+  }
+
+  .title {
+    font-size: @size-5;
+  }
+}
+
+.QRCode {
+  margin: @size-3 12.5%;
+}
+
+.featured {
+  padding: @size-6 0;
+  background-image: url('../../assets/image/mobileSite/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.features {
+  padding: @size-3;
+  background-color: white;
+}
+
+.features__item {
+  margin: @size-3 0;
+}
+
+.feature__image {
+  transform: translate3d(10%, -17.5%, 0);
+  transform-origin: 0 0;
+}

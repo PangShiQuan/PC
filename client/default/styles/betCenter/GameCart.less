@@ -1,0 +1,122 @@
+@import '~clientResolver/index.less';
+
+.gameCart {
+  background-color: @betCenter-cart-bg;
+  margin-right: @size-0;
+  color: @betCenter-cart-color;
+  border-bottom-left-radius: 6px;
+}
+.gameCart_table {
+  font-size: @size-2;
+  text-align: initial;
+
+  [data-align='right'] {
+    text-align: right;
+  }
+
+  span {
+    height: @size-5;
+    padding: 0 @size-0;
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+.gameCart_header {
+  div {
+    line-height: 2rem;
+    color: @betCenter-cartHeader-color;
+    background-color: @betCenter-cartHeader-bg;
+    display: inline-block;
+    border: @betCenter-cartHeader-border;
+  }
+}
+.gameCart_items {
+  position: relative;
+
+  &[data-repeated='true'] {
+    span {
+      color: @alert-color;
+    }
+  }
+}
+.gameCart_items__empty {
+  &:extend(.gameCart_items);
+
+  text-align: center;
+  color: fade(@betCenter-cart-color, 60%);
+}
+.gameCart_tdEllipsis {
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gameCart_ctrlBtn {
+  line-height: 1;
+  float: right;
+  font-size: @size-3;
+
+  i {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.gameCart_popOverText {
+  i {
+    vertical-align: middle;
+  }
+  [class*='mdi'] {
+    margin-right: @size-0;
+    font-size: @size-3;
+    display: inline-block;
+  }
+}
+
+@keyframes floatDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gameCart_response {
+  display: inline-block;
+  color: @base-white;
+  width: 98%;
+  text-align: center;
+  border-radius: 6px;
+  font-size: @size-2;
+  line-height: @button-height;
+  margin: @size-0 auto;
+  animation: floatDown 0.15s 1 @standard-curve-timing-function;
+  animation-fill-mode: forwards;
+  &[data-color='blue'] {
+    background-color: @info-color;
+  }
+  &[data-color='red'] {
+    background-color: @alert-color;
+  }
+  &[data-color='green'] {
+    background-color: @success-color;
+  }
+}
+.gameCart_clearAllBtn {
+  border-radius: @size-3;
+  margin-right: @size-0;
+  display: inline-block;
+  line-height: 2;
+  padding: 0 @size-0;
+  vertical-align: middle;
+  &:not([disabled]) {
+    box-shadow: @shadow-dp2;
+    background-color: @betCenter-cal-clear-btn-bg;
+    color: @betCenter-cal-clear-btn-color;
+  }
+}

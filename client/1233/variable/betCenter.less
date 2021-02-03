@@ -1,0 +1,95 @@
+@import './common.less';
+
+/*
+** BET_CENTER COMPONENT
+*/
+@betCenter-bg: url('../assets/image/background.png') repeat top left;
+
+// betcenter header
+
+@betCenter-header-bg: @base-white;
+
+@betCenter-collapseIcon-color: @base-white;
+
+@betCenter-header-color: @indicate-color;
+
+@betCenter-logo-bg: @betCenter-header-bg;
+
+// betcenter nav
+@betCenter-nav-bg: @primary-color--light;
+
+@betCenter-nav-bg--active: darken(@betCenter-nav-bg, 5%);
+
+// betcenter calulator
+@betCenter-cal-bg: @bg-gray--light;
+
+@betCenter-cal-color: @text-color;
+
+// betcenter cart
+@betCenter-cart-bg: darken(@bg-gray--light, 5%);
+
+@betCenter-cartHeader-bg: @tableHeader-bg;
+
+@betCenter-cartHeader-color: @base-white;
+
+@betCenter-cart-color: @text-color;
+
+/*
+** BET_ENTRANCE COMPONENT
+*/
+@betEntrance-btn-color: @accent-color;
+
+@betEntrance-gradient--btn: linear-gradient(
+  to bottom,
+  @accent-color--light 0%,
+  @accent-color 100%
+);
+
+@betEntrance-gradient--card: linear-gradient(
+  to bottom,
+  @base-white 0%,
+  @bg-gray--light 100%
+);
+
+/*
+** CIRCULAR_PROGRESS_BAR COMPONENT
+*/
+@circularBar-track-color: @indicate-color;
+
+@circularBar-progress-color: @primary-color;
+
+/*
+** COMPONENTS
+*/
+
+@lottery-bgColor--none: @shadow-color;
+
+/*
+** Overrides
+*/
+.gameboard_btn_override {
+  background: linear-gradient(-180deg, #fdfdfd 0%, #eeedf2 51%, #e3e3ec 100%);
+  color: @text-color;
+  border: 0;
+  box-shadow: @shadow-dp2;
+  &:hover,
+  &[data-active='true'] {
+    background: @accent-color;
+    color: @base-white;
+    border: 0;
+    box-shadow: @shadow-dp0;
+  }
+}
+.gameboard_ctrlBtn_override {
+  background: linear-gradient(-180deg, #fdfdfd 0%, #eeedf2 51%, #e3e3ec 100%);
+  color: @text-color;
+  border: 0;
+  box-shadow: @shadow-dp2;
+  &:hover,
+  &[data-active='true'] {
+    background: @accent-color;
+    color: @base-white;
+    border: 0;
+    box-shadow: @shadow-dp0;
+  }
+}

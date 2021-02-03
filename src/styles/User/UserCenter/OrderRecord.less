@@ -1,0 +1,367 @@
+@import '~styles/layout.less';
+@import '../ProfileTable.less';
+
+.orderRecord_filter {
+  .clearfix;
+
+  width: 100%;
+  margin-top: 1.2rem;
+  font-size: @size-2;
+  [class='ant-input'] {
+    padding: 0;
+  }
+  [class*='ant-calendar-range-picker-separator'],
+  [class*='ant-calendar-range-picker-input'] {
+    vertical-align: middle;
+  }
+}
+.orderRecord_gamePlatformTab {
+  width: @size-8;
+  height: 2.5rem;
+  border-color: @first-color;
+  border-style: solid;
+  border-radius: 0.25rem 0.25rem 0 0;
+  background-color: @first-color;
+  color: @base-white;
+  font-size: @size-1;
+  vertical-align: middle;
+  &:not(:only-child) {
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+    }
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+    }
+  }
+  &:not(:last-child) {
+    border-right-width: 1px;
+  }
+  &:hover {
+    background-color: @first-color;
+  }
+  &[data-active='true'] {
+    background-color: @profile-btn-bg-active;
+  }
+}
+
+.orderRecord_gamePlatformTabOuter {
+  display: inline-block;
+  border-bottom: 1px solid @first-color;
+}
+
+.orderRecord_searchBtn {
+  display: inline-block;
+  position: absolute;
+  margin-left: 48.4rem;
+}
+.orderRecord_value {
+  color: inherit;
+  &[data-negative='true'] {
+    color: @alert-color;
+  }
+}
+.orderRecord_betlogDetailsLabel {
+  width: 3rem;
+}
+.orderRecord_betlogDetailsValue {
+  width: 20rem;
+}
+.orderRecord_detailsBtn {
+  color: @profile-body-color;
+  i {
+    font-size: @size-2;
+  }
+}
+.orderRecord_SearchInput {
+  background-color: inherit;
+  color: inherit;
+  line-height: 1;
+  vertical-align: middle;
+  display: flex;
+  flex: 1 1;
+  width: 3rem;
+}
+.orderRecord_betlogDetailsModal {
+  [class*='ant-modal-close-x'] {
+    margin: @size-0 @size-0;
+    color: @base-white;
+    font-size: @size-1;
+  }
+}
+.orderRecord_dateRangePicker {
+  // margin: 0 0 0 4.5rem;
+  float: right;
+}
+
+.orderRecord_betlogDetailsPagination {
+  margin-top: @size-3;
+  text-align: right;
+}
+.orderRecord_mainTable {
+  // width: 100%;
+  // width: 870px;
+  [class*='ant-table'] table {
+    border-radius: 0;
+  }
+  [class*='ant-table-tbody'] {
+    [class*='ant-table-row'] {
+      &:hover {
+        background-color: @base-white;
+      }
+    }
+  }
+  [class*='ant-table-row'] {
+    background-color: @base-white;
+    &:hover {
+      td {
+        background-color: @base-white;
+      }
+    }
+  }
+  [class*='ant-table-expanded-row'] {
+    background-color: @bg-gray--light;
+    &:hover {
+      [class*='ant-table-body'] td {
+        background-color: @base-white;
+      }
+      td {
+        [class*='ant-table-expanded-row'] {
+          td {
+            background-color: @bg-gray--light;
+          }
+        }
+        [class*='ant-table-row'] {
+          td {
+            background-color: @base-white;
+          }
+        }
+
+        background-color: @bg-gray--light;
+      }
+    }
+  }
+  [class*='ant-pagination'][class*='ant-table-pagination'] {
+    .profile_tablePagination;
+  }
+}
+.orderRecord_modalClose {
+  margin-bottom: @size-5;
+}
+.orderRecord_mainTableOuter {
+  margin: 0 0 0 0;
+  [class*='ant-table-tbody'] tr td {
+    text-align: left;
+  }
+  [class*='ant-table-thead'] tr th {
+    text-align: left;
+  }
+}
+.orderRecord_columnTitle {
+  .profile_columnTitle;
+}
+.orderRecord_columnAmount {
+  .profile_columnAmount;
+}
+.orderRecord_columnMediumLong {
+  .profile_columnMediumLong;
+}
+.orderRecord_medium {
+  .profile_columnMedium;
+}
+.orderRecord_mediumShort {
+  .profile_columnShortMedium;
+}
+.orderRecord_long {
+  .profile_columnLong;
+}
+.orderRecord_extraLong {
+  .profile_columnExtraLong;
+}
+.orderRecord_short {
+  .profile_columnShort;
+}
+.orderRecord_sportGameDescription {
+  .profile_columnSportsGameDescription;
+  [class*='ant-collapse'] {
+    [class*='ant-collapse-item'] {
+      [class*='ant-collapse-content-box'] {
+        padding: 0 16px 0 16px;
+      }
+
+      border-bottom: none;
+      [class*='ant-collapse-header'] {
+        font-weight: 600;
+        [class*='arrow'] {
+          font-weight: 600;
+          left: 0;
+        }
+
+        padding: 10px 0 5px 20px;
+      }
+    }
+
+    background-color: transparent;
+    border-radius: none;
+    border: none;
+    border-bottom: 0;
+  }
+
+  hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid @profile-borderColor;
+  }
+}
+.orderRecord_bold {
+  .profile_columnBold;
+}
+.orderRecord_status {
+  &[data-color='green'] {
+    color: @success-color;
+  }
+  &[data-color='red'] {
+    color: @alert-color;
+  }
+}
+.orderRecord_notice {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.orderRecord_columnDetailBtn {
+  min-width: 5rem;
+}
+.orderRecord_searchInput {
+  display: flex;
+  span:first-child {
+    padding-top: @size-0 / 2;
+  }
+  input {
+    border-radius: 0.25rem;
+
+    &:hover {
+      border: 1px solid @first-color;
+    }
+  }
+  ::-webkit-input-placeholder {
+    color: @base-white;
+  }
+  ::-moz-placeholder {
+    color: @base-white;
+  }
+  :-ms-input-placeholder {
+    color: @base-white;
+  }
+  :-moz-placeholder {
+    color: @base-white;
+  }
+}
+.orderRecord_searchInputClearBtn {
+  visibility: hidden;
+  margin: 0 0 @size-1 @size-0 / 2;
+  font-size: @size-3;
+  &[data-visible='true'] {
+    visibility: visible;
+    position: relative;
+    right: 2rem;
+    margin-top: 0.25rem;
+  }
+}
+
+.orderRecord_resultFilterOuter {
+  display: flex;
+  min-height: 2rem;
+  [class*='ant-select'][class*='ant-select-open'][class*='ant-select-focused'][class*='ant-select-enabled'] {
+    border-color: @first-color;
+  }
+  [class*='ant-select-open'] {
+    [class*='ant-select-selection'] {
+      border-color: @first-color;
+      -webkit-box-shadow: 0;
+      box-shadow: 0;
+      color: @first-color;
+    }
+  }
+  [class*='ant-select-selection--multiple'] {
+    [class*='ant-select-selection__clear'] {
+      top: 9px;
+    }
+  }
+  [class*='ant-select-selection'] {
+    // height: 2rem;
+    margin-left: 0.5rem;
+    &:hover {
+      border-color: @first-color;
+    }
+    &:active {
+      border-color: @first-color;
+    }
+  }
+
+  [class*='ant-select-selection--multiple'] {
+    [class*='ant-select-selection__choice'] {
+      // width: 4.5rem;
+      height: 1.6rem;
+      border: solid 0.01rem @first-color;
+      background-color: @first-color;
+      color: @base-white;
+      text-align: center;
+    }
+  }
+  span:first-child {
+    padding-top: @size-0 / 2;
+  }
+  input {
+    width: 5rem;
+    height: 1.8rem;
+    margin-left: @size-0;
+    border: 1px solid #d9d9d9;
+    font-size: @size-2;
+  }
+}
+.orderRecord_specialBetTypeOuter {
+  display: flex;
+}
+
+.orderRecord_specialBetType {
+  span:first-child {
+    position: relative;
+  }
+
+  &[data-special='SCO'] {
+    background-color: @success-color--light;
+  }
+  &[data-special='ICO'] {
+    background-color: @first-color;
+  }
+  &[data-level='PARENT'] {
+    background-color: @success-color--light;
+  }
+  &[data-level='CHILD'] {
+    background-color: @first-color;
+  }
+
+  width: 19px;
+  height: 19px;
+  margin-right: @size-0 / 2;
+  // margin-top: @size-0;
+  border-radius: 2rem;
+  color: @base-white;
+  font-size: @size-1;
+  text-align: center;
+  vertical-align: text-top;
+}
+.orderRecord_detailsHeight {
+  // text-align: center;
+
+  &[data-special='true'] {
+    height: 1rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.orderRecord_shareChatRoomModal {
+  [class*='ant-modal-content'] {
+    border-radius: 20px;
+    box-shadow: none;
+  }
+}

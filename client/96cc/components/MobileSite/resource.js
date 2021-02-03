@@ -1,0 +1,8 @@
+import bg from '../../assets/image/mobileSite/mobileBgxxcp.png';
+import header from '../../assets/image/mobileSite/header.png';
+import phone from '../../assets/image/mobileSite/phone.png';
+import android from '../../assets/image/mobileSite/android_btn.png';
+import ios from '../../assets/image/mobileSite/ios_btn.png';
+import saoma from '../../assets/image/mobileSite/saoma.png';
+
+export {bg, header, phone, android, ios, saoma};

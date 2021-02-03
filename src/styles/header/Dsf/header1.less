@@ -1,0 +1,55 @@
+@import '~styles/layout.less';
+
+.header {
+  .row;
+
+  text-align: center;
+  color: @header-color;
+  background: @header-bg;
+  width: 100%;
+  border-bottom: 1px solid @homepage-border-color;
+
+  &[data-iswide='true'] {
+    @media only screen and (max-width: 768px) {
+      min-width: 64.3rem;
+    }
+    @media only screen and (max-width: 1024px) {
+      min-width: 64.3rem;
+    }
+  }
+  &[data-pathname~='cards'] {
+    color: @cards-header-color;
+    background: @cards-color;
+  }
+  &[data-pathname~='promotions'],
+  &[data-pathname~='welfarecenter'] {
+    background: @promotion-header-bg;
+  }
+  &[data-pathname~='games'] {
+    background: @games-color;
+  }
+  &[data-pathname~='fishing'] {
+    background: @games-color;
+  }
+  &[data-pathname~='sports'] {
+    background: @sports-color;
+  }
+  &[data-pathname~='realis'] {
+    background: @realis-color;
+  }
+}
+
+.navigation {
+  .row;
+
+  background: @navigation-bg-all;
+  min-height: @button-height + @size-3 + @size-0;
+  position: relative;
+  min-width: @page-min-width;
+  width: 100%;
+  z-index: 2;
+
+  &[ispromotions='true'] {
+    background: #1d2022;
+  }
+}

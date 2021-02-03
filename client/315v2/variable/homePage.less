@@ -1,0 +1,56 @@
+@import './common.less';
+
+@navigation-bg: transparent;
+
+@navigation-list-bg: url('../assets/image/navigation_bg.png') no-repeat center /
+  100% 100%;
+
+@navigation-color--disable: @primary-color--dark;
+
+@navigation-profileNavRow-bg: url('../assets/image/header_bg.png') no-repeat
+  right / auto 100%;
+
+@navigation-bg--selected: url('../assets/image/main-menu-selected-effect.png')
+  bottom no-repeat / cover;
+
+/*
+** HOME_PAGE COMPONENT
+*/
+@home-content--min-height: 70.25vh;
+
+@home-background: none;
+
+@featured-item-bgColor: @primary-color;
+
+.navigation__selected {
+  &::after {
+    content: unset;
+  }
+}
+
+.mainFooter {
+  bottom: 0;
+  width: 100%;
+}
+
+.mainFooter {
+  &[data-pathname~='games'] {
+    bottom: 0;
+    width: 100%;
+  }
+  &[data-pathname~='sports'] {
+    bottom: 0;
+    width: 100%;
+  }
+  &[data-pathname~='cards'] {
+    bottom: 0;
+    width: 100%;
+  }
+  &[data-pathname~='realis'] {
+    bottom: 0;
+    width: 100%;
+  }
+  &[data-pathname~='promotions'] {
+    position: static;
+  }
+}

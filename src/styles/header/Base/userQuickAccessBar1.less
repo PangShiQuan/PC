@@ -1,0 +1,120 @@
+@import '~styles/variables.less';
+@import '~clientResolver/index.less';
+
+.quickAccessBar {
+  margin: auto;
+}
+.quickAccessBarBtn {
+  border-radius: 6px;
+  color: @quickAccessBarBtn-color;
+  font-size: @size-2;
+  height: @button-height;
+  padding: 0 0.475rem;
+  position: relative;
+  .allIcon {
+    width: 18px;
+    vertical-align: middle;
+  }
+  .reloadIcon,
+  .cashoutIcon {
+    svg {
+      .allIcon;
+      > * path[class*='st0'] {
+        stroke: @userBarIcon-color;
+        stroke-width: 0.5;
+      }
+    }
+  }
+  &:disabled {
+    .reloadIcon,
+    .cashoutIcon {
+      svg {
+        .allIcon;
+        > * path[class*='st0'] {
+          stroke: @disabled-color;
+          stroke-width: 0.5;
+        }
+      }
+    }
+  }
+  .logoutIcon {
+    svg {
+      .allIcon;
+      > * path[class*='st0'] {
+        fill: @subbutton-color;
+        stroke: @subbutton-color;
+        stroke-width: 0.1;
+      }
+    }
+  }
+  .betrecordIcon,
+  .messageIcon,
+  .usercenterIcon,
+  .accountdetailIcon {
+    svg {
+      .allIcon;
+      > * path[class*='st0'] {
+        fill: @userBarIcon-color;
+        stroke: none;
+      }
+    }
+  }
+  [class*='mdi'] {
+    margin-right: @size-0;
+    font-size: 1.5em;
+    display: inline-block;
+    line-height: 1;
+  }
+  i {
+    display: inline-block;
+    line-height: 1.5em;
+    vertical-align: middle;
+  }
+  &[disabled] {
+    color: @disabled-color;
+    cursor: not-allowed;
+  }
+  &:not(:last-child)::after {
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    width: 1px;
+    right: 0;
+    top: @size-0;
+    bottom: @size-0;
+    left: auto;
+    background-color: @common-background-line-color;
+  }
+  &:last-child {
+    color: @subbutton-color;
+  }
+}
+.quickAccessBar_refreshIcon {
+  -webkit-transform-origin: 50% 51%;
+  margin-left: 10px;
+  &[data-rotated='true'] {
+    animation: rotate infinite 1s @transition-timing;
+    animation-fill-mode: forwards;
+  }
+}
+.quickAccessBar_balance {
+  display: inline-block;
+  background-color: @common-table-color;
+  border-radius: @size-3;
+  vertical-align: middle;
+  font-size: @size-3;
+  margin-left: @size-0;
+  color: @first-color;
+  padding: 0 @size-0;
+}
+.quickAccessBar_btnBubble {
+  background-color: @error-color;
+  color: white;
+  position: absolute;
+  line-height: 22px;
+  font-size: 14px;
+  border-radius: 11px;
+  top: 0;
+  left: @size-0 / 2;
+  padding: 0 8px;
+}

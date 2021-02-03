@@ -1,0 +1,52 @@
+@import '~styles/layout.less';
+
+.body {
+  position: relative;
+  display: flex;
+
+  .loading {
+    color: @welfare-center-font-color;
+    margin: 60px auto;
+  }
+
+  .sub_nav {
+    flex: 0 1 120px;
+    display: flex;
+    flex-direction: column;
+
+    & > button {
+      color: @welfare-center-font-color;
+      margin: 5px 20px 5px 0;
+      padding: 8px 0;
+      border-radius: @welfare-center-button-br;
+      border: 1px solid @welfare-center-primary-color;
+
+      &:hover,
+      &[data-active='true'] {
+        color: @welfare-center-button-color;
+        background-color: @welfare-center-primary-color;
+      }
+
+      &:disabled {
+        color: #888;
+        background-color: #eaeaea;
+        border: 1px solid #eaeaea;
+      }
+    }
+  }
+
+  .main {
+    flex: 1 1;
+  }
+
+  .alertMsg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: @welfare-center-desc-color;
+    color: @welfare-center-instruction-button-bg;
+    border-radius: 4px;
+    padding: 10px 100px;
+  }
+}

@@ -1,0 +1,69 @@
+@import '~styles/variables.less';
+@import '~clientResolver/index.less';
+
+@footer-bgWhite: @base-white;
+@footer-bgGray: @gray-4;
+@footer-color: @base-black;
+
+.footer {
+  background-color: @common-background-color;
+  color: @gray-1;
+  text-align: center;
+  min-width: @page-width;
+  &[data-disclaimerbgcolor='white'] {
+    background-color: @footer-bgWhite;
+  }
+}
+.footer_content {
+  width: @page-width;
+  margin: 0 auto;
+  padding: @size-3 0;
+  position: relative;
+  font-size: @size-2;
+  color: @footer-color;
+  overflow: auto;
+  p {
+    margin-bottom: 6px;
+  }
+}
+.footerImgs {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: @size-0;
+  li {
+    display: inline-block;
+    margin-right: @size-0;
+    width: 120px;
+    height: 45px;
+    line-height: 30px;
+    background: url('../../../assets/image/footerImgs.png') no-repeat 0 0;
+    &:nth-child(2) {
+      background-position: 0 -47px;
+    }
+    &:nth-child(3) {
+      background-position: 0 -94px;
+    }
+    &:nth-child(4) {
+      background-position: 0 -141px;
+    }
+    &:nth-child(5) {
+      background-position: 0 -188px;
+    }
+  }
+}
+
+.footerWord {
+  display: flex;
+  padding-top: 16px;
+  > p {
+    font-size: 12px;
+    color: @main-regular-color;
+    letter-spacing: 0;
+    &:nth-of-type(2) {
+      padding-left: 65px;
+    }
+  }
+}

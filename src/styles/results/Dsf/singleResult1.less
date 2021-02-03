@@ -1,0 +1,202 @@
+@import '~styles/layout.less';
+@import '~styles/general/Dsf/lotteryBalls1.less';
+
+.result {
+  background: @base-white;
+}
+
+.container {
+  font-size: @size-2;
+  margin: 10% 0;
+  text-align: center;
+  width: 100%;
+}
+
+.tables {
+  .row;
+
+  display: block;
+  width: 100%;
+}
+.tableContainer {
+  width: 50%;
+  float: left;
+}
+.table {
+  text-align: center;
+  width: 100%;
+  font-size: @size-1;
+  border-collapse: collapse;
+  border: 1px solid @border-color--light;
+  tr {
+    height: 46px;
+    border-bottom: 1px solid @border-color--light;
+  }
+}
+.gameInfo {
+  background-color: @accent-color--light;
+  border: 1px solid @accent-color;
+  color: @text-color;
+  padding: @size-3;
+  margin: @size-3 auto;
+  margin-bottom: 0;
+}
+.gameInfoRow {
+  font-size: @size-2;
+  & > span,
+  & > button {
+    margin-right: @size-3;
+    vertical-align: middle;
+    line-height: 1;
+  }
+  & ~ & {
+    margin-top: @size-4;
+    & > span {
+      margin-right: @size-6;
+    }
+  }
+}
+.gameName {
+  font-size: @size-6 / 2;
+}
+.gameFrequency {
+  color: @text-color;
+}
+.predictBtn {
+  color: @success-color--light;
+  margin-right: @size-0;
+  & > span {
+    vertical-align: middle;
+  }
+}
+.rulesBtn {
+  color: @alert-color--light;
+  & > span {
+    vertical-align: middle;
+  }
+}
+.predictIcon,
+.rulesIcon {
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+.issueSelectBtn {
+  background-color: @base-white;
+  border: 1px solid @text-color;
+  padding: @size-0 / 2 @size-0;
+  border-radius: 6px;
+  margin: 0 @size-0;
+  font-size: @size-2;
+
+  i {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+  }
+  [class*='mdi-'] {
+    font-size: 1.5em;
+    margin-left: @size-3;
+  }
+}
+.issueDropdown {
+  padding: 0 @size-3;
+  background-color: @base-white;
+  min-width: 150px;
+  max-height: @button-height * 10;
+  overflow-y: scroll;
+  box-shadow: @shadow-dp2;
+  display: inline-block;
+  border-radius: 6px;
+}
+.issueDropdownBtn {
+  display: block;
+  height: @button-height;
+  text-align: center;
+  width: 100%;
+}
+.singleIssueNumDivider {
+  margin-right: @size-0 / 2;
+  vertical-align: middle;
+}
+.singleIssueNumContainer {
+  display: inline-block;
+  vertical-align: middle;
+}
+.lotteryBall {
+  color: @accent-color;
+  font-size: @size-2;
+  font-weight: bold;
+  margin-left: @size-0;
+  display: inline-block;
+}
+.lotteryBallDivider {
+  font-size: 13px;
+  margin: 0 @size-0 / 2;
+  font-weight: normal;
+}
+.lotteryBall {
+  font-family: 'Courier New', Courier, monospace;
+}
+.markSixBall {
+  .lottery;
+
+  line-height: @size-4;
+  height: @size-4;
+  min-width: @size-4;
+  margin: 0 0.15rem;
+}
+.optionContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.dateOptions {
+  display: block;
+  text-align: left;
+}
+.dateOption {
+  display: inline-block;
+  text-align: center;
+  border-color: @border-color--light;
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  line-height: 40px;
+  width: 100px;
+  position: relative;
+
+  &:last-child {
+    border-right-width: 1px;
+  }
+  &[data-active='true']::after {
+    content: '';
+    position: absolute;
+    background-color: @accent-color;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+}
+.openCodeOptions {
+  display: block;
+}
+.openCodeOption {
+  padding: 0;
+  height: 100%;
+  font-size: @size-2;
+  &[data-active='true'] {
+    color: @accent-color;
+  }
+
+  .label {
+    padding: 0 20px;
+    border-left: 1px solid @border-color--light;
+  }
+
+  &:first-child {
+    .label {
+      border-left: none;
+    }
+  }
+}

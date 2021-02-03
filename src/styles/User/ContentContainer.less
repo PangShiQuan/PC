@@ -1,0 +1,20 @@
+@import '~clientResolver/index.less';
+
+.profile_container {
+  background-color: @base-white;
+  padding: 5px 0;
+
+  .profile_container_label {
+    font-size: @size-2;
+    margin-bottom: 30px;
+
+    &::before {
+      content: '';
+      height: 10px;
+      width: 3px;
+      background: #000;
+      display: inline-block;
+      margin-right: 8px;
+    }
+  }
+}

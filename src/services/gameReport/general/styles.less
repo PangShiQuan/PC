@@ -1,0 +1,17 @@
+@import '~clientResolver/index.less';
+
+.reportValue {
+  // color: @success-color;
+  &[data-negative='true'] {
+    color: @alert-color;
+  }
+}
+
+.reportStatus {
+  &[data-color='green'] {
+    color: @success-color;
+  }
+  &[data-color='red'] {
+    color: @alert-color;
+  }
+}

@@ -1,0 +1,318 @@
+@import '~clientResolver/index.less';
+
+html {
+  background-color: @common-background-color;
+  font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
+    'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial,
+    sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background: @common-background-color;
+  font-size: 1rem;
+}
+
+.btn {
+  border-radius: 6px;
+  color: @text-color;
+  float: left;
+  line-height: 42px;
+  padding: 0 @size-0;
+  text-decoration: none;
+}
+.geetest_logo {
+  display: none !important;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+.center {
+  margin: 0 auto;
+  padding: @size-0 * 2 @size-0 * 2.5;
+}
+
+.form {
+  margin: 0 auto;
+  max-width: 30rem;
+}
+
+.form-inputRow {
+  display: block;
+  width: 100%;
+}
+
+.form-inputLabel {
+  appearance: none;
+  background-color: @common-table-color;
+  // border: 1px solid @border-color--light;
+  border-radius: 6px;
+  // border-style: solid;
+  display: none;
+  margin-bottom: @size-0 * 2;
+  position: relative;
+  width: 100%;
+
+  &[data-required='true'] {
+    display: block;
+    &::before {
+      color: @error-color;
+      content: '*';
+      font-size: 1.5rem;
+      left: 100%;
+      padding-left: @size-0 / 2;
+      position: absolute;
+      top: 10px;
+    }
+  }
+
+  &[data-displayed='true'] {
+    display: block;
+  }
+}
+
+.form-inputIcon {
+  display: inline-block;
+  margin-left: @size-0;
+  vertical-align: middle;
+
+  path {
+    fill: @sub-regular-color;
+  }
+
+  &#password-toggle {
+    margin-top: 8px;
+    margin-right: 0.1rem;
+    float: right;
+    &[data-active='true'] {
+      path {
+        fill: @profile-primary-color;
+      }
+    }
+  }
+}
+
+.form-input {
+  display: inline-block;
+  width: 85%;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0;
+  background-color: transparent;
+  border-width: 0;
+  line-height: 40px;
+  outline: none;
+  vertical-align: middle;
+  color: @main-regular-color;
+  &#password {
+    width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &::-webkit-input-placeholder {
+    font-size: 0.8em;
+    color: @sub-regular-color;
+  }
+  &::-moz-placeholder {
+    font-size: 0.8em;
+    color: @sub-regular-color;
+  }
+  &:-ms-input-placeholder {
+    font-size: 0.8em;
+    color: @sub-regular-color;
+  }
+  &:-moz-placeholder {
+    font-size: 0.8em;
+    color: @sub-regular-color;
+  }
+}
+
+.form-inputImg {
+  border: 0;
+  color: @text-color;
+  font-size: 0.85rem;
+  height: 24px;
+  line-height: 24px;
+  outline: 0;
+  position: absolute;
+  right: @size-0;
+  text-align: right;
+  top: @size-0;
+  width: auto;
+}
+
+.form-btnRow {
+  display: block;
+  margin: 0 auto;
+  max-width: 30rem;
+  text-align: center;
+  width: auto;
+}
+
+.form-btn {
+  display: inline-block;
+  float: none;
+  margin: @size-0 auto;
+  width: 80%;
+
+  &[hidden='true'] {
+    display: none !important;
+  }
+}
+
+.form-registerBtn--indigo {
+  .form-btn;
+
+  background-color: @button-color;
+  color: @form-registerBtn-indigo-color;
+  border: 1px solid @form-registerBtn-indigo-color;
+}
+
+.form-registerBtn--white {
+  .form-btn;
+
+  background-color: @form-registerBtn-white-bgcolor;
+  color: @button-color;
+}
+
+.form-returnBtn {
+  background-color: transparent;
+  color: @form-returnBtn-color;
+  float: left;
+  font-size: 0.85rem;
+  font-weight: normal;
+  margin: @size-0 * 2 auto 0 10%;
+  text-align: left;
+  text-decoration: none;
+}
+
+.form-agreement {
+  cursor: pointer;
+  display: block;
+  font-size: 0.85rem;
+  margin: @size-0 auto;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.agreementLink {
+  color: @agreementLink-color;
+}
+
+.form-agreementSpan {
+  vertical-align: middle;
+  color: @sub-regular-color;
+}
+
+.form-agreementCheckbox {
+  position: absolute;
+  visibility: hidden;
+
+  &:checked ~ .form-checkboxIcon path {
+    fill: @correct-color;
+  }
+}
+
+.form-checkboxIcon {
+  display: inline-block;
+  vertical-align: middle;
+
+  path {
+    fill: @text-color--light;
+  }
+}
+
+footer {
+  color: @sub-regular-color;
+  font-size: 0.85rem;
+  overflow: auto;
+  text-align: center;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#response-message {
+  [id*='-msg'] {
+    border-radius: 6px;
+    color: @base-white;
+    display: none;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+    padding: @size-0;
+    animation-fill-mode: forwards;
+
+    &[data-show='true'] {
+      animation: fadeIn 500ms 1 cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+
+    &[data-show='false'] {
+      animation: fadeOut 500ms 1 cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+
+    span {
+      display: block;
+      margin: 0.25rem 0;
+      padding: 0 0.25rem;
+      text-align: left;
+
+      &::before {
+        content: '\2022  ';
+      }
+    }
+  }
+}
+
+#err-msg {
+  background-color: @error-color;
+}
+
+#success-msg {
+  background-color: @correct-color;
+}
+
+//overwrite
+#register-form {
+  .geetest_radar_btn {
+    border-radius: 6px;
+  }
+}
+
+#captcha-box {
+  margin-bottom: @size-0 * 3;
+
+  &:empty {
+    background-image: linear-gradient(180deg, @base-white 0%, #f3f3f3 100%);
+    border: 1px solid @border-color;
+    border-radius: 6px;
+    min-height: 42px;
+    text-align: center;
+
+    &::before {
+      color: @text-color;
+      content: '搭建校验环境中...';
+      font-size: 14px;
+      line-height: 42px;
+    }
+  }
+}

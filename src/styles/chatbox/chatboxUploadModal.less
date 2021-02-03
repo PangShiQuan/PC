@@ -1,0 +1,90 @@
+@import '~styles/layout.less';
+@import './index.less';
+
+.chatbox_upload_modal_container {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+
+  .chatbox_upload_modal {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .header {
+    text-align: center;
+    font-weight: 600;
+    font-size: 17px;
+    color: #333;
+    letter-spacing: -0.41px;
+
+    .closeButton {
+      position: absolute;
+      top: 8px;
+      right: 6px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        height: 12px;
+      }
+    }
+  }
+
+  .body {
+    .image_container {
+      height: 200px;
+      padding: 15px;
+      background: #f2f3f4;
+      margin: 15px 0;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        max-height: 100%;
+      }
+    }
+  }
+
+  .inputDiv {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .imageButton {
+      height: 20px;
+    }
+
+    .inputBox {
+      flex: 1;
+      background-color: #f2f3f4;
+      border-radius: 18px;
+      padding: 4px 10px;
+      width: 100%;
+    }
+  }
+
+  .submitDiv {
+    .submitButton {
+      margin: 20px 0 10px;
+      border-radius: 8px;
+      height: 40px;
+      width: 100%;
+      text-align: center;
+      background-color: @chatbox-color;
+      color: #fff;
+    }
+  }
+}

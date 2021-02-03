@@ -1,0 +1,402 @@
+@import '~styles/layout.less';
+
+.profile_tableTotalRow {
+  td {
+    font-weight: bold;
+    border-top: 3px double @primary-color;
+    border-bottom: 1px solid @primary-color;
+  }
+}
+.profile_tableBtn {
+  font-size: @size-2;
+  color: @primary-color;
+  height: @button-height;
+  padding: 0 @size-0;
+  min-width: auto;
+}
+.profile_tableMenuDownIcon {
+  font-size: @size-4;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+.profile_tableSortIcon {
+  font-size: @size-3;
+  color: rgba(255, 255, 255, 0.6);
+}
+.profile_tableChevronIcon {
+  font-size: @size-4;
+}
+.profile_tableSortIcon__active {
+  .profile_tableSortIcon;
+
+  color: rgb(255, 255, 255);
+}
+.profile_tableText {
+  color: @profile-body-color;
+  width: 100%;
+  text-align: inherit;
+  vertical-align: bottom;
+}
+.profile_tableAnchor {
+  &:extend(.profile_tableText);
+
+  cursor: pointer;
+  display: block;
+
+  i {
+    vertical-align: middle;
+  }
+  &[disabled] {
+    color: inherit;
+    cursor: default;
+  }
+}
+.profile_tableCtrlsRow {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.profile_tablePopUp {
+  .row;
+
+  animation: popDown 0.15s 1 @standard-curve-timing-function;
+  animation-fill-mode: forwards;
+  background-color: @bg-gray--light;
+  border-radius: 20px;
+  padding: 1.75rem;
+}
+
+.profile_tablePopUp_confirmation {
+  .profile_tablePopUp;
+
+  padding: 2.38rem 1rem 1rem;
+}
+
+.profile_tablePopUpGamePic {
+  background-color: @base-white;
+  border-radius: 50%;
+  box-shadow: @shadow-dp2;
+  display: inline-block;
+  vertical-align: middle;
+  height: @size-6 * 2;
+  margin-right: @size-0;
+  width: @size-6 * 2;
+}
+
+.profile_tableSearchBox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.profile_tableSearchInput {
+  background-color: inherit;
+  color: inherit;
+  line-height: 1;
+  vertical-align: middle;
+  display: flex;
+  flex: 1 1;
+  width: 80px;
+}
+.profile_tableSearchInput::placeholder {
+  color: @base-white !important;
+  opacity: 0.6;
+}
+.profile_tableSearchIcon {
+  font-size: @size-3;
+  vertical-align: middle;
+  margin-right: @size-0;
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  &::before {
+    position: relative;
+    z-index: 1;
+  }
+  &::after {
+    background-color: @accent-color;
+    border-radius: @size-5 / 2;
+    box-shadow: @shadow-dp0;
+    content: '';
+    height: @size-5;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(0);
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: @standard-curve-timing-function;
+    transform-origin: center center;
+    width: @size-5;
+    z-index: 0;
+  }
+}
+.profile_tableSearchIcon__active {
+  .profile_tableSearchIcon;
+
+  color: rgba(255, 255, 255, 1);
+  &::after {
+    box-shadow: @shadow-dp2;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+  }
+}
+.profile_tableClearIcon {
+  margin-left: @size-0;
+  vertical-align: middle;
+  color: rgba(255, 255, 255, 0);
+}
+.profile_tableClearIcon__active {
+  .profile_tableClearIcon;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+.profile_tableAddNewBtn {
+  height: @button-height;
+  display: block;
+  color: @accent-color--dark;
+  border-radius: 6px;
+  border: 1px solid @accent-color--dark;
+  margin: @size-0 auto;
+  width: 100%;
+  &[disabled] {
+    color: @text-color--disabled;
+    border: 1px solid @profile-borderColor;
+  }
+  i {
+    vertical-align: middle;
+  }
+}
+.profile_table_body {
+  overflow-x: auto;
+}
+.profile_table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  background-color: @base-white;
+  font-size: @size-2;
+  white-space: nowrap;
+
+  td {
+    line-height: @size-6;
+    padding: 0 @size-0;
+    font-size: inherit;
+    color: @text-color;
+    white-space: nowrap;
+    &[data-color='blue'] {
+      color: @blue-1;
+    }
+    &[data-color='red'] {
+      color: @red-1;
+    }
+    &[data-color='orange'] {
+      color: @orange-1;
+    }
+    &[data-color='yellow'] {
+      color: @yellow-1;
+    }
+    &[data-color='green'] {
+      color: @green-1;
+    }
+    &:only-of-type {
+      text-align: center;
+    }
+  }
+
+  thead td {
+    font-size: @size-1;
+    color: @base-white;
+    background-color: @profile-tableHeader-bg;
+
+    button {
+      padding: 0;
+    }
+  }
+
+  tbody {
+    & tr {
+      &:nth-child(even) {
+        td {
+          background-color: @profile-table-bg--even;
+        }
+      }
+    }
+  }
+  button {
+    line-height: 1;
+    vertical-align: middle;
+    text-align: inherit;
+    height: @button-height;
+  }
+  [data-clipboard-text] {
+    display: block;
+    width: 100%;
+    height: @button-height;
+  }
+}
+
+.profile_vitualTableHeader {
+  background-color: @tableHeader-bg;
+  color: @base-white;
+  & > span {
+    line-height: 36px;
+  }
+}
+.profile_vitualTableRow {
+  &[data-even='true'] {
+    background-color: @bg-gray--light;
+  }
+}
+.profile_vitualTableBody {
+  display: block;
+  width: 100%;
+}
+.profile_vitualTableHeader,
+.profile_vitualTableRow {
+  display: block;
+  width: 100%;
+  & > span {
+    display: inline-block;
+    vertical-align: middle;
+    width: (100% / 6);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 @size-0;
+    &[data-color='green'] {
+      color: @success-color;
+    }
+  }
+  [data-align='right'] {
+    text-align: right;
+  }
+}
+
+// override styling
+.profile_table {
+  [class='ant-calendar-picker'] {
+    float: left;
+  }
+  [class~='ant-calendar-picker-input'] {
+    color: @base-white;
+    background-color: inherit;
+    border: 0;
+    height: @button-height;
+    padding: 0 0 0 @size-3 + @size-0 / 2;
+    float: left;
+  }
+  [class*='ant-calendar-range-picker-input'] {
+    vertical-align: middle;
+    width: 40%;
+    font-size: @size-1;
+    &::placeholder {
+      color: @base-white;
+      opacity: 0.6;
+      font-size: @size-1;
+    }
+  }
+  [class*='ant-calendar-picker-clear'],
+  [class*='ant-calendar-range-picker-separator'],
+  [class*='ant-calendar-picker-icon'] {
+    vertical-align: middle;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: @size-2;
+    height: @size-3;
+    width: @size-3;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    &::before,
+    &::after {
+      font-size: inherit;
+      color: inherit;
+      line-height: inherit;
+      display: inline-block;
+    }
+  }
+  [class*='ant-calendar-picker-icon'] {
+    left: 0;
+  }
+  [class*='ant-calendar-picker-clear'] {
+    background-color: inherit;
+    right: 0;
+    font-size: @size-1;
+    &:hover {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+}
+.profile_tableColorIndicator {
+  &::before {
+    content: '';
+    display: inline-block;
+    width: @size-0;
+    height: @size-0;
+    border-radius: @size-0 / 2;
+    margin-right: @size-0;
+  }
+
+  &[data-color='green']::before {
+    background-color: @success-color;
+  }
+  &[data-color='gray']::before {
+    background-color: @primary-color--dark;
+  }
+  &[data-color='blue']::before {
+    background-color: @info-color;
+  }
+  &[data-color='red']::before {
+    background-color: @alert-color;
+  }
+  &[data-color='purple']::before {
+    background-color: @indicate-color;
+  }
+}
+
+.memberList_tableAnchor {
+  .profile_tableAnchor;
+
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.profile_tablePagination {
+  width: 100%;
+  margin: 1.5rem 0 0 0;
+  text-align: right;
+}
+.profile_columnTitle {
+  width: 5rem;
+}
+.profile_columnAmount {
+  width: 10rem;
+}
+.profile_columnMedium {
+  width: 8rem;
+}
+.profile_columnMediumLong {
+  width: 10rem;
+}
+.profile_columnShort {
+  width: 4rem;
+}
+.profile_columnShortMedium {
+  width: 6rem;
+}
+.profile_columnLong {
+  width: 12rem;
+}
+.profile_columnExtraLong {
+  width: 13rem;
+}
+.profile_columnBold {
+  font-weight: bold;
+}
+.profile_columnSportsGameDescription {
+  width: 25rem;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+  // white-space: nowrap;
+}

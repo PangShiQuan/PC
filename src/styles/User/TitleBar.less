@@ -1,0 +1,52 @@
+@import '~styles/layout.less';
+
+.titleBar {
+  background-image: linear-gradient(
+    to right,
+    @profile-gradient-start,
+    @profile-gradient-end
+  );
+  text-align: left;
+  padding: 16px 19px;
+  color: #fff;
+  font-size: 18px;
+
+  [class*='mdi'] {
+    font-size: @size-4;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+
+  .svg_icon {
+    margin-right: 5px;
+
+    svg {
+      width: 23px;
+      vertical-align: middle;
+      margin-top: -3px;
+
+      path {
+        fill: #fff;
+        stroke: none;
+      }
+      rect {
+        fill: #fff;
+        stroke: none;
+      }
+      ellipse {
+        fill: #fff;
+        stroke: none;
+      }
+      circle {
+        fill: #fff;
+        stroke: none;
+      }
+    }
+  }
+
+  .small_title {
+    margin-left: 20px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 13px;
+  }
+}

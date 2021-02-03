@@ -1,0 +1,594 @@
+@import '~styles/layout.less';
+
+.fishing {
+  position: relative;
+  text-align: center;
+  justify-content: space-between;
+  display: inline-block;
+  width: 100%;
+}
+
+.fishing_outer {
+  padding-top: @fishingPage-padding-top;
+  padding-bottom: @size-3;
+}
+
+.fishing_topWord {
+  background: @fishingPage-title;
+  height: @fishingPage-title-height;
+  margin: 0 auto;
+}
+
+.fishing_body {
+  max-width: @page-width;
+  text-align: left;
+  background-color: @base-white;
+  box-shadow: @shadow-dp8;
+  margin: 0 auto auto;
+  min-height: 31.5rem;
+}
+
+.fishing_pagination {
+  .clearfix;
+
+  padding: @size-3;
+  float: right;
+  padding: 0 @size-3 @size-3 @size-3;
+  .fishing_antPaginationSelected {
+    background-color: @primary-color;
+    color: @white-1;
+  }
+  [class*='ant-pagination'] {
+    font-size: @gameCenter-fontSize;
+    border-color: transparent;
+    font-family: @font-family;
+    [class*='ant-pagination-prev'] {
+      background-color: @white-1;
+      border-color: transparent;
+      &:hover {
+        color: @white-1;
+      }
+    }
+    [class*='ant-pagination-item-link'] {
+      background-color: @white-1;
+      color: @white-1;
+      border-color: transparent;
+      &:hover {
+        color: @white-1;
+      }
+    }
+    [class*='ant-pagination-item'] {
+      background-color: @white-1;
+      &:hover {
+        background-color: @primary-color;
+        border-color: transparent;
+        & a {
+          color: @white-1;
+        }
+      }
+    }
+    [class*='ant-pagination-item-active'] {
+      background-color: @primary-color;
+      color: @white-1;
+    }
+    [class*='ant-select-selection'] {
+      background-color: @white-1;
+      border-color: transparent;
+    }
+    [class*='ant-pagination-options-quick-jumper'] {
+      font-size: @gameCenter-fontSize;
+      font-family: @font-family;
+      background-color: @white-1;
+      border-color: transparent;
+      & input {
+        background-color: @white-1;
+      }
+    }
+  }
+}
+
+.fishing_clear {
+  clear: both;
+}
+
+.fishing_navBtn {
+  background-color: transparent;
+  line-height: @size-6;
+  padding: 0 @size-4 0 @size-4;
+  margin: 0 @size-0 / 4 @size-0 / 4 @size-0 / 4;
+  font-size: @gameCenter-fontSize;
+  font-weight: 300;
+  text-transform: lowercase;
+  &[data-active='true'],
+  &:hover {
+    background-color: @fishing-navBtn-bg;
+    border-color: @fishing-navBtn-border;
+    color: @base-white;
+    border-radius: 3px;
+  }
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.fishing_catalogue {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 @size-0 0 @size-0;
+
+  & > div {
+    flex: 0 0 25%;
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+// @keyframes slideFromTop {
+//   100% {
+//     margin: @size-6 0 0 @size-6;
+//   }
+// }
+
+@keyframes slideFromBottom {
+  100% {
+    margin: 5rem @size-6 auto;
+  }
+}
+
+.fishing_catalogueItem {
+  padding-top: 5px;
+  border-radius: 3px;
+  height: 100%;
+  text-align: center;
+
+  &[disabled] {
+    .fishing_catalogueName {
+      &::after {
+        content: ' (即将来临)';
+        font-size: 0.8em;
+      }
+    }
+  }
+  &:hover {
+    background-color: @fishing-catalogueItem-bg;
+    box-shadow: @shadow-dp16;
+    .fishing_catalogueCtrlBtnPlayGame {
+      display: inherit;
+      // margin: 0 0 0 @size-6;
+      // margin: @size-6 0 0 @size-6;
+      // animation: slideFromTop 0.5s forwards;
+    }
+    .fishing_catalogueCtrlBtnPlayTestGame {
+      display: inherit;
+      animation: slideFromBottom 0.5s forwards;
+    }
+    .fishing_catalogueName {
+      color: @base-white;
+    }
+
+    .fishing_canvasBtn {
+      &::before,
+      &::after {
+        display: inherit;
+      }
+    }
+  }
+}
+
+.fishing_canvas {
+  position: relative;
+}
+
+.fishing_canvasBtn {
+  position: relative;
+  padding: 0;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    background-color: @base-black;
+    color: @base-white;
+    font-size: 0.75rem;
+    opacity: 0.4;
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &::after {
+    content: '开始游戏';
+    position: absolute;
+    color: white;
+    top: 45%;
+    left: 6px;
+    width: 100%;
+    display: none;
+    text-align: center;
+    z-index: 1;
+    letter-spacing: 1px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 3px @primary-color;
+  }
+}
+
+.fishing_canvasImage {
+  min-width: @fishingPage-placeholder-width;
+  min-height: @fishingPage-placeholder-height;
+  transition: all 0.8s;
+  background-color: @fishing-canvasImage-bg;
+  background-image: @gameCenter-pending-logo;
+  background-size: @fishing-canvasImage-size;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  width: 240px;
+}
+
+.fishing_canvasImage_icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 90px;
+}
+
+.fishing_catalogueName {
+  text-align: center;
+  font-size: 0.95rem;
+  padding: @size-0 / 2;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fishing_catalogueCtrlBtn {
+  z-index: 99;
+  background-color: @success-color--light;
+  background-image: linear-gradient(
+    to top,
+    #16c38d 0%,
+    rgba(0, 255, 144, 0.5) 100%
+  );
+  border-radius: 24px;
+  color: @base-white;
+  font-size: 0.8rem;
+  width: 8rem;
+  height: 2rem;
+  margin: @size-1 @size-1 auto auto;
+  transition: all 0.8s ease-in-out;
+  &:hover {
+    .fishing_setBoxShadow; // text-decoration: underline;
+    // background-color: @success-color--light;
+    .fishing_catalogueCtrlBtnPlayGameInner {
+      transform: scale(1);
+    }
+    .fishing_catalogueCtrlBtnPlayGameIcon {
+      display: inline;
+      animation: fadeOut 0.7s ease-in forwards;
+    }
+  }
+  &[disabled] {
+    background-color: @bg-gray--light;
+  }
+}
+
+.fishing_catalogueCtrlBtnPlayGame {
+  .fishing_catalogueCtrlBtn;
+
+  z-index: 5;
+  top: 2.5rem;
+  left: 2.5rem;
+  display: none;
+  position: absolute;
+}
+
+.fishing_catalogueCtrlBtnPlayTestGame {
+  .fishing_catalogueCtrlBtn;
+
+  display: none;
+  position: absolute;
+  margin: 7rem @size-6 auto;
+}
+
+.fishing_catalogueCtrlBtnPlayGameIcon {
+  transition: all 0.5s ease-in-out;
+  font-size: @size-4;
+  opacity: 0;
+  display: none;
+}
+
+.fishing_catalogueCtrlBtnPlayGameInner {
+  width: 8rem;
+  height: 2rem;
+  border-radius: 24px;
+  position: absolute;
+  bottom: 0.01rem;
+  transition: all 0.5s ease-in-out;
+  transform: scale(0);
+  background-color: darken(@primary-color, 10%);
+  padding-top: 0.3rem;
+  z-index: -1;
+  right: 0;
+}
+
+.fishing_searchInputOuter {
+  display: flex;
+  margin-left: auto;
+  .clearfix;
+}
+
+.fishing_searchInputInnerPlaceHolder {
+  font-size: @gameCenter-fontSize;
+  color: @text-color--light;
+}
+
+.fishing_searchInputInner {
+  border-radius: @size-0 / 2 0 0 @size-0 / 2;
+  padding-left: @size-3;
+  font-size: @gameCenter-fontSize;
+  font-weight: 300;
+  border: 1px solid @border-color;
+  color: @fishing-searchInputInner-color;
+  width: 10rem;
+  height: @size-6;
+  text-align: left;
+  vertical-align: middle;
+  &:hover {
+    .fishing_setBoxShadow;
+  }
+  &::placeholder {
+    .fishing_searchInputInnerPlaceHolder;
+  }
+}
+
+.fishing_category {
+  margin: @size-3 @size-4 @size-3 @size-3;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.fishing_buttonTabGroup {
+  display: flex;
+  margin-left: 24rem;
+  max-width: @page-width;
+  margin: 0 auto;
+
+  &.sliderWrapper {
+    display: block;
+    // max-width: ~'calc(@{page-width} - 40px)';
+    line-height: 0;
+
+    .gameTabSliderSetting {
+      .gameTabPrevButton {
+        transform: unset;
+        transition: all 0.1s linear;
+        top: 0;
+        left: 0;
+        width: 34px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+
+        svg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        &::before {
+          content: none;
+        }
+
+        &:hover {
+          svg {
+            path {
+              fill: @navigation-color-active;
+            }
+          }
+        }
+
+        &.disableButton {
+          opacity: 0;
+          cursor: default;
+          z-index: -1;
+        }
+      }
+
+      .gameTabNextButton {
+        transform: unset;
+        transition: all 0.1s linear;
+        top: 0;
+        right: 0;
+        width: 34px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: all 0.1s linear;
+
+        svg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        &::before {
+          content: none;
+        }
+
+        &:hover {
+          svg {
+            path {
+              fill: @navigation-color-active;
+            }
+          }
+        }
+
+        &.disableButton {
+          opacity: 0;
+          cursor: default;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}
+
+.fishing_buttonTabIconImg(@selectedGame, @isSelected) {
+  @iconUrl: 'assets/image/games/fishing';
+  & when (@isSelected =true) {
+    @url: '@{iconUrl}/@{selectedGame}_on.png';
+
+    background-image: url('@{url}');
+  }
+  & when not (@isSelected =true) {
+    @url: '@{iconUrl}/@{selectedGame}.png';
+
+    background-image: url('@{url}');
+  }
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.fishing_buttonTabIcon(@isSelected) {
+  @iconUrl: 'assets/image/games/fishing';
+  &[data-fishing='AG'] {
+    .fishing_buttonTabIconImg('ag', @isSelected);
+  }
+  &[data-fishing='ALL'] {
+    .fishing_buttonTabIconImg('all', @isSelected);
+  }
+  &[data-fishing='BBIN'] {
+    .fishing_buttonTabIconImg('bbin', @isSelected);
+  }
+  &[data-fishing='BBLQP'] {
+    .fishing_buttonTabIconImg('bblqp', @isSelected);
+  }
+  &[data-fishing='BG'] {
+    .fishing_buttonTabIconImg('bg', @isSelected);
+  }
+  &[data-fishing='CQ9'] {
+    .fishing_buttonTabIconImg('cq9', @isSelected);
+  }
+  &[data-fishing='FG'] {
+    .fishing_buttonTabIconImg('fg', @isSelected);
+  }
+  &[data-fishing='JDB'] {
+    .fishing_buttonTabIconImg('jdb', @isSelected);
+  }
+  &[data-fishing='KY'] {
+    .fishing_buttonTabIconImg('ky', @isSelected);
+  }
+  &[data-fishing='LC'] {
+    .fishing_buttonTabIconImg('lc', @isSelected);
+  }
+  &[data-fishing='MG'] {
+    .fishing_buttonTabIconImg('mg', @isSelected);
+  }
+  &[data-fishing='NWG'] {
+    .fishing_buttonTabIconImg('nwg', @isSelected);
+  }
+  &[data-fishing='THQP'] {
+    .fishing_buttonTabIconImg('thqp', @isSelected);
+  }
+}
+
+.fishing_buttonTabOuter {
+  height: 4rem;
+  width: 14rem;
+  background-color: @primary-color;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: attr(data-content);
+    background-color: rgba(0, 0, 0, 0.75);
+    font-weight: 700;
+    height: 100%;
+    left: 0;
+    padding: 10% 0.5rem;
+    position: absolute;
+    text-align: center;
+    top: -100%;
+    transition: top 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    color: @base-white;
+  }
+
+  &[data-active='true'] {
+    .fishing_buttonTab {
+      .fishing_buttonTabIcon(true);
+    }
+  }
+  &[data-active='false'] {
+    background-color: @primary-color;
+    &:hover {
+      .fishing_buttonTab {
+        .fishing_buttonTabIcon(true);
+      }
+
+      background-color: @primary-color;
+    }
+    .fishing_buttonTab {
+      .fishing_buttonTabIcon(false);
+    }
+  }
+  &[disabled] {
+    box-shadow: @shadow-dp4--inset;
+    cursor: not-allowed;
+    filter: grayscale(100%);
+
+    &:hover {
+      &::after {
+        top: 0;
+      }
+    }
+  }
+}
+
+.fishing_buttonTab {
+  height: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.fishing_buttonSearch {
+  .clearfix;
+
+  color: @base-white;
+  background-color: @success-color--light;
+  font-size: @gameCenter-fontSize;
+  height: @size-6;
+  width: @size-7;
+  border-radius: 0 @size-0 / 2 @size-0 / 2 0;
+  &:hover {
+    .fishing_setBoxShadow;
+
+    background-color: darken(@success-color--light, 10%);
+  }
+}
+
+.fishing_loading {
+  margin: 0.025rem 0;
+}
+
+.fishing_catalogueNoItem {
+  font-size: @gameCenter-fontSize;
+  text-align: center;
+  vertical-align: middle;
+  margin: 10rem 0 0 0;
+  padding-bottom: 10rem;
+}
+
+.fishing_setBoxShadow {
+  box-shadow: @shadow-dp2;
+}

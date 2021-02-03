@@ -1,0 +1,201 @@
+@import '~clientResolver/index.less';
+
+.svg_icon {
+  svg {
+    width: 1.35rem;
+    margin-bottom: -6px;
+    margin-right: 5px;
+
+    path {
+      fill: @profile-body-color;
+      stroke: none;
+    }
+    rect {
+      fill: @profile-body-color;
+      stroke: none;
+    }
+    ellipse {
+      fill: @profile-body-color;
+      stroke: none;
+    }
+    circle {
+      fill: @profile-body-color;
+      stroke: none;
+    }
+  }
+}
+
+.addNewRow {
+  margin-bottom: 20px;
+
+  .addNewButton {
+    width: 218px;
+    height: 45px;
+    border-radius: 4px;
+    border: solid 1px @profile-body-color;
+    color: @profile-body-color;
+    background-color: #fff;
+    border-style: dotted;
+
+    [class*='mdi'] {
+      vertical-align: baseline;
+    }
+  }
+
+  .highlight {
+    color: @orange-1;
+    font-size: 13px;
+    margin-left: 22px;
+  }
+}
+
+.link {
+  color: @profile-body-color;
+}
+
+.actionColumn {
+  display: flex;
+  justify-content: center;
+
+  .editButton {
+    color: @profile-body-color;
+  }
+}
+
+.modal_title {
+  text-align: center;
+  background-color: @profile-button-color;
+  color: @profile-button-text-color;
+  font-size: @size-3;
+  padding: @size-3 0;
+}
+
+.modal_form_row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .rangeInput {
+    margin: 0;
+    width: auto;
+  }
+
+  .affCode_input {
+    border-radius: 4px;
+    background: #f4f4f4;
+    padding: 8px;
+    padding-left: 15px;
+    height: 45px;
+    width: 476px;
+  }
+
+  .radio_button {
+    height: @button-height;
+    margin-right: @size-3;
+    padding: 0;
+
+    i {
+      display: inline-block;
+      font-size: @size-4;
+      margin-right: @size-0 / 2;
+    }
+    i,
+    span {
+      line-height: @size-2;
+    }
+    i[class*='radiobox-blank']::before {
+      color: #d0d0d0;
+    }
+    &[data-checked='true'] [class*='mdi'] {
+      color: @profile-body-color;
+    }
+    &[disabled] [class*='mdi'] {
+      color: @profile-label-color--disabled;
+    }
+  }
+}
+
+.modal_button {
+  border-radius: 4px;
+  padding: 8px;
+  margin: 0 5px;
+  height: 45px;
+}
+
+.modal_button_row {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.modal_generateButton {
+  .modal_button;
+
+  margin: 0 0 0 9px;
+  background-color: #fff;
+  color: @profile-button-color;
+  border: 1px solid @profile-button-color;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.modal_cancelButton {
+  .modal_button;
+
+  background-color: #fff;
+  color: @profile-button-color;
+  border: 1px solid @profile-button-color;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.modal_deleteButton {
+  .modal_button;
+
+  background-color: #fff;
+  color: #ffa626;
+  border: 1px solid #ffa626;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.modal_submitButton {
+  .modal_button;
+
+  background-color: @profile-button-color;
+  color: @profile-button-text-color;
+  padding-left: 44px;
+  padding-right: 44px;
+}
+
+.modelWap {
+  height: 549px;
+  background-image: url('../../../assets/image/Modelbg.png');
+  background-repeat: no-repeat;
+}
+.modelWaptext {
+  color: #fff4bc;
+  font-weight: bold;
+  padding-left: 15px;
+}
+.QRCodemodelWap {
+  width: 148px;
+  height: 148px;
+  margin: 0 auto;
+  position: relative;
+  top: 302px;
+}
+.modelWapcode {
+  color: #fff4bc;
+  font-weight: bold;
+  padding-top: 8px;
+  padding-left: 15px;
+}
+.modelWapContent {
+  width: 284px;
+  height: 79px;
+  background: #d8d8d824;
+  margin: 0 auto;
+  border-radius: 8px;
+  position: relative;
+  top: 318px;
+}

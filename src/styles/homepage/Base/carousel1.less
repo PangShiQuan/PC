@@ -1,0 +1,72 @@
+@import '~styles/layout.less';
+
+.container {
+  .row;
+
+  width: @page-width;
+  height: @carousel-height;
+  text-align: right;
+  margin: 0 auto;
+  margin-bottom: @panel-margin;
+}
+.carousel {
+  .row;
+
+  background-color: @base-white;
+  position: relative;
+  height: @carousel-height;
+  width: @carousel-width;
+  margin-left: auto;
+  margin-right: 0;
+  // box-shadow: @shadow-dp4;
+
+  [class*='ant-carousel'] {
+    [class*='slick-dots'] {
+      height: inherit;
+
+      li {
+        margin: 0 7px;
+
+        button {
+          background-color: #fff;
+          border-radius: 50%;
+          width: 15px;
+          height: 15px;
+          opacity: 1;
+
+          &::before {
+            content: none;
+          }
+
+          &:hover {
+            background-color: transparent;
+            border: 2px solid #fff;
+            opacity: 1;
+          }
+
+          &:focus {
+            opacity: 1;
+          }
+        }
+
+        &[class*='slick-active'] {
+          button {
+            background-color: transparent;
+            border: 2px solid #fff;
+            width: 15px;
+
+            &::before {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.carousel_img {
+  display: inline-block;
+  width: 100%;
+  height: @carousel-height;
+}

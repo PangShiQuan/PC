@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      name="viewport"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="row header-row">
+      <div class="navigation">
+        <img
+          id="logo"
+          class="logo"
+          type="image"
+          alt="彩票首页"
+          src="<%= require('currentClientAssets/image/logo.png') %>"
+        />
+        <div class="navigation_navs">
+          <a id="main_page" href="#" class="paging-anchor to-home">官方首页</a>
+          <button id="myHB" class="paging-anchor hide">我的红包</button>
+          <a
+            data-info="onlineServiceUrl"
+            class="paging-anchor"
+            target="_blank"
+            rel="noopener noreferrer"
+            >在线客服</a
+          >
+          <a id="topup" href="#" class="paging-anchor hide">充值中心</a>
+          <a id="register" href="#" class="paging-anchor hide">免费注册</a>
+          <a id="login" href="#" class="paging-anchor hide">立即登录</a>
+        </div>
+      </div>
+    </header>
+    <div id="event" class="container">
+      <img class="banner" src="<%= require('./assets/images/banner.png') %>" />
+      <img
+        class="banner"
+        src="<%= require('./assets/images/banner_desc.png') %>"
+      />
+      <div class="row hongbao-row">
+        <input
+          id="flHongbao"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==
+          "
+          class="hongbao-btn hide"
+          hb
+          data-hbtype="FU"
+          type="image"
+          alt="立即抢福利红包"
+          data-src="fl_hb.png"
+        />
+        <input
+          id="tjHongbao"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==
+          "
+          class="hongbao-btn hide"
+          hb
+          data-hbtype="TJ"
+          type="image"
+          alt="立即抢运气红包"
+          data-src="yq_hb.png"
+        />
+      </div>
+      <section id="event-details" class="hide">
+        <div class="announcement">
+          <h1 class="hb_chances">
+            <div id="flHongbao_chances" class="hide">
+              <p>福利红包可抢次数:&nbsp; <strong></strong></p>
+            </div>
+            <div id="tjHongbao_chances" class="hide">
+              <p>运气红包可抢次数:&nbsp; <strong></strong></p>
+            </div>
+          </h1>
+          <h1 class="countdown">
+            <div id="flHongbao_current" class="hide" data-type="福利"></div>
+            <div id="tjHongbao_current" class="hide" data-type="运气"></div>
+          </h1>
+        </div>
+        <div class="contents">
+          <div class="content-live">
+            <div id="rank" class="contents-figure">
+              <div class="section">
+                <p class="sectionTitle">红包中奖榜</p>
+              </div>
+              <div id="rank_content"></div>
+            </div>
+          </div>
+
+          <div class="content">
+            <a id="tjHongbao_rule" class="hb_ruleBtn">更多规则</a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="popup hide" id="myHongbao">
+      <div class="popup-mask"></div>
+      <div class="popup-content" role="close">
+        <div class="popup-contentBody">
+          <div class="myHongbao">
+            <button class="popup-closeBtnModel" role="close">
+              <img src="<%= require('./assets/images/closebg.png') %>" />
+            </button>
+            <div class="wrapper">
+              <div class="row myHongbao-header"><span>我的红包</span></div>
+              <div class="row myHongbao-total-row">
+                <div class="col-7 myHongbao-total-col">
+                  <p class="myHongbao-totalAmount-paragraph">
+                    红包总额&nbsp;： <span id="totalAmount">0元</span>
+                  </p>
+                </div>
+                <div class="col-5 myHongbao-total-col">
+                  <p class="myHongbao-totalCount-paragraph1">
+                    红包个数&nbsp;： <span id="totalCount">0</span>
+                  </p>
+                </div>
+              </div>
+              <div class="row myHongbao-table-row">
+                <div class="myHongbao-table-content">
+                  <table class="myHongbao-table">
+                    <colgroup>
+                      <col width="33%" class="pc-only" />
+                      <col width="33%" />
+                      <col width="33%" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <td class="pc-only">时间</td>
+                        <td>红包类型</td>
+                        <td>金额</td>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="row pagination-row"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup hide" id="drawResult">
+      <div class="popup-mask"><div id="popup_mask"></div></div>
+      <div class="popup-content" role="close">
+        <div class="popup-contentBody">
+          <div id="hb_result" class="hongbao-result">
+            <button class="popup-closeBtnModel" role="close">
+              <img src="<%= require('./assets/images/closebg.png') %>" />
+            </button>
+            <div class="wrapper">
+              <p id="result_desc" class="hb_drawResultDesc"></p>
+              <p id="chances_desc" class="hb_drawResultDesc"></p>
+              <p><strong id="draw_type" class="hongbao-type"></strong></p>
+              <button class="hongbao-resultBtn" id="hb_continue">
+                <span>继续抢红包</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup hide" id="readrule">
+      <div class="popup-mask"><div></div></div>
+      <div class="popup-content" role="close">
+        <div class="popup-contentBody">
+          <div class="hongbao-result sorry-background">
+            <button class="popup-closeBtnModel" role="close">
+              <img src="<%= require('./assets/images/closebg.png') %>" />
+            </button>
+            <div class="wrapper">
+              <p class="sorry-paragraph">
+                您还未满足抢红包的条件资格，请查看抢红包具体规则，方便您早日参加红包活动
+              </p>
+              <a
+                id="noHongbao_rule"
+                class="hongbao-resultBtn"
+                target="_blank"
+                rel="noopener noreferrer"
+                >查看规则</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="row footer-row">
+      <div>2010-2020&copy; <span data-info="siteName"></span> 版权所有</div>
+      <div>
+        <span data-info="siteName"></span>郑重提示 : 彩票有风险, 投资需谨慎!
+        我们积极推行负责任博彩, 并极力拒接未成年玩家使用我们的软件进行网上娱乐.
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+@import '~clientResolver/index.less';
+
+@height: 45px;
+
+.filter_date {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 12px;
+  width: 100%;
+  line-height: @size-2;
+  font-size: @size-2;
+
+  // overwrite antdesign
+  [class*='ant-calendar-picker-input'] {
+    padding: 0;
+  }
+
+  .filter_label {
+    display: inline-block;
+    width: 50px;
+  }
+}
+
+.datePicker {
+  [class*='ant-calendar-picker-input'] {
+    height: @height;
+  }
+
+  [class*='ant-calendar-range-picker-separator'] {
+    vertical-align: initial;
+  }
+}
+
+.option_buttons {
+  padding: @size-0 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  color: @gray-1;
+  height: @height;
+  margin: 0 5px;
+  &[disabled] {
+    background-color: @gray-2;
+    color: @gray-1;
+  }
+  &[data-active='true'] {
+    background-color: @profile-button-color;
+    color: @profile-button-text-color;
+  }
+}

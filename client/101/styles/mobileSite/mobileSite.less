@@ -1,0 +1,124 @@
+@import '~clientResolver/index.less';
+@red-2 : #db1104;
+
+.mobileBody {
+}
+
+.mobileBanner {
+  background-image: url('../../assets/image/mobileSite/mobile-bg101.png');
+  background-repeat: no-repeat;
+  min-width: 70rem;
+  background-size: cover;
+  height: 1000px;
+  display: flex;
+}
+
+.wrap {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100rem;
+  margin: 2rem auto;
+}
+
+.mobileHeader {
+  width: 550px;
+}
+
+.mobileImage {
+  width: 50%;
+  img {
+    height: 700px;
+  }
+}
+
+.btn {
+  height: 60px;
+  width: 240px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.6rem;
+  padding-top: 0.5rem;
+  background-color: #3791db;
+  color: @base-white;
+
+  &:hover {
+    background-color: darken(#3791db, 5%);
+    color: @base-white;
+    // background-color: transparent;
+    // color: @red-4;
+    border: 1px solid #3791db;
+  }
+}
+
+.mobileIOSBtn {
+  .btn;
+
+  margin: 2.5rem 0 0 0;
+}
+
+.mobileAndroidBtn {
+  .btn;
+
+  margin: 2.5rem 0 0 3rem;
+}
+
+.qrCol {
+  height: 205px;
+  width: 205px;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+
+  &[data-right='true'] {
+    margin-left: 5.5rem;
+  }
+
+  // margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.qrBg {
+  .qrCol;
+
+  background-image: url('../../assets/image/mobileSite/erweima101.png');
+}
+
+.qr {
+  height: 169px;
+  width: 169px;
+  padding-top: 1.1rem;
+  margin-left: 1rem;
+}
+
+.mobileIOSQR {
+  .qr;
+}
+
+.mobileAndroidQR {
+  .qr;
+}
+
+.qrTitle {
+  text-align: center;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: @base-white;
+}
+
+.mobileItems {
+  width: 50%;
+}
+
+.iosAndroidButton {
+  display: flex;
+}
+
+.mobileQR {
+  display: flex;
+}
+
+.icon {
+  vertical-align: top;
+  font-size: 30px;
+}

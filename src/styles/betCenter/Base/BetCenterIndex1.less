@@ -1,0 +1,250 @@
+@import '~styles/layout.less';
+@import '~styles/header/Base/login1.less';
+@import '~clientResolver/index.less';
+
+.betCenter {
+  min-width: @page-width;
+}
+.betCenter_header {
+  min-height: @size-9 + @size-3;
+  display: flex;
+  flex-direction: row;
+  background: @betCenter-header-bgColor;
+}
+.betCenter_logoColumn {
+  flex: 0 0 @nav-side-width;
+  min-height: @size-9 + @size-3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+
+  & > a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+}
+.betCenter_allGameLabel {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  font-size: @size-2;
+  justify-content: space-between;
+  min-height: @header-height;
+  padding: 0 @size-3;
+  text-align: left;
+  background-color: @first-color;
+  color: @button-color;
+  letter-spacing: 1px;
+  border-top: 1px solid darken(@first-color, 5%);
+}
+.betCenter_logoImg {
+  width: auto;
+  height: auto;
+  display: inline-block;
+  max-width: 250px;
+  padding: 0 @size-1;
+}
+.betCenter_body {
+  display: flex;
+  background-color: @common-background-line-color;
+  background-repeat: repeat;
+}
+.betCenter_toptray {
+  text-align: right;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.betCenter_loginColumn {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.betCenter_loginRow {
+  text-align: center;
+}
+.betCenter_login {
+  &:extend(.pageContainer);
+
+  text-align: left;
+  margin: auto;
+}
+.betCenter_backHomeBtn {
+  line-height: @button-height;
+  border-radius: 6px;
+  font-size: @size-2;
+  color: @backHomeBtn-color;
+  display: inline-block;
+  margin-left: 10px;
+  &:hover {
+    color: @backHomeBtn-hover-color;
+  }
+  i {
+    vertical-align: middle;
+  }
+  [class*='mdi'] {
+    font-size: @size-4;
+    display: inline-block;
+    line-height: 1;
+    margin-right: @size-0;
+  }
+}
+.betCenter_board {
+  &:extend(.pageContainer);
+
+  // box-shadow: @shadow-dp16;
+  border-radius: 6px;
+  margin: @size-3 auto;
+  background-color: @common-background-color;
+}
+.betCenter_boardBody {
+  display: flex;
+  flex-direction: row;
+}
+.betCenter_boardColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 9;
+  overflow: hidden;
+}
+.betCenter_widgetsColumn {
+  display: flex;
+  min-width: 300px;
+  align-items: center;
+  flex-direction: column;
+  flex: 3;
+}
+
+@keyframes countDown {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+.betCenter_notificationBtn {
+  font-size: @size-2;
+  color: @base-white;
+  border-radius: 6px;
+  background-color: @red-1;
+  height: @button-height;
+  padding: 0 @size-0;
+  position: relative;
+  overflow: hidden;
+  span {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  &::before {
+    content: '';
+    background-color: darken(@red-1, 10%);
+    top: 0;
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    right: 100%;
+    animation: countDown 7s 1 ease;
+  }
+}
+@actionBtn-size: @size-9 * 1.5;
+@actionBtns-size: @actionBtn-size + (@size-0 * 2);
+.betCenter_actionRow {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-height: @actionBtns-size + @size-3;
+}
+.betCenter_actionBtns {
+  background-color: darken(@gray-4, 5%);
+  border-radius: @actionBtn-size + (@size-0 * 2) / 2;
+  box-shadow: @insetShadow-dp2;
+  padding: @size-0;
+  display: flex;
+  flex-direction: column;
+  height: @actionBtns-size;
+  width: @actionBtns-size;
+  font-size: @size-5;
+  transition: background-color 0.15s @transition-timing;
+  &[data-color='blue'] {
+    background-color: @blue-1;
+  }
+  &[data-color='red'] {
+    background-color: @error-color;
+  }
+  &[data-color='orange'] {
+    background-color: @orange-1;
+  }
+  &[data-color='yellow'] {
+    background-color: @yellow-1;
+  }
+  &[data-color='green'] {
+    background-color: @correct-color;
+  }
+}
+.betCenter_actionBtn {
+  color: @first-color;
+  background-color: @gray-4;
+  height: @actionBtn-size / 2;
+  width: @actionBtn-size;
+  box-shadow: @shadow-dp4;
+  background-size: 100% 150%;
+  background-position: center bottom;
+  transition: background-position 0.15s @transition-timing;
+  &[data-position='top'] {
+    padding-top: @size-4;
+    border-top-left-radius: @actionBtn-size / 2;
+    border-top-right-radius: @actionBtn-size / 2;
+    margin-bottom: @size-0 / 4;
+    background-image: linear-gradient(
+      to bottom,
+      @gray-4 0%,
+      @base-white 51%,
+      @gray-4 100%
+    );
+  }
+  &[data-position='bottom'] {
+    padding-bottom: @size-4;
+    border-bottom-left-radius: @actionBtn-size / 2;
+    border-bottom-right-radius: @actionBtn-size / 2;
+    margin-top: @size-0 / 4;
+    background-image: linear-gradient(
+      to bottom,
+      @gray-4 0%,
+      @base-white 51%,
+      @gray-4 100%
+    );
+  }
+  &:hover:not([disabled]) {
+    background-color: @base-white;
+    color: @first-color;
+    &[data-position='top'] {
+      background-position: center top;
+    }
+    &[data-position='bottom'] {
+      background-position: center top;
+    }
+  }
+  &[disabled] {
+    color: @gray-3;
+    cursor: default;
+  }
+}
+.popupModelFooter {
+  [class~='ant-modal-footer'] {
+    background-image: none;
+    border-top: 1px solid #e8e8e8;
+    padding: 10px 16px;
+    border-radius: 0 0 4px 4px;
+    text-align: center;
+    [class~='ant-btn'] {
+      background: @first-color;
+      color: @base-white;
+      border: 0.9px solid @first-color;
+    }
+  }
+}

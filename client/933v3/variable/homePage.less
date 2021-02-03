@@ -1,0 +1,26 @@
+@import './common.less';
+
+@navigation-bg: transparent;
+
+@navigation-list-bg: url('../assets/image/navigation_bg.png');
+
+@navigation-color--disable: #954576;
+
+@navigation-profileNavRow-bg: url('../assets/image/header_bg.png') no-repeat
+  right / contain;
+
+@navigation-bg--selected: url('../assets/image/main-menu-selected-effect.png')
+  bottom no-repeat;
+
+/*
+** HOME_PAGE COMPONENT
+*/
+@home-content--min-height: 70.25vh;
+
+@home-background: none;
+
+.navigation__selected {
+  &::after {
+    content: unset;
+  }
+}

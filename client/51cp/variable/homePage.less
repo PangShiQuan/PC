@@ -1,0 +1,40 @@
+@import './common.less';
+@import './base.less';
+
+@navigation-bg: transparent;
+
+@navigation-color--disable: @primary-color--dark;
+
+/*
+** HOME_PAGE COMPONENT
+*/
+@home-content--min-height: 70.25vh;
+
+@home-background: none;
+
+@featured-item-bgColor: @primary-color;
+
+.navigation__selected {
+  &::after {
+    content: unset;
+  }
+}
+
+@homepage-border-color: transparent;
+
+@homepage-title-display: none;
+
+@homepage-imageContent-display: none;
+
+@homePage-imageBtn-transform: none;
+
+@homePage-image-borderRadius: 0;
+
+// FloatWindows
+@floatwindows-font-color: white;
+
+.mainFooter {
+  &[data-pathname~='sports'] {
+    margin-top: -1px;
+  }
+}

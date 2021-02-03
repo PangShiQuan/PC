@@ -1,0 +1,14 @@
+#!/bin/bash
+. ./
+cd modules
+chmod -R u+x .
+for d in *; do
+    if [[ -d "$d" && ! -L "$d" && -f "./$d/webpack.config.js" ]] ; then
+        webpack --config ./$d/webpack.config.js
+
+        if [ $? -ne 0 ] ; then
+            echo "Build Failed, Exiting"
+            exit 1;
+        fi
+    fi
+done

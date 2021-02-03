@@ -1,0 +1,98 @@
+@import '~clientResolver/index.less';
+
+.label {
+  display: inline-block;
+  vertical-align: top;
+  padding: 12px 0;
+  font-size: @size-2;
+}
+
+.textFieldColor {
+  &[data-color='blue'] {
+    border: 1px solid @blue-1;
+  }
+  &[data-color='red'] {
+    border: 1px solid @red-1;
+  }
+  &[data-color='orange'] {
+    border: 1px solid @orange-1;
+  }
+  &[data-color='yellow'] {
+    border: 1px solid @yellow-1;
+  }
+  &[data-color='green'] {
+    border: 1px solid @green-1;
+  }
+}
+
+.textField {
+  position: absolute;
+  background-color: transparent;
+  color: transparent;
+  display: inline-block;
+  padding: 8px 8px 8px 15px;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  height: 45px;
+  .textFieldColor();
+
+  &:focus ~ .pinInput_active {
+    &::before {
+      position: absolute;
+      content: '';
+      background-color: @primary-color--dark;
+      left: @size-0;
+      height: 60%;
+      width: 1px;
+      top: 20%;
+      animation: blink 1s infinite ease;
+    }
+  }
+}
+
+.pinInput {
+  width: @size-6;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  font: normal normal normal 24px/1 'Material Design Icons';
+}
+
+.pinInput_divider {
+  vertical-align: top;
+  color: @profile-label-color;
+  line-height: 45px;
+}
+
+.pinInput_active {
+  .pinInput;
+}
+
+.pinInput_hasValue {
+  .pinInput;
+
+  &::before {
+    color: @profile-label-color--disabled;
+    content: '\f382';
+    font-size: @size-3;
+    font-weight: bold;
+    line-height: 1;
+    transform: translate3d(-50%, -50%, 0);
+    width: @size-3;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+  }
+}
+
+@keyframes blink {
+  0% {
+    width: 1px;
+  }
+  50% {
+    width: 1px;
+  }
+  100% {
+    width: 0;
+  }
+}

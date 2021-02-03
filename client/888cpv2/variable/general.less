@@ -1,0 +1,109 @@
+@import './common.less';
+
+@bg-transition-color-1: darken(@footer-bgColor--black, 2%);
+@bg-transition-color-2: darken(@footer-bgColor--black, 4%);
+@bg-transition-color-3: darken(@footer-bgColor--black, 6%);
+@bg-transition-color-4: darken(@footer-bgColor--black, 8%);
+@page-mainLayout-bg: url('../assets/image/background.png') 100%,
+  linear-gradient(
+    0deg,
+    @bg-transition-color-1 0%,
+    @bg-transition-color-2 5%,
+    @bg-transition-color-3 10%,
+    @bg-transition-color-4 15%,
+    lighten(#581200, 2%) 25%,
+    lighten(#581200, 1%) 30%,
+    #581200 45%
+  );
+
+/*
+** HEADER COMPONENT
+*/
+@header-bg: transparent;
+
+@header-color: @base-white;
+
+@header-height: 1.875rem;
+
+@marquee-bg: lighten(@primary-color--light, 35%);
+
+@login-body-align: center;
+
+.login_guestRegisterBtn-override {
+  min-height: 2rem;
+  min-width: 7rem;
+  color: @base-white;
+  border: none;
+  background: linear-gradient(
+    to bottom,
+    lighten(@primary-color--light, 10%) 0%,
+    lighten(@primary-color--light, 5%) 25%,
+    @primary-color 50%,
+    darken(@primary-color--dark, 10%) 75%,
+    darken(@primary-color--dark, 20%) 100%
+  );
+}
+.login-button-override {
+  float: none;
+  min-height: 2rem;
+  min-width: 7rem;
+  color: @base-white;
+  border: none;
+  box-shadow: 1px 3px 12px 1px @base-black;
+  background: radial-gradient(
+    ellipse at center,
+    lighten(@primary-color--light, 5%) 0%,
+    @primary-color--light 25%,
+    @primary-color 50%,
+    darken(@primary-color, 5%) 65%,
+    @primary-color--dark 80%,
+    darken(@primary-color--dark, 5%) 100%
+  );
+}
+
+/* ** FLOAT_PANEL COMPONENT */
+@floatPanel-bg: @primary-color--dark;
+@floatPanelTitle-color: @base-white;
+@floatPanelDesc-color: @base-white;
+@floatPanel-btn-bg--top: rgba(0, 0, 0, 0.15);
+@floatPanel-btn-bg--bottom: rgba(0, 0, 0, 0.15);
+@floatPanel-btn-color--top: @base-white;
+@floatPanel-btn-color--bottom: @base-white;
+.floatingPanelOverride {
+  border-radius: 0 0 0.5rem 0.5rem;
+  box-shadow: 0 6px 10px 0 rgba(67, 74, 100, 0.14),
+    0 1px 18px 0 rgba(67, 74, 100, 0.12), 0 3px 5px -1px rgba(67, 74, 100, 0.4);
+}
+.closeBtnOverride {
+  width: 100%;
+  transform: translateY(-95%);
+  color: @base-white;
+  font-size: 0.75rem;
+  &::before {
+    filter: drop-shadow(0 0 0.125rem black);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-bottom: @size-3 solid @primary-color;
+    border-left: 1.25rem solid transparent;
+    border-right: 1.25rem solid transparent;
+    z-index: -1;
+  }
+}
+
+/*
+** FOOTER COMPONENT
+*/
+@footer-bgColor--black: lighten(@primary-color, 5%);
+
+/* ** BUTTONS COMPONENT */
+@core-btn-color: @base-white;
+@core-btn-bg: #d50000;
+@core-btn-bg-hover: #d50000;
+@sub-btn-color: @base-black;
+@sub-btn-bg: @accent-color;
+@core-btn-border: none;
+@sub-btn-border: 2px solid darken(@accent-color, 5%);

@@ -1,0 +1,129 @@
+@import '~clientResolver/index.less';
+
+article {
+  background-image: url('../../assets/image/mobileSite/bg008.png');
+  background-repeat: no-repeat;
+  min-width: @page-width;
+  height: 100%;
+  background-position: center;
+}
+.container__flex {
+  align-items: flex-end;
+  display: flex;
+  flex-flow: row-reverse;
+  width: @page-width;
+  margin: 0 auto;
+  padding-top: @size-9;
+}
+.description {
+  margin: 0 @size-8;
+}
+.introBox {
+  color: @base-white;
+  font-size: 2rem;
+  text-align: center;
+}
+.intro {
+  margin-bottom: @size-3;
+  position: relative;
+  display: inline-block;
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+  &::before {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    height: 100%;
+    width: auto;
+    left: -@size-4;
+    right: -@size-4;
+    top: 0;
+    z-index: 0;
+    transform: skew(-45deg, 0);
+  }
+}
+.text {
+  letter-spacing: calc(@size-0 / 3);
+  text-align: center;
+  > * {
+    display: block;
+  }
+}
+.container__flexVertical {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  & + & {
+    .downloadBtn {
+      color: @green-1;
+    }
+  }
+}
+.downloadBtn {
+  background-color: @base-white;
+  border-radius: 100px;
+  color: @red-1;
+  margin: @size-2 0;
+  padding: @size-1 @size-6;
+  font-size: 18px;
+  & span {
+    padding-left: @size-3;
+    vertical-align: middle;
+  }
+  &:hover {
+    color: @base-white;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+}
+.downloadBtnIcon {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.25em;
+}
+.QRBottom_desc {
+  color: @base-white;
+  font-size: @size-3;
+  letter-spacing: 2px;
+  padding-top: @size-5;
+}
+.box__desc {
+  align-items: flex-start;
+  border: 1px solid transparent;
+  display: flex;
+  padding: @size-3;
+  & img {
+    height: calc(@size-7 + @size-3);
+    margin: @size-0;
+    width: calc(@size-7 + @size-3);
+  }
+  & p {
+    max-width: calc(@size-8 + @size-8 + @size-0);
+  }
+  & p * {
+    display: block;
+    margin: 0;
+  }
+  & p span:first-child {
+    font-weight: bolder;
+    font-size: @size-4;
+  }
+}
+.group {
+  padding-top: 14rem;
+  display: inline-flex;
+  > * {
+    margin: @size-1 @size-1*2;
+  }
+  & .downloadBtn {
+    min-width: 220px;
+  }
+}
+.platformBtn {
+  margin-bottom: 15px;
+}
